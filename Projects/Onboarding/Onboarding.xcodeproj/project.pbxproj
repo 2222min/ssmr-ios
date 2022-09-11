@@ -8,28 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		008CFAA049A158C0DF1BDCEF /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E4D07F9D6C1E84AC28562B /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
+		0CBCC575CC1B17896965D29A /* OnboardingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF821189BBD77720A211CBF /* OnboardingReactor.swift */; };
 		0CDD6697820CBF0B529FB3B8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1120B34E60201B2D82BDB8 /* Asset.xcassets */; };
+		0D2E3C1F52BED9DD7A91CF7D /* OnboardingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF821189BBD77720A211CBF /* OnboardingReactor.swift */; };
 		0DF63EB1DAF1D0C231F28AD1 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF5D9800610CBB78FAF8E9E /* Then.framework */; platformFilter = ios; };
-		0FD494BBCC7098EF58F955D4 /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CBFF64BB3FFDA43CBA06F5 /* HomeTests.swift */; };
 		10CA7E5A34652A8E713018E7 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1120B34E60201B2D82BDB8 /* Asset.xcassets */; };
-		11931D6B57BFA0F1860380E6 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748F6424392F128160B4E13 /* HomeViewReactor.swift */; };
 		2025A1AD01679E73CE92AC7D /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5954E6ABEC87C7C34410807 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20CCDF180DAF3DD43BA976F9 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42172512EB750EFAEB2F57F9 /* OnboardingTests.swift */; };
 		24C2C46E65D6FDA5F135A0F6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27369CAC2176927AC9BB57B /* RxSwift.framework */; platformFilter = ios; };
 		2AA9930A8A0DC0C0D0A511A2 /* TuistAssets+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C2F9BCF1B3EC9E39E57AB /* TuistAssets+Onboarding.swift */; };
-		2B21110378885F55A1B92007 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748F6424392F128160B4E13 /* HomeViewReactor.swift */; };
 		2BB7D7477C1E2AFC8E749BAC /* TuistAssets+OnboardingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493130523A955302761A23B /* TuistAssets+OnboardingDemoApp.swift */; };
 		2BF53BCA9E807BD9149EB60E /* Then.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFF5D9800610CBB78FAF8E9E /* Then.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3302BBD737BA8B2BC968C255 /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1016885DD92C038F8590522 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
 		36A1C793DC3661D10407927A /* ReactorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16A92A9613105F390BDE142E /* ReactorKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		36C966AEF508014F28C96DF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9389B9FF72A3C2475FC9418 /* HomeViewController.swift */; };
 		392C5118337B5BA54A254A8C /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99993073E12950A7DFEC34FC /* CommonUI.framework */; platformFilter = ios; };
 		398F670BE1077FD9CB5D4EBB /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD49AE735D47BC1211143A7 /* RxTest.framework */; platformFilter = ios; };
 		39AC4E125DD7A56A3F6EE30B /* TuistBundle+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D0B218DD865A9D383D1D8 /* TuistBundle+Onboarding.swift */; };
 		3F2EAACC702F18B8084CD950 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5954E6ABEC87C7C34410807 /* RxBlocking.framework */; platformFilter = ios; };
-		43029B61FE196975991507FF /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CBFF64BB3FFDA43CBA06F5 /* HomeTests.swift */; };
+		4452380B0F13D07465571F73 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42172512EB750EFAEB2F57F9 /* OnboardingTests.swift */; };
 		4482F920F2ADF08436FB877F /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4B120B482079B008C4084 /* SnapKit.framework */; platformFilter = ios; };
 		45718614E274478D5C1F46C9 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4B120B482079B008C4084 /* SnapKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4820C7CB942CB50B8828216E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9389B9FF72A3C2475FC9418 /* HomeViewController.swift */; };
 		4CBC71CDA90FF81494DAC206 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B212860BB078EA2A98129 /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		519BCC21B996B9B807C21246 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD49AE735D47BC1211143A7 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51EE3BB7343391E5E44190AB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDA201730C7F5B24FB4AEA9 /* Nimble.framework */; platformFilter = ios; };
@@ -41,6 +39,7 @@
 		8DBE924C63A13658E9EFFA91 /* RxCocoaRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0088DC47AB47A727A6D26355 /* RxCocoaRuntime.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		90D9390F129B21BB51A8D013 /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A92A9613105F390BDE142E /* ReactorKit.framework */; platformFilter = ios; };
 		94BB1B341B341E03B2820967 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD49AE735D47BC1211143A7 /* RxTest.framework */; platformFilter = ios; };
+		A37DC5EAD55E1B6985954E4A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA250A233B5B9496959439 /* OnboardingViewController.swift */; };
 		A4CC00EF2C86342F2BA00700 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B212860BB078EA2A98129 /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		A691214C820CE3402F1427D6 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E4D07F9D6C1E84AC28562B /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		AAC9B609AFF634EEF6CF537A /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1016885DD92C038F8590522 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
@@ -53,6 +52,7 @@
 		C59FC435C9EC68518B377F23 /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCCF3A5510673921990DE01 /* CwlCatchException.framework */; platformFilter = ios; };
 		C7F706716C791D78EA01C7C5 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B27369CAC2176927AC9BB57B /* RxSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D40C52680AC14B85EE17DBF5 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDA201730C7F5B24FB4AEA9 /* Nimble.framework */; platformFilter = ios; };
+		D723E0F58A93F62556787F6C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA250A233B5B9496959439 /* OnboardingViewController.swift */; };
 		D7B0EA5F301BAD4D917BF7AA /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1709A73A7D37A4077499C575 /* RxCocoa.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D87E3CE9E6EB4F3A4D814EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325916150956FB63028B3F3C /* AppDelegate.swift */; };
 		DAE79FBA730DD0870E81E027 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B457F8873DA65F06746DC6BC /* RxNimble.framework */; platformFilter = ios; };
@@ -153,17 +153,17 @@
 		250BEC4124F255797AE8C682 /* Onboarding-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Onboarding-Info.plist"; sourceTree = "<group>"; };
 		325916150956FB63028B3F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36DDE75454F038A54CD60DDC /* OnboardingDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4748F6424392F128160B4E13 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
-		55CBFF64BB3FFDA43CBA06F5 /* HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTests.swift; sourceTree = "<group>"; };
+		42172512EB750EFAEB2F57F9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
+		4FF821189BBD77720A211CBF /* OnboardingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingReactor.swift; sourceTree = "<group>"; };
 		5EC4B120B482079B008C4084 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D63151EE27C5CB36BC16AA /* CwlPosixPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPosixPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8493130523A955302761A23B /* TuistAssets+OnboardingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+OnboardingDemoApp.swift"; sourceTree = "<group>"; };
+		88DA250A233B5B9496959439 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8FA5004A31C2C5176E86C135 /* OnboardingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnboardingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99993073E12950A7DFEC34FC /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CCCF3A5510673921990DE01 /* CwlCatchException.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchException.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7EDAB1CA97B5DD338E47F9 /* OnboardingDemoAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "OnboardingDemoAppTests-Info.plist"; sourceTree = "<group>"; };
 		9FCB74F6A0917EC8F5134AF3 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9389B9FF72A3C2475FC9418 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACDA201730C7F5B24FB4AEA9 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1016885DD92C038F8590522 /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27369CAC2176927AC9BB57B /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,8 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				325916150956FB63028B3F3C /* AppDelegate.swift */,
-				A9389B9FF72A3C2475FC9418 /* HomeViewController.swift */,
-				4748F6424392F128160B4E13 /* HomeViewReactor.swift */,
+				4FF821189BBD77720A211CBF /* OnboardingReactor.swift */,
+				88DA250A233B5B9496959439 /* OnboardingViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 		9F0364073F77125A6D9AB0CD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				55CBFF64BB3FFDA43CBA06F5 /* HomeTests.swift */,
+				42172512EB750EFAEB2F57F9 /* OnboardingTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -461,8 +461,8 @@
 			targets = (
 				E73A33D74D8CBEC91B1DCFAB /* Onboarding */,
 				DA88977530A9E72DBD7E283A /* OnboardingTests */,
-				D7378499AB206CDE1001A1A9 /* OnboardingDemoAppTests */,
 				EF96B08A8A3FB0A356D226D3 /* OnboardingDemoApp */,
+				D7378499AB206CDE1001A1A9 /* OnboardingDemoAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -505,7 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD494BBCC7098EF58F955D4 /* HomeTests.swift in Sources */,
+				4452380B0F13D07465571F73 /* OnboardingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,8 +516,8 @@
 				2BB7D7477C1E2AFC8E749BAC /* TuistAssets+OnboardingDemoApp.swift in Sources */,
 				EBDF4363523E586887F0FDA5 /* TuistBundle+OnboardingDemoApp.swift in Sources */,
 				5EAB066012BECAE4F4601747 /* AppDelegate.swift in Sources */,
-				4820C7CB942CB50B8828216E /* HomeViewController.swift in Sources */,
-				11931D6B57BFA0F1860380E6 /* HomeViewReactor.swift in Sources */,
+				0CBCC575CC1B17896965D29A /* OnboardingReactor.swift in Sources */,
+				D723E0F58A93F62556787F6C /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,8 +528,8 @@
 				2AA9930A8A0DC0C0D0A511A2 /* TuistAssets+Onboarding.swift in Sources */,
 				39AC4E125DD7A56A3F6EE30B /* TuistBundle+Onboarding.swift in Sources */,
 				D87E3CE9E6EB4F3A4D814EF7 /* AppDelegate.swift in Sources */,
-				36C966AEF508014F28C96DF9 /* HomeViewController.swift in Sources */,
-				2B21110378885F55A1B92007 /* HomeViewReactor.swift in Sources */,
+				0D2E3C1F52BED9DD7A91CF7D /* OnboardingReactor.swift in Sources */,
+				A37DC5EAD55E1B6985954E4A /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43029B61FE196975991507FF /* HomeTests.swift in Sources */,
+				20CCDF180DAF3DD43BA976F9 /* OnboardingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

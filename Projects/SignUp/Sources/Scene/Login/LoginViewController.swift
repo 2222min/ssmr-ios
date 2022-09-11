@@ -25,7 +25,9 @@ open class LoginViewController: BaseViewController {
     // MARK: Properties
     
     // MARK: UI Properties
-    
+    private let imageView = UIImageView().then {
+        $0.image = SignUpAsset.splashIOS.image
+    }
     // MARK: Initializing
     init(reactor: LoginReactor) {
         self.reactor = reactor

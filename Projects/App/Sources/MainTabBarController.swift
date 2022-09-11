@@ -2,7 +2,7 @@
 //  MainTabBarController.swift
 //  App
 //
-//  Created by choidam on 2022/08/23.
+//  Created by mincheol on 2022/09/10.
 //  Copyright © 2022 cocaine.io. All rights reserved.
 //
 

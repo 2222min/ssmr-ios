@@ -1,8 +1,8 @@
 //
-//  AppTests.swift
-//  CommonUI
+//  SignUpTests.swift
+//  SignUpTests
 //
-//  Created by mincheol on 2022/09/10.
+//  Created by mincheol on 2022/09/11.
 //  Copyright © 2022 team.io. All rights reserved.
 //
 

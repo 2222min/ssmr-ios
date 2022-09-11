@@ -2,7 +2,7 @@
 //  User.swift
 //  HomeTests
 //
-//  Created by choidam on 2022/09/01.
+//  Created by mincheol on 2022/09/11.
 //  Copyright © 2022 team.io. All rights reserved.
 //
 

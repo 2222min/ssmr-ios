@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  App
 //
-//  Created by choidam on 2022/08/23.
+//  Created by mincheol on 2022/09/10.
 //  Copyright © 2022 cocaine.io. All rights reserved.
 //
 
@@ -26,13 +26,13 @@ import SignUp
         tabBarController.tabBar.tintColor = .systemBlue
         tabBarController.tabBar.isTranslucent = false
         
-        let onboardingVC = HomeViewController.create() ?? UIViewController()
-        onboardingVC.tabBarItem = UITabBarItem(title: "Onboarding", image: CommonUIAsset.homeIcon.image, tag: 0)
+        let onboardingVC = OnboardingViewController.create() ?? UIViewController()
+        onboardingVC.tabBarItem = UITabBarItem(title: "onboarding", image: CommonUIAsset.homeIcon.image, tag: 0)
         
         let loginVC = LoginViewController.create() ?? UIViewController()
         loginVC.tabBarItem = UITabBarItem(title: "Login", image: CommonUIAsset.homeIcon.image, tag: 0)
         
-        tabBarController.setViewControllers([onboardingVC, loginVC], animated: false)
+        tabBarController.setViewControllers([onboardingVC,loginVC], animated: false)
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

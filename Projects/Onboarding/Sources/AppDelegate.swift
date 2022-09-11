@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Home
+//  Onboarding
 //
-//  Created by choidam on 2022/08/23.
+//  Created by mincheol on 2022/09/10.
 //  Copyright © 2022 cocaine.io. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ import UIKit
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = HomeViewController.create() ?? UIViewController()
+        let viewController = OnboardingViewController.create() ?? UIViewController()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
