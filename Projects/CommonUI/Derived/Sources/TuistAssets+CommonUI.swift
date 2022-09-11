@@ -17,11 +17,60 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum CommonUIAsset {
+  public static let black = CommonUIColors(name: "black")
+  public static let blackGrey = CommonUIColors(name: "blackGrey")
+  public static let cream = CommonUIColors(name: "cream")
+  public static let grey = CommonUIColors(name: "grey")
+  public static let mBlue = CommonUIColors(name: "m-blue")
+  public static let mGreen = CommonUIColors(name: "m-green")
+  public static let mLighBlue = CommonUIColors(name: "m-lighBlue")
+  public static let mLightGreen = CommonUIColors(name: "m-lightGreen")
+  public static let mRedLighRed = CommonUIColors(name: "m-red-lighRed")
+  public static let mRed = CommonUIColors(name: "m-red")
+  public static let ponitColor = CommonUIColors(name: "ponitColor")
+  public static let white = CommonUIColors(name: "white")
+  public static let whiteGrey = CommonUIColors(name: "whiteGrey")
   public static let homeIcon = CommonUIImages(name: "homeIcon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
 // MARK: - Implementation Details
+
+public final class CommonUIColors {
+  public fileprivate(set) var name: String
+
+  #if os(macOS)
+  public typealias Color = NSColor
+  #elseif os(iOS) || os(tvOS) || os(watchOS)
+  public typealias Color = UIColor
+  #endif
+
+  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
+  public private(set) lazy var color: Color = {
+    guard let color = Color(asset: self) else {
+      fatalError("Unable to load color asset named \(name).")
+    }
+    return color
+  }()
+
+  fileprivate init(name: String) {
+    self.name = name
+  }
+}
+
+public extension CommonUIColors.Color {
+  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
+  convenience init?(asset: CommonUIColors) {
+    let bundle = CommonUIResources.bundle
+    #if os(iOS) || os(tvOS)
+    self.init(named: asset.name, in: bundle, compatibleWith: nil)
+    #elseif os(macOS)
+    self.init(named: NSColor.Name(asset.name), bundle: bundle)
+    #elseif os(watchOS)
+    self.init(named: asset.name)
+    #endif
+  }
+}
 
 public struct CommonUIImages {
   public fileprivate(set) var name: String
