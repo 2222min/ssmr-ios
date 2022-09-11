@@ -56,6 +56,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F0E56442CC4D56CAFB459F4E"
+               BuildableName = "BonMot.framework"
+               BlueprintName = "BonMot"
+               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/BonMot/BonMot.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CFD7DEB690E20277121FAD5C"
                BuildableName = "CommonUI.framework"
                BlueprintName = "CommonUI"
@@ -378,6 +392,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "574B48093AE4DBBAEF6C828C"
+               BuildableName = "SignUp.framework"
+               BlueprintName = "SignUp"
+               ReferencedContainer = "container:Projects/SignUp/SignUp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1BFCEAD2829FF139E8E0285D"
+               BuildableName = "SignUpDemoApp.app"
+               BlueprintName = "SignUpDemoApp"
+               ReferencedContainer = "container:Projects/SignUp/SignUp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "737BF62A569EB1D439A0C866"
+               BuildableName = "SignUpDemoAppTests.xctest"
+               BlueprintName = "SignUpDemoAppTests"
+               ReferencedContainer = "container:Projects/SignUp/SignUp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3F158B9B120E3FDBA2B24256"
+               BuildableName = "SignUpTests.xctest"
+               BlueprintName = "SignUpTests"
+               ReferencedContainer = "container:Projects/SignUp/SignUp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A043024BB190898066F1729"
                BuildableName = "SnapKit.framework"
                BlueprintName = "SnapKit"
@@ -458,6 +528,26 @@
                BuildableName = "OnboardingTests.xctest"
                BlueprintName = "OnboardingTests"
                ReferencedContainer = "container:Projects/Onboarding/Onboarding.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "737BF62A569EB1D439A0C866"
+               BuildableName = "SignUpDemoAppTests.xctest"
+               BlueprintName = "SignUpDemoAppTests"
+               ReferencedContainer = "container:Projects/SignUp/SignUp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3F158B9B120E3FDBA2B24256"
+               BuildableName = "SignUpTests.xctest"
+               BlueprintName = "SignUpTests"
+               ReferencedContainer = "container:Projects/SignUp/SignUp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

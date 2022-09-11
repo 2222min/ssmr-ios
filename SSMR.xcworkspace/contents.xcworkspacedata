@@ -13,6 +13,9 @@
       <FileRef
          location = "group:Onboarding/Onboarding.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:SignUp/SignUp.xcodeproj">
+      </FileRef>
    </Group>
    <Group
       location = "group:Tuist"
@@ -31,6 +34,9 @@
                   name = "checkouts">
                   <FileRef
                      location = "group:Alamofire/Alamofire.xcodeproj">
+                  </FileRef>
+                  <FileRef
+                     location = "group:BonMot/BonMot.xcodeproj">
                   </FileRef>
                   <FileRef
                      location = "group:CwlCatchException/CwlCatchException.xcodeproj">

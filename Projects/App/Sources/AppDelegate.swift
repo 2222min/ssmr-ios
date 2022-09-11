@@ -10,6 +10,7 @@ import CommonUI
 import Onboarding
 
 import UIKit
+import SignUp
 
 @main class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -25,11 +26,13 @@ import UIKit
         tabBarController.tabBar.tintColor = .systemBlue
         tabBarController.tabBar.isTranslucent = false
         
-        let homeVC = HomeViewController.create() ?? UIViewController()
-        homeVC.tabBarItem = UITabBarItem(title: "Onboarding", image: CommonUIAsset.homeIcon.image, tag: 0)
+        let onboardingVC = HomeViewController.create() ?? UIViewController()
+        onboardingVC.tabBarItem = UITabBarItem(title: "Onboarding", image: CommonUIAsset.homeIcon.image, tag: 0)
         
+        let loginVC = LoginViewController.create() ?? UIViewController()
+        loginVC.tabBarItem = UITabBarItem(title: "Login", image: CommonUIAsset.homeIcon.image, tag: 0)
         
-        tabBarController.setViewControllers([homeVC], animated: false)
+        tabBarController.setViewControllers([onboardingVC, loginVC], animated: false)
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

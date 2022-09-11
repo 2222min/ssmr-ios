@@ -2,13 +2,13 @@
 //  Project.swift
 //  ProjectDescriptionHelpers
 //
-//  Created by mincheol on 2022/09/10.
+//  Created by mincheol on 2022/09/11.
 //
 
 import ProjectDescriptionHelpers
 import ProjectDescription
 
-private let projectName = "Onboarding"
+private let projectName = "SignUp"
 private let iOSTargetVersion = "14.0"
 
 let infoPlist: [String: InfoPlist.Value] = [
@@ -25,7 +25,10 @@ let project = Project.frameworkWithDemoApp(name: projectName,
                                             .external(name: "RxSwift"),
                                             .external(name: "RxCocoa"),
                                             .external(name: "ReactorKit"),
+                                            .external(name: "Moya"),
+                                            .external(name: "RxMoya"),
                                             .external(name: "BonMot"),
                                             .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI"))
                                            ])
+
 

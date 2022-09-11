@@ -61,11 +61,10 @@ open class HomeViewController: UIViewController {
 
 extension HomeViewController {
     public static func create() -> HomeViewController? {
-        let homeProvider = HomeAPIProvider(isStub: true)
-        let homeReactor = HomeViewReactor(homeProvider: homeProvider)
-        let homeVC = HomeViewController(reactor: homeReactor)
+        let onBoardingReactor = HomeViewReactor()
+        let onBoardingVC = HomeViewController(reactor: onBoardingReactor)
         
-        return homeVC
+        return onBoardingVC
     }
     
     private func addViews(){

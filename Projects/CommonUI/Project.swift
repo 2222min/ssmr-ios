@@ -14,4 +14,10 @@ private let iOSTargetVersion = "14.0"
 let project = Project.framework(name: projectName,
                                 platform: .iOS,
                                 iOSTargetVersion: iOSTargetVersion,
-                                dependencies: [])
+                                dependencies: [
+                                    .external(name: "SnapKit"),
+                                    .external(name: "Then"),
+                                    .external(name: "BonMot"),
+                                    .external(name: "RxSwift"),
+                                    .external(name: "RxCocoa")
+                                ])

@@ -13,9 +13,10 @@ let dependencies = Dependencies(
             .remote(url: "https://github.com/ReactorKit/ReactorKit.git", requirement: .upToNextMajor(from: "3.2.0")),
             .remote(url: "https://github.com/SnapKit/SnapKit", requirement: .upToNextMajor(from: "5.0.1")),
             .remote(url: "https://github.com/devxoul/Then", requirement: .upToNextMajor(from: "3.0.0")),
-            .remote(url: "https://github.com/ReactiveX/RxSwift.git", requirement: .upToNextMinor(from: "6.5.0")),
+            .remote(url: "https://github.com/ReactiveX/RxSwift.git", requirement: .upToNextMajor(from: "6.0.0")),
             .remote(url: "https://github.com/RxSwiftCommunity/RxNimble.git", requirement: .upToNextMajor(from: "5.0.0")),
             .remote(url: "https://github.com/Moya/Moya.git", requirement: .upToNextMajor(from: "15.0.0")),
+            .remote(url: "https://github.com/Rightpoint/BonMot", requirement: .upToNextMajor(from: "6.1.1"))
          ],
          productTypes: [
             "ReactorKit": .framework,
@@ -23,6 +24,7 @@ let dependencies = Dependencies(
             "Moya": .framework,
             "RxMoya": .framework,
             "Alamofire": .framework,
+            "BonMot": .framework
          ]
      ),
      platforms: [.iOS]

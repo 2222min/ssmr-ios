@@ -14,30 +14,22 @@ final class HomeViewReactor: Reactor {
     enum Action {
         case plus
         case minus
-        
-        case getUser
     }
     
     enum Mutation {
         case plus
         case minus
-        
-        case getUser(Single<User>)
     }
     
     struct State {
         var count: Int = 0
-        
-        var user: User?
     }
     
     var initialState: State
     
-    private let homeProvider: HomeAPIProvider!
     
-    init(homeProvider: HomeAPIProvider) {
+    init() {
         self.initialState = State()
-        self.homeProvider = homeProvider
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -46,8 +38,6 @@ final class HomeViewReactor: Reactor {
             return .just(.plus)
         case .minus:
             return .just(.minus)
-        case .getUser:
-            return .just(.getUser(homeProvider.fetchUser()))
         }
     }
     
@@ -59,13 +49,6 @@ final class HomeViewReactor: Reactor {
             state.count += 1
         case .minus:
             state.count -= 1
-        case .getUser(let response):
-            response.subscribe(onSuccess: { user in
-                state.user = user
-                print("sample user: \(user)")
-            }, onFailure: { _ in
-                print("response fail")
-            })
         }
         
         return state

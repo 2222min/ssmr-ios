@@ -25,6 +25,8 @@ let project = Project.app(name: projectName,
                             .external(name: "RxCocoa"),
                             .external(name: "Moya"),
                             .external(name: "RxMoya"),
+                            .external(name: "BonMot"),
                             .project(target: "Onboarding", path: .relativeToCurrentFile("../Onboarding")),
+                            .project(target: "SignUp", path: .relativeToCurrentFile("../SignUp")),
                             .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI"))
                           ])
