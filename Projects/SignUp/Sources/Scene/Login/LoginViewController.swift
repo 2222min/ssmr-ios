@@ -14,7 +14,7 @@ import RxCocoa
 import ReactorKit
 import SnapKit
 import Then
-
+import SignUp
 
 open class LoginViewController: BaseViewController {
     private let reactor: LoginReactor
@@ -25,9 +25,7 @@ open class LoginViewController: BaseViewController {
     // MARK: Properties
     
     // MARK: UI Properties
-    private let imageView = UIImageView().then {
-        $0.image = SignUpAsset.splashIOS.image
-    }
+    
     // MARK: Initializing
     init(reactor: LoginReactor) {
         self.reactor = reactor
@@ -80,3 +78,4 @@ extension LoginViewController {
         return loginVC
     }
 }
+

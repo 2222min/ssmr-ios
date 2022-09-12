@@ -17,6 +17,7 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum OnboardingAsset {
+  public static let onboarding1 = OnboardingImages(name: "onboarding_1")
   public static let splashIOS = OnboardingImages(name: "splash_iOS")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
