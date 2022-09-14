@@ -10,7 +10,7 @@ import BonMot
 import Foundation
 import UIKit
 
-public enum TextString {
+public struct TextString {
    static public func styled(str: String , typo: CoreTypo, byAdding: [BonMot.StringStyle.Part] = []) -> NSAttributedString {
         return str.styled(with: typo.style.byAdding(byAdding))
     }
