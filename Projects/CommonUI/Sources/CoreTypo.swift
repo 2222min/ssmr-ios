@@ -10,16 +10,11 @@ import BonMot
 import Foundation
 import UIKit
 
-public struct TextString {
-   static public func styled(str: String , typo: CoreTypo, byAdding: [BonMot.StringStyle.Part] = []) -> NSAttributedString {
-        return str.styled(with: typo.style.byAdding(byAdding))
-    }
-    
-    static public func styled(str: String, typo: CoreTypo, byAdding: BonMot.StringStyle.Part...) -> NSAttributedString {
-        return str.styled(with: typo.style.byAdding(byAdding))
-    }
+extension String {
+   public func styled(typo: CoreTypo, byAdding: [BonMot.StringStyle.Part] = []) -> NSAttributedString {
+         return self.styled(with: typo.style.byAdding(byAdding))
+     }
 }
-
 
 public enum CoreTypo {
     case text32ExtraBold

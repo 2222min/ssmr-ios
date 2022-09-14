@@ -15,7 +15,6 @@ import ReactorKit
 import SnapKit
 import Then
 
-import Onboarding
 
 open class OnboardingViewController: BaseViewController {
     
@@ -23,7 +22,10 @@ open class OnboardingViewController: BaseViewController {
    
     // MARK: Constants
     private enum Constants {
-        static let firstTitleLabel = TextString.styled(str: "반가워요", typo: .text32ExtraBold, byAdding: [.color(CommonUIAsset.grey.color)])
+        static let firstTitleLabel = "반가워요".styled(
+            typo: .text32ExtraBold,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
         static let firstDescription = "여기는 땡리단길이에요!"
         
         static let secondTitleLabel = "빠르고 간편하게"
@@ -45,7 +47,7 @@ open class OnboardingViewController: BaseViewController {
         $0.text = Constants.firstDescription
     }
     private let imageView = UIImageView().then {
-        $0.image = OnboardingAsset.onboarding1.image
+        $0.image = OnboardingDemoAppAsset.onboarding1.image
     }
     
     // MARK: Initializing
