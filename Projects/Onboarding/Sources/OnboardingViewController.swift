@@ -14,34 +14,16 @@ import RxCocoa
 import ReactorKit
 import SnapKit
 import Then
-import BonMot
 
 import Onboarding
-
-// TODO: Extension 관리하는 프로젝트 생성 할 필요가 있음
-extension String {
-    /**
-     ### Usage ###
-     ```
-     "SingleLineText".styled(typo: .text30Bold)
-     "MultiLine\nText".styled(typo: .text30BoldN, byAdding: [.color(.black)])
-     ```
-     */
-    func styled(typo: CoreTypo, byAdding: [BonMot.StringStyle.Part] = []) -> NSAttributedString {
-        return self.styled(with: typo.style.byAdding(byAdding))
-    }
-    
-    func styled(typo: CoreTypo, byAdding: BonMot.StringStyle.Part...) -> NSAttributedString {
-        return self.styled(with: typo.style.byAdding(byAdding))
-    }
-}
 
 open class OnboardingViewController: BaseViewController {
     
     private let reactor: OnboardingReactor
+   
     // MARK: Constants
     private enum Constants {
-        static let firstTitleLabel = "반가워요".styled(typo: .text32ExtraBold, byAdding: [.color(CommonUIAsset.grey.color)])
+        static let firstTitleLabel = TextString.styled(str: "반가워요", typo: .text32ExtraBold, byAdding: [.color(CommonUIAsset.grey.color)])
         static let firstDescription = "여기는 땡리단길이에요!"
         
         static let secondTitleLabel = "빠르고 간편하게"
@@ -56,6 +38,8 @@ open class OnboardingViewController: BaseViewController {
     // MARK: UI Properties
     private let titleLabel = UILabel().then {
         $0.attributedText = Constants.firstTitleLabel
+        
+        
     }
     private let descriptionLabel = UILabel().then {
         $0.text = Constants.firstDescription

@@ -10,30 +10,17 @@ import BonMot
 import Foundation
 import UIKit
 
-extension String {
-    /**
-     ### Usage ###
-     ```
-     "SingleLineText".styled(typo: .text30Bold)
-     "MultiLine\nText".styled(typo: .text30BoldN, byAdding: [.color(.black)])
-     ```
-     */
-    func styled(typo: CoreTypo, byAdding: [BonMot.StringStyle.Part] = []) -> NSAttributedString {
-        return self.styled(with: typo.style.byAdding(byAdding))
+public enum TextString {
+   static public func styled(str: String , typo: CoreTypo, byAdding: [BonMot.StringStyle.Part] = []) -> NSAttributedString {
+        return str.styled(with: typo.style.byAdding(byAdding))
     }
     
-    func styled(typo: CoreTypo, byAdding: BonMot.StringStyle.Part...) -> NSAttributedString {
-        return self.styled(with: typo.style.byAdding(byAdding))
+    static public func styled(str: String, typo: CoreTypo, byAdding: BonMot.StringStyle.Part...) -> NSAttributedString {
+        return str.styled(with: typo.style.byAdding(byAdding))
     }
 }
 
-/**
- ### Usage ###
- ```
- let singleLine = CoreTypo.text30Bold.style.byAdding([.color(.black)])
- let multiLine = CoreTypo.text30BoldN.style.byAdding([.color(.black)])
- ```
- */
+
 public enum CoreTypo {
     case text32ExtraBold
 }
