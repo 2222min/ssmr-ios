@@ -37,8 +37,8 @@
 		8DBE924C63A13658E9EFFA91 /* RxCocoaRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0088DC47AB47A727A6D26355 /* RxCocoaRuntime.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		90D9390F129B21BB51A8D013 /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A92A9613105F390BDE142E /* ReactorKit.framework */; platformFilter = ios; };
 		94BB1B341B341E03B2820967 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD49AE735D47BC1211143A7 /* RxTest.framework */; platformFilter = ios; };
-		9BA72EF428D1C54F00ED6E22 /* TuistAssets+OnboardingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493130523A955302761A23B /* TuistAssets+OnboardingDemoApp.swift */; };
-		9BA72EF528D1C54F00ED6E22 /* TuistBundle+OnboardingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CFCA55441C8F943FBEBBD6 /* TuistBundle+OnboardingDemoApp.swift */; };
+		9BD7F11828D2216F00678DDC /* TuistAssets+OnboardingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493130523A955302761A23B /* TuistAssets+OnboardingDemoApp.swift */; };
+		9BD7F11928D2216F00678DDC /* TuistBundle+OnboardingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CFCA55441C8F943FBEBBD6 /* TuistBundle+OnboardingDemoApp.swift */; };
 		A37DC5EAD55E1B6985954E4A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA250A233B5B9496959439 /* OnboardingViewController.swift */; };
 		A4CC00EF2C86342F2BA00700 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B212860BB078EA2A98129 /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		A691214C820CE3402F1427D6 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E4D07F9D6C1E84AC28562B /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
@@ -459,10 +459,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EF96B08A8A3FB0A356D226D3 /* OnboardingDemoApp */,
-				D7378499AB206CDE1001A1A9 /* OnboardingDemoAppTests */,
 				E73A33D74D8CBEC91B1DCFAB /* Onboarding */,
+				EF96B08A8A3FB0A356D226D3 /* OnboardingDemoApp */,
 				DA88977530A9E72DBD7E283A /* OnboardingTests */,
+				D7378499AB206CDE1001A1A9 /* OnboardingDemoAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -525,8 +525,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BA72EF428D1C54F00ED6E22 /* TuistAssets+OnboardingDemoApp.swift in Sources */,
-				9BA72EF528D1C54F00ED6E22 /* TuistBundle+OnboardingDemoApp.swift in Sources */,
+				9BD7F11828D2216F00678DDC /* TuistAssets+OnboardingDemoApp.swift in Sources */,
+				9BD7F11928D2216F00678DDC /* TuistBundle+OnboardingDemoApp.swift in Sources */,
 				D87E3CE9E6EB4F3A4D814EF7 /* AppDelegate.swift in Sources */,
 				0D2E3C1F52BED9DD7A91CF7D /* OnboardingReactor.swift in Sources */,
 				A37DC5EAD55E1B6985954E4A /* OnboardingViewController.swift in Sources */,

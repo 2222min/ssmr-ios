@@ -9,13 +9,10 @@
 import UIKit
 import SnapKit
 import Then
-import CommonUI
 
 public class UnderlineLabel: UILabel {
     
-    private let label = UILabel().then {
-        $0.attributedText = Constants.labelStyle
-    }
+    private lazy var label = UILabel()
     
     private let underline = UIView().then {
         $0.backgroundColor = .yellow
@@ -51,14 +48,18 @@ public class UnderlineLabel: UILabel {
         }
     }
     
-    func congfigureText(text: String) {
-        label.text = text
-    }
 }
 
-private enum Constants {
-    static let labelStyle = String().styled(
-        typo: .text32ExtraBold,
-        byAdding: [.color(CommonUIAsset.black.color)]
-    )
+extension UnderlineLabel {
+    public var labelText: String  {
+        set {
+            self.label.attributedText = newValue.styled(
+                typo: .text32ExtraBold,
+                byAdding: [.color(CommonUIAsset.black.color)]
+            )
+        }
+        get {
+            return self.label.text ?? ""
+        }
+    }
 }

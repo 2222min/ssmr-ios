@@ -24,7 +24,9 @@ open class LoginViewController: BaseViewController {
     // MARK: Properties
     
     // MARK: UI Properties
-    
+    private let label = UnderlineLabel().then {
+        $0.labelText = "회원가입"
+    }
     
     
     // MARK: Initializing
@@ -48,11 +50,16 @@ open class LoginViewController: BaseViewController {
     
     open override func configureUI() {
         super.configureUI()
+        self.view.addSubview(self.label)
     }
     
     // MARK: Constraints
     open override func setupConstraints() {
         super.setupConstraints()
+        self.label.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(30)
+            $0.left.equalToSuperview().offset(20)
+        }
     }
     
 }
