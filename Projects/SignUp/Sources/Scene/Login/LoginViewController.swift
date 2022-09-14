@@ -14,7 +14,6 @@ import RxCocoa
 import ReactorKit
 import SnapKit
 import Then
-import SignUp
 
 open class LoginViewController: BaseViewController {
     private let reactor: LoginReactor
@@ -25,6 +24,8 @@ open class LoginViewController: BaseViewController {
     // MARK: Properties
     
     // MARK: UI Properties
+    
+    
     
     // MARK: Initializing
     init(reactor: LoginReactor) {

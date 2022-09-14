@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		46F35A39A8C1FB2EBAA3A500 /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F030FE704F3E6D0040A96B81 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
 		4782805C566E0871101C2B60 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1321D979BCBEAF892D8C0C8 /* RxSwift.framework */; platformFilter = ios; };
 		480C8FAA1581E1B1494B2D26 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7EA9DE29B8EB5C1D44EC32 /* Then.framework */; platformFilter = ios; };
+		543E44B428D21D0E0051A574 /* UnderlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543E44B328D21D0E0051A574 /* UnderlineLabel.swift */; };
 		5500C678B714E6EC434BDEE8 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F02358C8691B2319C7DEDFD /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		58B702764F53366CA63D89D8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB1AB775A07E3583B8990C0 /* Asset.xcassets */; };
 		5F9B51910EF9B63E7E4727B0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361886B3CC73C679F1192CA7 /* BaseViewController.swift */; };
@@ -76,6 +77,7 @@
 		3EF69C2BAF4131FC493CEAA4 /* CwlMachBadInstructionHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlMachBadInstructionHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB1AB775A07E3583B8990C0 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		524E91A492B6D1C35FFBCBB6 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		543E44B328D21D0E0051A574 /* UnderlineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineLabel.swift; sourceTree = "<group>"; };
 		5E7EA9DE29B8EB5C1D44EC32 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		629BC666AC9D8A03982DABBF /* AppleSDGothicNeoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoBold.ttf; sourceTree = "<group>"; };
 		65557C5B1D459C06F72A1C53 /* TuistFonts+CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+CommonUI.swift"; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		543E44B228D21D030051A574 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				543E44B328D21D0E0051A574 /* UnderlineLabel.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 		5641BE45FCCAA5B61332385A /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 		BADD047B94176A526A5B7FB2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				543E44B228D21D030051A574 /* CustomUI */,
 				361886B3CC73C679F1192CA7 /* BaseViewController.swift */,
 				12E6D465DD165B16491CD1AF /* CoreTypo.swift */,
 			);
@@ -297,8 +308,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = team.io;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 26B57D5F96290632B0503228 /* Build configuration list for PBXProject "CommonUI" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -347,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F96C553D6B996A70CA7104D /* AppTests.swift in Sources */,
+				543E44B428D21D0E0051A574 /* UnderlineLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,11 +573,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.CommonUITests;
 				PRODUCT_NAME = CommonUITests;
 				SDKROOT = iphoneos;
@@ -593,11 +599,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.CommonUITests;
 				PRODUCT_NAME = CommonUITests;
 				SDKROOT = iphoneos;
