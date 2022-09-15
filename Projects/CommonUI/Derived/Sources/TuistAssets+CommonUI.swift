@@ -31,6 +31,8 @@ public enum CommonUIAsset {
   public static let white = CommonUIColors(name: "white")
   public static let whiteGrey = CommonUIColors(name: "whiteGrey")
   public static let homeIcon = CommonUIImages(name: "homeIcon")
+  public static let onboarding1 = CommonUIImages(name: "onboarding_1")
+  public static let splashIOS = CommonUIImages(name: "splash_iOS")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
