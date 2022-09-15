@@ -47,7 +47,7 @@ open class OnboardingViewController: BaseViewController {
         $0.text = Constants.firstDescription
     }
     private let imageView = UIImageView().then {
-        $0.image = OnboardingAsset.onboarding1.image
+        $0.image = CommonUIAsset.onboarding1.image
     }
     
     // MARK: Initializing
