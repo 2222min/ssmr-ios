@@ -14,7 +14,7 @@ import RxCocoa
 open class BaseViewController: UIViewController {
     
     // MARK: Properties
-    var disposeBag: DisposeBag = DisposeBag()
+    public var disposeBag: DisposeBag = DisposeBag()
     var viewDisposeBag: DisposeBag?
     
     private(set) var didSetupConstraints = false
