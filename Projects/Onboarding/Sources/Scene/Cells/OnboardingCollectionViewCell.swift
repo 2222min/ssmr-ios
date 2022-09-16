@@ -25,7 +25,9 @@ final class OnboardingCollectionViewCell: BaseCollectionViewCell {
 	// MARK: Propertie
 
 	// MARK: UI Properties
-    
+    private let dotImageView = UIImageView().then {
+        $0.image = CommonUIAsset.dotImage8.image
+    }
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let imageView = UIImageView().then {
@@ -50,6 +52,7 @@ final class OnboardingCollectionViewCell: BaseCollectionViewCell {
         
         [
             self.titleLabel,
+            self.dotImageView,
             self.descriptionLabel,
             self.imageView
         ]
@@ -62,6 +65,10 @@ final class OnboardingCollectionViewCell: BaseCollectionViewCell {
         self.titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(96)
             $0.centerX.equalToSuperview()
+        }
+        self.dotImageView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.top).offset(32)
+            $0.left.equalTo(titleLabel.snp.right).offset(6)
         }
         self.descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(self.titleLabel.snp.bottom).offset(16)
