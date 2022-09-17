@@ -10,6 +10,7 @@
 		0B3DE9D8F5421C145582B348 /* CoreTypo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D465DD165B16491CD1AF /* CoreTypo.swift */; };
 		0DDDF4256602AFBB3F2D4ED8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC63D7E978738CCF3E183954 /* Nimble.framework */; platformFilter = ios; };
 		2B21C520F2A12506260FCE6D /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D899DF339C39912E110EA4 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
+		393BFF6242636CD8B6D52A2D /* TCAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C7927FAB5DE199F0BE3BA /* TCAButton.swift */; };
 		3B4FA57E73BB0ED850D3828A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1321D979BCBEAF892D8C0C8 /* RxSwift.framework */; platformFilter = ios; };
 		46F35A39A8C1FB2EBAA3A500 /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F030FE704F3E6D0040A96B81 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
 		4782805C566E0871101C2B60 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1321D979BCBEAF892D8C0C8 /* RxSwift.framework */; platformFilter = ios; };
@@ -21,6 +22,7 @@
 		63A0B00A15A76A2DCABC5178 /* AppleSDGothicNeoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 629BC666AC9D8A03982DABBF /* AppleSDGothicNeoBold.ttf */; };
 		6B5A4C1BA1270724002C1649 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9176ADE5DFD089C545E14153 /* RxNimble.framework */; platformFilter = ios; };
 		7D1FF5C07491777A9247B23F /* UnderlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EFE34401B4D488765B249 /* UnderlineLabel.swift */; };
+		759A0CE578F24201B77262B0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7651CF5F9B7CFC9952330 /* BaseCollectionViewCell.swift */; };
 		7DC59B80630854028C7C80F4 /* TuistBundle+CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF204F3CD6F86C6167C300 /* TuistBundle+CommonUI.swift */; };
 		8015832F17AC96CA7BBDEA57 /* TuistFonts+CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65557C5B1D459C06F72A1C53 /* TuistFonts+CommonUI.swift */; };
 		948D1F3215C8EFB86ADEED38 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C81F7E6D532A39E63E3FBBF /* BonMot.framework */; platformFilter = ios; };
@@ -88,6 +90,7 @@
 		94EF204F3CD6F86C6167C300 /* TuistBundle+CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+CommonUI.swift"; sourceTree = "<group>"; };
 		97D899DF339C39912E110EA4 /* CwlPosixPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPosixPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CCDC15081A22BAED6318E3E /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D7651CF5F9B7CFC9952330 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5D40077623D17508E9E3D41 /* CommonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9CD994C7FF02BB0FCD22F5 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		C6EF530A9F924851573B4D1B /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +99,7 @@
 		CF13EECA643D1CCCE5EE829C /* CwlCatchException.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchException.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C709D41F965043008FD351 /* AppleSDGothicNeoExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoExtraBold.ttf; sourceTree = "<group>"; };
 		DC63D7E978738CCF3E183954 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0C7927FAB5DE199F0BE3BA /* TCAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAButton.swift; sourceTree = "<group>"; };
 		F030FE704F3E6D0040A96B81 /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F7A08F911F04FE3F6FE36B /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1321D979BCBEAF892D8C0C8 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,8 +209,10 @@
 			isa = PBXGroup;
 			children = (
 				DB0B83017C75350EE8245C38 /* CustomUI */,
+				A4D7651CF5F9B7CFC9952330 /* BaseCollectionViewCell.swift */,
 				361886B3CC73C679F1192CA7 /* BaseViewController.swift */,
 				12E6D465DD165B16491CD1AF /* CoreTypo.swift */,
+				EC0C7927FAB5DE199F0BE3BA /* TCAButton.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -368,9 +374,11 @@
 				C94951E661D9DC9D28B56273 /* TuistAssets+CommonUI.swift in Sources */,
 				7DC59B80630854028C7C80F4 /* TuistBundle+CommonUI.swift in Sources */,
 				8015832F17AC96CA7BBDEA57 /* TuistFonts+CommonUI.swift in Sources */,
+				759A0CE578F24201B77262B0 /* BaseCollectionViewCell.swift in Sources */,
 				5F9B51910EF9B63E7E4727B0 /* BaseViewController.swift in Sources */,
 				0B3DE9D8F5421C145582B348 /* CoreTypo.swift in Sources */,
 				7D1FF5C07491777A9247B23F /* UnderlineLabel.swift in Sources */,
+				393BFF6242636CD8B6D52A2D /* TCAButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

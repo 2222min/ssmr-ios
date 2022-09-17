@@ -30,9 +30,13 @@ public enum CommonUIAsset {
   public static let ponitColor = CommonUIColors(name: "ponitColor")
   public static let white = CommonUIColors(name: "white")
   public static let whiteGrey = CommonUIColors(name: "whiteGrey")
-  public static let homeIcon = CommonUIImages(name: "homeIcon")
+  public static let dotImage8 = CommonUIImages(name: "dot_Image_8")
   public static let onboarding1 = CommonUIImages(name: "onboarding_1")
+  public static let onboarding2 = CommonUIImages(name: "onboarding_2")
+  public static let onboarding3 = CommonUIImages(name: "onboarding_3")
+  public static let selectedDot = CommonUIImages(name: "selectedDot")
   public static let splashIOS = CommonUIImages(name: "splash_iOS")
+  public static let homeIcon = CommonUIImages(name: "homeIcon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
