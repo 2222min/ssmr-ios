@@ -21,8 +21,8 @@
 		60447A540E5621F2FE7AE1C3 /* AppleSDGothicNeoMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4D2E9C07E18C62B3A454283 /* AppleSDGothicNeoMedium.ttf */; };
 		63A0B00A15A76A2DCABC5178 /* AppleSDGothicNeoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 629BC666AC9D8A03982DABBF /* AppleSDGothicNeoBold.ttf */; };
 		6B5A4C1BA1270724002C1649 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9176ADE5DFD089C545E14153 /* RxNimble.framework */; platformFilter = ios; };
-		7D1FF5C07491777A9247B23F /* UnderlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EFE34401B4D488765B249 /* UnderlineLabel.swift */; };
 		759A0CE578F24201B77262B0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7651CF5F9B7CFC9952330 /* BaseCollectionViewCell.swift */; };
+		7D1FF5C07491777A9247B23F /* UnderlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EFE34401B4D488765B249 /* UnderlineLabel.swift */; };
 		7DC59B80630854028C7C80F4 /* TuistBundle+CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF204F3CD6F86C6167C300 /* TuistBundle+CommonUI.swift */; };
 		8015832F17AC96CA7BBDEA57 /* TuistFonts+CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65557C5B1D459C06F72A1C53 /* TuistFonts+CommonUI.swift */; };
 		948D1F3215C8EFB86ADEED38 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C81F7E6D532A39E63E3FBBF /* BonMot.framework */; platformFilter = ios; };

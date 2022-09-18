@@ -14,8 +14,9 @@ public class UnderlineLabel: UILabel {
     
     private lazy var label = UILabel()
     
+    // TODO: 색상 변경
     private let underline = UIView().then {
-        $0.backgroundColor = .yellow
+        $0.backgroundColor = CommonUIAsset.ponitColor.color
     }
     
     override init(frame: CGRect) {
@@ -31,20 +32,22 @@ public class UnderlineLabel: UILabel {
     private func configureUI() {
         self.addSubview(label)
         self.addSubview(underline)
+        self.bringSubviewToFront(label)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
         label.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.bottom.trailing.equalToSuperview().inset(8)
+            $0.top.leading.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(8)
+            $0.bottom.equalToSuperview().inset(20)
         }
         
         underline.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
-            $0.centerY.equalTo(label.snp.bottom)
-            $0.height.equalTo(14)
+            $0.top.equalTo(self.snp.bottom).offset(-15)
+            $0.height.equalTo(20)
         }
     }
     
