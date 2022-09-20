@@ -34,7 +34,6 @@
 		61DAC623469990B0A8EDDA04 /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB7FDBF6E2BFB912110346 /* CwlCatchException.framework */; platformFilter = ios; };
 		6426C78F06EA2DB97195F643 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D6129F066D50FAF35DA006 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		69D49225A940916355661D7A /* TuistAssets+SignUpDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0468CBA4C3703A73F541BE /* TuistAssets+SignUpDemoApp.swift */; };
-		7303437F0F0F3E305AB47DE3 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF2CFD764FD229432DB25C2 /* SnapKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73EF28DDD10791B4C196931D /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB7FDBF6E2BFB912110346 /* CwlCatchException.framework */; platformFilter = ios; };
 		753DDBA941DAB6D15302EA8C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E927366167742E446BBFA3EE /* RxSwift.framework */; platformFilter = ios; };
 		754B098971153FA7B3D992D6 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032089FEE664EF99F80E4CB2 /* BonMot.framework */; platformFilter = ios; };
@@ -129,7 +128,6 @@
 				CAE11F4E20778622A0FD09E2 /* RxRelay.framework in Embed Frameworks */,
 				B415E580D08129DE74546E3A /* RxSwift.framework in Embed Frameworks */,
 				A65DEA5B7C6A64AA858D0F2C /* SignUp.framework in Embed Frameworks */,
-				7303437F0F0F3E305AB47DE3 /* SnapKit.framework in Embed Frameworks */,
 				5DCCD7235697EAC30B1C8538 /* Then.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -515,9 +513,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1BFCEAD2829FF139E8E0285D /* SignUpDemoApp */,
 				574B48093AE4DBBAEF6C828C /* SignUp */,
 				3F158B9B120E3FDBA2B24256 /* SignUpTests */,
+				1BFCEAD2829FF139E8E0285D /* SignUpDemoApp */,
 				737BF62A569EB1D439A0C866 /* SignUpDemoAppTests */,
 			);
 		};

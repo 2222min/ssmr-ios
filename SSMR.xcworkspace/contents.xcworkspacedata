@@ -54,6 +54,9 @@
                      location = "group:ReactorKit/ReactorKit.xcodeproj">
                   </FileRef>
                   <FileRef
+                     location = "group:ReusableKit/ReusableKit.xcodeproj">
+                  </FileRef>
+                  <FileRef
                      location = "group:RxNimble/RxNimble.xcodeproj">
                   </FileRef>
                   <FileRef
