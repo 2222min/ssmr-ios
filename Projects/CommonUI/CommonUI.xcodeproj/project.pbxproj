@@ -36,6 +36,7 @@
 		C12EDC11E38F8E7DEA4DE75F /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6EF530A9F924851573B4D1B /* RxTest.framework */; platformFilter = ios; };
 		C94951E661D9DC9D28B56273 /* TuistAssets+CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F625FE1E640FBDB817D76A3 /* TuistAssets+CommonUI.swift */; };
 		F45F44459146491B37BD3FD0 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF69C2BAF4131FC493CEAA4 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
+		FE590D98AFB9BB5743119C32 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2E218308F4B3E86C597BC /* UnderlineTextField.swift */; };
 		FF34EC4407B8B88D9BCADA4F /* AppleSDGothicNeoLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33AC5A9C28F74A8AB64DA6C8 /* AppleSDGothicNeoLight.ttf */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		AA9CD994C7FF02BB0FCD22F5 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		C6EF530A9F924851573B4D1B /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88EFE34401B4D488765B249 /* UnderlineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineLabel.swift; sourceTree = "<group>"; };
+		C8C2E218308F4B3E86C597BC /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		CDBD62030B65AE3A6A7F34D6 /* CommonUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CommonUI-Info.plist"; sourceTree = "<group>"; };
 		CF13EECA643D1CCCE5EE829C /* CwlCatchException.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchException.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C709D41F965043008FD351 /* AppleSDGothicNeoExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoExtraBold.ttf; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				C88EFE34401B4D488765B249 /* UnderlineLabel.swift */,
+				C8C2E218308F4B3E86C597BC /* UnderlineTextField.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				5F9B51910EF9B63E7E4727B0 /* BaseViewController.swift in Sources */,
 				0B3DE9D8F5421C145582B348 /* CoreTypo.swift in Sources */,
 				7D1FF5C07491777A9247B23F /* UnderlineLabel.swift in Sources */,
+				FE590D98AFB9BB5743119C32 /* UnderlineTextField.swift in Sources */,
 				393BFF6242636CD8B6D52A2D /* TCAButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

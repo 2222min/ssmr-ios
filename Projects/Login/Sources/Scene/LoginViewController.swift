@@ -29,21 +29,27 @@ class LoginViewController: BaseViewController {
     private let idLabel = UILabel().then {
         $0.attributedText = "아이디".styled(
             typo: .text20NeoNormal,
-            byAdding: [.color(CommonUIAsset.black.color)])
+            byAdding: [.color(CommonUIAsset.blackGrey.color)])
     }
     
     private let pwLabel = UILabel().then {
         $0.attributedText = "비밀번호".styled(
             typo: .text20NeoNormal,
-            byAdding: [.color(CommonUIAsset.black.color)])
+            byAdding: [.color(CommonUIAsset.blackGrey.color)])
     }
     
-    private let idTextField = UITextField().then {
-        $0.placeholder = "이메일 주소를 입력해주세요."
+    private let idTextField = UnderlineTextField().then {
+        $0.textField.attributedPlaceholder = NSAttributedString(
+            string: "이메일 주소를 입력해 주세요.",
+            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
+        )
     }
     
-    private let pwTextField = UITextField().then {
-        $0.placeholder = "비밀번호를 입력해주세요."
+    private let pwTextField = UnderlineTextField().then {
+        $0.textField.attributedPlaceholder =  NSAttributedString(
+            string: "비밀번호를 입력해 주세요.",
+            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
+        )
     }
     
     private let loginButton = TCAButton().then {
@@ -67,7 +73,7 @@ class LoginViewController: BaseViewController {
         super.setupConstraints()
         
         self.loginLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
             $0.leading.equalToSuperview().offset(16)
         }
         self.idLabel.snp.makeConstraints {

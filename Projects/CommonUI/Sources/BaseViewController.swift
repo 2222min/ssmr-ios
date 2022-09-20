@@ -44,7 +44,7 @@ open class BaseViewController: UIViewController {
         self.view.setNeedsUpdateConstraints()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = CommonUIAsset.cream.color
         self.configureUI()
     }
     
