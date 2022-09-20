@@ -46,8 +46,8 @@ public class UnderlineLabel: UILabel {
         
         underline.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(self.snp.bottom).offset(-15)
-            $0.height.equalTo(20)
+            $0.top.equalTo(self.snp.bottom).offset(-11)
+            $0.height.equalTo(14)
         }
     }
     
@@ -57,7 +57,7 @@ extension UnderlineLabel {
     public var labelText: String  {
         set {
             self.label.attributedText = newValue.styled(
-                typo: .text32ExtraBold,
+                typo: .text24ExtraBold,
                 byAdding: [.color(CommonUIAsset.black.color)]
             )
         }
