@@ -82,6 +82,7 @@ class LoginViewController: BaseViewController {
         }
         self.idTextField.snp.makeConstraints {
             $0.top.equalTo(self.idLabel.snp.bottom).offset(16)
+            $0.height.equalTo(24)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
         self.pwLabel.snp.makeConstraints {
@@ -90,6 +91,7 @@ class LoginViewController: BaseViewController {
         }
         self.pwTextField.snp.makeConstraints {
             $0.top.equalTo(self.pwLabel.snp.bottom).offset(16)
+            $0.height.equalTo(24)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
         self.loginButton.snp.makeConstraints {
