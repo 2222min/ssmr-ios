@@ -17,6 +17,21 @@ class LoginViewController: BaseViewController {
             typo: .text17NeoBold,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
+        
+        static let findInfoButtonText = "아이디/비밀번호찾기".styled(
+            typo: .text12NeoNormal,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
+        
+        static let dividerText = "|".styled(
+            typo: .text12NeoNormal,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
+        
+        static let signUpButtonText = "회원가입하기".styled(
+            typo: .text12NeoNormal,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
     }
     
     // MARK: Properties
@@ -59,14 +74,51 @@ class LoginViewController: BaseViewController {
         )
     }
     
+    private let findInfoButton = UIButton().then {
+        $0.setTitle("아이디/비밀번호찾기", for: .normal)
+        $0.setAttributedTitle(
+            Constants.findInfoButtonText,
+            for: .normal
+        )
+    }
+    
+    private let divider = UILabel().then {
+        $0.attributedText = Constants.dividerText
+    }
+    
+    private let signUpButton = UIButton().then {
+        $0.setTitle("회원가입하기", for: .normal)
+        $0.setAttributedTitle(
+            Constants.signUpButtonText,
+            for: .normal
+        )
+    }
+    
+    private let bottomStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 16
+    }
+    
     override func configureUI() {
         super.configureUI()
-        self.view.addSubview(loginLabel)
-        self.view.addSubview(idLabel)
-        self.view.addSubview(idTextField)
-        self.view.addSubview(pwLabel)
-        self.view.addSubview(pwTextField)
-        self.view.addSubview(loginButton)
+        
+        [
+            self.findInfoButton,
+            self.divider,
+            self.signUpButton
+        ]
+            .forEach(self.bottomStackView.addArrangedSubview)
+        
+        [
+            self.loginLabel,
+            self.idLabel,
+            self.idTextField,
+            self.pwLabel,
+            self.pwTextField,
+            self.loginButton,
+            self.bottomStackView
+        ]
+            .forEach(self.view.addSubview)
     }
     
     override func setupConstraints() {
@@ -98,6 +150,10 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(self.pwTextField.snp.bottom).offset(64)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(48)
+        }
+        self.bottomStackView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(self.loginButton.snp.bottom).offset(40)
         }
     }
     

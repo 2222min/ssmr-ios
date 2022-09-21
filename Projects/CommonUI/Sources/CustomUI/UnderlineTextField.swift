@@ -13,13 +13,9 @@ public class UnderlineTextField: UIView {
     public let textField = UITextField().then {
         $0.clearButtonMode = .whileEditing
         $0.textColor = CommonUIAsset.black.color
-        $0.attributedPlaceholder = NSAttributedString(
-            string: String(),
-            attributes: [NSAttributedString.Key.foregroundColor : UIColor.red]
-        )
     }
     
-    let underline = UIView().then {
+    private let underline = UIView().then {
         $0.backgroundColor = CommonUIAsset.whiteGrey.color
     }
     
