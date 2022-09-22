@@ -75,7 +75,6 @@ class LoginViewController: BaseViewController {
     }
     
     private let findInfoButton = UIButton().then {
-        $0.setTitle("아이디/비밀번호찾기", for: .normal)
         $0.setAttributedTitle(
             Constants.findInfoButtonText,
             for: .normal
