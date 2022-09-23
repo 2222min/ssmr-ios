@@ -20,21 +20,12 @@ import SignUp
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
+        sleep(2) // delay 2 seconds
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let tabBarController = MainTabBarController()
-        tabBarController.tabBar.tintColor = .systemBlue
-        tabBarController.tabBar.isTranslucent = false
-        
         let onboardingVC = OnboardingViewController.create() ?? UIViewController()
-        onboardingVC.tabBarItem = UITabBarItem(title: "onboarding", image: CommonUIAsset.homeIcon.image, tag: 0)
         
-        let loginVC = LoginViewController.create() ?? UIViewController()
-        loginVC.tabBarItem = UITabBarItem(title: "Login", image: CommonUIAsset.homeIcon.image, tag: 0)
-        
-        tabBarController.setViewControllers([onboardingVC,loginVC], animated: false)
-        
-        window?.rootViewController = tabBarController
+        window?.rootViewController = onboardingVC
         window?.makeKeyAndVisible()
         
         return true
