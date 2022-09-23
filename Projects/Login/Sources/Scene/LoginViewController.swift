@@ -65,6 +65,7 @@ class LoginViewController: BaseViewController {
             string: "비밀번호를 입력해 주세요.",
             attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
         )
+        $0.textField.isSecureTextEntry = true
     }
     
     private let loginButton = TCAButton().then {
@@ -158,5 +159,12 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                let loginFailVC = LoginFailViewController()
+                loginFailVC.modalPresentationStyle = .overCurrentContext
+                loginFailVC.modalTransitionStyle = .crossDissolve
+                owner.present(loginFailVC, animated: true)
+            }.disposed(by: disposeBag)
     }
 }
