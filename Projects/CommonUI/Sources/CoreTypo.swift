@@ -19,6 +19,9 @@ extension String {
 public enum CoreTypo {
     case text32ExtraBold
     case text17NeoBold
+    case text20NeoNormal
+    case text24ExtraBold
+    case text12NeoNormal
 }
 extension CoreTypo {
     public var style: BonMot.StringStyle {
@@ -36,12 +39,21 @@ extension CoreTypo {
             return CommonUIFontFamily.AppleSDGothicNeoEB00.regular.font(size: 32)
         case .text17NeoBold:
             return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 17)
+        case .text20NeoNormal:
+            return CommonUIFontFamily.AppleSDGothicNeoM00.regular.font(size: 20)
+        case .text24ExtraBold:
+            return CommonUIFontFamily.AppleSDGothicNeoEB00.regular.font(size: 24)
+        case .text12NeoNormal:
+            return CommonUIFontFamily.AppleSDGothicNeoL00.regular.font(size: 12)
         }
     }
     var lineHeight: CGFloat {
         switch self {
         case .text32ExtraBold: return 40
         case .text17NeoBold: return 20
+        case .text20NeoNormal: return 28
+        case .text24ExtraBold: return 32
+        case .text12NeoNormal: return 16
         }
     }
     
@@ -49,6 +61,9 @@ extension CoreTypo {
       switch self {
       case .text32ExtraBold: return -1.04
       case .text17NeoBold: return 0
+      case .text20NeoNormal: return 0
+      case .text24ExtraBold: return 0
+      case .text12NeoNormal: return 0
       }
     }
 }
