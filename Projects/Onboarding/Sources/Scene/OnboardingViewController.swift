@@ -23,7 +23,7 @@ public class OnboardingViewController: BaseViewController, ReactorKit.View {
     // MARK: Constants
     private enum Constants {
         static let skipButtonText = "서비스 둘러보기".styled(
-            typo: .text17NeoBold,
+            typo: .ButtonLarge,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }

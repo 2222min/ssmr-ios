@@ -17,11 +17,15 @@ extension String {
 }
 
 public enum CoreTypo {
-    case text32ExtraBold
-    case text17NeoBold
-    case text20NeoNormal
-    case text24ExtraBold
-    case text12NeoNormal
+    case DDaengH1
+    case DDaengH2
+    case DDaengH3
+    case DDaengB1
+    case DDaengMB2
+    case DDaengC1
+    case DDaengC2
+    case DDaengOverLine
+    case ButtonLarge
 }
 extension CoreTypo {
     public var style: BonMot.StringStyle {
@@ -35,35 +39,51 @@ extension CoreTypo {
 extension CoreTypo {
     var font: UIFont? {
         switch self {
-        case .text32ExtraBold:
+        case .DDaengH1:
             return CommonUIFontFamily.AppleSDGothicNeoEB00.regular.font(size: 32)
-        case .text17NeoBold:
-            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 17)
-        case .text20NeoNormal:
-            return CommonUIFontFamily.AppleSDGothicNeoM00.regular.font(size: 20)
-        case .text24ExtraBold:
+        case .DDaengH2:
             return CommonUIFontFamily.AppleSDGothicNeoEB00.regular.font(size: 24)
-        case .text12NeoNormal:
-            return CommonUIFontFamily.AppleSDGothicNeoL00.regular.font(size: 12)
+        case .DDaengH3:
+            return CommonUIFontFamily.AppleSDGothicNeoSB00.regular.font(size: 20)
+        case .DDaengB1:
+            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 18)
+        case .DDaengMB2:
+            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 17)
+        case .DDaengC1:
+            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 12)
+        case .DDaengC2:
+            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 11)
+        case .DDaengOverLine:
+            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 11)
+        case .ButtonLarge:
+            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 17)
         }
     }
     var lineHeight: CGFloat {
         switch self {
-        case .text32ExtraBold: return 40
-        case .text17NeoBold: return 20
-        case .text20NeoNormal: return 28
-        case .text24ExtraBold: return 32
-        case .text12NeoNormal: return 16
+        case .DDaengH1: return 40
+        case .DDaengH2: return 32
+        case .DDaengH3: return 28
+        case .DDaengB1: return 24
+        case .DDaengMB2: return 24
+        case .DDaengC1: return 16
+        case .DDaengC2: return 16
+        case .DDaengOverLine: return 16
+        case .ButtonLarge: return 20.4
         }
     }
     
     var letterSpacing: CGFloat {
       switch self {
-      case .text32ExtraBold: return -1.04
-      case .text17NeoBold: return 0
-      case .text20NeoNormal: return 0
-      case .text24ExtraBold: return 0
-      case .text12NeoNormal: return 0
+      case .DDaengH1: return -1.04
+      case .DDaengH2: return 0
+      case .DDaengH3: return 0
+      case .DDaengB1: return 0
+      case .DDaengMB2: return 0
+      case .DDaengC1: return 0
+      case .DDaengC2: return 0
+      case .DDaengOverLine: return 0
+      case .ButtonLarge: return 0
       }
     }
 }

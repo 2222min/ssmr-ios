@@ -32,7 +32,15 @@ public enum CommonUIFontFamily {
     public static let regular = CommonUIFontConvertible(name: "AppleSDGothicNeoM00", family: "AppleSDGothicNeoM00", path: "AppleSDGothicNeoMedium.ttf")
     public static let all: [CommonUIFontConvertible] = [regular]
   }
-  public static let allCustomFonts: [CommonUIFontConvertible] = [AppleSDGothicNeoB00.all, AppleSDGothicNeoEB00.all, AppleSDGothicNeoL00.all, AppleSDGothicNeoM00.all].flatMap { $0 }
+  public enum AppleSDGothicNeoR00 {
+    public static let regular = CommonUIFontConvertible(name: "AppleSDGothicNeoR00", family: "AppleSDGothicNeoR00", path: "AppleSDGothicNeoRegular.ttf")
+    public static let all: [CommonUIFontConvertible] = [regular]
+  }
+  public enum AppleSDGothicNeoSB00 {
+    public static let regular = CommonUIFontConvertible(name: "AppleSDGothicNeoSB00", family: "AppleSDGothicNeoSB00", path: "AppleSDGothicNeoSemiBold.ttf")
+    public static let all: [CommonUIFontConvertible] = [regular]
+  }
+  public static let allCustomFonts: [CommonUIFontConvertible] = [AppleSDGothicNeoB00.all, AppleSDGothicNeoEB00.all, AppleSDGothicNeoL00.all, AppleSDGothicNeoM00.all, AppleSDGothicNeoR00.all, AppleSDGothicNeoSB00.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

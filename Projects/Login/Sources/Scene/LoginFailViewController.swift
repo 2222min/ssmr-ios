@@ -15,7 +15,7 @@ class LoginFailViewController: BaseViewController {
     // MARK: Constants
     private enum Constants {
         static let confirmButtonText = "확인".styled(
-            typo: .text17NeoBold,
+            typo: .ButtonLarge,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
     }
@@ -30,13 +30,13 @@ class LoginFailViewController: BaseViewController {
     
     private let loginFailLabel = UILabel().then {
         $0.attributedText = "로그인에 실패했어요".styled(
-            typo: .text20NeoNormal,
+            typo: .DDaengH3,
             byAdding: [.color(CommonUIAsset.black.color)])
     }
     
     private let failCountLabel = UILabel().then {
         $0.attributedText = "(1회 실패)".styled(
-            typo: .text12NeoNormal,
+            typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }
