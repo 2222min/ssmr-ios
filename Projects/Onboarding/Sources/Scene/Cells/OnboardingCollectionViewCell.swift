@@ -90,11 +90,11 @@ final class OnboardingCollectionViewCell: BaseCollectionViewCell {
 extension OnboardingCollectionViewCell {
     private func setUIProperties(_ item: OnboardingModel) {
         self.titleLabel.attributedText = item.title.styled(
-            typo: .text32ExtraBold,
+            typo: .DDaengH1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         self.descriptionLabel.attributedText = item.description.styled(
-            typo: .text17NeoBold,
+            typo: .DDaengB1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         self.imageView.image = item.image

@@ -33,7 +33,6 @@ public class UnderlineTextField: UIView {
         addSubview(underline)
         
         setupConstraints()
-        self.isUserInteractionEnabled = true
     }
     
     private func setupConstraints() {

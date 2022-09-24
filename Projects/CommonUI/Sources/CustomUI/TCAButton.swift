@@ -29,7 +29,7 @@ public class TCAButton: UIButton {
     
     private func setTitleLabel(_ title: String) -> NSAttributedString {
         return title.styled(
-            typo: .text17NeoBold,
+            typo: .ButtonLarge,
             byAdding: [.color(.white)]
         )
     }

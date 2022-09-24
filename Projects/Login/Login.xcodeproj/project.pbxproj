@@ -3,6 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
+	objectVersion = 50;
 	objectVersion = 55;
 	objects = {
 
@@ -39,6 +40,9 @@
 		81916AD62AF04D194674C0C2 /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2798BC3E90C0B211A8C88C7 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		844C12F592CBC2C67A0CC714 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502E1893C793C44DE25A5395 /* RxTest.framework */; platformFilter = ios; };
 		862A84587C3884B15EA18531 /* TuistBundle+LoginDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818351462571E70B3397551F /* TuistBundle+LoginDemoApp.swift */; };
+		880F34EFDC434A652B9CD3C4 /* LoginFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CFCCED5CA2E4B7548A000 /* LoginFailViewController.swift */; };
+		899362A800757E26F42AC63C /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2798BC3E90C0B211A8C88C7 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
+		8C2C1F4FB1DBF9E006AA2566 /* LoginFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CFCCED5CA2E4B7548A000 /* LoginFailViewController.swift */; };
 		899362A800757E26F42AC63C /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2798BC3E90C0B211A8C88C7 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		9467C2E7A7A5709A31063A1B /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5F7FB95E15955EFB8BDFA6 /* RxBlocking.framework */; platformFilter = ios; };
 		A2DD99D036B33B4B67E19670 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149968626029AF0A6483A522 /* RxSwift.framework */; platformFilter = ios; };
@@ -157,6 +161,7 @@
 		21D6E91FA13D3D7D7989E850 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2464D09DC092B2E5885DB373 /* RxMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C6E6787DFAF624F53D6F5B /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6CFCCED5CA2E4B7548A000 /* LoginFailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailViewController.swift; sourceTree = "<group>"; };
 		40D695E4C468FA9331DCE740 /* LoginDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42870745A687037AA443C219 /* RxCocoaRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoaRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490515CAD73E056B9A1C97CE /* CwlMachBadInstructionHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlMachBadInstructionHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +307,8 @@
 		2A0D1DDB4FA6D4A26061048E /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3E6CFCCED5CA2E4B7548A000 /* LoginFailViewController.swift */,
+				530743EDCE3BAAF6DD7E45F4 /* LoginViewController.swift */,
 				530743EDCE3BAAF6DD7E45F4 /* LoginViewController.swift */,
 				54ED977F28DC844C00370656 /* LoginFailViewController.swift */,
 			);
@@ -469,6 +476,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				AFB6321CC7768949CDA5C44C /* LoginDemoApp */,
+				EF8CE03A2759141C3B1EAC1D /* Login */,
+				8EC12D40A59F4E845C71699F /* LoginTests */,
+				A2CA833B76BD3A488901673C /* LoginDemoAppTests */,
 				EF8CE03A2759141C3B1EAC1D /* Login */,
 				A2CA833B76BD3A488901673C /* LoginDemoAppTests */,
 				AFB6321CC7768949CDA5C44C /* LoginDemoApp */,
@@ -518,6 +529,7 @@
 				61A6CFE2724203545C711718 /* TuistAssets+Login.swift in Sources */,
 				1EFD47ADF1CA0DC5FD887C88 /* TuistBundle+Login.swift in Sources */,
 				E9B7944B0ED599E5BFD50796 /* AppDelegate.swift in Sources */,
+				880F34EFDC434A652B9CD3C4 /* LoginFailViewController.swift in Sources */,
 				54ED978028DC844C00370656 /* LoginFailViewController.swift in Sources */,
 				FD1E11FB7F3B30AE3D854255 /* LoginViewController.swift in Sources */,
 			);
@@ -544,6 +556,7 @@
 				2234E72649D821F602965E67 /* TuistAssets+LoginDemoApp.swift in Sources */,
 				862A84587C3884B15EA18531 /* TuistBundle+LoginDemoApp.swift in Sources */,
 				F4F939EAEF1077D2190B9330 /* AppDelegate.swift in Sources */,
+				8C2C1F4FB1DBF9E006AA2566 /* LoginFailViewController.swift in Sources */,
 				54ED978128DC844C00370656 /* LoginFailViewController.swift in Sources */,
 				C47800FA62CF2C802979D3C6 /* LoginViewController.swift in Sources */,
 			);
@@ -587,6 +600,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.LoginTests;
 				PRODUCT_NAME = LoginTests;
@@ -613,6 +631,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.LoginTests;
 				PRODUCT_NAME = LoginTests;
@@ -637,6 +660,11 @@
 				);
 				OTHER_CFLAGS = (
 					"$(inherited)",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
@@ -722,6 +750,11 @@
 				);
 				OTHER_CFLAGS = (
 					"$(inherited)",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";

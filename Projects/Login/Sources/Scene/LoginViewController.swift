@@ -14,22 +14,22 @@ class LoginViewController: BaseViewController {
     // MARK: Constants
     private enum Constants {
         static let loginButtonText = "로그인".styled(
-            typo: .text17NeoBold,
+            typo: .ButtonLarge,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         
         static let findInfoButtonText = "아이디/비밀번호찾기".styled(
-            typo: .text12NeoNormal,
+            typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         
         static let dividerText = "|".styled(
-            typo: .text12NeoNormal,
+            typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         
         static let signUpButtonText = "회원가입하기".styled(
-            typo: .text12NeoNormal,
+            typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }
@@ -43,13 +43,13 @@ class LoginViewController: BaseViewController {
     
     private let idLabel = UILabel().then {
         $0.attributedText = "아이디".styled(
-            typo: .text20NeoNormal,
+            typo: .DDaengH3,
             byAdding: [.color(CommonUIAsset.blackGrey.color)])
     }
     
     private let pwLabel = UILabel().then {
         $0.attributedText = "비밀번호".styled(
-            typo: .text20NeoNormal,
+            typo: .DDaengH3,
             byAdding: [.color(CommonUIAsset.blackGrey.color)])
     }
     
