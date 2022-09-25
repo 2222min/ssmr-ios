@@ -30,6 +30,7 @@ public enum CommonUIAsset {
   public static let ponitColor = CommonUIColors(name: "ponitColor")
   public static let white = CommonUIColors(name: "white")
   public static let whiteGrey = CommonUIColors(name: "whiteGrey")
+  public static let cautionImage = CommonUIImages(name: "cautionImage")
   public static let chevronLeft = CommonUIImages(name: "chevron-left")
   public static let checkImage = CommonUIImages(name: "checkImage")
   public static let dotImage8 = CommonUIImages(name: "dot_Image_8")
