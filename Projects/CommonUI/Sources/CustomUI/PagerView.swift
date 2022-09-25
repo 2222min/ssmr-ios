@@ -10,9 +10,12 @@ import UIKit
 
 public final class PagerView: UIButton {
     
+    // MARK: UI Properties
     private let pagerTitleLabel = UILabel()
     private let bottomLineView = UIView()
     
+    
+    // MARK: Properties
     public var title: NSAttributedString = .init() {
         didSet {
             self.pagerTitleLabel.attributedText = self.title
