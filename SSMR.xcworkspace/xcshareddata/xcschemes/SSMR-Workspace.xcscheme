@@ -168,6 +168,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ADDBEB1C771D19D7F93E002E"
+               BuildableName = "FindUserInfo.framework"
+               BlueprintName = "FindUserInfo"
+               ReferencedContainer = "container:Projects/FindUserInfo/FindUserInfo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC11AB5662EE9D06F00E9A3E"
+               BuildableName = "FindUserInfoDemoApp.app"
+               BlueprintName = "FindUserInfoDemoApp"
+               ReferencedContainer = "container:Projects/FindUserInfo/FindUserInfo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F02545CBAD84A4693B86FB5"
+               BuildableName = "FindUserInfoDemoAppTests.xctest"
+               BlueprintName = "FindUserInfoDemoAppTests"
+               ReferencedContainer = "container:Projects/FindUserInfo/FindUserInfo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B2096E17537636111ACEC3C"
+               BuildableName = "FindUserInfoTests.xctest"
+               BlueprintName = "FindUserInfoTests"
+               ReferencedContainer = "container:Projects/FindUserInfo/FindUserInfo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "EF8CE03A2759141C3B1EAC1D"
                BuildableName = "Login.framework"
                BlueprintName = "Login"
@@ -578,6 +634,26 @@
                BuildableName = "CommonUITests.xctest"
                BlueprintName = "CommonUITests"
                ReferencedContainer = "container:Projects/CommonUI/CommonUI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F02545CBAD84A4693B86FB5"
+               BuildableName = "FindUserInfoDemoAppTests.xctest"
+               BlueprintName = "FindUserInfoDemoAppTests"
+               ReferencedContainer = "container:Projects/FindUserInfo/FindUserInfo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B2096E17537636111ACEC3C"
+               BuildableName = "FindUserInfoTests.xctest"
+               BlueprintName = "FindUserInfoTests"
+               ReferencedContainer = "container:Projects/FindUserInfo/FindUserInfo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
