@@ -1,5 +1,5 @@
 //
-//  UnderlineTextField.swift
+//  UnderlineTextFieldWithTitle.swift
 //  CommonUI
 //
 //  Created by 정건호 on 2022/09/20.
@@ -9,7 +9,11 @@
 import UIKit
 import RxCocoa
 
-public class UnderlineTextField: UIView {
+public class UnderlineTextFieldWithTitle: UIView {
+    public let title = UILabel().then {
+        $0.textColor = CommonUIAsset.blackGrey.color
+    }
+    
     public let textField = UITextField().then {
         $0.clearButtonMode = .whileEditing
         $0.textColor = CommonUIAsset.black.color
@@ -29,6 +33,7 @@ public class UnderlineTextField: UIView {
     }
     
     private func configureUI() {
+        addSubview(title)
         addSubview(textField)
         addSubview(underline)
         
@@ -36,8 +41,13 @@ public class UnderlineTextField: UIView {
     }
     
     private func setupConstraints() {
-        textField.snp.makeConstraints {
+        title.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.height.equalTo(28)
+            $0.leading.trailing.equalToSuperview()
+        }
+        textField.snp.makeConstraints {
+            $0.top.equalTo(self.title.snp.bottom).offset(16)
             $0.height.equalTo(24)
             $0.leading.trailing.equalToSuperview().inset(10)
         }

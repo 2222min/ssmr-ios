@@ -41,26 +41,32 @@ class LoginViewController: BaseViewController {
         $0.labelText = "로그인"
     }
     
-    private let idLabel = UILabel().then {
-        $0.attributedText = "아이디".styled(
+//    private let idLabel = UILabel().then {
+//        $0.attributedText = "아이디".styled(
+//            typo: .DDaengH3,
+//            byAdding: [.color(CommonUIAsset.blackGrey.color)])
+//    }
+//
+//    private let pwLabel = UILabel().then {
+//        $0.attributedText = "비밀번호".styled(
+//            typo: .DDaengH3,
+//            byAdding: [.color(CommonUIAsset.blackGrey.color)])
+//    }
+    
+    private let idTextField = UnderlineTextFieldWithTitle().then {
+        $0.title.attributedText = "아이디".styled(
             typo: .DDaengH3,
             byAdding: [.color(CommonUIAsset.blackGrey.color)])
-    }
-    
-    private let pwLabel = UILabel().then {
-        $0.attributedText = "비밀번호".styled(
-            typo: .DDaengH3,
-            byAdding: [.color(CommonUIAsset.blackGrey.color)])
-    }
-    
-    private let idTextField = UnderlineTextField().then {
         $0.textField.attributedPlaceholder = NSAttributedString(
             string: "이메일 주소를 입력해 주세요.",
             attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
         )
     }
     
-    private let pwTextField = UnderlineTextField().then {
+    private let pwTextField = UnderlineTextFieldWithTitle().then {
+        $0.title.attributedText = "비밀번호".styled(
+            typo: .DDaengH3,
+            byAdding: [.color(CommonUIAsset.blackGrey.color)])
         $0.textField.attributedPlaceholder =  NSAttributedString(
             string: "비밀번호를 입력해 주세요.",
             attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
@@ -111,9 +117,9 @@ class LoginViewController: BaseViewController {
         
         [
             self.loginLabel,
-            self.idLabel,
+//            self.idLabel,
             self.idTextField,
-            self.pwLabel,
+//            self.pwLabel,
             self.pwTextField,
             self.loginButton,
             self.bottomStackView
@@ -128,22 +134,22 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
             $0.leading.equalToSuperview().offset(16)
         }
-        self.idLabel.snp.makeConstraints {
-            $0.top.equalTo(self.loginLabel.snp.bottom).offset(64)
-            $0.leading.equalToSuperview().offset(16)
-        }
+//        self.idLabel.snp.makeConstraints {
+//            $0.top.equalTo(self.loginLabel.snp.bottom).offset(64)
+//            $0.leading.equalToSuperview().offset(16)
+//        }
         self.idTextField.snp.makeConstraints {
-            $0.top.equalTo(self.idLabel.snp.bottom).offset(16)
-            $0.height.equalTo(24)
+            $0.top.equalTo(self.loginLabel.snp.bottom).offset(64)
+            $0.height.equalTo(73)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
-        self.pwLabel.snp.makeConstraints {
-            $0.top.equalTo(self.idTextField.snp.bottom).offset(32)
-            $0.leading.equalToSuperview().offset(16)
-        }
+//        self.pwLabel.snp.makeConstraints {
+//            $0.top.equalTo(self.idTextField.snp.bottom).offset(32)
+//            $0.leading.equalToSuperview().offset(16)
+//        }
         self.pwTextField.snp.makeConstraints {
-            $0.top.equalTo(self.pwLabel.snp.bottom).offset(16)
-            $0.height.equalTo(24)
+            $0.top.equalTo(self.idTextField.snp.bottom).offset(32)
+            $0.height.equalTo(73)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
         self.loginButton.snp.makeConstraints {
