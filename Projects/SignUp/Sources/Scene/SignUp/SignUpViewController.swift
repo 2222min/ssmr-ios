@@ -18,6 +18,16 @@ class SignUpViewController: BaseViewController {
             typo: .DDaengB1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
+        
+        static let duplicationButtonText = "중복확인".styled(
+            typo: .ButtomSmall,
+            byAdding: [.color(CommonUIAsset.white.color)]
+        )
+        
+        static let nextButtonText = "다음".styled(
+            typo: .ButtonLarge,
+            byAdding: [.color(CommonUIAsset.white.color)]
+        )
     }
     // MARK: Properties
     
@@ -43,10 +53,9 @@ class SignUpViewController: BaseViewController {
     }
     
     private let duplicationButton = UIButton().then {
-        $0.setTitle("중복확인", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
+        $0.setAttributedTitle(Constants.duplicationButtonText, for: .normal)
         $0.backgroundColor = CommonUIAsset.grey.color
-        $0.layer.cornerRadius = 32
+        $0.layer.cornerRadius = 12
     }
     
     private let pwTextField = UnderlineTextFieldWithTitle().then {
@@ -58,6 +67,29 @@ class SignUpViewController: BaseViewController {
             attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
         )
         $0.textField.isSecureTextEntry = true
+    }
+    
+    private let eyeImageOfPW = UIImageView().then {
+        $0.image = UIImage(asset: CommonUIAsset.eyeImage)
+    }
+    
+    private let pwCheckTextField = UnderlineTextField().then {
+        $0.textField.attributedPlaceholder =  NSAttributedString(
+            string: "비밀번호를 재입력해 주세요.",
+            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
+        )
+        $0.textField.isSecureTextEntry = true
+    }
+    
+    private let eyeImageOfPWCheck = UIImageView().then {
+        $0.image = UIImage(asset: CommonUIAsset.eyeImage)
+    }
+    
+    private let nextButton = TCAButton().then {
+        $0.setAttributedTitle(
+            Constants.nextButtonText,
+            for: .normal
+        )
     }
     
  
@@ -73,6 +105,10 @@ class SignUpViewController: BaseViewController {
         self.view.addSubview(idTextField)
         self.view.addSubview(duplicationButton)
         self.view.addSubview(pwTextField)
+        self.view.addSubview(eyeImageOfPW)
+        self.view.addSubview(pwCheckTextField)
+        self.view.addSubview(eyeImageOfPWCheck)
+        self.view.addSubview(nextButton)
     }
     
     override func setupConstraints() {
@@ -89,17 +125,36 @@ class SignUpViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(73)
         }
-        // TODO: 중복 버튼 만들기
+        // TODO: 중복 버튼 상하 간격
         self.duplicationButton.snp.makeConstraints {
             $0.top.bottom.equalTo(self.idTextField.textField)
             $0.trailing.equalTo(self.idTextField.snp.trailing)
             $0.width.equalTo(72)
         }
         self.pwTextField.snp.makeConstraints {
-            $0.top.equalTo(self.idTextField.snp.bottom).offset(42)
+            $0.top.equalTo(self.idTextField.snp.bottom).offset(48)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(73)
         }
-        
+        self.eyeImageOfPW.snp.makeConstraints {
+            $0.height.width.equalTo(24)
+            $0.trailing.equalTo(self.pwTextField.snp.trailing)
+            $0.top.bottom.equalTo(self.pwTextField.textField)
+        }
+        self.pwCheckTextField.snp.makeConstraints {
+            $0.top.equalTo(self.pwTextField.snp.bottom).offset(48)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(73)
+        }
+        self.eyeImageOfPWCheck.snp.makeConstraints {
+            $0.height.width.equalTo(24)
+            $0.trailing.equalTo(self.pwCheckTextField.snp.trailing)
+            $0.top.bottom.equalTo(self.pwCheckTextField.textField)
+        }
+        self.nextButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-50)
+            $0.height.equalTo(48)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
     }
 }

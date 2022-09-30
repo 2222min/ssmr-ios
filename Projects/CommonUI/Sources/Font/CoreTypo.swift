@@ -26,6 +26,7 @@ public enum CoreTypo {
     case DDaengC2
     case DDaengOverLine
     case ButtonLarge
+    case ButtomSmall
 }
 extension CoreTypo {
     public var style: BonMot.StringStyle {
@@ -57,6 +58,8 @@ extension CoreTypo {
             return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 11)
         case .ButtonLarge:
             return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 17)
+        case .ButtomSmall:
+            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
         }
     }
     var lineHeight: CGFloat {
@@ -70,6 +73,7 @@ extension CoreTypo {
         case .DDaengC2: return 16
         case .DDaengOverLine: return 16
         case .ButtonLarge: return 20.4
+        case .ButtomSmall: return 16
         }
     }
     
@@ -84,6 +88,7 @@ extension CoreTypo {
       case .DDaengC2: return 0
       case .DDaengOverLine: return 0
       case .ButtonLarge: return 0
+      case .ButtomSmall: return 0
       }
     }
 }
