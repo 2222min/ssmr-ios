@@ -1,5 +1,5 @@
 //
-//  TCAButton.swift
+//  CTAButton.swift
 //  CommonUI
 //
 //  Created by mincheol on 2022/09/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TCAButton: UIButton {
+public class CTAButton: UIButton {
     public var title: String = "" {
         didSet {
             let attributedString = self.setTitleLabel(self.title)
@@ -25,6 +25,13 @@ public class TCAButton: UIButton {
     
     required init?(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+    }
+    
+    override public var intrinsicContentSize: CGSize {
+        var size = super.intrinsicContentSize
+        size.height = 48
+        
+        return size
     }
     
     private func setTitleLabel(_ title: String) -> NSAttributedString {

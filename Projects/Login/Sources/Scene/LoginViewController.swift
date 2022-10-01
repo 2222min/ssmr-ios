@@ -68,7 +68,7 @@ class LoginViewController: BaseViewController {
         $0.textField.isSecureTextEntry = true
     }
     
-    private let loginButton = TCAButton().then {
+    private let loginButton = CTAButton().then {
         $0.setAttributedTitle(
             Constants.loginButtonText,
             for: .normal
