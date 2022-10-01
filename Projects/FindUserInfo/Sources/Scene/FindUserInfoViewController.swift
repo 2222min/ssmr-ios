@@ -42,23 +42,29 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
     }
     
     private lazy var stackView = UIStackView(arrangedSubviews: [
-        self.findIdView,
-        self.findPwView
+        self.idPager,
+        self.pwPager
     ]).then {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
         $0.spacing = 0.5
     }
     
-    private let findIdView = PagerView().then {
+    private let idPager = PagerView().then {
         $0.title = Constants.findIdLabel
         $0.changeColor(true)
     }
-    private let findPwView = PagerView().then {
+    private let pwPager = PagerView().then {
         $0.title = Constants.findPwLabel
         $0.changeColor(false)
     }
+    private let contentContainerView = UIView()
+    private let findIdView = FindIdView()
+    private let findPwView = FindPwView()
     
+    private let confirmButton = CTAButton().then {
+        $0.title = "다음"
+    }
 	// MARK: Initializing
 	init(reactor: Reactor) {
 		defer {
@@ -82,7 +88,9 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
         [
             self.topBar,
             self.titleLabel,
-            self.stackView
+            self.stackView,
+            self.confirmButton,
+            self.contentContainerView
         ]
             .forEach(self.view.addSubview)
 	}
@@ -102,13 +110,24 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
             $0.top.equalTo(self.titleLabel.snp.bottom).offset(21)
             $0.left.right.equalToSuperview()
         }
+        self.confirmButton.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().inset(50)
+        }
+        self.contentContainerView.snp.makeConstraints {
+            $0.top.equalTo(stackView.snp.bottom)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(self.confirmButton.snp.top)
+        }
 	}
 }
 
 // MARK: ReactorBind
 extension FindUserInfoViewController {
     public func bind(reactor: Reactor) {
-        
+        // Func
+        self.bindDidTapIdPager()
+        self.bindDidTapFindPwPager()
 	}
 }
 
@@ -125,5 +144,43 @@ extension FindUserInfoViewController {
         let viewController = FindUserInfoViewController.init(reactor: reactor)
         
         return viewController
+    }
+    private func bindDidTapIdPager() {
+        self.idPager.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                self?.idPager.changeColor(true)
+                self?.pwPager.changeColor(false)
+                self?.setUpFindIdView()
+            })
+            .disposed(by: self.disposeBag)
+    }
+    private func bindDidTapFindPwPager() {
+        self.pwPager.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                self?.idPager.changeColor(false)
+                self?.pwPager.changeColor(true)
+                self?.setUpFindPwView()
+            })
+            .disposed(by: self.disposeBag)
+    }
+    private func setUpFindIdView() {
+        self.contentContainerView.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+        self.contentContainerView.addSubview(self.findIdView)
+        self.findIdView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
+    private func setUpFindPwView() {
+        self.contentContainerView.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+        self.contentContainerView.addSubview(self.findPwView)
+        self.findPwView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }

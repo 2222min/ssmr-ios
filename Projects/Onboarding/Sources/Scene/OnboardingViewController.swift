@@ -52,7 +52,7 @@ public class OnboardingViewController: BaseViewController, ReactorKit.View {
         $0.register(Reusable.onboardingCollectionViewCell)
     }
     
-    private let nextButton = TCAButton()
+    private let nextButton = CTAButton()
     private let skipButton = UIButton().then {
         $0.setAttributedTitle(
             Constants.skipButtonText,
