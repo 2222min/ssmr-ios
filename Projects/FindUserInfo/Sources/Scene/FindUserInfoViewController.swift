@@ -6,6 +6,7 @@
 //  Copyright © 2022 team.io. All rights reserved.
 //
 import CommonUI
+import Util
 
 import UIKit
 import SnapKit
@@ -64,6 +65,8 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
     
     private let confirmButton = CTAButton().then {
         $0.title = "다음"
+        $0.setBackgroundColor(color: CommonUIAsset.grey.color, forState: .disabled)
+        $0.isEnabled = false
     }
 	// MARK: Initializing
 	init(reactor: Reactor) {
@@ -126,16 +129,54 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 extension FindUserInfoViewController {
     public func bind(reactor: Reactor) {
         // Func
-        self.bindDidTapIdPager()
-        self.bindDidTapFindPwPager()
+        // State
+        self.bindState(findType: reactor)
+        // Action
+        self.bindAction(didTapIdPager: reactor)
+        self.bindAction(didTapPwPager: reactor)
 	}
 }
 
 // MARK: Action
-extension FindUserInfoViewController {}
+extension FindUserInfoViewController {
+    private func bindAction(didTapIdPager reactor: Reactor) {
+        self.idPager.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.didTapIdPager }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+    }
+    private func bindAction(didTapPwPager reactor: Reactor) {
+        self.pwPager.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.didTapPwPager }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+    }
+}
 
 // MARK: State
-extension FindUserInfoViewController {}
+extension FindUserInfoViewController {
+    private func bindState(findType reactor: Reactor) {
+        reactor.state.map { $0.findType }
+            .distinctUntilChanged()
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: { [weak self]  in
+                switch $0 {
+                case .id:
+                    self?.idPager.changeColor(true)
+                    self?.pwPager.changeColor(false)
+                    self?.setUpFindIdView()
+                case .password:
+                    self?.idPager.changeColor(false)
+                    self?.pwPager.changeColor(true)
+                    self?.setUpFindPwView()
+                }
+                
+            })
+            .disposed(by: self.disposeBag)
+    }
+}
 
 // MARK: Func
 extension FindUserInfoViewController {
@@ -144,26 +185,6 @@ extension FindUserInfoViewController {
         let viewController = FindUserInfoViewController.init(reactor: reactor)
         
         return viewController
-    }
-    private func bindDidTapIdPager() {
-        self.idPager.rx.tap
-            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] _ in
-                self?.idPager.changeColor(true)
-                self?.pwPager.changeColor(false)
-                self?.setUpFindIdView()
-            })
-            .disposed(by: self.disposeBag)
-    }
-    private func bindDidTapFindPwPager() {
-        self.pwPager.rx.tap
-            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] _ in
-                self?.idPager.changeColor(false)
-                self?.pwPager.changeColor(true)
-                self?.setUpFindPwView()
-            })
-            .disposed(by: self.disposeBag)
     }
     private func setUpFindIdView() {
         self.contentContainerView.subviews.forEach {

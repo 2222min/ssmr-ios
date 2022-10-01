@@ -22,6 +22,9 @@
       <FileRef
          location = "group:SignUp/SignUp.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Util/Util.xcodeproj">
+      </FileRef>
    </Group>
    <Group
       location = "group:Tuist"

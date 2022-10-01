@@ -602,6 +602,34 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D5BAEF0EE03F09D494B7E734"
+               BuildableName = "Util.framework"
+               BlueprintName = "Util"
+               ReferencedContainer = "container:Projects/Util/Util.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8AE4BA4BBB4228689ACA23B4"
+               BuildableName = "UtilTests.xctest"
+               BlueprintName = "UtilTests"
+               ReferencedContainer = "container:Projects/Util/Util.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8AD5B657F9C652DED316999E"
                BuildableName = "WeakMapTable.framework"
                BlueprintName = "WeakMapTable"
@@ -714,6 +742,16 @@
                BuildableName = "SignUpTests.xctest"
                BlueprintName = "SignUpTests"
                ReferencedContainer = "container:Projects/SignUp/SignUp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8AE4BA4BBB4228689ACA23B4"
+               BuildableName = "UtilTests.xctest"
+               BlueprintName = "UtilTests"
+               ReferencedContainer = "container:Projects/Util/Util.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
