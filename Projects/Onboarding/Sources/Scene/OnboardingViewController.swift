@@ -62,7 +62,7 @@ public class OnboardingViewController: BaseViewController, ReactorKit.View {
     private let pageControl = UIPageControl().then {
         $0.numberOfPages = 3
         $0.pageIndicatorTintColor = CommonUIAsset.grey.color
-        $0.currentPageIndicatorTintColor = CommonUIAsset.ponitColor.color
+        $0.currentPageIndicatorTintColor = CommonUIAsset.pointColor.color
     }
     
     // MARK: Initializing

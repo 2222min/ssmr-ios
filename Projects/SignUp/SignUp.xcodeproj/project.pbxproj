@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,10 @@
 		4C7E0D2FCAE9066409C91889 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41FD7857C1AF339283E85D4 /* RxNimble.framework */; platformFilter = ios; };
 		4D59EC9E66863F9F12FAFC49 /* SignUpAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192740A8558F0FBDA5593D00 /* SignUpAPIProvider.swift */; };
 		4E93B193EA9968A395A3EF7B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885FEF80E63F09245002C53 /* SignUpViewController.swift */; };
+		547A188B28EACA3D00C029BB /* AddEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A188A28EACA3D00C029BB /* AddEmailViewController.swift */; };
+		547A188C28EACA3D00C029BB /* AddEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A188A28EACA3D00C029BB /* AddEmailViewController.swift */; };
+		547A188E28EAD5F300C029BB /* CertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A188D28EAD5F300C029BB /* CertificationViewController.swift */; };
+		547A188F28EAD5F300C029BB /* CertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A188D28EAD5F300C029BB /* CertificationViewController.swift */; };
 		54D2AE18F2DAA3A636AFF8C6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8C1EFD9A4D6F218588D661 /* RxCocoa.framework */; platformFilter = ios; };
 		5DCCD7235697EAC30B1C8538 /* Then.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 998120C01F122FF6EBA3A379 /* Then.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DF41379839CB235EFA867B2 /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2166758057A6AF16477DE39D /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
@@ -180,6 +184,8 @@
 		495FA455BB4C92102705F5A9 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2EBF71C7A3E1630AC412B1 /* TuistAssets+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+SignUp.swift"; sourceTree = "<group>"; };
 		51B9D48340A6951C2FFCE2E8 /* SignUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		547A188A28EACA3D00C029BB /* AddEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailViewController.swift; sourceTree = "<group>"; };
+		547A188D28EAD5F300C029BB /* CertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationViewController.swift; sourceTree = "<group>"; };
 		66DEF51AF9D1D9AB00481084 /* SignUpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SignUpTests-Info.plist"; sourceTree = "<group>"; };
 		6AB356492F82D1FCEC2BB33E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E6995BF9E4D694CAECDB7C9 /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				F885FEF80E63F09245002C53 /* SignUpViewController.swift */,
+				547A188A28EACA3D00C029BB /* AddEmailViewController.swift */,
+				547A188D28EAD5F300C029BB /* CertificationViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -525,7 +533,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1BFCEAD2829FF139E8E0285D /* SignUpDemoApp */,
 				3F158B9B120E3FDBA2B24256 /* SignUpTests */,
 				737BF62A569EB1D439A0C866 /* SignUpDemoAppTests */,
 				574B48093AE4DBBAEF6C828C /* SignUp */,
@@ -573,9 +580,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C7139D51C7BCB8D2A6258F /* TuistAssets+SignUp.swift in Sources */,
+				547A188B28EACA3D00C029BB /* AddEmailViewController.swift in Sources */,
 				39DB78BA4E751EDB541DC2FD /* TuistBundle+SignUp.swift in Sources */,
 				38D5A07940750DAFDD741478 /* ProviderProtocol.swift in Sources */,
 				E665B8AD05DA10E2ADF71EF5 /* SignUpAPI.swift in Sources */,
+				547A188E28EAD5F300C029BB /* CertificationViewController.swift in Sources */,
 				4D59EC9E66863F9F12FAFC49 /* SignUpAPIProvider.swift in Sources */,
 				036B7250BE8F5A7D46990D2E /* User.swift in Sources */,
 				21937DB6D5CD94395760536A /* AppDelegate.swift in Sources */,
@@ -606,9 +615,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D49225A940916355661D7A /* TuistAssets+SignUpDemoApp.swift in Sources */,
+				547A188C28EACA3D00C029BB /* AddEmailViewController.swift in Sources */,
 				16D0A5228BA4352B15CDD263 /* TuistBundle+SignUpDemoApp.swift in Sources */,
 				E1F2A9CF85097DA1C1A728DA /* ProviderProtocol.swift in Sources */,
 				16D05AB0D14779889E218E57 /* SignUpAPI.swift in Sources */,
+				547A188F28EAD5F300C029BB /* CertificationViewController.swift in Sources */,
 				771EFE7CA3A5827BC20CF936 /* SignUpAPIProvider.swift in Sources */,
 				DD835729F6CF102331E02367 /* User.swift in Sources */,
 				C58FB513DBDD489254502CBA /* AppDelegate.swift in Sources */,
@@ -657,11 +668,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = SignUpDemoAppTests;
 				SDKROOT = iphoneos;
@@ -749,11 +756,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = SignUpDemoAppTests;
 				SDKROOT = iphoneos;
@@ -943,11 +946,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.SignUpTests;
 				PRODUCT_NAME = SignUpTests;
 				SDKROOT = iphoneos;
@@ -973,11 +972,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.SignUpTests;
 				PRODUCT_NAME = SignUpTests;
 				SDKROOT = iphoneos;

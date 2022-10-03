@@ -15,7 +15,6 @@ public class UnderlineTextFieldWithTitle: UIView {
     }
     
     public let textField = UITextField().then {
-        $0.clearButtonMode = .whileEditing
         $0.textColor = CommonUIAsset.black.color
     }
     

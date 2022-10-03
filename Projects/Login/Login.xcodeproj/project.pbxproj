@@ -470,11 +470,9 @@
 			projectRoot = "";
 			targets = (
 				8EC12D40A59F4E845C71699F /* LoginTests */,
-				AFB6321CC7768949CDA5C44C /* LoginDemoApp */,
-				A2CA833B76BD3A488901673C /* LoginDemoAppTests */,
-				8EC12D40A59F4E845C71699F /* LoginTests */,
-				AFB6321CC7768949CDA5C44C /* LoginDemoApp */,
 				EF8CE03A2759141C3B1EAC1D /* Login */,
+				A2CA833B76BD3A488901673C /* LoginDemoAppTests */,
+				AFB6321CC7768949CDA5C44C /* LoginDemoApp */,
 			);
 		};
 /* End PBXProject section */

@@ -8,6 +8,7 @@
 
 import UIKit
 import CommonUI
+import RxCocoa
 
 class SignUpViewController: BaseViewController {
     
@@ -18,15 +19,37 @@ class SignUpViewController: BaseViewController {
             typo: .DDaengB1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
-        
         static let duplicationButtonText = "중복확인".styled(
             typo: .ButtomSmall,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
-        
         static let nextButtonText = "다음".styled(
             typo: .ButtonLarge,
             byAdding: [.color(CommonUIAsset.white.color)]
+        )
+        static let availableIDLabelText = "사용할 수 있는 아이디예요!".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mBlue.color)]
+        )
+        static let unavailableIDLabelText = "이미 존재하는 아이디예요!".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mRed.color)]
+        )
+        static let checkCapitalLetterText = "대소문자".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mBlue.color)]
+        )
+        static let checkSpecialLetterText = "특수문자".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mBlue.color)]
+        )
+        static let checkLetterLengthText = "8-20글자 이내".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mBlue.color)]
+        )
+        static let checkPasswordText = "비밀번호 일치".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
     }
     // MARK: Properties
@@ -69,8 +92,9 @@ class SignUpViewController: BaseViewController {
         $0.textField.isSecureTextEntry = true
     }
     
-    private let eyeImageOfPW = UIImageView().then {
-        $0.image = UIImage(asset: CommonUIAsset.eyeImage)
+    private let eyeImageOfPW = UIButton().then {
+        $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOffImage), for: .normal)
+        $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOnImage), for: .selected)
     }
     
     private let pwCheckTextField = UnderlineTextField().then {
@@ -81,11 +105,56 @@ class SignUpViewController: BaseViewController {
         $0.textField.isSecureTextEntry = true
     }
     
-    private let eyeImageOfPWCheck = UIImageView().then {
-        $0.image = UIImage(asset: CommonUIAsset.eyeImage)
+    private let eyeImageOfPWCheck = UIButton().then {
+        $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOffImage), for: .normal)
+        $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOnImage), for: .selected)
     }
     
-    private let nextButton = TCAButton().then {
+    private let availableIDLabel = LeftImageButton().then {
+        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalTitle = Constants.availableIDLabelText
+        $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+        $0.isHidden = true
+    }
+    
+    private let unavailableIDLabel = LeftImageButton().then {
+        $0.normalImage = UIImage(asset: CommonUIAsset.closeImage) ?? UIImage()
+        $0.normalTitle = Constants.unavailableIDLabelText
+        $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+        $0.isHidden = true
+    }
+    
+    private let checkCapitalLetter = LeftImageButton().then {
+        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalTitle = Constants.checkCapitalLetterText
+        $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+    }
+    
+    private let checkSpecialLetter = LeftImageButton().then {
+        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalTitle = Constants.checkSpecialLetterText
+        $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+    }
+    
+    private let checkLetterLength = LeftImageButton().then {
+        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalTitle = Constants.checkLetterLengthText
+        $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+    }
+    
+    private let checkPassword = LeftImageButton().then {
+        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalTitle = Constants.checkPasswordText
+        $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+    }
+    
+    private let nextButton = CTAButton().then {
         $0.setAttributedTitle(
             Constants.nextButtonText,
             for: .normal
@@ -95,22 +164,32 @@ class SignUpViewController: BaseViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        subscribeUI()
         // Do any additional setup after loading the view.
     }
     
     override func configureUI() {
-        self.view.addSubview(signUpLabel)
-        self.view.addSubview(guideLabel)
-        self.view.addSubview(idTextField)
-        self.view.addSubview(duplicationButton)
-        self.view.addSubview(pwTextField)
-        self.view.addSubview(eyeImageOfPW)
-        self.view.addSubview(pwCheckTextField)
-        self.view.addSubview(eyeImageOfPWCheck)
-        self.view.addSubview(nextButton)
+        [
+            self.signUpLabel,
+            self.guideLabel,
+            self.idTextField,
+            self.duplicationButton,
+            self.pwTextField,
+            self.eyeImageOfPW,
+            self.pwCheckTextField,
+            self.eyeImageOfPWCheck,
+            self.nextButton,
+            self.availableIDLabel,
+            self.unavailableIDLabel,
+            self.checkCapitalLetter,
+            self.checkSpecialLetter,
+            self.checkLetterLength,
+            self.checkPassword
+        ]
+            .forEach(self.view.addSubview)
     }
     
+    // MARK: Constraints
     override func setupConstraints() {
         self.signUpLabel.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
@@ -144,7 +223,7 @@ class SignUpViewController: BaseViewController {
         self.pwCheckTextField.snp.makeConstraints {
             $0.top.equalTo(self.pwTextField.snp.bottom).offset(48)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(73)
+            $0.height.equalTo(29)
         }
         self.eyeImageOfPWCheck.snp.makeConstraints {
             $0.height.width.equalTo(24)
@@ -156,5 +235,43 @@ class SignUpViewController: BaseViewController {
             $0.height.equalTo(48)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
+        // MARK: approve Label
+        self.availableIDLabel.snp.makeConstraints {
+            $0.top.equalTo(self.idTextField.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(16)
+        }
+        self.unavailableIDLabel.snp.makeConstraints {
+            $0.top.equalTo(self.idTextField.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(16)
+        }
+        self.checkCapitalLetter.snp.makeConstraints {
+            $0.top.equalTo(self.pwTextField.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(16)
+        }
+        self.checkSpecialLetter.snp.makeConstraints {
+            $0.top.equalTo(self.pwTextField.snp.bottom).offset(12)
+            $0.leading.equalTo(self.checkCapitalLetter.snp.trailing).offset(8)
+        }
+        self.checkLetterLength.snp.makeConstraints {
+            $0.top.equalTo(self.pwTextField.snp.bottom).offset(12)
+            $0.leading.equalTo(self.checkSpecialLetter.snp.trailing).offset(8)
+        }
+        self.checkPassword.snp.makeConstraints {
+            $0.top.equalTo(self.pwCheckTextField.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(16)
+        }
+    }
+    
+    // 테스트를 위한 구독 임시 함수
+    private func subscribeUI() {
+        nextButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                owner.moveToAddEMailPage()
+            }.disposed(by: disposeBag)
+    }
+    
+    private func moveToAddEMailPage() {
+        let addEMailVC = AddEmailViewController()
+        self.navigationController?.pushViewController(addEMailVC, animated: true)
     }
 }

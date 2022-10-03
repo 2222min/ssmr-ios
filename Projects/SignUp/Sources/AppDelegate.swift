@@ -18,7 +18,12 @@ import UIKit
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         let viewController = SignUpViewController()
-        window?.rootViewController = viewController
+        
+        // TODO: 나중에 바꾸기
+        let rootViewController =  UINavigationController(rootViewController: viewController)
+        window?.rootViewController = rootViewController
+        
+//        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }

@@ -27,9 +27,11 @@ public enum CommonUIAsset {
   public static let mLightGreen = CommonUIColors(name: "m-lightGreen")
   public static let mRedLighRed = CommonUIColors(name: "m-red-lighRed")
   public static let mRed = CommonUIColors(name: "m-red")
-  public static let ponitColor = CommonUIColors(name: "ponitColor")
+  public static let pointColor = CommonUIColors(name: "pointColor")
   public static let white = CommonUIColors(name: "white")
   public static let whiteGrey = CommonUIColors(name: "whiteGrey")
+  public static let approveImage = CommonUIImages(name: "approveImage")
+  public static let closeImage = CommonUIImages(name: "closeImage")
   public static let informationMark = CommonUIImages(name: "information Mark")
   public static let chevronLeft = CommonUIImages(name: "chevron-left")
   public static let cautionImage = CommonUIImages(name: "cautionImage")
@@ -40,7 +42,8 @@ public enum CommonUIAsset {
   public static let onboarding3 = CommonUIImages(name: "onboarding_3")
   public static let selectedDot = CommonUIImages(name: "selectedDot")
   public static let splashIOS = CommonUIImages(name: "splash_iOS")
-  public static let eyeImage = CommonUIImages(name: "eyeImage")
+  public static let eyeOffImage = CommonUIImages(name: "eyeOffImage")
+  public static let eyeOnImage = CommonUIImages(name: "eyeOnImage")
   public static let homeIcon = CommonUIImages(name: "homeIcon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

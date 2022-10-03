@@ -41,18 +41,6 @@ class LoginViewController: BaseViewController {
         $0.labelText = "로그인"
     }
     
-//    private let idLabel = UILabel().then {
-//        $0.attributedText = "아이디".styled(
-//            typo: .DDaengH3,
-//            byAdding: [.color(CommonUIAsset.blackGrey.color)])
-//    }
-//
-//    private let pwLabel = UILabel().then {
-//        $0.attributedText = "비밀번호".styled(
-//            typo: .DDaengH3,
-//            byAdding: [.color(CommonUIAsset.blackGrey.color)])
-//    }
-    
     private let idTextField = UnderlineTextFieldWithTitle().then {
         $0.title.attributedText = "아이디".styled(
             typo: .DDaengH3,
@@ -117,9 +105,7 @@ class LoginViewController: BaseViewController {
         
         [
             self.loginLabel,
-//            self.idLabel,
             self.idTextField,
-//            self.pwLabel,
             self.pwTextField,
             self.loginButton,
             self.bottomStackView
@@ -127,6 +113,7 @@ class LoginViewController: BaseViewController {
             .forEach(self.view.addSubview)
     }
     
+    // MARK: Constraints
     override func setupConstraints() {
         super.setupConstraints()
         
@@ -134,19 +121,11 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
             $0.leading.equalToSuperview().offset(16)
         }
-//        self.idLabel.snp.makeConstraints {
-//            $0.top.equalTo(self.loginLabel.snp.bottom).offset(64)
-//            $0.leading.equalToSuperview().offset(16)
-//        }
         self.idTextField.snp.makeConstraints {
             $0.top.equalTo(self.loginLabel.snp.bottom).offset(64)
             $0.height.equalTo(73)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
-//        self.pwLabel.snp.makeConstraints {
-//            $0.top.equalTo(self.idTextField.snp.bottom).offset(32)
-//            $0.leading.equalToSuperview().offset(16)
-//        }
         self.pwTextField.snp.makeConstraints {
             $0.top.equalTo(self.idTextField.snp.bottom).offset(32)
             $0.height.equalTo(73)
