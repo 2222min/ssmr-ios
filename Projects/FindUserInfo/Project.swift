@@ -28,5 +28,6 @@ let project = Project.frameworkWithDemoApp(name: projectName,
                                             .external(name: "Moya"),
                                             .external(name: "RxMoya"),
                                             .external(name: "BonMot"),
-                                            .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI"))
+                                            .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
+                                            .project(target: "Util", path: .relativeToCurrentFile("../Util"))
                                            ])
