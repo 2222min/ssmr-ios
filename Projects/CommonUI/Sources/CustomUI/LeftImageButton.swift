@@ -44,9 +44,9 @@ public final class LeftImageButton: UIButton {
         self.titleEdgeInsets = .init(top: 0, left: 8, bottom: 0, right: 0)
         self.imageView?.contentMode = .scaleAspectFit
         self.titleLabel?.lineBreakMode = .byTruncatingTail
+        self.titleLabel?.numberOfLines = 0
         self.contentHorizontalAlignment = .leading
         self.contentVerticalAlignment = .top
-
     }
     
     required init?(coder: NSCoder) {

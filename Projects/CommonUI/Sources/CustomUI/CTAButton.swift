@@ -19,7 +19,7 @@ public class CTAButton: UIButton {
     
     public init() {
       super.init(frame: .zero)
-        self.backgroundColor = CommonUIAsset.ponitColor.color
+        self.backgroundColor = CommonUIAsset.pointColor.color
         self.layer.cornerRadius = 8
     }
     

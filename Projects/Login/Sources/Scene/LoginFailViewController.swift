@@ -29,7 +29,7 @@ class LoginFailViewController: BaseViewController {
                     typo: .DDaengC1,
                     byAdding: [.color(CommonUIAsset.mRed.color)]
                 ),
-                "제한되어\n아이디/비밀번호 찾기를 통해\n비밀번호를 재설정해 주세요.".styled(
+                "제한되어\n아이디/비밀번호 찾기를 통해\n비밀번호를 재설정해 주세요".styled(
                     typo: .DDaengC1,
                     byAdding: [.color(CommonUIAsset.black.color)]
                 )
@@ -46,7 +46,7 @@ class LoginFailViewController: BaseViewController {
             byAdding: [.color(CommonUIAsset.black.color)]
         )
         
-        static let caution3Text = "5회 이상 입력 오류 시 개인정보 보호를 위해\n잠시 동안 로그인이 제한됩니다.".styled(
+        static let caution3Text = "5회 이상 입력 오류 시 개인정보 보호를 위해\n잠시 동안 로그인이 제한됩니다".styled(
             typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.black.color)]
         )
@@ -121,7 +121,7 @@ class LoginFailViewController: BaseViewController {
     
     private let confirmButton = UIButton().then {
         $0.setAttributedTitle(Constants.confirmButtonText, for: .normal)
-        $0.backgroundColor = CommonUIAsset.ponitColor.color
+        $0.backgroundColor = CommonUIAsset.pointColor.color
         $0.layer.cornerRadius = 8
     }
 
@@ -155,6 +155,7 @@ class LoginFailViewController: BaseViewController {
             .forEach(self.uiView.addSubview)
     }
     
+    // MARK: Constraints
     override func setupConstraints() {
         self.uiView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
@@ -191,13 +192,13 @@ class LoginFailViewController: BaseViewController {
         }
         
         self.caution2.snp.makeConstraints {
-            $0.top.equalTo(self.caution1.snp.bottom).offset(7)
+            $0.top.equalTo(self.caution1.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(74)
             $0.trailing.equalToSuperview()
         }
         
         self.caution3.snp.makeConstraints {
-            $0.top.equalTo(self.caution2.snp.bottom).offset(7)
+            $0.top.equalTo(self.caution2.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(74)
             $0.trailing.equalToSuperview()
         }
