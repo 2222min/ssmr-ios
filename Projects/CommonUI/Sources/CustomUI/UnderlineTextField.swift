@@ -16,7 +16,7 @@ public class UnderlineTextField: UIView {
         $0.textColor = CommonUIAsset.black.color
     }
     
-    private let underline = UIView().then {
+    public let underline = UIView().then {
         $0.backgroundColor = CommonUIAsset.whiteGrey.color
     }
     
