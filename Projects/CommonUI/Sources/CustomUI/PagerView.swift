@@ -29,7 +29,7 @@ public final class PagerView: UIButton {
     /// 선택 됐을때 타이틀 색상
     public var selectedTitleColor: UIColor = .black
     /// 선택 됐을때 바텀라인 색상
-    public var selectedBottomLineColor: UIColor = CommonUIAsset.ponitColor.color
+    public var selectedBottomLineColor: UIColor = CommonUIAsset.pointColor.color
     
     public init() {
         super.init(frame: .zero)

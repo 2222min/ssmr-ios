@@ -14,9 +14,8 @@ public class UnderlineLabel: UILabel {
     
     private lazy var label = UILabel()
     
-    // TODO: 색상 변경
     private let underline = UIView().then {
-        $0.backgroundColor = CommonUIAsset.ponitColor.color
+        $0.backgroundColor = CommonUIAsset.pointColor.color
     }
     
     override init(frame: CGRect) {
