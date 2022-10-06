@@ -8,6 +8,21 @@
 
 import UIKit
 
+
+/*
+ 왼쪽에 이미지 오른쪽에 라벨이 있는 UI
+ 
+ Ex) let button = LeftImageButton().then {
+  Propertis Setting:
+    Button State - Normal
+        $0.normalTitle = NSAttributedString()
+        $0.normalImage = UIImage()
+    Button State - Selected
+        $0.selectedTitle = NSAttributedString()
+        $0.seletedImage = UIImage()
+ }
+ */
+
 public final class LeftImageButton: UIButton {
     public var normalTitle: NSAttributedString = .init() {
         didSet {
