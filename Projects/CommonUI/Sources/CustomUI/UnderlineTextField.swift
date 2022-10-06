@@ -48,5 +48,11 @@ public class UnderlineTextField: UIView {
             $0.top.equalTo(textField.snp.bottom).offset(4)
         }
     }
+    
+    public func setUnderlineHeight(height: CGFloat) {
+        underline.snp.updateConstraints {
+            $0.height.equalTo(height)
+        }
+    }
 }
 

@@ -38,27 +38,38 @@ class CertificationViewController: BaseViewController {
     private let textfield1 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
-        $0.textField.
+        $0.textField.textAlignment = .center
+        $0.setUnderlineHeight(height: 2)
     }
     private let textfield2 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
+        $0.textField.textAlignment = .center
+        $0.setUnderlineHeight(height: 2)
     }
     private let textfield3 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
+        $0.textField.textAlignment = .center
+        $0.setUnderlineHeight(height: 2)
     }
     private let textfield4 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
+        $0.textField.textAlignment = .center
+        $0.setUnderlineHeight(height: 2)
     }
     private let textfield5 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
+        $0.textField.textAlignment = .center
+        $0.setUnderlineHeight(height: 2)
     }
     private let textfield6 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
+        $0.textField.textAlignment = .center
+        $0.setUnderlineHeight(height: 2)
     }
     
     private let nextButton = CTAButton().then {
@@ -85,6 +96,17 @@ class CertificationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        [
+            self.textfield1.textField,
+            self.textfield2.textField,
+            self.textfield3.textField,
+            self.textfield4.textField,
+            self.textfield5.textField,
+            self.textfield6.textField
+        ]
+            .forEach {
+                $0.delegate = self
+            }
     }
     
     // MARK: Constraints
@@ -133,5 +155,17 @@ class CertificationViewController: BaseViewController {
             $0.height.width.equalTo(40)
             $0.leading.equalTo(self.textfield5.snp.trailing).offset(8)
         }
+    }
+}
+
+extension CertificationViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        
+        if text.count == 1 {
+            return false
+        }
+        
+        return true
     }
 }
