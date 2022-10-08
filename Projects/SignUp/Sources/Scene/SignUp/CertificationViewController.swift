@@ -39,36 +39,48 @@ class CertificationViewController: BaseViewController {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
         $0.textField.textAlignment = .center
+        $0.textField.keyboardType = .numberPad
+        $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
     }
     private let textfield2 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
         $0.textField.textAlignment = .center
+        $0.textField.keyboardType = .numberPad
+        $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
     }
     private let textfield3 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
         $0.textField.textAlignment = .center
+        $0.textField.keyboardType = .numberPad
+        $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
     }
     private let textfield4 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
         $0.textField.textAlignment = .center
+        $0.textField.keyboardType = .numberPad
+        $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
     }
     private let textfield5 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
         $0.textField.textAlignment = .center
+        $0.textField.keyboardType = .numberPad
+        $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
     }
     private let textfield6 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
         $0.textField.textAlignment = .center
+        $0.textField.keyboardType = .numberPad
+        $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
     }
     
@@ -107,6 +119,7 @@ class CertificationViewController: BaseViewController {
             .forEach {
                 $0.delegate = self
             }
+        addTargetToTextFields()
     }
     
     // MARK: Constraints
@@ -156,16 +169,50 @@ class CertificationViewController: BaseViewController {
             $0.leading.equalTo(self.textfield5.snp.trailing).offset(8)
         }
     }
+    
+    private func addTargetToTextFields() {
+        textfield1.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textfield2.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textfield3.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textfield4.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textfield5.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textfield6.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    @objc func textDidChange(textField: UITextField) {
+        textField.attributedText = textField.text?.styled(typo: .DDaengH1)
+        let text = textField.text
+        
+        if text?.count == 1 {
+            switch textField {
+            case textfield1.textField:
+                textfield2.textField.becomeFirstResponder()
+            case textfield2.textField:
+                textfield3.textField.becomeFirstResponder()
+            case textfield3.textField:
+                textfield4.textField.becomeFirstResponder()
+            case textfield4.textField:
+                textfield5.textField.becomeFirstResponder()
+            case textfield5.textField:
+                textfield6.textField.becomeFirstResponder()
+            case textfield6.textField:
+                textfield6.textField.resignFirstResponder()
+            default:
+                break
+            }
+        }
+    }
 }
 
 extension CertificationViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return false }
-        
-        if text.count == 1 {
-            return false
+        if let char = string.cString(using: String.Encoding.utf8) {
+            let isBackSpace = strcmp(char, "\\b")
+            if isBackSpace == -92 {
+                return true
+            }
         }
-        
+        guard textField.text?.count ?? 0 < 1 else { return false }
         return true
     }
 }
