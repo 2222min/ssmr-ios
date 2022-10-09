@@ -507,11 +507,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E73A33D74D8CBEC91B1DCFAB /* Onboarding */,
 				D7378499AB206CDE1001A1A9 /* OnboardingDemoAppTests */,
 				DA88977530A9E72DBD7E283A /* OnboardingTests */,
 				EF96B08A8A3FB0A356D226D3 /* OnboardingDemoApp */,
-				D7378499AB206CDE1001A1A9 /* OnboardingDemoAppTests */,
-				E73A33D74D8CBEC91B1DCFAB /* Onboarding */,
 			);
 		};
 /* End PBXProject section */

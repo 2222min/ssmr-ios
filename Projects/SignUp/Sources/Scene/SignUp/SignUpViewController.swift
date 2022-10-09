@@ -78,6 +78,7 @@ class SignUpViewController: BaseViewController {
     private let duplicationButton = UIButton().then {
         $0.setAttributedTitle(Constants.duplicationButtonText, for: .normal)
         $0.backgroundColor = CommonUIAsset.grey.color
+        $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
         $0.layer.cornerRadius = 12
     }
     
@@ -204,7 +205,6 @@ class SignUpViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(73)
         }
-        // TODO: 중복 버튼 상하 간격
         self.duplicationButton.snp.makeConstraints {
             $0.top.bottom.equalTo(self.idTextField.textField)
             $0.trailing.equalTo(self.idTextField.snp.trailing)

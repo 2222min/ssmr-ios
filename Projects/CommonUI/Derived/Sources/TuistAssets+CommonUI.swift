@@ -42,6 +42,7 @@ public enum CommonUIAsset {
   public static let onboarding3 = CommonUIImages(name: "onboarding_3")
   public static let selectedDot = CommonUIImages(name: "selectedDot")
   public static let splashIOS = CommonUIImages(name: "splash_iOS")
+  public static let dotImage = CommonUIImages(name: "dotImage")
   public static let eyeOffImage = CommonUIImages(name: "eyeOffImage")
   public static let eyeOnImage = CommonUIImages(name: "eyeOnImage")
   public static let homeIcon = CommonUIImages(name: "homeIcon")
