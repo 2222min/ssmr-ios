@@ -220,6 +220,7 @@ class CertificationViewController: BaseViewController {
                 $0.delegate = self
             }
         addTargetToTextFields()
+        subscribeUI()
     }
     
     // MARK: Constraints
@@ -334,6 +335,19 @@ class CertificationViewController: BaseViewController {
                 break
             }
         }
+    }
+    
+    // 테스트를 위한 구독 임시 함수
+    private func subscribeUI() {
+        nextButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                owner.moveToAddInfoPage()
+            }.disposed(by: disposeBag)
+    }
+    
+    private func moveToAddInfoPage() {
+        let addInfoVC = AddInfoViewController()
+        self.navigationController?.pushViewController(addInfoVC, animated: true)
     }
 }
 

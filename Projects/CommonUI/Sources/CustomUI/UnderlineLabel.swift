@@ -25,7 +25,6 @@ public class UnderlineLabel: UILabel {
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureUI()
     }
     
     private func configureUI() {
