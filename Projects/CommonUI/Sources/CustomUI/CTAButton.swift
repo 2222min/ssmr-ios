@@ -6,7 +6,16 @@
 //  Copyright © 2022 team.io. All rights reserved.
 //
 
+import Util
 import UIKit
+
+/*
+ Ex) let button = CTAButton().then {
+    $0.title = "버튼 타이틀" // 타이틀만 변경해서 사용하면 됨
+    $0.isEnabled = false // disabled 의 경우
+ }
+ */
+
 
 public class CTAButton: UIButton {
     public var title: String = "" {
@@ -19,7 +28,8 @@ public class CTAButton: UIButton {
     
     public init() {
       super.init(frame: .zero)
-        self.backgroundColor = CommonUIAsset.pointColor.color
+        self.setBackgroundColor(color: CommonUIAsset.pointColor.color, forState: .normal)
+        self.setBackgroundColor(color: CommonUIAsset.grey.color, forState: .disabled)
         self.layer.cornerRadius = 8
     }
     

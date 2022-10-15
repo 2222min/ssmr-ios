@@ -10,6 +10,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+/*
+ 커스텀 네비게이션 바
+ Ex) private let topBar = NavigationTopBar().then {
+     $0.titleLabel.text = "타이틀" // 네비게이션 타이틀 추가
+     $0.leftButton.setImage(UIImage(), for: .normal) // 왼쪽 버튼에 이미지 추가
+     $0.rightButton.setImage(UIImage(), for: .normal) // 오른쪽 버튼에 이미지 추가
+ }
+ */
+
 public final class NavigationTopBar: UIView {
     
     // MARK: Constants

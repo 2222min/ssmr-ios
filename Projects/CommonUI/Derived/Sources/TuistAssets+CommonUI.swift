@@ -20,6 +20,7 @@ public enum CommonUIAsset {
   public static let black = CommonUIColors(name: "black")
   public static let blackGrey = CommonUIColors(name: "blackGrey")
   public static let cream = CommonUIColors(name: "cream")
+  public static let deepGrey = CommonUIColors(name: "deepGrey")
   public static let grey = CommonUIColors(name: "grey")
   public static let mBlue = CommonUIColors(name: "m-blue")
   public static let mGreen = CommonUIColors(name: "m-green")

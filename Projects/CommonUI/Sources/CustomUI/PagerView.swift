@@ -8,6 +8,13 @@
 
 import UIKit
 
+/*
+ private let pager = PagerView().then {
+     $0.title = "타이틀" // pager 타이틀
+     $0.changeColor(true) // pager 백그라운드 color 변경 true: 선택, false: 미선택
+ }
+ */
+
 public final class PagerView: UIButton {
     
     // MARK: UI Properties
