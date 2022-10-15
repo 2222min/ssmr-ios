@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		1AAE47E119B76D9DCEF37A9B /* TuistBundle+FindUserInfoDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D171D2B0EDB71F46748B764C /* TuistBundle+FindUserInfoDemoApp.swift */; };
 		1EAFE46FFDB0B8C4BF2DB702 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910049233F88716D9F36014 /* RxSwift.framework */; platformFilter = ios; };
 		1F46B2FD24F520DCF60237B6 /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDBCD4244A291B244F74E46 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
+		214042E9E09689853C41E197 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B160E64A587471DD00946F /* ResetPasswordViewController.swift */; };
+		34405E32EF43E5CD16E42AD8 /* ResetPasswordReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C46D4B1B575120AC616D3 /* ResetPasswordReactor.swift */; };
 		3932E21994E6818AFBE3322D /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713A81A4095FC896833A0830 /* Then.framework */; platformFilter = ios; };
 		3C3C992B38F823A6F9C19F88 /* TuistAssets+FindUserInfoDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBBA4386FB7719B5B07AE36 /* TuistAssets+FindUserInfoDemoApp.swift */; };
 		3CE5CF17F3355C59D809CA52 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD80513E13FF11703BC1D14 /* RxMoya.framework */; platformFilter = ios; };
@@ -44,10 +46,6 @@
 		87DD39DAE893C29565D8D958 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910049233F88716D9F36014 /* RxSwift.framework */; platformFilter = ios; };
 		918796D8CD19D57876D6BDD3 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF77E6C4AACE7D48DDE0355 /* RxCocoa.framework */; platformFilter = ios; };
 		938F332BD13AC6EBE1760906 /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9964445DA7AA4C6120EA72E /* CwlCatchException.framework */; platformFilter = ios; };
-		9B649F4D28FACE0B006009A0 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B649F4728FACE0B006009A0 /* ResetPasswordViewController.swift */; };
-		9B649F4E28FACE0B006009A0 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B649F4728FACE0B006009A0 /* ResetPasswordViewController.swift */; };
-		9B649F4F28FACE0B006009A0 /* ResetPasswordReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B649F4828FACE0B006009A0 /* ResetPasswordReactor.swift */; };
-		9B649F5028FACE0B006009A0 /* ResetPasswordReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B649F4828FACE0B006009A0 /* ResetPasswordReactor.swift */; };
 		9E5741A93C2D2C96391B4E62 /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3071AE189CDA1FFC58A1672 /* FindIdView.swift */; };
 		9F4A265598EFB38C6D86FE8F /* TuistAssets+FindUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B477BFE616361BA40ACB26 /* TuistAssets+FindUserInfo.swift */; };
 		9FA0430443C2CF4141D908A1 /* Util.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34A81B3D81189C239BAC8AA5 /* Util.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -57,12 +55,14 @@
 		AFE7E5CDCC640054160A9672 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED9CD3388A880EFBFB11A68 /* Moya.framework */; platformFilter = ios; };
 		B4D6E0B7BF176E52E7E5528E /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3071AE189CDA1FFC58A1672 /* FindIdView.swift */; };
 		B54E5C74D33EEFCE05B3763D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E107DF53D84D920B409A2 /* AppDelegate.swift */; };
+		B85B8144B7843FE1F9CF25DD /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B160E64A587471DD00946F /* ResetPasswordViewController.swift */; };
 		B8F751528996AED778180AA8 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0187685588388F82399D5BC9 /* BonMot.framework */; platformFilter = ios; };
 		B9CFC0EC5794E7E6759BF56A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083758FF3D8D438593EF5F10 /* RxBlocking.framework */; platformFilter = ios; };
 		BEB4FFFF571653D63DDD22F3 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319BCA2956429CB182D1E880 /* RxTest.framework */; platformFilter = ios; };
 		BFFE1EE2F44E0419E9B909D7 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319BCA2956429CB182D1E880 /* RxTest.framework */; platformFilter = ios; };
 		C2C44992231588BD12A1BF61 /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9203C5F46C25A5C0B7F68D /* CommonUI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C534B835076CB7C3FE847D53 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 083758FF3D8D438593EF5F10 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C777701A117AE0A0F37CF043 /* ResetPasswordReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C46D4B1B575120AC616D3 /* ResetPasswordReactor.swift */; };
 		CB61BF560C88E9CBCA5E137B /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D384AE9DB05C9A0181E40326 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA39F2D3ECC67EF0A5EB47F9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910049233F88716D9F36014 /* RxSwift.framework */; platformFilter = ios; };
 		DF2F5C4A7B30948F08F2E986 /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1DB30BCF97B996AEC9D6C7 /* ReactorKit.framework */; platformFilter = ios; };
@@ -175,14 +175,13 @@
 		4DD9C0DD3C02F99E6BD1F76A /* FindUserInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindUserInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5F5000168A3334D6AA8AB6 /* FindPwView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwView.swift; sourceTree = "<group>"; };
 		5DC39F703CC5C1A8FBE3BEC1 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		62B160E64A587471DD00946F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		6C9203C5F46C25A5C0B7F68D /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D62E8C42937EE045826A56D /* FindUserInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindUserInfoReactor.swift; sourceTree = "<group>"; };
 		6DD80513E13FF11703BC1D14 /* RxMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FDBCD4244A291B244F74E46 /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		713A81A4095FC896833A0830 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF77E6C4AACE7D48DDE0355 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B649F4728FACE0B006009A0 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		9B649F4828FACE0B006009A0 /* ResetPasswordReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordReactor.swift; sourceTree = "<group>"; };
 		9CC6F5527095A800799F3C48 /* FindUserInfo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FindUserInfo-Info.plist"; sourceTree = "<group>"; };
 		B1CB081B4D73CEC5F30A1645 /* CwlMachBadInstructionHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlMachBadInstructionHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF9B24B83D15A9AEA2B73D4 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +197,7 @@
 		D384AE9DB05C9A0181E40326 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E5EBC3567B8C7DE70C0D6F /* FindUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindUserInfoViewController.swift; sourceTree = "<group>"; };
 		D83E107DF53D84D920B409A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD6C46D4B1B575120AC616D3 /* ResetPasswordReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordReactor.swift; sourceTree = "<group>"; };
 		DE07F80DDDBFA12669DA0046 /* RxNimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C1A3F221832CA7570F654F /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FAAE3569BD5D205B21DE7D /* FindUserInfoDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindUserInfoDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,8 +373,8 @@
 				54B8BD4DA343B24BCA70AE77 /* Views */,
 				6D62E8C42937EE045826A56D /* FindUserInfoReactor.swift */,
 				D4E5EBC3567B8C7DE70C0D6F /* FindUserInfoViewController.swift */,
-				9B649F4728FACE0B006009A0 /* ResetPasswordViewController.swift */,
-				9B649F4828FACE0B006009A0 /* ResetPasswordReactor.swift */,
+				DD6C46D4B1B575120AC616D3 /* ResetPasswordReactor.swift */,
+				62B160E64A587471DD00946F /* ResetPasswordViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -499,10 +499,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1F02545CBAD84A4693B86FB5 /* FindUserInfoDemoAppTests */,
 				ADDBEB1C771D19D7F93E002E /* FindUserInfo */,
-				BC11AB5662EE9D06F00E9A3E /* FindUserInfoDemoApp */,
 				5B2096E17537636111ACEC3C /* FindUserInfoTests */,
+				BC11AB5662EE9D06F00E9A3E /* FindUserInfoDemoApp */,
+				1F02545CBAD84A4693B86FB5 /* FindUserInfoDemoAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -555,10 +555,10 @@
 				3C3C992B38F823A6F9C19F88 /* TuistAssets+FindUserInfoDemoApp.swift in Sources */,
 				1AAE47E119B76D9DCEF37A9B /* TuistBundle+FindUserInfoDemoApp.swift in Sources */,
 				FDD70DBB87754160D76F88A7 /* AppDelegate.swift in Sources */,
-				9B649F5028FACE0B006009A0 /* ResetPasswordReactor.swift in Sources */,
 				48AA231A01A8EE88B4BF5EF5 /* FindUserInfoReactor.swift in Sources */,
 				4675F3E26D3F4579F8848E24 /* FindUserInfoViewController.swift in Sources */,
-				9B649F4E28FACE0B006009A0 /* ResetPasswordViewController.swift in Sources */,
+				C777701A117AE0A0F37CF043 /* ResetPasswordReactor.swift in Sources */,
+				B85B8144B7843FE1F9CF25DD /* ResetPasswordViewController.swift in Sources */,
 				B4D6E0B7BF176E52E7E5528E /* FindIdView.swift in Sources */,
 				74E1E56F8DA6AD4C6F2DB6F1 /* FindPwView.swift in Sources */,
 			);
@@ -571,10 +571,10 @@
 				9F4A265598EFB38C6D86FE8F /* TuistAssets+FindUserInfo.swift in Sources */,
 				F4FA36C6987F93DEB9003BED /* TuistBundle+FindUserInfo.swift in Sources */,
 				B54E5C74D33EEFCE05B3763D /* AppDelegate.swift in Sources */,
-				9B649F4F28FACE0B006009A0 /* ResetPasswordReactor.swift in Sources */,
 				F34D2D1FC4213FDFA031B339 /* FindUserInfoReactor.swift in Sources */,
 				6A9DC0D2E0BC6134E3A3AE5B /* FindUserInfoViewController.swift in Sources */,
-				9B649F4D28FACE0B006009A0 /* ResetPasswordViewController.swift in Sources */,
+				34405E32EF43E5CD16E42AD8 /* ResetPasswordReactor.swift in Sources */,
+				214042E9E09689853C41E197 /* ResetPasswordViewController.swift in Sources */,
 				9E5741A93C2D2C96391B4E62 /* FindIdView.swift in Sources */,
 				7AF650129FA018914F4EB900 /* FindPwView.swift in Sources */,
 			);
@@ -626,7 +626,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = FindUserInfoDemoAppTests;
 				SDKROOT = iphoneos;
@@ -744,7 +748,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.FindUserInfoTests;
 				PRODUCT_NAME = FindUserInfoTests;
 				SDKROOT = iphoneos;
@@ -770,7 +778,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.FindUserInfoTests;
 				PRODUCT_NAME = FindUserInfoTests;
 				SDKROOT = iphoneos;
@@ -796,7 +808,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = FindUserInfoDemoAppTests;
 				SDKROOT = iphoneos;

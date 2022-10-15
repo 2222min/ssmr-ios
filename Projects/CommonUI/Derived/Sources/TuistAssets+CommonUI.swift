@@ -45,7 +45,6 @@ public enum CommonUIAsset {
   public static let splashIOS = CommonUIImages(name: "splash_iOS")
   public static let eyeOffImage = CommonUIImages(name: "eyeOffImage")
   public static let eyeOnImage = CommonUIImages(name: "eyeOnImage")
-  public static let bankSymbolWoori = CommonUIImages(name: "bank_symbol_woori")
   public static let homeIcon = CommonUIImages(name: "homeIcon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

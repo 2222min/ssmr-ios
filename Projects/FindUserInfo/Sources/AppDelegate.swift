@@ -18,8 +18,13 @@ import UIKit
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let viewController = FindUserInfoViewController.create() 
-        window?.rootViewController = viewController
+        // TODO: 나중에 바꾸기
+        let viewController = FindUserInfoViewController.create()
+        let rootViewController =  UINavigationController(rootViewController: viewController)
+        rootViewController.navigationBar.isHidden = true
+        window?.rootViewController = rootViewController
+        
+//        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }
