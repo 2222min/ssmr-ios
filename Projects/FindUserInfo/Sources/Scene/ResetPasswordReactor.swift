@@ -19,11 +19,8 @@ final class ResetPasswordReactor: Reactor {
 	let initialState: State = State()
 
 	// MARK: Initializing
-	let effector: ResetPasswordEffectorProtocol
 	
-	init(effector: ResetPasswordEffectorProtocol) {
-		self.effector = effector
-	}
+	init() {}
     
 	// MARK: Action
 	enum Action {}
