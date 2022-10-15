@@ -30,8 +30,10 @@
 		4C7E0D2FCAE9066409C91889 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41FD7857C1AF339283E85D4 /* RxNimble.framework */; platformFilter = ios; };
 		4D59EC9E66863F9F12FAFC49 /* SignUpAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192740A8558F0FBDA5593D00 /* SignUpAPIProvider.swift */; };
 		4E93B193EA9968A395A3EF7B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885FEF80E63F09245002C53 /* SignUpViewController.swift */; };
-		546E39AE28F4326F0075108C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E39AD28F4326F0075108C /* DatePickerView.swift */; };
-		546E39AF28F4326F0075108C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E39AD28F4326F0075108C /* DatePickerView.swift */; };
+		5435601428FAA215007EF3D3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435601328FAA215007EF3D3 /* DatePickerViewController.swift */; };
+		5435601528FAA215007EF3D3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435601328FAA215007EF3D3 /* DatePickerViewController.swift */; };
+		5435601728FAB352007EF3D3 /* SignUpSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435601628FAB352007EF3D3 /* SignUpSuccessViewController.swift */; };
+		5435601828FAB352007EF3D3 /* SignUpSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435601628FAB352007EF3D3 /* SignUpSuccessViewController.swift */; };
 		54D2AE18F2DAA3A636AFF8C6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8C1EFD9A4D6F218588D661 /* RxCocoa.framework */; platformFilter = ios; };
 		5DCCD7235697EAC30B1C8538 /* Then.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 998120C01F122FF6EBA3A379 /* Then.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DF41379839CB235EFA867B2 /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2166758057A6AF16477DE39D /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
@@ -192,7 +194,8 @@
 		495FA455BB4C92102705F5A9 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2EBF71C7A3E1630AC412B1 /* TuistAssets+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+SignUp.swift"; sourceTree = "<group>"; };
 		51B9D48340A6951C2FFCE2E8 /* SignUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		546E39AD28F4326F0075108C /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		5435601328FAA215007EF3D3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		5435601628FAB352007EF3D3 /* SignUpSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessViewController.swift; sourceTree = "<group>"; };
 		57DD7756FE843AA76D599E30 /* CertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationViewController.swift; sourceTree = "<group>"; };
 		66DEF51AF9D1D9AB00481084 /* SignUpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SignUpTests-Info.plist"; sourceTree = "<group>"; };
 		6AB356492F82D1FCEC2BB33E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -331,7 +334,8 @@
 				57DD7756FE843AA76D599E30 /* CertificationViewController.swift */,
 				F885FEF80E63F09245002C53 /* SignUpViewController.swift */,
 				348E6066DF37555263843ED2 /* SpeechBalloonView.swift */,
-				546E39AD28F4326F0075108C /* DatePickerView.swift */,
+				5435601328FAA215007EF3D3 /* DatePickerViewController.swift */,
+				5435601628FAB352007EF3D3 /* SignUpSuccessViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -597,14 +601,15 @@
 				E665B8AD05DA10E2ADF71EF5 /* SignUpAPI.swift in Sources */,
 				4D59EC9E66863F9F12FAFC49 /* SignUpAPIProvider.swift in Sources */,
 				036B7250BE8F5A7D46990D2E /* User.swift in Sources */,
-				546E39AF28F4326F0075108C /* DatePickerView.swift in Sources */,
 				21937DB6D5CD94395760536A /* AppDelegate.swift in Sources */,
 				ED040B39BA8792F1584CE6E3 /* LoginReactor.swift in Sources */,
 				F02AA3D530315D146FA942E0 /* LoginViewController.swift in Sources */,
 				7E5DAAF960F661658F2846DC /* AddEmailViewController.swift in Sources */,
 				A236DA715CEB56F5020C9CAC /* AddInfoViewController.swift in Sources */,
+				5435601528FAA215007EF3D3 /* DatePickerViewController.swift in Sources */,
 				AEF73B48123347113E8D6434 /* CertificationViewController.swift in Sources */,
 				D60CEB5D61A288CF18B7C3EB /* SignUpViewController.swift in Sources */,
+				5435601828FAB352007EF3D3 /* SignUpSuccessViewController.swift in Sources */,
 				230C8816751DAB47C25CB982 /* SpeechBalloonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,14 +640,15 @@
 				16D05AB0D14779889E218E57 /* SignUpAPI.swift in Sources */,
 				771EFE7CA3A5827BC20CF936 /* SignUpAPIProvider.swift in Sources */,
 				DD835729F6CF102331E02367 /* User.swift in Sources */,
-				546E39AE28F4326F0075108C /* DatePickerView.swift in Sources */,
 				C58FB513DBDD489254502CBA /* AppDelegate.swift in Sources */,
 				05A0BF64CC5C8F956FFB351D /* LoginReactor.swift in Sources */,
 				7C95D4CE496CD5E74F554772 /* LoginViewController.swift in Sources */,
 				20FE9C733570AFE225A2D0C5 /* AddEmailViewController.swift in Sources */,
 				9076C51AC3DB2BF0953FC0BB /* AddInfoViewController.swift in Sources */,
+				5435601428FAA215007EF3D3 /* DatePickerViewController.swift in Sources */,
 				95749A53866763C5863F6AA4 /* CertificationViewController.swift in Sources */,
 				4E93B193EA9968A395A3EF7B /* SignUpViewController.swift in Sources */,
+				5435601728FAB352007EF3D3 /* SignUpSuccessViewController.swift in Sources */,
 				76DFA052426FB06DBAE3EA3C /* SpeechBalloonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -908,6 +914,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 842FZARC28;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/SignUpDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -932,6 +939,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 842FZARC28;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/SignUpDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

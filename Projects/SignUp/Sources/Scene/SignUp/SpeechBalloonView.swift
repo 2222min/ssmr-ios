@@ -14,8 +14,7 @@ class SpeechBalloonView: UIView {
     private let backgroundImageView = UIImageView().then {
         $0.image = UIImage(asset: CommonUIAsset.speechBalloonImage)
     }
-    private let label = UILabel()
-    private let triangle = UIBezierPath()
+    let label = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,12 +40,5 @@ class SpeechBalloonView: UIView {
             $0.top.equalTo(self.backgroundImageView).offset(5)
             $0.leading.trailing.equalTo(self.backgroundImageView).inset(8)
         }
-    }
-    
-    public func setLabelText(text: String) {
-        self.label.attributedText = text.styled(
-            typo: .DDaengC2,
-            byAdding: [.color(CommonUIAsset.white.color)]
-        )
     }
 }

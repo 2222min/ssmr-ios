@@ -15,6 +15,7 @@ class SignUpViewController: BaseViewController {
     // MARK: Constants
     
     private enum Constants {
+        static let signUpLabelText = "회원가입"
         static let guideLabelText = "로그인에 사용할 이메일주소와\n비밀번호를 입력해 주세요".styled(
             typo: .DDaengB1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
@@ -51,66 +52,65 @@ class SignUpViewController: BaseViewController {
             typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
+        static let idTextFieldTitle = "아이디".styled(
+            typo: .DDaengH3,
+            byAdding: [.color(CommonUIAsset.blackGrey.color)]
+        )
+        static let idTextFieldPlaceholder = "아이디를 입력해 주세요".styled(
+            typo: .DDaengMB2,
+            byAdding: [.color(CommonUIAsset.whiteGrey.color)]
+        )
+        static let pwTextFieldTitle = "비밀번호".styled(
+            typo: .DDaengH3,
+            byAdding: [.color(CommonUIAsset.blackGrey.color)]
+        )
+        static let pwTextFieldPlaceholder = "비밀번호를 입력해 주세요".styled(
+            typo: .DDaengMB2,
+            byAdding: [.color(CommonUIAsset.whiteGrey.color)]
+        )
+        static let pwCheckTextFieldPlaceholder = "비밀번호를 재입력해 주세요.".styled(
+            typo: .DDaengMB2,
+            byAdding: [.color(CommonUIAsset.whiteGrey.color)]
+        )
     }
     // MARK: Properties
     
     // MARK: UI Properties
     
     private let signUpLabel = UnderlineLabel().then {
-        $0.labelText = "회원가입"
+        $0.labelText = Constants.signUpLabelText
     }
-    
     private let guideLabel = UILabel().then {
         $0.attributedText = Constants.guideLabelText
         $0.numberOfLines = 0
     }
-    
     private let idTextField = UnderlineTextFieldWithTitle().then {
-        $0.title.attributedText = "아이디".styled(
-            typo: .DDaengH3,
-            byAdding: [.color(CommonUIAsset.blackGrey.color)])
-        $0.textField.attributedPlaceholder = NSAttributedString(
-            string: "아이디를 입력해 주세요",
-            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
-        )
+        $0.title.attributedText = Constants.idTextFieldTitle
+        $0.textField.attributedPlaceholder = Constants.idTextFieldPlaceholder
     }
-    
     private let duplicationButton = UIButton().then {
         $0.setAttributedTitle(Constants.duplicationButtonText, for: .normal)
         $0.backgroundColor = CommonUIAsset.grey.color
         $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
         $0.layer.cornerRadius = 12
     }
-    
     private let pwTextField = UnderlineTextFieldWithTitle().then {
-        $0.title.attributedText = "비밀번호".styled(
-            typo: .DDaengH3,
-            byAdding: [.color(CommonUIAsset.blackGrey.color)])
-        $0.textField.attributedPlaceholder =  NSAttributedString(
-            string: "비밀번호를 입력해 주세요.",
-            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
-        )
+        $0.title.attributedText = Constants.pwTextFieldTitle
+        $0.textField.attributedPlaceholder = Constants.pwTextFieldPlaceholder
         $0.textField.isSecureTextEntry = true
     }
-    
     private let eyeImageOfPW = UIButton().then {
         $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOffImage), for: .normal)
         $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOnImage), for: .selected)
     }
-    
     private let pwCheckTextField = UnderlineTextField().then {
-        $0.textField.attributedPlaceholder =  NSAttributedString(
-            string: "비밀번호를 재입력해 주세요.",
-            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
-        )
+        $0.textField.attributedPlaceholder = Constants.pwCheckTextFieldPlaceholder
         $0.textField.isSecureTextEntry = true
     }
-    
     private let eyeImageOfPWCheck = UIButton().then {
         $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOffImage), for: .normal)
         $0.setBackgroundImage(UIImage(asset: CommonUIAsset.eyeOnImage), for: .selected)
     }
-    
     private let availableIDLabel = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
         $0.normalTitle = Constants.availableIDLabelText
@@ -118,7 +118,6 @@ class SignUpViewController: BaseViewController {
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
         $0.isHidden = true
     }
-    
     private let unavailableIDLabel = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.closeImage) ?? UIImage()
         $0.normalTitle = Constants.unavailableIDLabelText
@@ -126,47 +125,40 @@ class SignUpViewController: BaseViewController {
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
         $0.isHidden = true
     }
-    
     private let checkCapitalLetter = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
         $0.normalTitle = Constants.checkCapitalLetterText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
-    
     private let checkSpecialLetter = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
         $0.normalTitle = Constants.checkSpecialLetterText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
-    
     private let checkLetterLength = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
         $0.normalTitle = Constants.checkLetterLengthText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
-    
     private let checkPassword = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
         $0.normalTitle = Constants.checkPasswordText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
-    
     private let nextButton = CTAButton().then {
         $0.setAttributedTitle(
             Constants.nextButtonText,
             for: .normal
         )
     }
-    
  
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeUI()
-        // Do any additional setup after loading the view.
     }
     
     override func configureUI() {

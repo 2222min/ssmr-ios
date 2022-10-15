@@ -14,6 +14,7 @@ class AddInfoViewController: BaseViewController {
 
     // MARK: Constants
     private enum Constants {
+        static let signUpLabelText = "회원가입"
         static let guideLabelText = "사용하실 닉네임과\n생년월일을 입력해 주세요".styled(
             typo: .DDaengB1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
@@ -34,32 +35,51 @@ class AddInfoViewController: BaseViewController {
             typo: .ButtonLarge,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
+        static let nicknameTextFieldTitle = "닉네임".styled(
+            typo: .DDaengH3,
+            byAdding: [.color(CommonUIAsset.blackGrey.color)]
+        )
+        static let nicknameTextFieldPlaceholder = "닉네임을 입력해주세요.".styled(
+            typo: .DDaengMB2,
+            byAdding: [.color(CommonUIAsset.whiteGrey.color)]
+        )
+        static let dateOfBirthTextFieldTitle = "생년월일".styled(
+            typo: .DDaengH3,
+            byAdding: [.color(CommonUIAsset.blackGrey.color)]
+        )
+        static let dateOfBirthTextFieldPlaceholder = "2021.07.02".styled(
+            typo: .DDaengMB2,
+            byAdding: [.color(CommonUIAsset.whiteGrey.color)]
+        )
+        static let speechBallonViewText = "닉네임 결정하기 어렵다면?".styled(
+            typo: .DDaengC2,
+            byAdding: [.color(CommonUIAsset.white.color)]
+        )
+        static let recheckGuideLabelText = "멋진 날에 태어나셨네요~\n생년월일은 수정할 수 없으니 정확하게 기입되었는지 확인해 주세요!".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.blackGrey.color)]
+        )
     }
     
     // MARK: Properties
     
     // MARK: UI Properties
     private let signUpLabel = UnderlineLabel().then {
-        $0.labelText = "회원가입"
+        $0.labelText = Constants.signUpLabelText
     }
     private let guideLabel = UILabel().then {
         $0.attributedText = Constants.guideLabelText
         $0.numberOfLines = 0
     }
     private let nicknameTextField = UnderlineTextFieldWithTitle().then {
-        $0.title.attributedText = "닉네임".styled(
-            typo: .DDaengH3,
-            byAdding: [.color(CommonUIAsset.blackGrey.color)])
-        $0.textField.attributedPlaceholder = NSAttributedString(
-            string: "닉네임을 입력해주세요.",
-            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
-        )
+        $0.title.attributedText = Constants.nicknameTextFieldTitle
+        $0.textField.attributedPlaceholder = Constants.nicknameTextFieldPlaceholder
     }
     private let diceImageView = UIImageView().then {
         $0.image = UIImage(asset: CommonUIAsset.diceImage)
     }
     private let speechBalloonView = SpeechBalloonView().then {
-        $0.setLabelText(text: "닉네임 결정하기 어렵다면?")
+        $0.label.attributedText = Constants.speechBallonViewText
     }
     private let checkCountLetter = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
@@ -80,13 +100,15 @@ class AddInfoViewController: BaseViewController {
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
     private let dateOfBirthTextField =  UnderlineTextFieldWithTitle().then {
-        $0.title.attributedText = "생년월일".styled(
-            typo: .DDaengH3,
-            byAdding: [.color(CommonUIAsset.blackGrey.color)])
-        $0.textField.attributedPlaceholder = NSAttributedString(
-            string: "2021.07.02",
-            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
-        )
+        $0.title.attributedText = Constants.dateOfBirthTextFieldTitle
+        $0.textField.attributedPlaceholder = Constants.dateOfBirthTextFieldPlaceholder
+    }
+    private let recheckGuideLabel = LeftImageButton().then {
+//        $0.normalImage = UIImage(asset: CommonUIAsset.informationMark) ?? UIImage()
+        $0.normalTitle = Constants.recheckGuideLabelText
+//        $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
+//        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+        
     }
     private let nextButton = CTAButton().then {
         $0.setAttributedTitle(
@@ -106,7 +128,8 @@ class AddInfoViewController: BaseViewController {
             self.checkSpace,
             self.checkAvailable,
             self.nextButton,
-            self.dateOfBirthTextField
+            self.dateOfBirthTextField,
+            self.recheckGuideLabel
         ]
             .forEach(self.view.addSubview)
     }
@@ -117,7 +140,7 @@ class AddInfoViewController: BaseViewController {
         
         self.dateOfBirthTextField.textField.rx.controlEvent(.touchDown)
             .subscribe(with: self) { owner, _ in
-                print("sdasdsadssa")
+                owner.presentDatePicker()
             }
             .disposed(by: disposeBag)
     }
@@ -162,11 +185,22 @@ class AddInfoViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(73)
         }
+        self.recheckGuideLabel.snp.makeConstraints {
+            $0.top.equalTo(self.dateOfBirthTextField.snp.bottom).offset(12)
+            $0.leading.trailing.equalToSuperview().inset(18)
+        }
         self.nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-50)
             $0.height.equalTo(48)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
+    }
+    
+    private func presentDatePicker() {
+        let datePickerVC = DatePickerViewController()
+        datePickerVC.modalPresentationStyle = .overCurrentContext
+        datePickerVC.modalTransitionStyle = .crossDissolve
+        self.present(datePickerVC, animated: true)
     }
 }
 

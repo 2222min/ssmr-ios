@@ -13,6 +13,7 @@ class CertificationViewController: BaseViewController {
 
     // MARK: Constants
     private enum Constants {
+        static let signUpLabelText = "회원가입"
         static let guideLabelText = "입력하신 이메일 주소에\n메일을 발송했어요".styled(
             typo: .DDaengB1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
@@ -55,32 +56,27 @@ class CertificationViewController: BaseViewController {
     
     // MARK: UI Properties
     private let signUpLabel = UnderlineLabel().then {
-        $0.labelText = "회원가입"
+        $0.labelText = Constants.signUpLabelText
     }
-    
     private let guideLabel = UILabel().then {
         $0.attributedText = Constants.guideLabelText
         $0.numberOfLines = 0
     }
-    
     // TODO: 타이머 구현
 //    private let timerLabel = UILabel().then {
 //    }
-    
     private let resendButton = UIButton().then {
         $0.setAttributedTitle(Constants.resendButtonText, for: .normal)
         $0.backgroundColor = CommonUIAsset.grey.color
         $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
         $0.layer.cornerRadius = 12
     }
-    
     private let checkFailLabel = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.closeImage) ?? UIImage()
         $0.normalTitle = Constants.checkFailLabelText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
-    
     private let checkSuccessLabel = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.approveImage)?.withTintColor(CommonUIAsset.grey.color) ?? UIImage()
         $0.normalTitle = Constants.checkSuccessLabelText
@@ -88,14 +84,12 @@ class CertificationViewController: BaseViewController {
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
         $0.isHidden = true
     }
-    
     private let resendSuccessLabel = LeftImageButton().then {
         $0.normalImage = UIImage(asset: CommonUIAsset.informationMark)?.withTintColor(CommonUIAsset.mGreen.color) ?? UIImage()
         $0.normalTitle = Constants.resendSuccessLabelText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
-    
     private let textfield1 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
         $0.textField.clearButtonMode = .never
