@@ -138,9 +138,16 @@ class AddInfoViewController: BaseViewController {
         super.viewDidLoad()
         self.dateOfBirthTextField.textField.delegate = self
         
+        // 테스트를 위한 임시 구독
         self.dateOfBirthTextField.textField.rx.controlEvent(.touchDown)
             .subscribe(with: self) { owner, _ in
                 owner.presentDatePicker()
+            }
+            .disposed(by: disposeBag)
+        
+        self.nextButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                owner.moveToSuccessPage()
             }
             .disposed(by: disposeBag)
     }
@@ -201,6 +208,10 @@ class AddInfoViewController: BaseViewController {
         datePickerVC.modalPresentationStyle = .overCurrentContext
         datePickerVC.modalTransitionStyle = .crossDissolve
         self.present(datePickerVC, animated: true)
+    }
+    private func moveToSuccessPage() {
+        let successVC = SignUpSuccessViewController()
+        self.navigationController?.pushViewController(successVC, animated: true)
     }
 }
 

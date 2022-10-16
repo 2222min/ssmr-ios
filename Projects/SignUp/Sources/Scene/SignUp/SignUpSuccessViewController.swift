@@ -10,22 +10,87 @@ import UIKit
 import CommonUI
 
 class SignUpSuccessViewController: BaseViewController {
+    
+    // MARK: Constants
+    private enum Constants {
+        static let titleLabelText = "XXXX님,\n땡리단길 가입을\n축하드립니다 🎉".styled(
+            typo: .DDaengH1,
+            byAdding: [.color(CommonUIAsset.black.color)]
+        )
+        static let subtitleLabelText = "혹시 대표님이신가요?\n가게 등록을 손쉽게 진행하고\n입점해 볼까요?".styled(
+            typo: .DDaengB1,
+            byAdding: [.color(CommonUIAsset.deepGrey.color)]
+        )
+        static let registerStoreButtonText = "3분만에 입점하기".styled(
+            typo: .ButtonLarge,
+            byAdding: [.color(CommonUIAsset.pointColor.color)]
+        )
+    }
+    
+    private let titleLabel = UILabel().then {
+        $0.attributedText = Constants.titleLabelText
+        $0.numberOfLines = 0
+    }
+    private let subtitleLabel = UILabel().then {
+        $0.attributedText = Constants.subtitleLabelText
+        $0.numberOfLines = 0
+    }
+    private let registerStoreButton = UIButton().then {
+        $0.setAttributedTitle(Constants.registerStoreButtonText, for: .normal)
+        $0.setImage(UIImage(asset: CommonUIAsset.rightArrowImage), for: .normal)
+        $0.setImage(UIImage(asset: CommonUIAsset.rightArrowImage), for: .highlighted)
+        $0.semanticContentAttribute = .forceRightToLeft
+        $0.imageEdgeInsets = .init(top: 3, left: 3, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 0, bottom: 3, right: 0)
+        $0.layer.cornerRadius = 8
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor(asset: CommonUIAsset.pointColor)?.cgColor
+    }
+    private let celebrationImageView = UIImageView().then {
+        $0.image = UIImage(asset: CommonUIAsset.celebrationImage)
+    }
+    private let moveToMainButton = CTAButton().then {
+        $0.title = "땡리단길로 가기"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func configureUI() {
+        [
+            self.titleLabel,
+            self.subtitleLabel,
+            self.registerStoreButton,
+            self.celebrationImageView,
+            self.moveToMainButton
+        ]
+            .forEach(self.view.addSubview)
     }
-    */
-
+    
+    override func setupConstraints() {
+        self.titleLabel.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+        }
+        self.subtitleLabel.snp.makeConstraints {
+            $0.top.equalTo(self.titleLabel.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+        }
+        self.registerStoreButton.snp.makeConstraints {
+            $0.top.equalTo(self.subtitleLabel.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.width.equalTo(193)
+            $0.height.equalTo(46)
+        }
+        self.celebrationImageView.snp.makeConstraints {
+            $0.top.equalTo(self.registerStoreButton.snp.bottom).offset(40)
+            $0.leading.trailing.equalToSuperview()
+        }
+        self.moveToMainButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-50)
+            $0.height.equalTo(48)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
+    }
 }

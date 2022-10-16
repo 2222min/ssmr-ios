@@ -491,9 +491,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1F02545CBAD84A4693B86FB5 /* FindUserInfoDemoAppTests */,
 				ADDBEB1C771D19D7F93E002E /* FindUserInfo */,
 				5B2096E17537636111ACEC3C /* FindUserInfoTests */,
+				1F02545CBAD84A4693B86FB5 /* FindUserInfoDemoAppTests */,
 				BC11AB5662EE9D06F00E9A3E /* FindUserInfoDemoApp */,
 			);
 		};
