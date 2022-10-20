@@ -110,11 +110,12 @@ public class OnboardingViewController: BaseViewController, ReactorKit.View {
         }
         self.nextButton.snp.makeConstraints {
             $0.top.equalTo(self.collectionView.snp.bottom).offset(80)
+            $0.bottom.equalTo(self.skipButton.snp.top).offset(-13)
             $0.left.right.equalToSuperview().inset(16)
             $0.height.equalTo(48)
         }
         self.skipButton.snp.makeConstraints {
-            $0.top.equalTo(self.nextButton.snp.bottom).offset(13)
+            $0.bottom.equalToSuperview().inset(63)
             $0.left.right.equalToSuperview().inset(16)
             $0.height.equalTo(48)
         }
