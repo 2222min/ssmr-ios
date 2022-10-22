@@ -85,10 +85,12 @@ class SignUpSuccessViewController: BaseViewController {
         }
         self.celebrationImageView.snp.makeConstraints {
             $0.top.equalTo(self.registerStoreButton.snp.bottom).offset(40)
+            $0.height.equalTo(self.view.frame.width * 0.573)
             $0.leading.trailing.equalToSuperview()
         }
         self.moveToMainButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-50)
+//            $0.bottom.equalToSuperview().offset(-50)
+            $0.top.equalTo(self.celebrationImageView.snp.bottom).offset(76)
             $0.height.equalTo(48)
             $0.leading.trailing.equalToSuperview().inset(16)
         }

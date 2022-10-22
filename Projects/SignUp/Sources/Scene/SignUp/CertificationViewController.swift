@@ -269,7 +269,7 @@ class CertificationViewController: BaseViewController {
             $0.leading.equalTo(self.textfieldStackView.snp.leading)
         }
         self.failTitleBackground.snp.makeConstraints {
-            $0.top.equalTo(self.checkSuccessLabel.snp.bottom).offset(257)
+            $0.bottom.equalTo(self.failGuideBackground.snp.top).offset(-4)
             $0.leading.equalToSuperview().offset(16)
             $0.width.equalTo(110)
             $0.height.equalTo(24)
@@ -279,7 +279,7 @@ class CertificationViewController: BaseViewController {
             $0.bottom.equalToSuperview().inset(6)
         }
         self.failGuideBackground.snp.makeConstraints {
-            $0.top.equalTo(self.failTitleBackground.snp.bottom).offset(5)
+            $0.bottom.equalTo(self.nextButton.snp.top).offset(-24)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(72)
         }

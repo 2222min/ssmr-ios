@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,8 @@
 		46689C44EFF40B5719CD647A /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B63BC104D63EF4584E71D13 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4815430F7CF16DD63B617F01 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179BF3E20B9D7F0E38458F90 /* BonMot.framework */; platformFilter = ios; };
 		52E9566F3E3D488370B044A9 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502E1893C793C44DE25A5395 /* RxTest.framework */; platformFilter = ios; };
+		54EB635A2903E1C200A0F16D /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB63592903E1C200A0F16D /* LoginReactor.swift */; };
+		54EB635B2903E1C200A0F16D /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB63592903E1C200A0F16D /* LoginReactor.swift */; };
 		5E13CD8FAC77004366135561 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA030D516B81159EFB6CF99D /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		61A6CFE2724203545C711718 /* TuistAssets+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D49D85AE6A5AEE8BA4930 /* TuistAssets+Login.swift */; };
 		6340081E552303A940AC073E /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2464D09DC092B2E5885DB373 /* RxMoya.framework */; platformFilter = ios; };
@@ -166,6 +168,7 @@
 		4C4C40A9BE76DBC8AFA362D6 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502E1893C793C44DE25A5395 /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		530743EDCE3BAAF6DD7E45F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		54EB63592903E1C200A0F16D /* LoginReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReactor.swift; sourceTree = "<group>"; };
 		5A081E642E46083180A4C656 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C292928E68F5F6E022317A0 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		6A7EB55BCE37FAC7E9FC6D7F /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,6 +307,7 @@
 			children = (
 				3E6CFCCED5CA2E4B7548A000 /* LoginFailViewController.swift */,
 				530743EDCE3BAAF6DD7E45F4 /* LoginViewController.swift */,
+				54EB63592903E1C200A0F16D /* LoginReactor.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -319,6 +323,14 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		54EB63582903E05800A0F16D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4AA85998DCDDD1A57216CBC0 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		6A94C6BA5CFCFEEAE644E6D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,8 +341,8 @@
 		82158BAC7310E834F5971A06 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				54EB63582903E05800A0F16D /* Core */,
 				2A0D1DDB4FA6D4A26061048E /* Scene */,
-				4AA85998DCDDD1A57216CBC0 /* AppDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -517,6 +529,7 @@
 			files = (
 				61A6CFE2724203545C711718 /* TuistAssets+Login.swift in Sources */,
 				1EFD47ADF1CA0DC5FD887C88 /* TuistBundle+Login.swift in Sources */,
+				54EB635B2903E1C200A0F16D /* LoginReactor.swift in Sources */,
 				E9B7944B0ED599E5BFD50796 /* AppDelegate.swift in Sources */,
 				880F34EFDC434A652B9CD3C4 /* LoginFailViewController.swift in Sources */,
 				FD1E11FB7F3B30AE3D854255 /* LoginViewController.swift in Sources */,
@@ -543,6 +556,7 @@
 			files = (
 				2234E72649D821F602965E67 /* TuistAssets+LoginDemoApp.swift in Sources */,
 				862A84587C3884B15EA18531 /* TuistBundle+LoginDemoApp.swift in Sources */,
+				54EB635A2903E1C200A0F16D /* LoginReactor.swift in Sources */,
 				F4F939EAEF1077D2190B9330 /* AppDelegate.swift in Sources */,
 				8C2C1F4FB1DBF9E006AA2566 /* LoginFailViewController.swift in Sources */,
 				C47800FA62CF2C802979D3C6 /* LoginViewController.swift in Sources */,
@@ -587,11 +601,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.LoginTests;
 				PRODUCT_NAME = LoginTests;
 				SDKROOT = iphoneos;
@@ -617,11 +627,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.LoginTests;
 				PRODUCT_NAME = LoginTests;
 				SDKROOT = iphoneos;
@@ -647,11 +653,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = LoginDemoAppTests;
 				SDKROOT = iphoneos;
@@ -735,11 +737,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = LoginDemoAppTests;
 				SDKROOT = iphoneos;
