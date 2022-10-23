@@ -8,8 +8,11 @@
 
 import UIKit
 import CommonUI
+import ReactorKit
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, ReactorKit.View {
+    
+    public typealias Reactor = LoginReactor
     
     // MARK: Constants
     private enum Constants {
@@ -151,5 +154,21 @@ class LoginViewController: BaseViewController {
                 loginFailVC.modalTransitionStyle = .crossDissolve
                 owner.present(loginFailVC, animated: true)
             }.disposed(by: disposeBag)
+    }
+}
+
+extension LoginViewController {
+    public func bind(reactor: Reactor) {
+        
+    }
+}
+
+extension LoginViewController {
+    private func bindAction(didTapCTAButton reactor: Reactor) {
+        self.loginButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                
+            }
+            .disposed(by: disposeBag)
     }
 }

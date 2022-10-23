@@ -26,19 +26,38 @@ final public class LoginReactor: Reactor {
     
     // MARK: Action
     public enum Action {
+        case didTapCTAButton
     }
     
     // MARK: Mutation
     public enum Mutation {
+        case didTapCTAButton
     }
     
     // MARK: State
     public struct State {
+        var isPresentedLoginFailView = false
     }
     
-    // MARK: Mutate
+    
     public func mutate(action: Action) -> Observable<Mutation> {
-        
+        switch action {
+        case .didTapCTAButton:
+            return Observable.just(.didTapCTAButton)
+        }
+    }
+    
+    public func reduce(state: State, mutation: Mutation) -> State {
+        var newState = state
+        switch mutation {
+        case .didTapCTAButton:
+            if state.isPresentedLoginFailView {
+                newState.isPresentedLoginFailView.toggle()
+            } else {
+                newState.isPresentedLoginFailView.toggle()
+            }
+            return newState
+        }
     }
     
 }
