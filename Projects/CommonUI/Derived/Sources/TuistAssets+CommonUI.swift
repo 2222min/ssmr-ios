@@ -33,6 +33,7 @@ public enum CommonUIAsset {
   public static let whiteGrey = CommonUIColors(name: "whiteGrey")
   public static let approveImage = CommonUIImages(name: "approveImage")
   public static let closeImage = CommonUIImages(name: "closeImage")
+  public static let disapproveImage = CommonUIImages(name: "disapproveImage")
   public static let informationMark = CommonUIImages(name: "information Mark")
   public static let chevronLeft = CommonUIImages(name: "chevron-left")
   public static let cautionImage = CommonUIImages(name: "cautionImage")

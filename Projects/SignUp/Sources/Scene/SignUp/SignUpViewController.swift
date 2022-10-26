@@ -8,9 +8,12 @@
 
 import UIKit
 import CommonUI
+import ReactorKit
 import RxCocoa
 
-class SignUpViewController: BaseViewController {
+class SignUpViewController: BaseViewController, ReactorKit.View {
+    
+    public typealias Reactor = SignUpReactor
     
     // MARK: Constants
     
@@ -90,7 +93,8 @@ class SignUpViewController: BaseViewController {
     }
     private let duplicationButton = UIButton().then {
         $0.setAttributedTitle(Constants.duplicationButtonText, for: .normal)
-        $0.backgroundColor = CommonUIAsset.grey.color
+        $0.setBackgroundColor(color: CommonUIAsset.grey.color, forState: .disabled)
+        $0.setBackgroundColor(color: CommonUIAsset.pointColor.color, forState: .normal)
         $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
         $0.layer.cornerRadius = 12
     }
@@ -154,11 +158,23 @@ class SignUpViewController: BaseViewController {
             Constants.nextButtonText,
             for: .normal
         )
+        $0.isEnabled = false
+    }
+    
+    // MARK: Initializing
+    init(reactor: Reactor) {
+        defer {
+            self.reactor = reactor
+        }
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeUI()
     }
     
     override func configureUI() {
@@ -254,16 +270,62 @@ class SignUpViewController: BaseViewController {
         }
     }
     
-    // 테스트를 위한 구독 임시 함수
-    private func subscribeUI() {
-        nextButton.rx.tap
-            .subscribe(with: self) { owner, _ in
-                owner.moveToAddEMailPage()
-            }.disposed(by: disposeBag)
-    }
-    
     private func moveToAddEMailPage() {
         let addEMailVC = AddEmailViewController()
         self.navigationController?.pushViewController(addEMailVC, animated: true)
+    }
+    
+    private func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let correctEmail = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return correctEmail.evaluate(with: email)
+    }
+}
+
+// MARK: ReactorBind
+extension SignUpViewController {
+    public func bind(reactor: Reactor) {
+        self.checkIdTextField()
+        self.tapEyeImageOfPW()
+        self.tapEyeImageOfPWCheck()
+    }
+}
+
+// MARK: Func
+extension SignUpViewController {
+    public static func create() -> SignUpViewController {
+        let reactor: SignUpReactor = .init()
+        let viewController = SignUpViewController.init(reactor: reactor)
+        
+        return viewController
+    }
+    
+    private func checkIdTextField() {
+        self.idTextField.textField.rx.text
+            .withUnretained(self)
+            .subscribe(onNext: { owner, text in
+                guard let text = text else { return }
+                owner.duplicationButton.isEnabled = owner.isValidEmail(email: text)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func tapEyeImageOfPW() {
+        self.eyeImageOfPW.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.eyeImageOfPW.isSelected.toggle()
+                owner.pwTextField.textField.isSecureTextEntry = !owner.eyeImageOfPW.isSelected
+            })
+            .disposed(by: disposeBag)
+    }
+    private func tapEyeImageOfPWCheck() {
+        self.eyeImageOfPWCheck.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.eyeImageOfPWCheck.isSelected.toggle()
+                owner.pwCheckTextField.textField.isSecureTextEntry = !owner.eyeImageOfPWCheck.isSelected
+            })
+            .disposed(by: disposeBag)
     }
 }

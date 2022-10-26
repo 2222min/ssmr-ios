@@ -17,7 +17,7 @@ import UIKit
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = SignUpViewController()
+        let viewController = SignUpViewController.create()
         
         // TODO: 나중에 바꾸기
         let rootViewController =  UINavigationController(rootViewController: viewController)
