@@ -96,6 +96,22 @@ class LoginViewController: BaseViewController, ReactorKit.View {
         $0.spacing = 16
     }
     
+    // MARK: Initializing
+    init(reactor: Reactor) {
+        defer {
+            self.reactor = reactor
+        }
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func configureUI() {
         super.configureUI()
         
@@ -145,30 +161,52 @@ class LoginViewController: BaseViewController, ReactorKit.View {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loginButton.rx.tap
-            .subscribe(with: self) { owner, _ in
-                let loginFailVC = LoginFailViewController()
-                loginFailVC.modalPresentationStyle = .overCurrentContext
-                loginFailVC.modalTransitionStyle = .crossDissolve
-                owner.present(loginFailVC, animated: true)
-            }.disposed(by: disposeBag)
+    func showLoginFailView() {
+        let loginFailView = LoginFailViewController()
+        loginFailView.modalTransitionStyle = .crossDissolve
+        loginFailView.modalPresentationStyle = .overCurrentContext
+        self.present(loginFailView, animated: true)
     }
 }
 
+// MARK: ReactorBind
 extension LoginViewController {
     public func bind(reactor: Reactor) {
-        
+        self.bindAction(didTapCTAButton: reactor)
+        self.bindState(showLoginFailView: reactor)
     }
 }
 
+// MARK: Action
 extension LoginViewController {
     private func bindAction(didTapCTAButton reactor: Reactor) {
         self.loginButton.rx.tap
-            .subscribe(with: self) { owner, _ in
-                
-            }
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.didTapCTAButton }
+            .bind(to: reactor.action)
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: State
+extension LoginViewController {
+    private func bindState(showLoginFailView reactor: Reactor) {
+        reactor.state.map { $0.isShowLoginFailView }
+            .filter { $0 }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive { [weak self] _ in
+                self?.showLoginFailView()
+            }
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: Func
+extension LoginViewController {
+    public static func create() -> LoginViewController {
+        let reactor: LoginReactor = .init()
+        let viewController = LoginViewController.init(reactor: reactor)
+        
+        return viewController
     }
 }

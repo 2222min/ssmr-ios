@@ -31,31 +31,30 @@ final public class LoginReactor: Reactor {
     
     // MARK: Mutation
     public enum Mutation {
-        case didTapCTAButton
+        case showLoginFailView(Bool)
     }
     
     // MARK: State
     public struct State {
-        var isPresentedLoginFailView = false
+        var isShowLoginFailView = false
     }
     
     
     public func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .didTapCTAButton:
-            return Observable.just(.didTapCTAButton)
+            return Observable.concat([
+                Observable.just(.showLoginFailView(true)),
+                Observable.just(.showLoginFailView(false))
+            ])
         }
     }
     
     public func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case .didTapCTAButton:
-            if state.isPresentedLoginFailView {
-                newState.isPresentedLoginFailView.toggle()
-            } else {
-                newState.isPresentedLoginFailView.toggle()
-            }
+        case .showLoginFailView(let isShow):
+            newState.isShowLoginFailView = isShow
             return newState
         }
     }
