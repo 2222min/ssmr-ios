@@ -158,7 +158,6 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
             Constants.nextButtonText,
             for: .normal
         )
-        $0.isEnabled = false
     }
     
     // MARK: Initializing
@@ -285,6 +284,7 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
 // MARK: ReactorBind
 extension SignUpViewController {
     public func bind(reactor: Reactor) {
+        self.moveToNextPage()
         self.checkIdTextField()
         self.tapEyeImageOfPW()
         self.tapEyeImageOfPWCheck()
@@ -298,6 +298,15 @@ extension SignUpViewController {
         let viewController = SignUpViewController.init(reactor: reactor)
         
         return viewController
+    }
+    
+    private func moveToNextPage() {
+        self.nextButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.moveToAddEMailPage()
+            })
+            .disposed(by: disposeBag)
     }
     
     private func checkIdTextField() {
