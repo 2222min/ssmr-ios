@@ -273,12 +273,6 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
         let addEMailVC = AddEmailViewController()
         self.navigationController?.pushViewController(addEMailVC, animated: true)
     }
-    
-    private func isValidEmail(email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let correctEmail = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        return correctEmail.evaluate(with: email)
-    }
 }
 
 // MARK: ReactorBind
@@ -314,7 +308,7 @@ extension SignUpViewController {
             .withUnretained(self)
             .subscribe(onNext: { owner, text in
                 guard let text = text else { return }
-                owner.duplicationButton.isEnabled = owner.isValidEmail(email: text)
+                owner.duplicationButton.isEnabled = text.isValidEmail()
             })
             .disposed(by: disposeBag)
     }

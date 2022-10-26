@@ -61,6 +61,7 @@ class AddEmailViewController: BaseViewController {
             Constants.nextButtonText,
             for: .normal
         )
+        $0.isEnabled = false
     }
     
     override func configureUI() {
@@ -106,10 +107,20 @@ class AddEmailViewController: BaseViewController {
     }
     
     private func subscribeUI() {
-        nextButton.rx.tap
-            .subscribe(with: self) { owner, _ in
+        self.emailTextField.textField.rx.text
+            .withUnretained(self)
+            .subscribe(onNext: { owner, text in
+                guard let text = text else { return }
+                owner.nextButton.isEnabled = text.isValidEmail()
+            })
+            .disposed(by: disposeBag)
+        
+        self.nextButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
                 owner.moveToCertificationPage()
-            }.disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func moveToCertificationPage() {
