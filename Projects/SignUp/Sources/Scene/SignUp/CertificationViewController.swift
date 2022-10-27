@@ -97,6 +97,7 @@ class CertificationViewController: BaseViewController {
         $0.textField.keyboardType = .numberPad
         $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
+        $0.textField.tag = 0
     }
     private let textfield2 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
@@ -105,6 +106,7 @@ class CertificationViewController: BaseViewController {
         $0.textField.keyboardType = .numberPad
         $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
+        $0.textField.tag = 1
     }
     private let textfield3 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
@@ -113,6 +115,7 @@ class CertificationViewController: BaseViewController {
         $0.textField.keyboardType = .numberPad
         $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
+        $0.textField.tag = 2
     }
     private let textfield4 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
@@ -121,6 +124,7 @@ class CertificationViewController: BaseViewController {
         $0.textField.keyboardType = .numberPad
         $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
+        $0.textField.tag = 3
     }
     private let textfield5 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
@@ -129,6 +133,7 @@ class CertificationViewController: BaseViewController {
         $0.textField.keyboardType = .numberPad
         $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
+        $0.textField.tag = 4
     }
     private let textfield6 = UnderlineTextField().then {
         $0.underline.backgroundColor = CommonUIAsset.grey.color
@@ -137,6 +142,7 @@ class CertificationViewController: BaseViewController {
         $0.textField.keyboardType = .numberPad
         $0.setTextFieldHeight(height: 40)
         $0.setUnderlineHeight(height: 2)
+        $0.textField.tag = 5
     }
     private let textfieldStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -213,7 +219,7 @@ class CertificationViewController: BaseViewController {
             .forEach {
                 $0.delegate = self
             }
-        addTargetToTextFields()
+//        addTargetToTextFields()
         subscribeUI()
     }
     
@@ -298,45 +304,47 @@ class CertificationViewController: BaseViewController {
         }
     }
     
-    private func addTargetToTextFields() {
-        textfield1.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        textfield2.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        textfield3.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        textfield4.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        textfield5.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        textfield6.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-    }
-    
-    @objc func textDidChange(textField: UITextField) {
-        textField.attributedText = textField.text?.styled(typo: .DDaengH1)
-        let text = textField.text
-        
-        if text?.count == 1 {
-            switch textField {
-            case textfield1.textField:
-                textfield2.textField.becomeFirstResponder()
-            case textfield2.textField:
-                textfield3.textField.becomeFirstResponder()
-            case textfield3.textField:
-                textfield4.textField.becomeFirstResponder()
-            case textfield4.textField:
-                textfield5.textField.becomeFirstResponder()
-            case textfield5.textField:
-                textfield6.textField.becomeFirstResponder()
-            case textfield6.textField:
-                textfield6.textField.resignFirstResponder()
-            default:
-                break
-            }
-        }
-    }
-    
-    // 테스트를 위한 구독 임시 함수
     private func subscribeUI() {
         nextButton.rx.tap
-            .subscribe(with: self) { owner, _ in
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
                 owner.moveToAddInfoPage()
-            }.disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
+        
+        subscribeTextField()
+    }
+    
+    private func subscribeTextField() {
+        let textFields = [
+            self.textfield1.textField,
+            self.textfield2.textField,
+            self.textfield3.textField,
+            self.textfield4.textField,
+            self.textfield5.textField,
+            self.textfield6.textField,
+        ]
+        
+        textFields.forEach { textField in
+            textField.rx.controlEvent(.editingChanged)
+                .withUnretained(self)
+                .subscribe(onNext: { owner, _ in
+                    textField.attributedText = textField.text?.styled(typo: .DDaengH1)
+                    textField.textAlignment = .center
+                    if textField.text?.count == 1 {
+                        if textFields.count == textField.tag + 1 {
+                            owner.textfield6.textField.resignFirstResponder()
+                        } else {
+                            textFields[textField.tag + 1].becomeFirstResponder()
+                        }
+                    } else if textField.text?.count == 0 {
+                        if textField.tag != 0 {
+                            textFields[textField.tag - 1].becomeFirstResponder()
+                        }
+                    }
+                })
+                .disposed(by: disposeBag)
+        }
     }
     
     private func moveToAddInfoPage() {
