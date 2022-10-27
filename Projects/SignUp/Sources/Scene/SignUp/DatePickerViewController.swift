@@ -35,12 +35,7 @@ class DatePickerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        confirmButton.rx.tap
-            .subscribe(with: self) { owner, _ in
-                owner.dismiss(animated: true)
-            }
-            .disposed(by: disposeBag)
+        subscribeUI()
     }
     
     override func setupConstraints() {
@@ -62,6 +57,15 @@ class DatePickerViewController: BaseViewController {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(48)
         }
+    }
+    
+    func subscribeUI() {
+        confirmButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.dismiss(animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 
 }

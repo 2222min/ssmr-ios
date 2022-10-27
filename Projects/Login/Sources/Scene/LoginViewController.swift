@@ -160,13 +160,6 @@ class LoginViewController: BaseViewController, ReactorKit.View {
             $0.top.equalTo(self.loginButton.snp.bottom).offset(40)
         }
     }
-    
-    func showLoginFailView() {
-        let loginFailView = LoginFailViewController()
-        loginFailView.modalTransitionStyle = .crossDissolve
-        loginFailView.modalPresentationStyle = .overCurrentContext
-        self.present(loginFailView, animated: true)
-    }
 }
 
 // MARK: ReactorBind
@@ -208,5 +201,12 @@ extension LoginViewController {
         let viewController = LoginViewController.init(reactor: reactor)
         
         return viewController
+    }
+    
+    func showLoginFailView() {
+        let loginFailView = LoginFailViewController()
+        loginFailView.modalTransitionStyle = .crossDissolve
+        loginFailView.modalPresentationStyle = .overCurrentContext
+        self.present(loginFailView, animated: true)
     }
 }

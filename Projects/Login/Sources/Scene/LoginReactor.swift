@@ -43,10 +43,10 @@ final public class LoginReactor: Reactor {
     public func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .didTapCTAButton:
-            return Observable.concat([
+            return Observable.concat(
                 Observable.just(.showLoginFailView(true)),
                 Observable.just(.showLoginFailView(false))
-            ])
+            )
         }
     }
     
