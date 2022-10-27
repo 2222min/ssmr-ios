@@ -244,8 +244,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D5BAEF0EE03F09D494B7E734 /* Util */,
 				8AE4BA4BBB4228689ACA23B4 /* UtilTests */,
+				D5BAEF0EE03F09D494B7E734 /* Util */,
 			);
 		};
 /* End PBXProject section */

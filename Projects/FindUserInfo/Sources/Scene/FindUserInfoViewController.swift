@@ -130,6 +130,7 @@ extension FindUserInfoViewController {
         // Action
         self.bindAction(didTapIdPager: reactor)
         self.bindAction(didTapPwPager: reactor)
+        self.bindAction(didTapConfirmButton: reactor)
 	}
 }
 
@@ -149,6 +150,15 @@ extension FindUserInfoViewController {
             .throttle(.milliseconds(300))
             .map { Reactor.Action.didTapPwPager }
             .drive(reactor.action)
+            .disposed(by: self.disposeBag)
+    }
+    private func bindAction(didTapConfirmButton reactor: Reactor) {
+        self.confirmButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                let reactor = ResetPasswordReactor.init()
+                let vc = ResetPasswordViewController.init(reactor: reactor)
+                self?.navigationController?.pushViewController(vc, animated: true)
+            })
             .disposed(by: self.disposeBag)
     }
 }
