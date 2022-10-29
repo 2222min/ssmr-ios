@@ -45,9 +45,9 @@ public final class LeftImageButton: UIButton {
         }
     }
     
-    public var seletedImage: UIImage = .init() {
+    public var selectedImage: UIImage = .init() {
         didSet {
-            self.setImage(self.seletedImage, for: .selected)
+            self.setImage(self.selectedImage, for: .selected)
             setNeedsLayout()
         }
     }

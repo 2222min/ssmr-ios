@@ -8,10 +8,15 @@
 
 import UIKit
 import CommonUI
+import RxSwift
 import RxCocoa
 
 class DatePickerViewController: BaseViewController {
-
+    
+    // MARK: Properties
+    var dateSubject = PublishSubject<String>()
+    
+    // MARK: UI Properties
     private let uiView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
@@ -63,9 +68,15 @@ class DatePickerViewController: BaseViewController {
         confirmButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
+                owner.dateSubject.onNext(owner.dateToString(date: owner.datePicker.date))
                 owner.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
     }
 
+    private func dateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        return dateFormatter.string(from: date)
+    }
 }

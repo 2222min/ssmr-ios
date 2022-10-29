@@ -16,7 +16,6 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
     public typealias Reactor = SignUpReactor
     
     // MARK: Constants
-    
     private enum Constants {
         static let signUpLabelText = "회원가입"
         static let guideLabelText = "로그인에 사용할 이메일주소와\n비밀번호를 입력해 주세요".styled(
@@ -41,17 +40,33 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
         )
         static let checkCapitalLetterText = "대소문자".styled(
             typo: .DDaengC1,
-            byAdding: [.color(CommonUIAsset.mBlue.color)]
+            byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkSpecialLetterText = "특수문자".styled(
             typo: .DDaengC1,
-            byAdding: [.color(CommonUIAsset.mBlue.color)]
+            byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkLetterLengthText = "8-20글자 이내".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
+        static let checkCapitalLetterSelectedText = "대소문자".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mBlue.color)]
+        )
+        static let checkSpecialLetterSelectedText = "특수문자".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.mBlue.color)]
+        )
+        static let checkLetterLengthSelectedText = "8-20글자 이내".styled(
             typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkPasswordText = "비밀번호 일치".styled(
+            typo: .DDaengC1,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
+        static let checkPasswordSelectedText = "비밀번호 일치".styled(
             typo: .DDaengC1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
@@ -130,26 +145,34 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
         $0.isHidden = true
     }
     private let checkCapitalLetter = LeftImageButton().then {
-        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalImage = UIImage(asset: CommonUIAsset.disapproveImage) ?? UIImage()
         $0.normalTitle = Constants.checkCapitalLetterText
+        $0.selectedImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.selectedTitle = Constants.checkCapitalLetterSelectedText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
     private let checkSpecialLetter = LeftImageButton().then {
-        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalImage = UIImage(asset: CommonUIAsset.disapproveImage) ?? UIImage()
         $0.normalTitle = Constants.checkSpecialLetterText
+        $0.selectedImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.selectedTitle = Constants.checkSpecialLetterSelectedText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
     private let checkLetterLength = LeftImageButton().then {
-        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalImage = UIImage(asset: CommonUIAsset.disapproveImage) ?? UIImage()
         $0.normalTitle = Constants.checkLetterLengthText
+        $0.selectedImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.selectedTitle = Constants.checkLetterLengthSelectedText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
     private let checkPassword = LeftImageButton().then {
-        $0.normalImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.normalImage = UIImage(asset: CommonUIAsset.disapproveImage) ?? UIImage()
         $0.normalTitle = Constants.checkPasswordText
+        $0.selectedImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.selectedTitle = Constants.checkPasswordSelectedText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
@@ -282,6 +305,7 @@ extension SignUpViewController {
         self.checkIdTextField()
         self.tapEyeImageOfPW()
         self.tapEyeImageOfPWCheck()
+        self.checkPWTextField()
     }
 }
 
@@ -308,7 +332,7 @@ extension SignUpViewController {
             .withUnretained(self)
             .subscribe(onNext: { owner, text in
                 guard let text = text else { return }
-                owner.duplicationButton.isEnabled = text.isValidEmail()
+                owner.duplicationButton.isEnabled = text.count > 4
             })
             .disposed(by: disposeBag)
     }
@@ -330,5 +354,29 @@ extension SignUpViewController {
                 owner.pwCheckTextField.textField.isSecureTextEntry = !owner.eyeImageOfPWCheck.isSelected
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func checkPWTextField() {
+        self.pwTextField.textField.rx.text
+            .withUnretained(self)
+            .subscribe(onNext: { owner, text in
+                guard let text = text else { return }
+                owner.checkCapitalLetter.isSelected = text.containUppercased && text.containLowercased
+                owner.checkLetterLength.isSelected = 8 <= text.count && text.count <= 20
+                owner.checkSpecialLetter.isSelected = text.containSpecialLetter
+            })
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(
+            self.pwTextField.textField.rx.text,
+            self.pwCheckTextField.textField.rx.text
+        )
+        .withUnretained(self)
+        .subscribe(onNext: { owner, result in
+            guard let pwText = result.0 else { return }
+            guard let pwCheckText = result.1 else { return }
+            owner.checkPassword.isSelected = (pwText == pwCheckText) && !pwText.isEmpty
+        })
+        .disposed(by: disposeBag)
     }
 }
