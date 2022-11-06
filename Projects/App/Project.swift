@@ -29,5 +29,6 @@ let project = Project.app(name: projectName,
                             .project(target: "Onboarding", path: .relativeToCurrentFile("../Onboarding")),
                             .project(target: "SignUp", path: .relativeToCurrentFile("../SignUp")),
                             .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
-                            .project(target: "Login", path: .relativeToCurrentFile("../Login"))
+                            .project(target: "Login", path: .relativeToCurrentFile("../Login")),
+                            .project(target: "RegisterBusiness", path: .relativeToCurrentFile("../RegisterBusiness"))
                           ])
