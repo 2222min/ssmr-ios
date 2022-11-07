@@ -9,7 +9,7 @@
 import UIKit
 
 /*
- 왼쪽에 이미지 오른쪽에 라벨이 있는 UI
+ 오른쪽에 이미지 왼쪽에 라벨이 있는 UI
  
  Ex) let button = RightImageButton().then {
   Propertis Setting:

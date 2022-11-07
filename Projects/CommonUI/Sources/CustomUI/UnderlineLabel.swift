@@ -10,6 +10,15 @@ import UIKit
 import SnapKit
 import Then
 
+/*
+ 밑줄이 있는 Label
+ 
+ Ex) let label = UnderlineLabel().then {
+    // label's text
+    $0.labelText = Constants.labelText
+ }
+ */
+
 public class UnderlineLabel: UILabel {
     
     private lazy var label = UILabel()

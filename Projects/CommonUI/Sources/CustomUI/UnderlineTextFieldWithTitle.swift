@@ -9,6 +9,20 @@
 import UIKit
 import RxCocoa
 
+/*
+ 타이틀과 밑줄이 있는 TextField
+ 
+ Ex) let underlineTextField = UnderlineTextField().then {
+    // TextField's placeHolder
+    $0.textField.attributedPlaceholder = Constants.placeHolder
+ }
+ 
+ // height 값을 할당해줘야 TextField 사용 가능
+ businessNumberTextField.snp.makeConstraints {
+    $0.height.equalTo(73)
+ }
+ */
+
 public class UnderlineTextFieldWithTitle: UIView {
     public let title = UILabel().then {
         $0.textColor = CommonUIAsset.blackGrey.color

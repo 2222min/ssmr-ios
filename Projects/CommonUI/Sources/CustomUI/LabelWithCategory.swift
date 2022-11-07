@@ -9,6 +9,18 @@
 import UIKit
 import RxCocoa
 
+/*
+ Ex) let category = LabelWithCategory().then {
+    $0.category.setAttributedTitle(Constants.categoryText, for: .normal)
+    $0.category.setAttributedTitle(Constants.categoryText, for: .selected)
+}
+
+ // height 값을 할당해줘야 button 사용 가능
+ category.snp.makeConstraints {
+    $0.height.equalTo(24)
+ }
+ */
+
 public class LabelWithCategory: UIView {
     
     public let category = RightImageButton().then {
