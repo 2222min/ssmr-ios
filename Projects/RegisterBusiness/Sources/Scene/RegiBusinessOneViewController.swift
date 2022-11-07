@@ -37,7 +37,7 @@ class RegiBusinessOneViewController: BaseViewController {
             typo: .ButtomSmall,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
-        static let businessNumberTextFieldPlaceHolder = "businessNumberTextField".styled(
+        static let businessNumberTextFieldPlaceHolder = "사업자번호를 입력해 주세요".styled(
             typo: .DDaengMB2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
@@ -124,10 +124,7 @@ class RegiBusinessOneViewController: BaseViewController {
         $0.layer.borderColor = UIColor(asset: CommonUIAsset.whiteGrey)?.cgColor
     }
     private let businessNumberTextField = UnderlineTextField().then {
-        $0.textField.attributedPlaceholder = NSAttributedString(
-            string: "사업자번호를 입력해 주세요",
-            attributes: [NSAttributedString.Key.foregroundColor : CommonUIAsset.whiteGrey.color]
-        )
+        $0.textField.attributedPlaceholder = Constants.businessNameTextFieldPlaceHolder
     }
     private let checkButton = UIButton().then {
         $0.setAttributedTitle(Constants.checkButtonText, for: .normal)
