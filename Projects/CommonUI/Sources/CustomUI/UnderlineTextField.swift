@@ -12,11 +12,10 @@ import RxCocoa
 public class UnderlineTextField: UIView {
     
     public let textField = UITextField().then {
-        $0.clearButtonMode = .whileEditing
         $0.textColor = CommonUIAsset.black.color
     }
     
-    private let underline = UIView().then {
+    public let underline = UIView().then {
         $0.backgroundColor = CommonUIAsset.whiteGrey.color
     }
     
@@ -46,6 +45,18 @@ public class UnderlineTextField: UIView {
             $0.height.equalTo(1)
             $0.left.right.equalToSuperview()
             $0.top.equalTo(textField.snp.bottom).offset(4)
+        }
+    }
+    
+    public func setTextFieldHeight(height: CGFloat) {
+        textField.snp.updateConstraints {
+            $0.height.equalTo(height)
+        }
+    }
+    
+    public func setUnderlineHeight(height: CGFloat) {
+        underline.snp.updateConstraints {
+            $0.height.equalTo(height)
         }
     }
 }

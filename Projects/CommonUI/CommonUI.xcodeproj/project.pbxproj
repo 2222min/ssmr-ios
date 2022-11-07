@@ -20,6 +20,7 @@
 		4782805C566E0871101C2B60 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1321D979BCBEAF892D8C0C8 /* RxSwift.framework */; platformFilter = ios; };
 		480C8FAA1581E1B1494B2D26 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7EA9DE29B8EB5C1D44EC32 /* Then.framework */; platformFilter = ios; };
 		5500C678B714E6EC434BDEE8 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F02358C8691B2319C7DEDFD /* CwlPreconditionTesting.framework */; platformFilter = ios; };
+		586D79B6542A72CE958707B5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326F43311ABB64B6AC5AA06 /* StringExtension.swift */; };
 		58B702764F53366CA63D89D8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB1AB775A07E3583B8990C0 /* Asset.xcassets */; };
 		60447A540E5621F2FE7AE1C3 /* AppleSDGothicNeoMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4D2E9C07E18C62B3A454283 /* AppleSDGothicNeoMedium.ttf */; };
 		63A0B00A15A76A2DCABC5178 /* AppleSDGothicNeoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 629BC666AC9D8A03982DABBF /* AppleSDGothicNeoBold.ttf */; };
@@ -94,6 +95,7 @@
 		6F02358C8691B2319C7DEDFD /* CwlPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F625FE1E640FBDB817D76A3 /* TuistAssets+CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+CommonUI.swift"; sourceTree = "<group>"; };
 		72CBFFDCD8922305CDD21836 /* UnderlineTextFieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextFieldWithTitle.swift; sourceTree = "<group>"; };
+		7326F43311ABB64B6AC5AA06 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7C81F7E6D532A39E63E3FBBF /* BonMot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BonMot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BCEE09BFEC2A14AE203809 /* AppleSDGothicNeoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoRegular.ttf; sourceTree = "<group>"; };
 		8511B917A4CCC3BA81E6349D /* CommonUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CommonUITests-Info.plist"; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		45816E8E783249B256914008 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7326F43311ABB64B6AC5AA06 /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5641BE45FCCAA5B61332385A /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +253,7 @@
 			children = (
 				88FA467F361B11350139B775 /* Base */,
 				DB0B83017C75350EE8245C38 /* CustomUI */,
+				45816E8E783249B256914008 /* Extension */,
 				A09A059ED65639C22DA4265F /* Font */,
 			);
 			path = Sources;
@@ -422,6 +433,7 @@
 				7D1FF5C07491777A9247B23F /* UnderlineLabel.swift in Sources */,
 				FE590D98AFB9BB5743119C32 /* UnderlineTextField.swift in Sources */,
 				6FA9AB89480D36E2E9FC7A04 /* UnderlineTextFieldWithTitle.swift in Sources */,
+				586D79B6542A72CE958707B5 /* StringExtension.swift in Sources */,
 				085AF070609F36C35A5CE7D8 /* CoreTypo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

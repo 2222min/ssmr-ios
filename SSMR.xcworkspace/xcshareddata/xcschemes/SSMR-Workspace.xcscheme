@@ -392,6 +392,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9E31F0FD5186241FA07F2892"
+               BuildableName = "RegisterBusiness.framework"
+               BlueprintName = "RegisterBusiness"
+               ReferencedContainer = "container:Projects/RegisterBusiness/RegisterBusiness.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2349CF5F510EF8F6A9E726BF"
+               BuildableName = "RegisterBusinessDemoApp.app"
+               BlueprintName = "RegisterBusinessDemoApp"
+               ReferencedContainer = "container:Projects/RegisterBusiness/RegisterBusiness.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AC4B282F46204717DF6627FB"
+               BuildableName = "RegisterBusinessDemoAppTests.xctest"
+               BlueprintName = "RegisterBusinessDemoAppTests"
+               ReferencedContainer = "container:Projects/RegisterBusiness/RegisterBusiness.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7C563B874AFCE250A0FD5DE4"
+               BuildableName = "RegisterBusinessTests.xctest"
+               BlueprintName = "RegisterBusinessTests"
+               ReferencedContainer = "container:Projects/RegisterBusiness/RegisterBusiness.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "C776C0F70AA5F9106AA47A1E"
                BuildableName = "ReusableKit.framework"
                BlueprintName = "ReusableKit"
@@ -722,6 +778,26 @@
                BuildableName = "OnboardingTests.xctest"
                BlueprintName = "OnboardingTests"
                ReferencedContainer = "container:Projects/Onboarding/Onboarding.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AC4B282F46204717DF6627FB"
+               BuildableName = "RegisterBusinessDemoAppTests.xctest"
+               BlueprintName = "RegisterBusinessDemoAppTests"
+               ReferencedContainer = "container:Projects/RegisterBusiness/RegisterBusiness.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7C563B874AFCE250A0FD5DE4"
+               BuildableName = "RegisterBusinessTests.xctest"
+               BlueprintName = "RegisterBusinessTests"
+               ReferencedContainer = "container:Projects/RegisterBusiness/RegisterBusiness.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference

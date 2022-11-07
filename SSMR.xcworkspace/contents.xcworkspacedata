@@ -20,6 +20,9 @@
          location = "group:Onboarding/Onboarding.xcodeproj">
       </FileRef>
       <FileRef
+         location = "group:RegisterBusiness/RegisterBusiness.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:SignUp/SignUp.xcodeproj">
       </FileRef>
       <FileRef
