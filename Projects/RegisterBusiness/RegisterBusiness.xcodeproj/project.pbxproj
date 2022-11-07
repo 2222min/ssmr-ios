@@ -4,6 +4,7 @@
 	classes = {
 	};
 	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +30,10 @@
 		51149048E76D34AB8BA1A02A /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11453C448FB8D9845B17A934 /* CwlCatchException.framework */; platformFilter = ios; };
 		51CAFE4B46CFC58A47A2984E /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E59239A0D887722C24A36A2 /* ReactorKit.framework */; platformFilter = ios; };
 		54819C1C7FFB3D8235E1094B /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5BFB7F3FC0C872D014894C4 /* CommonUI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		54F2979029177EF100F695EA /* RegiBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */; };
+		54F2979129177EF200F695EA /* RegiBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */; };
+		54F2979229177F0F00F695EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978629177D7600F695EA /* AppDelegate.swift */; };
+		54F2979329177F1000F695EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978629177D7600F695EA /* AppDelegate.swift */; };
 		5521198C8AE541689EB9C7C4 /* BonMot.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAB066AA73F22FD453422F93 /* BonMot.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		576C6898E1A19118657721DE /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5871A800B0D2C8496704C2C2 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB99ECD3279378E6E07FD805 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -159,6 +164,9 @@
 		4A39C99A6762814429BBF9E1 /* RegisterBusinessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessTests-Info.plist"; sourceTree = "<group>"; };
 		51B275B16B4A7ED95819FFAF /* RegiBusinessOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessOneViewController.swift; sourceTree = "<group>"; };
 		53399836ECE38F4D4146AB26 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53399836ECE38F4D4146AB26 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F2978629177D7600F695EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessOneViewController.swift; sourceTree = "<group>"; };
 		857A6B3927175F05DBA0894C /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6E7E28DF2E9685908B3879 /* RxNimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E59239A0D887722C24A36A2 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +254,10 @@
 			children = (
 				6FF611B147322339D77763AF /* Derived */,
 				81CB3E16409FADD3391EDC2A /* Sources */,
+				54F2978529177D4600F695EA /* Tests */,
+				54F2978429177D3F00F695EA /* Sources */,
+				54F2978329177D3C00F695EA /* Resources */,
+				6FF611B147322339D77763AF /* Derived */,
 			);
 			name = Project;
 			sourceTree = "<group>";
@@ -259,6 +271,37 @@
 				4A39C99A6762814429BBF9E1 /* RegisterBusinessTests-Info.plist */,
 			);
 			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		54F2978329177D3C00F695EA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		54F2978429177D3F00F695EA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				54F2978829177D9200F695EA /* Scene */,
+				54F2978629177D7600F695EA /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		54F2978529177D4600F695EA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		54F2978829177D9200F695EA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		6FF611B147322339D77763AF /* Derived */ = {
@@ -422,6 +465,7 @@
 				ORGANIZATIONNAME = team.io;
 				TargetAttributes = {
 					AC4B282F46204717DF6627FB = {
+						LastSwiftMigration = 1400;
 						TestTargetID = 2349CF5F510EF8F6A9E726BF;
 					};
 				};
@@ -443,6 +487,10 @@
 				2349CF5F510EF8F6A9E726BF /* RegisterBusinessDemoApp */,
 				AC4B282F46204717DF6627FB /* RegisterBusinessDemoAppTests */,
 				7C563B874AFCE250A0FD5DE4 /* RegisterBusinessTests */,
+				AC4B282F46204717DF6627FB /* RegisterBusinessDemoAppTests */,
+				7C563B874AFCE250A0FD5DE4 /* RegisterBusinessTests */,
+				9E31F0FD5186241FA07F2892 /* RegisterBusiness */,
+				2349CF5F510EF8F6A9E726BF /* RegisterBusinessDemoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -499,6 +547,8 @@
 			files = (
 				229A3B3F863B362D557EA12E /* AppDelegate.swift in Sources */,
 				646FAB96BDF7C4D81F6264BF /* RegiBusinessOneViewController.swift in Sources */,
+				54F2979329177F1000F695EA /* AppDelegate.swift in Sources */,
+				54F2979129177EF200F695EA /* RegiBusinessOneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +558,8 @@
 			files = (
 				CB27EF21229846803B2A3A77 /* AppDelegate.swift in Sources */,
 				8355DE913F2D26EE619F865F /* RegiBusinessOneViewController.swift in Sources */,
+				54F2979229177F0F00F695EA /* AppDelegate.swift in Sources */,
+				54F2979029177EF100F695EA /* RegiBusinessOneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +591,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoAppTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -555,6 +610,7 @@
 					"-Xcc",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -571,6 +627,7 @@
 		0F8DBE2BC0476B94E43C3404 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -587,6 +644,7 @@
 					"-Xcc",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -600,6 +658,7 @@
 		2085F8A1F58DD682D337E387 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -616,6 +675,7 @@
 					"-Xcc",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -689,6 +749,7 @@
 		5618948634D2B86E84B0FEE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
@@ -745,6 +806,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoAppTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -761,6 +825,7 @@
 					"-Xcc",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -808,6 +873,7 @@
 		E95BC5451050775EAACED73D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
