@@ -28,6 +28,7 @@ public class LabelWithCategory: UIView {
         $0.selectedImage = UIImage(asset: CommonUIAsset.chevronDownSelected) ?? UIImage()
         $0.imageEdgeInsets = .init(top: 6, left: 0, bottom: 0, right: -10)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+        $0.adjustsImageWhenHighlighted = false
     }
     
     public let label = UILabel().then {

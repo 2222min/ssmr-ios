@@ -7,6 +7,7 @@
 
 import UIKit
 import CommonUI
+import RxSwift
 
 class RegiBusinessOneViewController: BaseViewController {
 
@@ -88,9 +89,10 @@ class RegiBusinessOneViewController: BaseViewController {
     }
     
     // MARK: Properties
+    private let largeCategorySubject = PublishSubject<String>()
+    private let mediumCategorySubject = PublishSubject<String>()
     
     // MARK: UI Properties
-    
     private let titleLabel = UnderlineLabel().then {
         $0.labelText = Constants.titleLabelText
     }
@@ -167,6 +169,8 @@ class RegiBusinessOneViewController: BaseViewController {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
+        bindUI()
     }
     
     override func configureUI() {
@@ -254,5 +258,56 @@ class RegiBusinessOneViewController: BaseViewController {
             $0.top.equalTo(self.businessNameTextField.textField.snp.bottom).offset(48)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
+    }
+    
+    private func subscribeUI() {
+        self.largeCategory.category.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.presentToLargeCategoryPicker()
+            })
+            .disposed(by: disposeBag)
+        
+        self.mediumCategory.category.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.presentToMediumCategoryPicker()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
+        self.largeCategorySubject
+            .withUnretained(self)
+            .subscribe(onNext: { owner, text in
+                self.largeCategory.category.isSelected = true
+                self.largeCategory.label.text = text
+            })
+            .disposed(by: disposeBag)
+        self.mediumCategorySubject
+            .withUnretained(self)
+            .subscribe(onNext: { owner, text in
+                self.mediumCategory.category.isSelected = true
+                self.mediumCategory.label.text = text
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func presentToLargeCategoryPicker() {
+        let categoryPickerVC = CategoryPickerViewController()
+        categoryPickerVC.pickerSubject = largeCategorySubject
+        categoryPickerVC.setTitle(self.largeCategory.category.titleLabel?.text ?? String())
+        categoryPickerVC.modalPresentationStyle = .overCurrentContext
+        categoryPickerVC.modalTransitionStyle = .crossDissolve
+        self.present(categoryPickerVC, animated: true)
+    }
+    
+    private func presentToMediumCategoryPicker() {
+        let categoryPickerVC = CategoryPickerViewController()
+        categoryPickerVC.pickerSubject = mediumCategorySubject
+        categoryPickerVC.setTitle(self.mediumCategory.category.titleLabel?.text ?? String())
+        categoryPickerVC.modalPresentationStyle = .overCurrentContext
+        categoryPickerVC.modalTransitionStyle = .crossDissolve
+        self.present(categoryPickerVC, animated: true)
     }
 }
