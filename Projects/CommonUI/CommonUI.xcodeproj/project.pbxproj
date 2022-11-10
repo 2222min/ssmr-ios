@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		473FF71F38F4A6775222236A /* AppleSDGothicNeoSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B638A8B32135305B4E0A9D71 /* AppleSDGothicNeoSemiBold.ttf */; };
 		4782805C566E0871101C2B60 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1321D979BCBEAF892D8C0C8 /* RxSwift.framework */; platformFilter = ios; };
 		480C8FAA1581E1B1494B2D26 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7EA9DE29B8EB5C1D44EC32 /* Then.framework */; platformFilter = ios; };
+		5469143B291D18F200939F8C /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5469143A291D18F200939F8C /* UIButtonExtension.swift */; };
 		5500C678B714E6EC434BDEE8 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F02358C8691B2319C7DEDFD /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		586D79B6542A72CE958707B5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326F43311ABB64B6AC5AA06 /* StringExtension.swift */; };
 		58B702764F53366CA63D89D8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB1AB775A07E3583B8990C0 /* Asset.xcassets */; };
@@ -90,6 +91,7 @@
 		4BB1AB775A07E3583B8990C0 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		4EA441A29B6C085FB856631D /* LabelWithCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithCategory.swift; sourceTree = "<group>"; };
 		524E91A492B6D1C35FFBCBB6 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5469143A291D18F200939F8C /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		54B6A779CD4CE35FB36FBA47 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		5E7EA9DE29B8EB5C1D44EC32 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		629BC666AC9D8A03982DABBF /* AppleSDGothicNeoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoBold.ttf; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				7326F43311ABB64B6AC5AA06 /* StringExtension.swift */,
+				5469143A291D18F200939F8C /* UIButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -368,8 +371,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = team.io;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 26B57D5F96290632B0503228 /* Build configuration list for PBXProject "CommonUI" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -434,6 +435,7 @@
 				F3DA12FF4D18AE405F2F6B08 /* BaseViewController.swift in Sources */,
 				18720200D7D752D21C46A635 /* CTAButton.swift in Sources */,
 				CA29321B074C2DD5901092F5 /* LabelWithCategory.swift in Sources */,
+				5469143B291D18F200939F8C /* UIButtonExtension.swift in Sources */,
 				25FB511EEEDF309C83A438BD /* LeftImageButton.swift in Sources */,
 				44CA5BF1A4194996558E1FEF /* NavigationTopBar.swift in Sources */,
 				9FEFAF6A4B39223CBE8D7FB3 /* PagerView.swift in Sources */,
@@ -647,11 +649,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.CommonUITests;
 				PRODUCT_NAME = CommonUITests;
 				SDKROOT = iphoneos;
@@ -677,11 +675,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.CommonUITests;
 				PRODUCT_NAME = CommonUITests;
 				SDKROOT = iphoneos;

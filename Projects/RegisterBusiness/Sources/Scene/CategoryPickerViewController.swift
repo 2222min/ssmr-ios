@@ -14,7 +14,7 @@ import RxCocoa
 class CategoryPickerViewController: BaseViewController {
     
     // MARK: Properties
-    private let pickerTest = ["음식점", "문화/예술", "스포츠/레저", "오락", "테마파크"]
+    private var pickerTest = [String]()
     var pickerSubject = PublishSubject<String>()
     private var selectedPickerText = String()
     
@@ -45,6 +45,9 @@ class CategoryPickerViewController: BaseViewController {
         picker.delegate = self
         picker.dataSource = self
         subscribeUI()
+        
+        pickerTest = ["음식점", "문화/예술", "스포츠/레저", "오락", "테마파크"]
+        selectedPickerText = pickerTest[0]
     }
     
     override func setupConstraints() {

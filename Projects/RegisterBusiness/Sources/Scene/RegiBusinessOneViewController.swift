@@ -274,6 +274,24 @@ class RegiBusinessOneViewController: BaseViewController {
                 owner.presentToMediumCategoryPicker()
             })
             .disposed(by: disposeBag)
+        self.individualButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.individualButton.isSelectedToggleWithBorderColor()
+                if owner.individualButton.isSelected && owner.corporationButton.isSelected {
+                    owner.corporationButton.isSelectedToggleWithBorderColor()
+                }
+            })
+            .disposed(by: disposeBag)
+        self.corporationButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.corporationButton.isSelectedToggleWithBorderColor()
+                if owner.individualButton.isSelected && owner.corporationButton.isSelected {
+                    owner.individualButton.isSelectedToggleWithBorderColor()
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
