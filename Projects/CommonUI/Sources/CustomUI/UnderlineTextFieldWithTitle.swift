@@ -12,13 +12,13 @@ import RxCocoa
 /*
  타이틀과 밑줄이 있는 TextField
  
- Ex) let underlineTextField = UnderlineTextField().then {
-    // TextField's placeHolder
+ Ex) let underlineTextField = UnderlineTextFieldWithTitle().then {
+    $0.title.attributedText = Constants.title
     $0.textField.attributedPlaceholder = Constants.placeHolder
  }
  
  // height 값을 할당해줘야 TextField 사용 가능
- businessNumberTextField.snp.makeConstraints {
+ underlineTextField.snp.makeConstraints {
     $0.height.equalTo(73)
  }
  */

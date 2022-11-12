@@ -1,5 +1,5 @@
 //
-//  RegiBusinessOneViewController.swift
+//  RegiBusinessFirstViewController.swift
 //
 //  Created by 정건호 on 2022/11/06.
 //  Copyright © 2022 team.io. All rights reserved.
@@ -9,7 +9,7 @@ import UIKit
 import CommonUI
 import RxSwift
 
-class RegiBusinessOneViewController: BaseViewController {
+class RegiBusinessFirstViewController: BaseViewController {
 
     // MARK: Constants
     private enum Constants {
@@ -163,7 +163,7 @@ class RegiBusinessOneViewController: BaseViewController {
             Constants.nextButtonText,
             for: .normal
         )
-        $0.isEnabled = false
+        $0.isEnabled = true
     }
     
     // MARK: View Life Cycle
@@ -292,6 +292,13 @@ class RegiBusinessOneViewController: BaseViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        self.nextButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.moveToRegiBusinessSecondVC()
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -327,5 +334,9 @@ class RegiBusinessOneViewController: BaseViewController {
         categoryPickerVC.modalPresentationStyle = .overCurrentContext
         categoryPickerVC.modalTransitionStyle = .crossDissolve
         self.present(categoryPickerVC, animated: true)
+    }
+    private func moveToRegiBusinessSecondVC() {
+        let regiBusinessSecondVC = RegiBusinessSecondViewController()
+        self.navigationController?.pushViewController(regiBusinessSecondVC, animated: true)
     }
 }
