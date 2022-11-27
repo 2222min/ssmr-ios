@@ -1,5 +1,5 @@
 //
-//  RegiBusinessSecondViewController.swift
+//  RegiBusinessAddressViewController.swift
 //  RegisterBusiness
 //
 //  Created by 정건호 on 2022/11/12.
@@ -10,7 +10,7 @@ import UIKit
 import CommonUI
 import RxSwift
 
-class RegiBusinessSecondViewController: BaseViewController {
+class RegiBusinessAddressViewController: BaseViewController {
     // MARK: Constants
     private enum Constants {
         static let titleLabelText = "사업자 등록하기"
@@ -128,6 +128,7 @@ class RegiBusinessSecondViewController: BaseViewController {
         self.addressTextField.snp.makeConstraints {
             $0.top.equalTo(self.nameTextFieldGuideLabel.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(73)
         }
         self.searchButton.snp.makeConstraints {
             $0.top.bottom.equalTo(self.addressTextField.textField)
@@ -151,7 +152,7 @@ class RegiBusinessSecondViewController: BaseViewController {
     }
     
     private func moveToRegiBusinessThirdVC() {
-        let regiBusinessThirdVC = RegiBusinessThirdViewController()
-        self.navigationController?.pushViewController(regiBusinessThirdVC, animated: true)
+        let regiBusinessContactVC = RegiBusinessContactViewController()
+        self.navigationController?.pushViewController(regiBusinessContactVC, animated: true)
     }
 }

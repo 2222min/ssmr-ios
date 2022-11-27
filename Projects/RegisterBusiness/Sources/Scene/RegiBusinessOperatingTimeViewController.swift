@@ -1,5 +1,5 @@
 //
-//  RegiBusinessThirdViewController.swift
+//  RegiBusinessOperatingTimeViewController.swift
 //  RegisterBusiness
 //
 //  Created by 정건호 on 2022/11/12.
@@ -10,7 +10,7 @@ import UIKit
 import CommonUI
 import RxSwift
 
-class RegiBusinessThirdViewController: BaseViewController {
+class RegiBusinessOperatingTimeViewController: BaseViewController {
 
     // MARK: Constants
     private enum Constants {
@@ -67,9 +67,15 @@ class RegiBusinessThirdViewController: BaseViewController {
             typo: .ButtonLarge,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
+        static let savedOperatingTimeLabelText = "저장된 운영시간 (모든 요일 필수)".styled(
+            typo: .ButtomSmall,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
     }
     
     // MARK: Properties
+    
+    private let timeSubject = PublishSubject<String>()
     
     // MARK: UI Properties
     
@@ -153,6 +159,16 @@ class RegiBusinessThirdViewController: BaseViewController {
         $0.imageEdgeInsets = .init(top: 2, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
+    private let savedOperatingTimeLabel = LeftImageButton().then {
+        $0.normalImage = UIImage(asset: CommonUIAsset.watchImage) ?? UIImage()
+        $0.normalTitle = Constants.savedOperatingTimeLabelText
+        $0.imageEdgeInsets = .init(top: 2, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
+    }
+    private let operatingTimeCheckImage = UIImageView().then {
+        $0.image = UIImage(asset: CommonUIAsset.approveImage)?
+            .withTintColor(CommonUIAsset.grey.color, renderingMode: .alwaysOriginal)
+    }
     private let nextButton = CTAButton().then {
         $0.setAttributedTitle(
             Constants.nextButtonText,
@@ -164,6 +180,8 @@ class RegiBusinessThirdViewController: BaseViewController {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
+        bindUI()
     }
     
     override func configureUI() {
@@ -185,6 +203,8 @@ class RegiBusinessThirdViewController: BaseViewController {
             self.operatingTimeTextField,
             self.saveButton,
             self.operatingTimeGuideLabel,
+            self.savedOperatingTimeLabel,
+            self.operatingTimeCheckImage,
             self.nextButton
         ]
             .forEach(self.view.addSubview)
@@ -212,6 +232,7 @@ class RegiBusinessThirdViewController: BaseViewController {
         self.operatingTimeTextField.snp.makeConstraints {
             $0.top.equalTo(self.dayStackView.snp.bottom).offset(16)
             $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(73)
         }
         self.saveButton.snp.makeConstraints {
             $0.top.bottom.equalTo(self.operatingTimeTextField.textField)
@@ -222,9 +243,43 @@ class RegiBusinessThirdViewController: BaseViewController {
             $0.top.equalTo(self.operatingTimeTextField.underline.snp.bottom).offset(16)
             $0.leading.equalToSuperview().offset(16)
         }
+        self.savedOperatingTimeLabel.snp.makeConstraints {
+            $0.top.equalTo(self.operatingTimeGuideLabel.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(16)
+        }
+        self.operatingTimeCheckImage.snp.makeConstraints {
+            $0.centerY.equalTo(self.savedOperatingTimeLabel).offset(2)
+            $0.leading.equalTo(self.savedOperatingTimeLabel.snp.trailing).offset(6)
+        }
         self.nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-50)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
+    }
+    
+    private func subscribeUI() {
+        self.operatingTimeTextField.textField.rx.controlEvent(.touchDown)
+            .withUnretained(self)
+            .subscribe(onNext: {owner, _ in
+                owner.presentTimePicker()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
+        self.timeSubject
+            .withUnretained(self)
+            .subscribe(onNext: { owner, time in
+                owner.operatingTimeTextField.textField.text = time
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func presentTimePicker() {
+        let timePicker = TimePickerViewController()
+        timePicker.modalPresentationStyle = .overCurrentContext
+        timePicker.modalTransitionStyle = .crossDissolve
+        timePicker.timeSubject = self.timeSubject
+        self.present(timePicker, animated: true)
     }
 }
