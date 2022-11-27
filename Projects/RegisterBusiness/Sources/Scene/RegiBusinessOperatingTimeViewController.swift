@@ -19,18 +19,6 @@ class RegiBusinessThirdViewController: BaseViewController {
             typo: .DDaengB1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
-        static let telTextFieldTitleText = "가게 전화번호".styled(
-            typo: .DDaengH3,
-            byAdding: [.color(CommonUIAsset.deepGrey.color)]
-        )
-        static let nameTextFieldPlaceHolderText = "대표님의 성함을 입력해 주세요".styled(
-            typo: .DDaengMB2,
-            byAdding: [.color(CommonUIAsset.whiteGrey.color)]
-        )
-        static let telGuideLabelText = "전화번호 오입력으로 인한 사용자 신고 접수 시 서비스 이용이 영구\n제한될 수 있습니다".styled(
-            typo: .DDaengC1,
-            byAdding: [.color(CommonUIAsset.grey.color)]
-        )
         static let operatingTimeLabelText = "운영시간".styled(
             typo: .DDaengH3,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
@@ -91,16 +79,6 @@ class RegiBusinessThirdViewController: BaseViewController {
     private let subTitleLabel = UILabel().then {
         $0.attributedText = Constants.subTitleLabeltext
         $0.numberOfLines = 0
-    }
-    private let telTextField = UnderlineTextFieldWithTitle().then {
-        $0.title.attributedText = Constants.telTextFieldTitleText
-        $0.textField.attributedPlaceholder = Constants.nameTextFieldPlaceHolderText
-    }
-    private let telTextFieldGuideLabel = LeftImageButton().then {
-        $0.normalImage = UIImage(asset: CommonUIAsset.informationMark) ?? UIImage()
-        $0.normalTitle = Constants.telGuideLabelText
-        $0.imageEdgeInsets = .init(top: 2, left: 0, bottom: 0, right: 0)
-        $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
     private let operatingTimeLabel = UILabel().then {
         $0.attributedText = Constants.operatingTimeLabelText
@@ -202,8 +180,6 @@ class RegiBusinessThirdViewController: BaseViewController {
         [
             self.titleLabel,
             self.subTitleLabel,
-            self.telTextField,
-            self.telTextFieldGuideLabel,
             self.operatingTimeLabel,
             self.dayStackView,
             self.operatingTimeTextField,
@@ -224,17 +200,8 @@ class RegiBusinessThirdViewController: BaseViewController {
             $0.top.equalTo(self.titleLabel.snp.bottom).offset(16)
             $0.leading.equalToSuperview().offset(16)
         }
-        self.telTextField.snp.makeConstraints {
-            $0.top.equalTo(self.subTitleLabel.snp.bottom).offset(40)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(73)
-        }
-        self.telTextFieldGuideLabel.snp.makeConstraints {
-            $0.top.equalTo(self.telTextField.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-        }
         self.operatingTimeLabel.snp.makeConstraints {
-            $0.top.equalTo(self.telTextFieldGuideLabel.snp.bottom).offset(28)
+            $0.top.equalTo(self.subTitleLabel.snp.bottom).offset(40)
             $0.leading.equalToSuperview().offset(16)
         }
         self.dayStackView.snp.makeConstraints {
