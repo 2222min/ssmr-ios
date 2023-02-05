@@ -54,9 +54,9 @@ class TimePickerViewController: BaseViewController {
         $0.attributedText = Constants.operatingTimeLabelText
     }
     private let offDayButton = LeftImageButton().then {
-        $0.normalImage = UIImage(asset: CommonUIAsset.disapproveImage) ?? UIImage()
+        $0.normalImage = CommonUIAsset.disapproveImage.image
         $0.normalTitle = Constants.offDayButtonNormalText
-        $0.selectedImage = UIImage(asset: CommonUIAsset.approveImage) ?? UIImage()
+        $0.selectedImage = CommonUIAsset.approveImage.image.withTintColor(CommonUIAsset.pointColor.color)
         $0.selectedTitle = Constants.offDayButtonSelectedText
         $0.imageEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
@@ -90,6 +90,14 @@ class TimePickerViewController: BaseViewController {
     private let timeStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .equalCentering
+    }
+    private let openEmptyView = UIImageView().then {
+        $0.image = CommonUIAsset.noTimeImage.image
+        $0.isHidden = true
+    }
+    private let closeEmptyView = UIImageView().then {
+        $0.image = CommonUIAsset.noTimeImage.image
+        $0.isHidden = true
     }
     private let completionButton = CTAButton().then {
         $0.setAttributedTitle(
@@ -128,6 +136,8 @@ class TimePickerViewController: BaseViewController {
             self.operatingTimeLabel,
             self.offDayButton,
             self.timeStackView,
+            self.openEmptyView,
+            self.closeEmptyView,
             self.completionButton
         ]
             .forEach(self.uiView.addSubview)
@@ -163,6 +173,14 @@ class TimePickerViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(spacing)
             $0.top.equalTo(self.operatingTimeLabel.snp.bottom).offset(48)
         }
+        self.openEmptyView.snp.makeConstraints {
+            $0.centerX.equalTo(self.openLabel)
+            $0.top.equalTo(self.openLabel.snp.bottom).offset(16)
+        }
+        self.closeEmptyView.snp.makeConstraints {
+            $0.centerX.equalTo(self.closeLabel)
+            $0.top.equalTo(self.closeLabel.snp.bottom).offset(16)
+        }
         self.completionButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(9)
             $0.bottom.equalToSuperview().offset(-9)
@@ -170,11 +188,36 @@ class TimePickerViewController: BaseViewController {
     }
     
     private func subscribeUI() {
+        Observable.combineLatest(
+            self.openTimePicker.rx.value,
+            self.closeTimePicker.rx.value
+        )
+        .withUnretained(self)
+        .subscribe(onNext: { owner, dates in
+            owner.completionButton.isEnabled = dates.0 < dates.1
+        })
+        .disposed(by: disposeBag)
+        
         self.completionButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner , _ in
-                owner.timeSubject.onNext(owner.operatingTimeToString())
+                let time = owner.offDayButton.isSelected ? "휴무" : owner.operatingTimeToString()
+                owner.timeSubject.onNext(time)
                 owner.dismiss(animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        self.offDayButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.offDayButton.isSelected.toggle()
+                owner.hideTimePicker(owner.offDayButton.isSelected)
+//                owner.completionButton.isEnabled = true
+                if owner.offDayButton.isSelected {
+                    owner.completionButton.isEnabled = true
+                } else {
+                    owner.completionButton.isEnabled = owner.openTimePicker.date < owner.closeTimePicker.date
+                }
             })
             .disposed(by: disposeBag)
     }
@@ -184,5 +227,20 @@ class TimePickerViewController: BaseViewController {
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: openTimePicker.date) + " - "
         + dateFormatter.string(from: closeTimePicker.date)
+    }
+    
+    private func hideTimePicker(_ isHidden: Bool) {
+        let stackViewHeight = isHidden ? 16 : 135
+        self.openTimePicker.isHidden = isHidden
+        self.closeTimePicker.isHidden = isHidden
+        self.openEmptyView.isHidden = !isHidden
+        self.closeEmptyView.isHidden = !isHidden
+        
+        self.openStackView.snp.updateConstraints {
+            $0.height.equalTo(stackViewHeight)
+        }
+        self.closeStackView.snp.updateConstraints {
+            $0.height.equalTo(stackViewHeight)
+        }
     }
 }

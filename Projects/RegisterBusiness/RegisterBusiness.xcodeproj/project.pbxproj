@@ -463,9 +463,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				2349CF5F510EF8F6A9E726BF /* RegisterBusinessDemoApp */,
 				7C563B874AFCE250A0FD5DE4 /* RegisterBusinessTests */,
 				AC4B282F46204717DF6627FB /* RegisterBusinessDemoAppTests */,
-				2349CF5F510EF8F6A9E726BF /* RegisterBusinessDemoApp */,
 				9E31F0FD5186241FA07F2892 /* RegisterBusiness */,
 			);
 		};

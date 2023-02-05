@@ -40,6 +40,7 @@ public final class LeftImageButton: UIButton {
     
     public var normalImage: UIImage = .init() {
         didSet {
+            self.normalImage.withRenderingMode(.alwaysTemplate)
             self.setImage(self.normalImage, for: .normal)
             setNeedsLayout()
         }
@@ -47,6 +48,7 @@ public final class LeftImageButton: UIButton {
     
     public var selectedImage: UIImage = .init() {
         didSet {
+            self.selectedImage.withRenderingMode(.alwaysTemplate)
             self.setImage(self.selectedImage, for: .selected)
             setNeedsLayout()
         }
