@@ -16,7 +16,7 @@ import UIKit
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = RegiBusinessOneViewController()
+        let viewController = RegiBusinessNumberViewController()
         
         // TODO: 나중에 바꾸기
         let rootViewController =  UINavigationController(rootViewController: viewController)

@@ -1,5 +1,5 @@
 //
-//  RegiBusinessOneViewController.swift
+//  RegisterBusinessOneViewController.swift
 //
 //  Created by 정건호 on 2022/11/06.
 //  Copyright © 2022 team.io. All rights reserved.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class RegiBusinessOneViewController: UIViewController {
+class RegisterBusinessOneViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red
+        // Do any additional setup after loading the view.
     }
     
 

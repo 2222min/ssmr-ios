@@ -1,18 +1,17 @@
 //
-//  LeftImageButton.swift
+//  RightImageButton.swift
 //  CommonUI
 //
-//  Created by mincheol on 2022/09/24.
+//  Created by 정건호 on 2022/11/06.
 //  Copyright © 2022 team.io. All rights reserved.
 //
 
 import UIKit
 
-
 /*
- 왼쪽에 이미지 오른쪽에 라벨이 있는 UI
+ 오른쪽에 이미지 왼쪽에 라벨이 있는 UI
  
- Ex) let button = LeftImageButton().then {
+ Ex) let button = RightImageButton().then {
   Propertis Setting:
     Button State - Normal
         $0.normalTitle = NSAttributedString()
@@ -23,7 +22,7 @@ import UIKit
  }
  */
 
-public final class LeftImageButton: UIButton {
+public final class RightImageButton: UIButton {
     public var normalTitle: NSAttributedString = .init() {
         didSet {
             self.setAttributedTitle(self.normalTitle, for: .normal)
@@ -40,7 +39,6 @@ public final class LeftImageButton: UIButton {
     
     public var normalImage: UIImage = .init() {
         didSet {
-            self.normalImage.withRenderingMode(.alwaysTemplate)
             self.setImage(self.normalImage, for: .normal)
             setNeedsLayout()
         }
@@ -48,7 +46,6 @@ public final class LeftImageButton: UIButton {
     
     public var selectedImage: UIImage = .init() {
         didSet {
-            self.selectedImage.withRenderingMode(.alwaysTemplate)
             self.setImage(self.selectedImage, for: .selected)
             setNeedsLayout()
         }
@@ -64,6 +61,7 @@ public final class LeftImageButton: UIButton {
         self.titleLabel?.numberOfLines = 0
         self.contentHorizontalAlignment = .leading
         self.contentVerticalAlignment = .top
+        self.semanticContentAttribute = .forceRightToLeft
     }
     
     required init?(coder: NSCoder) {

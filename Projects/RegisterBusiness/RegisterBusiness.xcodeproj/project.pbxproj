@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,46 +18,58 @@
 		1B56F2401E59F1C18D08C53C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; };
 		20CFC92FAE62235A6613C072 /* Util.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1854A10E1571AB74AF2D3AD /* Util.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2184528AF14850CC36DD6166 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD67F62724F7A4FE5471979 /* Nimble.framework */; platformFilter = ios; };
+		229A3B3F863B362D557EA12E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467B1DE76B88605AA8F086B /* AppDelegate.swift */; };
 		2A9E1E6F451262F9802EE79C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; };
 		2D391947CB503553BA05E384 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22035A8B1DCF7CC4C64F8BAA /* Then.framework */; platformFilter = ios; };
+		2DA5E4D7D8696473F1699148 /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */; };
 		3309951B28199BE061E5D949 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FB5F86F75DB4C2C3CA5A3F8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; };
 		42B8D0200DCF21C352BB8B9B /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9396A785F0CDEE8DAF9F7FF /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
+		4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */; };
 		4AC3E64C0ADE9DDC82F00ECD /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11453C448FB8D9845B17A934 /* CwlCatchException.framework */; platformFilter = ios; };
 		50D0065421EDB0A73AEAC952 /* RxMoya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFDC78DD782FEBB8C2E19924 /* RxMoya.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51149048E76D34AB8BA1A02A /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11453C448FB8D9845B17A934 /* CwlCatchException.framework */; platformFilter = ios; };
 		51CAFE4B46CFC58A47A2984E /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E59239A0D887722C24A36A2 /* ReactorKit.framework */; platformFilter = ios; };
 		54819C1C7FFB3D8235E1094B /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5BFB7F3FC0C872D014894C4 /* CommonUI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		54F2979029177EF100F695EA /* RegiBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */; };
-		54F2979129177EF200F695EA /* RegiBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */; };
-		54F2979229177F0F00F695EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978629177D7600F695EA /* AppDelegate.swift */; };
-		54F2979329177F1000F695EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2978629177D7600F695EA /* AppDelegate.swift */; };
 		5521198C8AE541689EB9C7C4 /* BonMot.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAB066AA73F22FD453422F93 /* BonMot.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		576C6898E1A19118657721DE /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5871A800B0D2C8496704C2C2 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB99ECD3279378E6E07FD805 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58DAD08A3FE96C02DB3C7573 /* RegisterBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDFDA47E2C63BC820C5C91 /* RegisterBusiness.framework */; platformFilter = ios; };
 		5A0E94A6B940AE2AD30A8970 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6E7E28DF2E9685908B3879 /* RxNimble.framework */; platformFilter = ios; };
+		5BEA7B17E405C1871287E836 /* RegiBusinessOperatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */; };
+		5C7FDE8DFEC89365EB1D12E5 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95954B63C171472730F240 /* TimePickerViewController.swift */; };
 		5D6F27BE2BB0218E890DB63F /* ReactorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E59239A0D887722C24A36A2 /* ReactorKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6D676667D69A781973DBB020 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BFB7F3FC0C872D014894C4 /* CommonUI.framework */; platformFilter = ios; };
 		6E8175DDE951E58715DA78AE /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55C6020372209921286DC1 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
+		7885FD69863E03394CCD0605 /* RegiBusinessStoreNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */; };
+		7BAA39DE2391A110E1A757EC /* RegiBusinessStoreNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */; };
+		7EB2C955DBA57EE20B3953F6 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */; };
 		7EE5B422D12A4D59B9738F0A /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBA23362E7C99A8CEECB0AF /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		828CEB725B6DCDFE24ED40C8 /* RxCocoaRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 172FB34452D92CA4716C871A /* RxCocoaRuntime.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D97DE190816BF804CEA6E6F /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; };
+		A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */; };
+		A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */; };
 		A68273323460926EF62C6EBF /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; };
+		AAD9BD6A391DD176866BE31E /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */; };
 		AD5352984640F0EB9509E39A /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55C6020372209921286DC1 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		B6FF432F3B7DD00291447293 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AC58B31CE5D330DF01DCA0 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		BAAF0CC7802A8CECE21FD924 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108A2AF267BE9CD2A14DDA10 /* RxCocoa.framework */; platformFilter = ios; };
 		C603B66760B77B45129B89EF /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBA23362E7C99A8CEECB0AF /* CwlPreconditionTesting.framework */; platformFilter = ios; };
+		C69E62F608C7B1DDA4B4F3A6 /* RegiBusinessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */; };
 		C8C14C0F8948B0EB15556FE3 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6E7E28DF2E9685908B3879 /* RxNimble.framework */; platformFilter = ios; };
+		CB27EF21229846803B2A3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467B1DE76B88605AA8F086B /* AppDelegate.swift */; };
 		CCC70A5D64171E510D08EB63 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDC78DD782FEBB8C2E19924 /* RxMoya.framework */; platformFilter = ios; };
 		E31240CE74A450F26605E4B4 /* Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1854A10E1571AB74AF2D3AD /* Util.framework */; platformFilter = ios; };
 		E49A9191468FF2434742E6DE /* RegisterBusiness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDFDA47E2C63BC820C5C91 /* RegisterBusiness.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E5E225A6D1BE20F09764E738 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC5FD31467B024436AAF7731 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53399836ECE38F4D4146AB26 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED35412AED793B9FE59F46B6 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */; };
 		ED73712B0CDCAE4310F9C7D3 /* RegisterBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDFDA47E2C63BC820C5C91 /* RegisterBusiness.framework */; platformFilter = ios; };
 		EFA8B2B1B23A2F9FFBECA1D3 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 108A2AF267BE9CD2A14DDA10 /* RxCocoa.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1CF799E6E4069163FD23C0D /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9396A785F0CDEE8DAF9F7FF /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
+		F3B3FF64935D0419D2376C29 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95954B63C171472730F240 /* TimePickerViewController.swift */; };
 		F59425D750F30E0DAD48F9AA /* Then.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22035A8B1DCF7CC4C64F8BAA /* Then.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC25C4149E793CF97E404BFE /* RegiBusinessCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +155,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0467B1DE76B88605AA8F086B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08AC58B31CE5D330DF01DCA0 /* CwlMachBadInstructionHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlMachBadInstructionHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D55C6020372209921286DC1 /* CwlPosixPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPosixPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		108A2AF267BE9CD2A14DDA10 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,17 +166,19 @@
 		1DEF5B5F6B164B374580E53F /* RegisterBusinessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegisterBusinessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22035A8B1DCF7CC4C64F8BAA /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BDFDA47E2C63BC820C5C91 /* RegisterBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RegisterBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessCategoryViewController.swift; sourceTree = "<group>"; };
 		2E8F38E923048AD0602FDCF9 /* RegisterBusinessDemoApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessDemoApp-Info.plist"; sourceTree = "<group>"; };
 		3C6B1A5A22822F97EE0FBF70 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A39C99A6762814429BBF9E1 /* RegisterBusinessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessTests-Info.plist"; sourceTree = "<group>"; };
 		53399836ECE38F4D4146AB26 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54F2978629177D7600F695EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessOneViewController.swift; sourceTree = "<group>"; };
+		5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
+		7A95954B63C171472730F240 /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
 		857A6B3927175F05DBA0894C /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6E7E28DF2E9685908B3879 /* RxNimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E59239A0D887722C24A36A2 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECF5FE88C48119B2AC7E9F1 /* RegisterBusinessDemoAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessDemoAppTests-Info.plist"; sourceTree = "<group>"; };
 		9F76F975AE32A2B3ADAFAE78 /* RegisterBusiness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusiness-Info.plist"; sourceTree = "<group>"; };
+		A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessNumberViewController.swift; sourceTree = "<group>"; };
 		A9396A785F0CDEE8DAF9F7FF /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB066AA73F22FD453422F93 /* BonMot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BonMot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BFB7F3FC0C872D014894C4 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,7 +188,10 @@
 		C9ED61C167AF05910E327C34 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54D8AD860544E5F81833949 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB99ECD3279378E6E07FD805 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessStoreNumberViewController.swift; sourceTree = "<group>"; };
+		DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessOperatingTimeViewController.swift; sourceTree = "<group>"; };
 		DFD67F62724F7A4FE5471979 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessAddressViewController.swift; sourceTree = "<group>"; };
 		FFDC78DD782FEBB8C2E19924 /* RxMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -244,10 +262,8 @@
 		09FBFDC0B1413705F09F251C /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				54F2978529177D4600F695EA /* Tests */,
-				54F2978429177D3F00F695EA /* Sources */,
-				54F2978329177D3C00F695EA /* Resources */,
 				6FF611B147322339D77763AF /* Derived */,
+				81CB3E16409FADD3391EDC2A /* Sources */,
 			);
 			name = Project;
 			sourceTree = "<group>";
@@ -263,43 +279,21 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
-		54F2978329177D3C00F695EA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		54F2978429177D3F00F695EA /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				54F2978829177D9200F695EA /* Scene */,
-				54F2978629177D7600F695EA /* AppDelegate.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		54F2978529177D4600F695EA /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		54F2978829177D9200F695EA /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				54F2978E29177EED00F695EA /* RegiBusinessOneViewController.swift */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
 		6FF611B147322339D77763AF /* Derived */ = {
 			isa = PBXGroup;
 			children = (
 				440F0C206F3E0805E4423A3F /* InfoPlists */,
 			);
 			path = Derived;
+			sourceTree = "<group>";
+		};
+		81CB3E16409FADD3391EDC2A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E792571968DF24C5659EF398 /* Scene */,
+				0467B1DE76B88605AA8F086B /* AppDelegate.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		89F95F4B90C3598E5EE4AAFA = {
@@ -316,6 +310,20 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E792571968DF24C5659EF398 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */,
+				F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */,
+				2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */,
+				A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */,
+				DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */,
+				DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */,
+				7A95954B63C171472730F240 /* TimePickerViewController.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		FC09472AC10B8D03E0EEA65B /* Products */ = {
@@ -438,7 +446,6 @@
 				ORGANIZATIONNAME = team.io;
 				TargetAttributes = {
 					AC4B282F46204717DF6627FB = {
-						LastSwiftMigration = 1400;
 						TestTargetID = 2349CF5F510EF8F6A9E726BF;
 					};
 				};
@@ -456,10 +463,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC4B282F46204717DF6627FB /* RegisterBusinessDemoAppTests */,
-				7C563B874AFCE250A0FD5DE4 /* RegisterBusinessTests */,
-				9E31F0FD5186241FA07F2892 /* RegisterBusiness */,
 				2349CF5F510EF8F6A9E726BF /* RegisterBusinessDemoApp */,
+				7C563B874AFCE250A0FD5DE4 /* RegisterBusinessTests */,
+				AC4B282F46204717DF6627FB /* RegisterBusinessDemoAppTests */,
+				9E31F0FD5186241FA07F2892 /* RegisterBusiness */,
 			);
 		};
 /* End PBXProject section */
@@ -514,8 +521,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F2979329177F1000F695EA /* AppDelegate.swift in Sources */,
-				54F2979129177EF200F695EA /* RegiBusinessOneViewController.swift in Sources */,
+				229A3B3F863B362D557EA12E /* AppDelegate.swift in Sources */,
+				7EB2C955DBA57EE20B3953F6 /* CategoryPickerViewController.swift in Sources */,
+				AAD9BD6A391DD176866BE31E /* RegiBusinessAddressViewController.swift in Sources */,
+				FC25C4149E793CF97E404BFE /* RegiBusinessCategoryViewController.swift in Sources */,
+				C69E62F608C7B1DDA4B4F3A6 /* RegiBusinessNumberViewController.swift in Sources */,
+				A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
+				7885FD69863E03394CCD0605 /* RegiBusinessStoreNumberViewController.swift in Sources */,
+				5C7FDE8DFEC89365EB1D12E5 /* TimePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,8 +536,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F2979229177F0F00F695EA /* AppDelegate.swift in Sources */,
-				54F2979029177EF100F695EA /* RegiBusinessOneViewController.swift in Sources */,
+				CB27EF21229846803B2A3A77 /* AppDelegate.swift in Sources */,
+				ED35412AED793B9FE59F46B6 /* CategoryPickerViewController.swift in Sources */,
+				2DA5E4D7D8696473F1699148 /* RegiBusinessAddressViewController.swift in Sources */,
+				4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */,
+				A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */,
+				5BEA7B17E405C1871287E836 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
+				7BAA39DE2391A110E1A757EC /* RegiBusinessStoreNumberViewController.swift in Sources */,
+				F3B3FF64935D0419D2376C29 /* TimePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,9 +574,7 @@
 		07C4D0076581B423C5CAA5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoAppTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -569,7 +586,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -586,7 +607,6 @@
 		0F8DBE2BC0476B94E43C3404 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -598,7 +618,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -612,7 +636,6 @@
 		2085F8A1F58DD682D337E387 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -624,7 +647,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -698,7 +725,6 @@
 		5618948634D2B86E84B0FEE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
@@ -754,9 +780,7 @@
 		6F2BCF40EBE713ABCE055554 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoAppTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -768,7 +792,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -816,7 +844,6 @@
 		E95BC5451050775EAACED73D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
