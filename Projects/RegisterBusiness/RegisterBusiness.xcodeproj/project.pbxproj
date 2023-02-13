@@ -11,6 +11,7 @@
 		05644A4E4D0F0B07EEC99CE8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD67F62724F7A4FE5471979 /* Nimble.framework */; platformFilter = ios; };
 		06E71ED4D6E19661FCC63834 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9ED61C167AF05910E327C34 /* Alamofire.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A0BE89E2BBB228F82F90FBE /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; };
+		0A3E9A30AC1B262DC962D6F4 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E28F677BBE25918CCBC29 /* AppTests.swift */; };
 		11D31A20567E073EA29308F9 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB066AA73F22FD453422F93 /* BonMot.framework */; platformFilter = ios; };
 		122A3B6185E881A59E3E05A2 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AC58B31CE5D330DF01DCA0 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		128E4EDF8B82E2ACFE119532 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53399836ECE38F4D4146AB26 /* RxBlocking.framework */; platformFilter = ios; };
@@ -24,6 +25,7 @@
 		2DA5E4D7D8696473F1699148 /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */; };
 		3309951B28199BE061E5D949 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FB5F86F75DB4C2C3CA5A3F8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; };
+		413F49940FEA2C47BC8E42D6 /* RegisterBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C8E1E2E0666ECA1681DD5 /* RegisterBusinessOneViewController.swift */; };
 		42B8D0200DCF21C352BB8B9B /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9396A785F0CDEE8DAF9F7FF /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
 		4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */; };
 		4AC3E64C0ADE9DDC82F00ECD /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11453C448FB8D9845B17A934 /* CwlCatchException.framework */; platformFilter = ios; };
@@ -43,11 +45,15 @@
 		6E8175DDE951E58715DA78AE /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55C6020372209921286DC1 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		7885FD69863E03394CCD0605 /* RegiBusinessStoreNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */; };
 		7BAA39DE2391A110E1A757EC /* RegiBusinessStoreNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */; };
+		7BABC440126CFCF001E16C7F /* RegiBusinessFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC348DD9F1D784DCF1755E /* RegiBusinessFirstViewController.swift */; };
+		7CA51C06F3C06FA31E7389A6 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E28F677BBE25918CCBC29 /* AppTests.swift */; };
 		7EB2C955DBA57EE20B3953F6 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */; };
 		7EE5B422D12A4D59B9738F0A /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBA23362E7C99A8CEECB0AF /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		828CEB725B6DCDFE24ED40C8 /* RxCocoaRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 172FB34452D92CA4716C871A /* RxCocoaRuntime.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		917E15AABDAFEA5F5B07BA87 /* RegisterBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C8E1E2E0666ECA1681DD5 /* RegisterBusinessOneViewController.swift */; };
 		9D97DE190816BF804CEA6E6F /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; };
 		A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */; };
+		A3A06FEB05E1BE8B1CD24701 /* RegiBusinessFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC348DD9F1D784DCF1755E /* RegiBusinessFirstViewController.swift */; };
 		A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */; };
 		A68273323460926EF62C6EBF /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; };
 		AAD9BD6A391DD176866BE31E /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */; };
@@ -170,6 +176,7 @@
 		2E8F38E923048AD0602FDCF9 /* RegisterBusinessDemoApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessDemoApp-Info.plist"; sourceTree = "<group>"; };
 		3C6B1A5A22822F97EE0FBF70 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A39C99A6762814429BBF9E1 /* RegisterBusinessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessTests-Info.plist"; sourceTree = "<group>"; };
+		4A6C8E1E2E0666ECA1681DD5 /* RegisterBusinessOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBusinessOneViewController.swift; sourceTree = "<group>"; };
 		53399836ECE38F4D4146AB26 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		7A95954B63C171472730F240 /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +198,9 @@
 		DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessStoreNumberViewController.swift; sourceTree = "<group>"; };
 		DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessOperatingTimeViewController.swift; sourceTree = "<group>"; };
 		DFD67F62724F7A4FE5471979 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E01E28F677BBE25918CCBC29 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessAddressViewController.swift; sourceTree = "<group>"; };
+		F5CC348DD9F1D784DCF1755E /* RegiBusinessFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessFirstViewController.swift; sourceTree = "<group>"; };
 		FFDC78DD782FEBB8C2E19924 /* RxMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -264,8 +273,17 @@
 			children = (
 				6FF611B147322339D77763AF /* Derived */,
 				81CB3E16409FADD3391EDC2A /* Sources */,
+				33FBED0B4729BEE384A27829 /* Tests */,
 			);
 			name = Project;
+			sourceTree = "<group>";
+		};
+		33FBED0B4729BEE384A27829 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E01E28F677BBE25918CCBC29 /* AppTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		440F0C206F3E0805E4423A3F /* InfoPlists */ = {
@@ -318,9 +336,11 @@
 				5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */,
 				F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */,
 				2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */,
+				F5CC348DD9F1D784DCF1755E /* RegiBusinessFirstViewController.swift */,
 				A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */,
 				DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */,
 				DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */,
+				4A6C8E1E2E0666ECA1681DD5 /* RegisterBusinessOneViewController.swift */,
 				7A95954B63C171472730F240 /* TimePickerViewController.swift */,
 			);
 			path = Scene;
@@ -463,10 +483,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2349CF5F510EF8F6A9E726BF /* RegisterBusinessDemoApp */,
-				7C563B874AFCE250A0FD5DE4 /* RegisterBusinessTests */,
-				AC4B282F46204717DF6627FB /* RegisterBusinessDemoAppTests */,
 				9E31F0FD5186241FA07F2892 /* RegisterBusiness */,
+				7C563B874AFCE250A0FD5DE4 /* RegisterBusinessTests */,
+				2349CF5F510EF8F6A9E726BF /* RegisterBusinessDemoApp */,
+				AC4B282F46204717DF6627FB /* RegisterBusinessDemoAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -507,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A3E9A30AC1B262DC962D6F4 /* AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA51C06F3C06FA31E7389A6 /* AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,9 +547,11 @@
 				7EB2C955DBA57EE20B3953F6 /* CategoryPickerViewController.swift in Sources */,
 				AAD9BD6A391DD176866BE31E /* RegiBusinessAddressViewController.swift in Sources */,
 				FC25C4149E793CF97E404BFE /* RegiBusinessCategoryViewController.swift in Sources */,
+				7BABC440126CFCF001E16C7F /* RegiBusinessFirstViewController.swift in Sources */,
 				C69E62F608C7B1DDA4B4F3A6 /* RegiBusinessNumberViewController.swift in Sources */,
 				A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
 				7885FD69863E03394CCD0605 /* RegiBusinessStoreNumberViewController.swift in Sources */,
+				917E15AABDAFEA5F5B07BA87 /* RegisterBusinessOneViewController.swift in Sources */,
 				5C7FDE8DFEC89365EB1D12E5 /* TimePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,9 +564,11 @@
 				ED35412AED793B9FE59F46B6 /* CategoryPickerViewController.swift in Sources */,
 				2DA5E4D7D8696473F1699148 /* RegiBusinessAddressViewController.swift in Sources */,
 				4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */,
+				A3A06FEB05E1BE8B1CD24701 /* RegiBusinessFirstViewController.swift in Sources */,
 				A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */,
 				5BEA7B17E405C1871287E836 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
 				7BAA39DE2391A110E1A757EC /* RegiBusinessStoreNumberViewController.swift in Sources */,
+				413F49940FEA2C47BC8E42D6 /* RegisterBusinessOneViewController.swift in Sources */,
 				F3B3FF64935D0419D2376C29 /* TimePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
