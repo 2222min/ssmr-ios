@@ -10,6 +10,9 @@
 #elseif os(tvOS) || os(watchOS)
   import UIKit
 #endif
+#if canImport(SwiftUI)
+  import SwiftUI
+#endif
 
 // swiftlint:disable superfluous_disable_command file_length implicit_return
 
@@ -47,8 +50,13 @@ public enum CommonUIAsset {
   public static let onboarding3 = CommonUIImages(name: "onboarding_3")
   public static let selectedDot = CommonUIImages(name: "selectedDot")
   public static let splashIOS = CommonUIImages(name: "splash_iOS")
+  public static let bigWatchImage = CommonUIImages(name: "bigWatchImage")
   public static let noTimeImage = CommonUIImages(name: "noTimeImage")
   public static let watchImage = CommonUIImages(name: "watchImage")
+  public static let image = CommonUIImages(name: "Image")
+  public static let approveImage = CommonUIImages(name: "approveImage")
+  public static let cakeImage = CommonUIImages(name: "cakeImage")
+  public static let cakeImageImageset212203600 = CommonUIImages(name: "cakeImage.imageset 21-22-03-600")
   public static let celebrationImage = CommonUIImages(name: "celebrationImage")
   public static let diceImage = CommonUIImages(name: "diceImage")
   public static let dotImage = CommonUIImages(name: "dotImage")
@@ -79,6 +87,13 @@ public final class CommonUIColors {
     return color
   }()
 
+  #if canImport(SwiftUI)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  public private(set) lazy var swiftUIColor: SwiftUI.Color = {
+    SwiftUI.Color(asset: self)
+  }()
+  #endif
+
   fileprivate init(name: String) {
     self.name = name
   }
@@ -97,6 +112,16 @@ public extension CommonUIColors.Color {
     #endif
   }
 }
+
+#if canImport(SwiftUI)
+public extension SwiftUI.Color {
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  init(asset: CommonUIColors) {
+    let bundle = CommonUIResources.bundle
+    self.init(asset.name, bundle: bundle)
+  }
+}
+#endif
 
 public struct CommonUIImages {
   public fileprivate(set) var name: String
@@ -121,6 +146,13 @@ public struct CommonUIImages {
     }
     return result
   }
+
+  #if canImport(SwiftUI)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  public var swiftUIImage: SwiftUI.Image {
+    SwiftUI.Image(asset: self)
+  }
+  #endif
 }
 
 public extension CommonUIImages.Image {
@@ -137,6 +169,26 @@ public extension CommonUIImages.Image {
     #endif
   }
 }
+
+#if canImport(SwiftUI)
+@available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+public extension SwiftUI.Image {
+  init(asset: CommonUIImages) {
+    let bundle = CommonUIResources.bundle
+    self.init(asset.name, bundle: bundle)
+  }
+
+  init(asset: CommonUIImages, label: Text) {
+    let bundle = CommonUIResources.bundle
+    self.init(asset.name, bundle: bundle, label: label)
+  }
+
+  init(decorative asset: CommonUIImages) {
+    let bundle = CommonUIResources.bundle
+    self.init(decorative: asset.name, bundle: bundle)
+  }
+}
+#endif
 
 // swiftlint:enable all
 // swiftformat:enable all
