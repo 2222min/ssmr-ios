@@ -200,6 +200,7 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
     }
     
     override func configureUI() {
+        super.configureUI()
         [
             self.signUpLabel,
             self.guideLabel,
@@ -222,8 +223,9 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
     
     // MARK: Constraints
     override func setupConstraints() {
+        super.setupConstraints()
         self.signUpLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(16)
         }
         self.guideLabel.snp.makeConstraints {
@@ -290,6 +292,10 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
             $0.top.equalTo(self.pwCheckTextField.snp.bottom).offset(12)
             $0.leading.equalToSuperview().offset(16)
         }
+    }
+    
+    override func subscribeUI() {
+        super.subscribeUI()
     }
     
     private func moveToAddEMailPage() {

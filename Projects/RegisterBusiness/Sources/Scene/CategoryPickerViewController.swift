@@ -74,7 +74,8 @@ class CategoryPickerViewController: BaseViewController {
         }
     }
     
-    private func subscribeUI() {
+    override func subscribeUI() {
+        super.subscribeUI()
         confirmButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in

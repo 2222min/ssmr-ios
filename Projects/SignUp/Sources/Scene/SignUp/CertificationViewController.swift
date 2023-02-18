@@ -179,6 +179,7 @@ class CertificationViewController: BaseViewController {
     }
     
     override func configureUI() {
+        super.configureUI()
         [
             self.signUpLabel,
             self.guideLabel,
@@ -219,14 +220,14 @@ class CertificationViewController: BaseViewController {
             .forEach {
                 $0.delegate = self
             }
-//        addTargetToTextFields()
         subscribeUI()
     }
     
     // MARK: Constraints
     override func setupConstraints() {
+        super.setupConstraints()
         self.signUpLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(16)
         }
         self.guideLabel.snp.makeConstraints {
@@ -304,7 +305,8 @@ class CertificationViewController: BaseViewController {
         }
     }
     
-    private func subscribeUI() {
+    override func subscribeUI() {
+        super.subscribeUI()
         nextButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
