@@ -54,7 +54,6 @@ public enum CommonUIAsset {
   public static let noTimeImage = CommonUIImages(name: "noTimeImage")
   public static let watchImage = CommonUIImages(name: "watchImage")
   public static let image = CommonUIImages(name: "Image")
-  public static let approveImage = CommonUIImages(name: "approveImage")
   public static let cakeImage = CommonUIImages(name: "cakeImage")
   public static let cakeImageImageset212203600 = CommonUIImages(name: "cakeImage.imageset 21-22-03-600")
   public static let celebrationImage = CommonUIImages(name: "celebrationImage")
