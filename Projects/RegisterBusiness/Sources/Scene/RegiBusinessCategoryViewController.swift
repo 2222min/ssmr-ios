@@ -204,7 +204,8 @@ class RegiBusinessCategoryViewController: BaseViewController {
         self.present(categoryPickerVC, animated: true)
     }
     private func moveToRegiBusinessAddressVC() {
-        let regiBusinessAddressVC = RegiBusinessAddressViewController()
+        let regiBusinessAddressReactor = RegiBusinessAddressReactor()
+        let regiBusinessAddressVC = RegiBusinessAddressViewController(reactor: regiBusinessAddressReactor)
         self.navigationController?.pushViewController(regiBusinessAddressVC, animated: true)
     }
 }
