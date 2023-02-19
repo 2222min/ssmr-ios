@@ -22,6 +22,10 @@ open class BaseViewController: UIViewController {
     
     private var scrollViewOriginalContentInsetAdjustmentBehaviorRawValue: Int?
     
+    public var navigationTopBar = NavigationTopBar().then {
+        $0.leftButton.setImage(CommonUIAsset.chevronLeft.image, for: .normal)
+    }
+    
     // MARK: UI Properties
     
     var convertSccenSize: CGFloat {
@@ -43,7 +47,7 @@ open class BaseViewController: UIViewController {
         super.viewDidLoad()
         self.view.setNeedsUpdateConstraints()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
+        self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = .white
         self.configureUI()
     }
@@ -106,11 +110,27 @@ open class BaseViewController: UIViewController {
     
     // MARK: Func
     
-    open func configureUI() {}
+    open func configureUI() {
+        self.view.addSubview(navigationTopBar)
+    }
     
-    open func setupConstraints() {}
+    open func setupConstraints() {
+        self.navigationTopBar.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.left.right.equalToSuperview()
+        }
+    }
     
     open func setupSubViews() {}
+    
+    open func subscribeUI() {
+        self.navigationTopBar.rx.leftButtonDidTap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                self.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
+    }
     
     open override var preferredStatusBarStyle: UIStatusBarStyle {
         if #available(iOS 13.0, *) {
@@ -118,6 +138,10 @@ open class BaseViewController: UIViewController {
         } else {
             return .default
         }
+    }
+    
+    open func hideNavigationBar() {
+        self.navigationTopBar.isHidden = true
     }
 }
 

@@ -146,6 +146,7 @@ class AddInfoViewController: BaseViewController {
     }
     
     override func configureUI() {
+        super.configureUI()
         [
             self.signUpLabel,
             self.guideLabel,
@@ -172,8 +173,9 @@ class AddInfoViewController: BaseViewController {
     
     // MARK: Constraints
     override func setupConstraints() {
+        super.setupConstraints()
         self.signUpLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(16)
         }
         self.guideLabel.snp.makeConstraints {
@@ -226,7 +228,8 @@ class AddInfoViewController: BaseViewController {
         }
     }
     
-    private func subscribeUI() {
+    override func subscribeUI() {
+        super.subscribeUI()
         self.dateOfBirthTextField.textField.rx.controlEvent(.touchDown)
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
