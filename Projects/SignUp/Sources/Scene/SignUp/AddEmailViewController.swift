@@ -65,6 +65,7 @@ class AddEmailViewController: BaseViewController {
     }
     
     override func configureUI() {
+        super.configureUI()
         [
             self.signUpLabel,
             self.guideLabel,
@@ -82,8 +83,9 @@ class AddEmailViewController: BaseViewController {
     
     // MARK: Constraints
     override func setupConstraints() {
+        super.setupConstraints()
         self.signUpLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(16)
         }
         self.guideLabel.snp.makeConstraints {
@@ -106,7 +108,8 @@ class AddEmailViewController: BaseViewController {
         }
     }
     
-    private func subscribeUI() {
+    override func subscribeUI() {
+        super.subscribeUI()
         self.emailTextField.textField.rx.text
             .withUnretained(self)
             .subscribe(onNext: { owner, text in

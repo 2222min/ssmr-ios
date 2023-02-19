@@ -110,6 +110,7 @@ class LoginViewController: BaseViewController, ReactorKit.View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideNavigationBar()
     }
     
     override func configureUI() {

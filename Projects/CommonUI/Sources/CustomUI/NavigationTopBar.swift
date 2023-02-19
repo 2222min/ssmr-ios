@@ -109,11 +109,11 @@ extension Reactive where Base: NavigationTopBar {
         }
     }
     
-    var leftButtonDidTap: ControlEvent<Void> {
+    public var leftButtonDidTap: ControlEvent<Void> {
         return self.base.leftButton.rx.tap
     }
     
-    var rightButtonDidTap: ControlEvent<Void> {
+    public var rightButtonDidTap: ControlEvent<Void> {
         return self.base.rightButton.rx.tap
     }
 }
