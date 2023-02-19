@@ -11,13 +11,11 @@
 		027FD040C07AA7E3E480C2A9 /* OnboardingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35924186C81E0ED91DF62034 /* OnboardingReactor.swift */; };
 		0B9F1C0234AFB608BC9EE835 /* ReusableKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABEAF886FC5A47CDA1EFAC5 /* ReusableKit.framework */; platformFilter = ios; };
 		0CDD6697820CBF0B529FB3B8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1120B34E60201B2D82BDB8 /* Asset.xcassets */; };
-		0DF63EB1DAF1D0C231F28AD1 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF5D9800610CBB78FAF8E9E /* Then.framework */; platformFilter = ios; };
 		10CA7E5A34652A8E713018E7 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1120B34E60201B2D82BDB8 /* Asset.xcassets */; };
 		2025A1AD01679E73CE92AC7D /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5954E6ABEC87C7C34410807 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20CCDF180DAF3DD43BA976F9 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42172512EB750EFAEB2F57F9 /* OnboardingTests.swift */; };
 		21F6FDECF0510781395E58E0 /* OnboardingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35924186C81E0ED91DF62034 /* OnboardingReactor.swift */; };
 		220C8A5CF11389DE38A31F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A1C99306FEB2F5FFAA3CFC /* AppDelegate.swift */; };
-		24C2C46E65D6FDA5F135A0F6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27369CAC2176927AC9BB57B /* RxSwift.framework */; platformFilter = ios; };
 		2AA9930A8A0DC0C0D0A511A2 /* TuistAssets+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C2F9BCF1B3EC9E39E57AB /* TuistAssets+Onboarding.swift */; };
 		2BB7D7477C1E2AFC8E749BAC /* TuistAssets+OnboardingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493130523A955302761A23B /* TuistAssets+OnboardingDemoApp.swift */; };
 		2BF53BCA9E807BD9149EB60E /* Then.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFF5D9800610CBB78FAF8E9E /* Then.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -29,7 +27,6 @@
 		3F2EAACC702F18B8084CD950 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5954E6ABEC87C7C34410807 /* RxBlocking.framework */; platformFilter = ios; };
 		44428FC78F7D7B2F5F887110 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF06B02F2BC664B6501EB314 /* OnboardingCollectionViewCell.swift */; };
 		4452380B0F13D07465571F73 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42172512EB750EFAEB2F57F9 /* OnboardingTests.swift */; };
-		4482F920F2ADF08436FB877F /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4B120B482079B008C4084 /* SnapKit.framework */; platformFilter = ios; };
 		4CBC71CDA90FF81494DAC206 /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B212860BB078EA2A98129 /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		519BCC21B996B9B807C21246 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD49AE735D47BC1211143A7 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51EE3BB7343391E5E44190AB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDA201730C7F5B24FB4AEA9 /* Nimble.framework */; platformFilter = ios; };
@@ -50,7 +47,6 @@
 		B861E57C3B491E65F2E7A200 /* OnboardingCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D45D1DC916DBB2E110909 /* OnboardingCellReactor.swift */; };
 		BC041FCECC48ED357E5C0D6C /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEEFB1496014F5FB421AC34 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BC5CF7821B302AC5D1ECDC1A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27369CAC2176927AC9BB57B /* RxSwift.framework */; platformFilter = ios; };
-		BEB5897E5AE01F9447224AA7 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1709A73A7D37A4077499C575 /* RxCocoa.framework */; platformFilter = ios; };
 		BED71926779B5C8471110EEA /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D63151EE27C5CB36BC16AA /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		BF6CE0B4ED6815714A99F1FA /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B457F8873DA65F06746DC6BC /* RxNimble.framework */; platformFilter = ios; };
 		C0EE5DAE7F0D8900FBF96CFC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1A2B5C753D4BA216A4992 /* OnboardingViewController.swift */; };
@@ -66,7 +62,6 @@
 		EBDF4363523E586887F0FDA5 /* TuistBundle+OnboardingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CFCA55441C8F943FBEBBD6 /* TuistBundle+OnboardingDemoApp.swift */; };
 		ED1E226D3F4BF244A0B10E3D /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF06B02F2BC664B6501EB314 /* OnboardingCollectionViewCell.swift */; };
 		F304184337C109A2A81A1EB3 /* Onboarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCB74F6A0917EC8F5134AF3 /* Onboarding.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F6BB525C4484877885046714 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E198A84523BA195A1BC5CC5B /* BonMot.framework */; platformFilter = ios; };
 		F89D62AC2C7566B404BF9DD3 /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D63151EE27C5CB36BC16AA /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		FC8179925386F55B7F6E5C87 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F9FA0063D8769C4260B93 /* OnboardingModel.swift */; };
 /* End PBXBuildFile section */
@@ -162,7 +157,6 @@
 		35924186C81E0ED91DF62034 /* OnboardingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingReactor.swift; sourceTree = "<group>"; };
 		36DDE75454F038A54CD60DDC /* OnboardingDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42172512EB750EFAEB2F57F9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
-		5EC4B120B482079B008C4084 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		609F9FA0063D8769C4260B93 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		68D63151EE27C5CB36BC16AA /* CwlPosixPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPosixPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABEAF886FC5A47CDA1EFAC5 /* ReusableKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReusableKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,14 +234,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6BB525C4484877885046714 /* BonMot.framework in Frameworks */,
 				392C5118337B5BA54A254A8C /* CommonUI.framework in Frameworks */,
 				90D9390F129B21BB51A8D013 /* ReactorKit.framework in Frameworks */,
 				0B9F1C0234AFB608BC9EE835 /* ReusableKit.framework in Frameworks */,
-				BEB5897E5AE01F9447224AA7 /* RxCocoa.framework in Frameworks */,
-				24C2C46E65D6FDA5F135A0F6 /* RxSwift.framework in Frameworks */,
-				4482F920F2ADF08436FB877F /* SnapKit.framework in Frameworks */,
-				0DF63EB1DAF1D0C231F28AD1 /* Then.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +386,6 @@
 				DEEEFB1496014F5FB421AC34 /* RxRelay.framework */,
 				B27369CAC2176927AC9BB57B /* RxSwift.framework */,
 				DBD49AE735D47BC1211143A7 /* RxTest.framework */,
-				5EC4B120B482079B008C4084 /* SnapKit.framework */,
 				EFF5D9800610CBB78FAF8E9E /* Then.framework */,
 			);
 			name = Products;

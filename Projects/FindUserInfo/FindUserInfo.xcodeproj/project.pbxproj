@@ -10,7 +10,6 @@
 		03DA019B0AA4F23473619858 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C1A3F221832CA7570F654F /* Nimble.framework */; platformFilter = ios; };
 		04D80E67AC18A7D6707D4E63 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 319BCA2956429CB182D1E880 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A91DB3DA31A719B2B672D26 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9B24B83D15A9AEA2B73D4 /* Alamofire.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0C99C96FB4CD055309B65306 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBBB53CF3EFEE97E5542561 /* SnapKit.framework */; platformFilter = ios; };
 		11C01A125BC66BB195F0EF66 /* RxMoya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD80513E13FF11703BC1D14 /* RxMoya.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11F4FDA74CADB54E80873F8B /* ReactorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1DB30BCF97B996AEC9D6C7 /* ReactorKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1275E237B591D6C3E0009933 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C1A3F221832CA7570F654F /* Nimble.framework */; platformFilter = ios; };
@@ -19,7 +18,6 @@
 		1F46B2FD24F520DCF60237B6 /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDBCD4244A291B244F74E46 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
 		214042E9E09689853C41E197 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B160E64A587471DD00946F /* ResetPasswordViewController.swift */; };
 		34405E32EF43E5CD16E42AD8 /* ResetPasswordReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C46D4B1B575120AC616D3 /* ResetPasswordReactor.swift */; };
-		3932E21994E6818AFBE3322D /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713A81A4095FC896833A0830 /* Then.framework */; platformFilter = ios; };
 		3C3C992B38F823A6F9C19F88 /* TuistAssets+FindUserInfoDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBBA4386FB7719B5B07AE36 /* TuistAssets+FindUserInfoDemoApp.swift */; };
 		3CE5CF17F3355C59D809CA52 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD80513E13FF11703BC1D14 /* RxMoya.framework */; platformFilter = ios; };
 		4152EB7CE46A96A968B3CA70 /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDBCD4244A291B244F74E46 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
@@ -44,7 +42,6 @@
 		7F924DA2A40291E6801981ED /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C910049233F88716D9F36014 /* RxSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86C48075B9A63F0D04DD610B /* Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A81B3D81189C239BAC8AA5 /* Util.framework */; platformFilter = ios; };
 		87DD39DAE893C29565D8D958 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910049233F88716D9F36014 /* RxSwift.framework */; platformFilter = ios; };
-		918796D8CD19D57876D6BDD3 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF77E6C4AACE7D48DDE0355 /* RxCocoa.framework */; platformFilter = ios; };
 		938F332BD13AC6EBE1760906 /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9964445DA7AA4C6120EA72E /* CwlCatchException.framework */; platformFilter = ios; };
 		9E5741A93C2D2C96391B4E62 /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3071AE189CDA1FFC58A1672 /* FindIdView.swift */; };
 		9F4A265598EFB38C6D86FE8F /* TuistAssets+FindUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B477BFE616361BA40ACB26 /* TuistAssets+FindUserInfo.swift */; };
@@ -56,7 +53,6 @@
 		B4D6E0B7BF176E52E7E5528E /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3071AE189CDA1FFC58A1672 /* FindIdView.swift */; };
 		B54E5C74D33EEFCE05B3763D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E107DF53D84D920B409A2 /* AppDelegate.swift */; };
 		B85B8144B7843FE1F9CF25DD /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B160E64A587471DD00946F /* ResetPasswordViewController.swift */; };
-		B8F751528996AED778180AA8 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0187685588388F82399D5BC9 /* BonMot.framework */; platformFilter = ios; };
 		B9CFC0EC5794E7E6759BF56A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083758FF3D8D438593EF5F10 /* RxBlocking.framework */; platformFilter = ios; };
 		BEB4FFFF571653D63DDD22F3 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319BCA2956429CB182D1E880 /* RxTest.framework */; platformFilter = ios; };
 		BFFE1EE2F44E0419E9B909D7 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319BCA2956429CB182D1E880 /* RxTest.framework */; platformFilter = ios; };
@@ -64,7 +60,6 @@
 		C534B835076CB7C3FE847D53 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 083758FF3D8D438593EF5F10 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C777701A117AE0A0F37CF043 /* ResetPasswordReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C46D4B1B575120AC616D3 /* ResetPasswordReactor.swift */; };
 		CB61BF560C88E9CBCA5E137B /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D384AE9DB05C9A0181E40326 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA39F2D3ECC67EF0A5EB47F9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910049233F88716D9F36014 /* RxSwift.framework */; platformFilter = ios; };
 		DF2F5C4A7B30948F08F2E986 /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1DB30BCF97B996AEC9D6C7 /* ReactorKit.framework */; platformFilter = ios; };
 		DF92C6D6A14A95DB8BEC4058 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CB081B4D73CEC5F30A1645 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		E8DF9D4FDA795AF62B584FF3 /* FindUserInfo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2931590C59722E95ECACE830 /* FindUserInfo.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -162,7 +157,6 @@
 		0187685588388F82399D5BC9 /* BonMot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BonMot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ED21F5E82EE1FA3F126A39 /* TuistBundle+FindUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+FindUserInfo.swift"; sourceTree = "<group>"; };
 		083758FF3D8D438593EF5F10 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DBBB53CF3EFEE97E5542561 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12805A2032306837C71E5507 /* FindUserInfoDemoAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FindUserInfoDemoAppTests-Info.plist"; sourceTree = "<group>"; };
 		25B477BFE616361BA40ACB26 /* TuistAssets+FindUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+FindUserInfo.swift"; sourceTree = "<group>"; };
 		2931590C59722E95ECACE830 /* FindUserInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FindUserInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,15 +237,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F751528996AED778180AA8 /* BonMot.framework in Frameworks */,
 				78D5CA8F2503DFDA7FFD712E /* CommonUI.framework in Frameworks */,
 				AFE7E5CDCC640054160A9672 /* Moya.framework in Frameworks */,
 				DF2F5C4A7B30948F08F2E986 /* ReactorKit.framework in Frameworks */,
-				918796D8CD19D57876D6BDD3 /* RxCocoa.framework in Frameworks */,
 				3CE5CF17F3355C59D809CA52 /* RxMoya.framework in Frameworks */,
-				DA39F2D3ECC67EF0A5EB47F9 /* RxSwift.framework in Frameworks */,
-				0C99C96FB4CD055309B65306 /* SnapKit.framework in Frameworks */,
-				3932E21994E6818AFBE3322D /* Then.framework in Frameworks */,
 				86C48075B9A63F0D04DD610B /* Util.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +338,6 @@
 				D384AE9DB05C9A0181E40326 /* RxRelay.framework */,
 				C910049233F88716D9F36014 /* RxSwift.framework */,
 				319BCA2956429CB182D1E880 /* RxTest.framework */,
-				0DBBB53CF3EFEE97E5542561 /* SnapKit.framework */,
 				713A81A4095FC896833A0830 /* Then.framework */,
 				34A81B3D81189C239BAC8AA5 /* Util.framework */,
 			);
