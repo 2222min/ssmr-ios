@@ -9,8 +9,12 @@
 import UIKit
 import CommonUI
 import RxSwift
+import ReactorKit
 
-class RegiBusinessAddressViewController: BaseViewController {
+class RegiBusinessAddressViewController: BaseViewController, ReactorKit.View  {
+    
+    typealias Reactor = RegiBusinessAddressReactor
+    
     // MARK: Constants
     private enum Constants {
         static let titleLabelText = "사업자 등록하기"
@@ -87,14 +91,25 @@ class RegiBusinessAddressViewController: BaseViewController {
         $0.isEnabled = true
     }
     
+    // MARK: Initializing
+    
+    init(reactor: Reactor) {
+      defer {
+        self.reactor = reactor
+      }
+      super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeUI()
     }
     
     override func configureUI() {
-        super.configureUI()
         [
             self.titleLabel,
             self.subTitleLabel,
@@ -109,9 +124,8 @@ class RegiBusinessAddressViewController: BaseViewController {
     
     // MARK: Constraints
     override func setupConstraints() {
-        super.setupConstraints()
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
             $0.leading.equalToSuperview().offset(16)
         }
         self.subTitleLabel.snp.makeConstraints {
@@ -144,18 +158,47 @@ class RegiBusinessAddressViewController: BaseViewController {
         }
     }
     
-    override func subscribeUI() {
-        super.subscribeUI()
+    func bind(reactor: Reactor) {
         self.nextButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
                 owner.moveToRegiBusinessThirdVC()
             })
             .disposed(by: disposeBag)
+        self.searchButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.searchAddress()
+            })
+            .disposed(by: self.disposeBag)
     }
-    
+}
+
+// MARK: Func
+
+extension RegiBusinessAddressViewController {
     private func moveToRegiBusinessThirdVC() {
         let regiBusinessContactVC = RegiBusinessContactViewController()
         self.navigationController?.pushViewController(regiBusinessContactVC, animated: true)
     }
+    private func searchAddress() {
+        let kakaoPostcodeVC = SearchKakaoPostCodeViewController()
+        kakaoPostcodeVC.delegate = self
+        kakaoPostcodeVC.modalTransitionStyle = .crossDissolve
+        kakaoPostcodeVC.modalPresentationStyle = .overCurrentContext
+        self.present(kakaoPostcodeVC, animated: true)
+    }
 }
+
+// MARK: SearchKakaoPostCodeViewControllerDelegate
+
+extension RegiBusinessAddressViewController: SearchKakaoPostCodeViewControllerDelegate {
+    func setAddressTextField(address: [String: Any]) {
+        // TODO: 추가로 필요한 데이터가 있으면 address 딕셔너리에서 꺼내서 쓰면 됨
+        // Key 값:  jibunAddress, roadAddress, zonecode
+        guard let address = address["roadAddress"] as? String else { return }
+        self.addressTextField.textField.text = address
+    }
+}
+
+
