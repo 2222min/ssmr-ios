@@ -187,7 +187,8 @@ class TimePickerViewController: BaseViewController {
         }
     }
     
-    private func subscribeUI() {
+    override func subscribeUI() {
+        super.subscribeUI()
         Observable.combineLatest(
             self.openTimePicker.rx.value,
             self.closeTimePicker.rx.value

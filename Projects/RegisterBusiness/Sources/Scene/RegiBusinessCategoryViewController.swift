@@ -96,6 +96,7 @@ class RegiBusinessCategoryViewController: BaseViewController {
     }
     
     override func configureUI() {
+        super.configureUI()
         [
             self.titleLabel,
             self.subTitleLabel,
@@ -110,8 +111,9 @@ class RegiBusinessCategoryViewController: BaseViewController {
     
     // MARK: Constraints
     override func setupConstraints() {
+        super.setupConstraints()
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(16)
         }
         self.subTitleLabel.snp.makeConstraints {
@@ -143,7 +145,8 @@ class RegiBusinessCategoryViewController: BaseViewController {
         }
     }
     
-    private func subscribeUI() {
+    override func subscribeUI() {
+        super.subscribeUI()
         self.largeCategory.category.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in

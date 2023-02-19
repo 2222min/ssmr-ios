@@ -268,6 +268,7 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
     }
     
     override func configureUI() {
+        super.configureUI()
         [
             self.monButton,
             self.tueButton,
@@ -309,8 +310,9 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
     
     // MARK: Constraints
     override func setupConstraints() {
+        super.setupConstraints()
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(16)
         }
         self.subTitleLabel.snp.makeConstraints {
@@ -410,7 +412,8 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
         }
     }
     
-    private func subscribeUI() {
+    override func subscribeUI() {
+        super.subscribeUI()
         self.operatingTimeTextField.textField.rx.controlEvent(.touchDown)
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
