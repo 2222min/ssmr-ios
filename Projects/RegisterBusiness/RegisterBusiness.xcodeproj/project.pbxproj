@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,6 +51,10 @@
 		7EE5B422D12A4D59B9738F0A /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBA23362E7C99A8CEECB0AF /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		828CEB725B6DCDFE24ED40C8 /* RxCocoaRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 172FB34452D92CA4716C871A /* RxCocoaRuntime.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		917E15AABDAFEA5F5B07BA87 /* RegisterBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C8E1E2E0666ECA1681DD5 /* RegisterBusinessOneViewController.swift */; };
+		9B85043D29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */; };
+		9B85043E29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */; };
+		9B85044129A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */; };
+		9B85044229A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */; };
 		9D97DE190816BF804CEA6E6F /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; };
 		A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */; };
 		A3A06FEB05E1BE8B1CD24701 /* RegiBusinessFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC348DD9F1D784DCF1755E /* RegiBusinessFirstViewController.swift */; };
@@ -184,6 +188,8 @@
 		8A6E7E28DF2E9685908B3879 /* RxNimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E59239A0D887722C24A36A2 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECF5FE88C48119B2AC7E9F1 /* RegisterBusinessDemoAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessDemoAppTests-Info.plist"; sourceTree = "<group>"; };
+		9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessAddressReactor.swift; sourceTree = "<group>"; };
+		9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKakaoPostCodeViewController.swift; sourceTree = "<group>"; };
 		9F76F975AE32A2B3ADAFAE78 /* RegisterBusiness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusiness-Info.plist"; sourceTree = "<group>"; };
 		A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessNumberViewController.swift; sourceTree = "<group>"; };
 		A9396A785F0CDEE8DAF9F7FF /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,6 +329,16 @@
 			);
 			sourceTree = "<group>";
 		};
+		9B85043F29A1DCD700B7F0FF /* RegiBusinessAddress */ = {
+			isa = PBXGroup;
+			children = (
+				F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */,
+				9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */,
+				9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */,
+			);
+			path = RegiBusinessAddress;
+			sourceTree = "<group>";
+		};
 		CC8A448B3CEBFD0AF0BA30CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,8 +349,8 @@
 		E792571968DF24C5659EF398 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				9B85043F29A1DCD700B7F0FF /* RegiBusinessAddress */,
 				5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */,
-				F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */,
 				2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */,
 				F5CC348DD9F1D784DCF1755E /* RegiBusinessFirstViewController.swift */,
 				A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */,
@@ -549,7 +565,9 @@
 				FC25C4149E793CF97E404BFE /* RegiBusinessCategoryViewController.swift in Sources */,
 				7BABC440126CFCF001E16C7F /* RegiBusinessFirstViewController.swift in Sources */,
 				C69E62F608C7B1DDA4B4F3A6 /* RegiBusinessNumberViewController.swift in Sources */,
+				9B85044229A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */,
 				A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
+				9B85043E29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */,
 				7885FD69863E03394CCD0605 /* RegiBusinessStoreNumberViewController.swift in Sources */,
 				917E15AABDAFEA5F5B07BA87 /* RegisterBusinessOneViewController.swift in Sources */,
 				5C7FDE8DFEC89365EB1D12E5 /* TimePickerViewController.swift in Sources */,
@@ -566,7 +584,9 @@
 				4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */,
 				A3A06FEB05E1BE8B1CD24701 /* RegiBusinessFirstViewController.swift in Sources */,
 				A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */,
+				9B85044129A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */,
 				5BEA7B17E405C1871287E836 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
+				9B85043D29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */,
 				7BAA39DE2391A110E1A757EC /* RegiBusinessStoreNumberViewController.swift in Sources */,
 				413F49940FEA2C47BC8E42D6 /* RegisterBusinessOneViewController.swift in Sources */,
 				F3B3FF64935D0419D2376C29 /* TimePickerViewController.swift in Sources */,
@@ -612,11 +632,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -644,11 +660,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -673,11 +685,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -752,7 +760,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -762,6 +772,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessDemoApp;
 				PRODUCT_NAME = RegisterBusinessDemoApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -818,11 +829,7 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -871,7 +878,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -881,6 +890,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessDemoApp;
 				PRODUCT_NAME = RegisterBusinessDemoApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
