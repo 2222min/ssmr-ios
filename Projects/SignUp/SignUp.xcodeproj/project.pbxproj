@@ -33,7 +33,6 @@
 		4C7E0D2FCAE9066409C91889 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41FD7857C1AF339283E85D4 /* RxNimble.framework */; platformFilter = ios; };
 		4D59EC9E66863F9F12FAFC49 /* SignUpAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192740A8558F0FBDA5593D00 /* SignUpAPIProvider.swift */; };
 		4E93B193EA9968A395A3EF7B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F885FEF80E63F09245002C53 /* SignUpViewController.swift */; };
-		54D2AE18F2DAA3A636AFF8C6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8C1EFD9A4D6F218588D661 /* RxCocoa.framework */; platformFilter = ios; };
 		55FCB175D983DEB9F3B502B9 /* Util.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84BA95CD9AC86DE0D2B30D6A /* Util.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DCCD7235697EAC30B1C8538 /* Then.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 998120C01F122FF6EBA3A379 /* Then.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DF41379839CB235EFA867B2 /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2166758057A6AF16477DE39D /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
@@ -43,13 +42,9 @@
 		6426C78F06EA2DB97195F643 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D6129F066D50FAF35DA006 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		69D49225A940916355661D7A /* TuistAssets+SignUpDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0468CBA4C3703A73F541BE /* TuistAssets+SignUpDemoApp.swift */; };
 		73EF28DDD10791B4C196931D /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB7FDBF6E2BFB912110346 /* CwlCatchException.framework */; platformFilter = ios; };
-		753DDBA941DAB6D15302EA8C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E927366167742E446BBFA3EE /* RxSwift.framework */; platformFilter = ios; };
-		754B098971153FA7B3D992D6 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032089FEE664EF99F80E4CB2 /* BonMot.framework */; platformFilter = ios; };
 		76DFA052426FB06DBAE3EA3C /* SpeechBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348E6066DF37555263843ED2 /* SpeechBalloonView.swift */; };
 		771EFE7CA3A5827BC20CF936 /* SignUpAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192740A8558F0FBDA5593D00 /* SignUpAPIProvider.swift */; };
-		774107EBE4026F3C46104A52 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998120C01F122FF6EBA3A379 /* Then.framework */; platformFilter = ios; };
 		7AF9578528671D9BE030A59A /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E84D1A1453D2F254211CE07 /* Moya.framework */; platformFilter = ios; };
-		7AFF0984079D1371D20ECC50 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF2CFD764FD229432DB25C2 /* SnapKit.framework */; platformFilter = ios; };
 		7C95D4CE496CD5E74F554772 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3EE32E2117AEB8A7C1274 /* LoginViewController.swift */; };
 		7D12F0D29598D4BED56A60BC /* SignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94B746F031DB5CD50BE922 /* SignUpReactor.swift */; };
 		7E5DAAF960F661658F2846DC /* AddEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC0F4F963372E31C58AF60B /* AddEmailViewController.swift */; };
@@ -195,7 +190,6 @@
 		3B0468CBA4C3703A73F541BE /* TuistAssets+SignUpDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+SignUpDemoApp.swift"; sourceTree = "<group>"; };
 		3BC0F4F963372E31C58AF60B /* AddEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailViewController.swift; sourceTree = "<group>"; };
 		3DA7D19AB0BB9A4FC47729CF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EF2CFD764FD229432DB25C2 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4474D331BB51AFCCCFD11C64 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		460F51D660F3D2596A8205A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		495FA455BB4C92102705F5A9 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,15 +240,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				754B098971153FA7B3D992D6 /* BonMot.framework in Frameworks */,
 				9050AEB576120AE371E0318F /* CommonUI.framework in Frameworks */,
 				7AF9578528671D9BE030A59A /* Moya.framework in Frameworks */,
 				FBF5221397674EE8C74FCB31 /* ReactorKit.framework in Frameworks */,
-				54D2AE18F2DAA3A636AFF8C6 /* RxCocoa.framework in Frameworks */,
 				A1CE2F178C665D2501CD3665 /* RxMoya.framework in Frameworks */,
-				753DDBA941DAB6D15302EA8C /* RxSwift.framework in Frameworks */,
-				7AFF0984079D1371D20ECC50 /* SnapKit.framework in Frameworks */,
-				774107EBE4026F3C46104A52 /* Then.framework in Frameworks */,
 				1503CE9475C444CFCDDDF9B4 /* Util.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +416,6 @@
 				B3512288D2B7EFC5DD4ADCD8 /* SignUpDemoApp.app */,
 				3A5BBA285A57E1887E49D0C9 /* SignUpDemoAppTests.xctest */,
 				774F4F02E05A890620B59D2B /* SignUpTests.xctest */,
-				3EF2CFD764FD229432DB25C2 /* SnapKit.framework */,
 				998120C01F122FF6EBA3A379 /* Then.framework */,
 				84BA95CD9AC86DE0D2B30D6A /* Util.framework */,
 			);

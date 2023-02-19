@@ -16,7 +16,6 @@
 		1D7C0F3E4A52430F8FB7067C /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCC50767C7E3F741B339EAA9 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		271C210373DDD22D96EA78C6 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BB1C35E2A629DADB8BE53E /* Asset.xcassets */; };
 		2BB465818117840C25F79A43 /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEADD7E3DE6AE8771B112153 /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
-		2C625E388FE9330832B1D2FC /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7703DB5539953F38792597A5 /* Then.framework */; platformFilter = ios; };
 		2CF8AAE3848B5975255E54AB /* RxMoya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 61D473CE2B88447108D34DD9 /* RxMoya.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E743A6F76CCB6064D781210 /* TuistAssets+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D529DAAF6A9D59C44D9D68 /* TuistAssets+App.swift */; };
 		32381EDA1A9867BCAB8E2817 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F48A93D37532F9E97FAFA324 /* RxCocoa.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -24,7 +23,6 @@
 		44F418D4255B4F295188C675 /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B635A6DA767BD051310146A9 /* ReactorKit.framework */; platformFilter = ios; };
 		48C8C11205FA3D84C8A4A96C /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC50767C7E3F741B339EAA9 /* RxTest.framework */; platformFilter = ios; };
 		496A8328370DD45B758570F1 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1EBD7E352FEC5C7145F2B93 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		50AEE7600B114296E0277A8E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE442BA1C87E9CF5D190ED8 /* SnapKit.framework */; platformFilter = ios; };
 		55C10C02F203892AF5DFBEC5 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97590F8716CD862F585CC863 /* Moya.framework */; platformFilter = ios; };
 		5CC4FB34994C6DC7BA05BBB1 /* Util.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3971CE0F850EA4A76F58D45 /* Util.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6222971913F22EA554B23EFC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CA972BF68EF8FD34B1324 /* MainTabBarController.swift */; };
@@ -116,7 +114,6 @@
 		057A3CD8D734F9C1B4948C18 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05C205C150A8B60F0BF50551 /* AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AppTests-Info.plist"; sourceTree = "<group>"; };
 		083CD4D343ECF7F321C1905D /* TuistBundle+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+App.swift"; sourceTree = "<group>"; };
-		0DE442BA1C87E9CF5D190ED8 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13566D70F67E07A15705DCB0 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A421115315736B26FAF60E /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F52CD34B770EC66ED52D2FF /* ReusableKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReusableKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,8 +184,6 @@
 				744D2DBD4295EC676A6AF96C /* RxMoya.framework in Frameworks */,
 				E843BE55F05497E1A99940F4 /* RxSwift.framework in Frameworks */,
 				0CC0950646F371A14FD7B655 /* SignUp.framework in Frameworks */,
-				50AEE7600B114296E0277A8E /* SnapKit.framework in Frameworks */,
-				2C625E388FE9330832B1D2FC /* Then.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +300,6 @@
 				13A421115315736B26FAF60E /* RxSwift.framework */,
 				DCC50767C7E3F741B339EAA9 /* RxTest.framework */,
 				87B052B51BF0110BC3797752 /* SignUp.framework */,
-				0DE442BA1C87E9CF5D190ED8 /* SnapKit.framework */,
 				7703DB5539953F38792597A5 /* Then.framework */,
 				D3971CE0F850EA4A76F58D45 /* Util.framework */,
 			);

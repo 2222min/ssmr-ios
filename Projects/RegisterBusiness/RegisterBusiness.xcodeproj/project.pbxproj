@@ -3,28 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02092CA3CE508DA58B448B66 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54D8AD860544E5F81833949 /* SnapKit.framework */; platformFilter = ios; };
 		05644A4E4D0F0B07EEC99CE8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD67F62724F7A4FE5471979 /* Nimble.framework */; platformFilter = ios; };
 		06E71ED4D6E19661FCC63834 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9ED61C167AF05910E327C34 /* Alamofire.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A0BE89E2BBB228F82F90FBE /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; };
 		0A3E9A30AC1B262DC962D6F4 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E28F677BBE25918CCBC29 /* AppTests.swift */; };
-		11D31A20567E073EA29308F9 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB066AA73F22FD453422F93 /* BonMot.framework */; platformFilter = ios; };
 		122A3B6185E881A59E3E05A2 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AC58B31CE5D330DF01DCA0 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		128E4EDF8B82E2ACFE119532 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53399836ECE38F4D4146AB26 /* RxBlocking.framework */; platformFilter = ios; };
+		1464C643405C92C7E32E69AE /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E776B813FDA61986741BB5B /* RegiBusinessAddressReactor.swift */; };
 		188E73B40AC7E2E171BA25EE /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53399836ECE38F4D4146AB26 /* RxBlocking.framework */; platformFilter = ios; };
 		1B56F2401E59F1C18D08C53C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; };
 		20CFC92FAE62235A6613C072 /* Util.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1854A10E1571AB74AF2D3AD /* Util.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2184528AF14850CC36DD6166 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD67F62724F7A4FE5471979 /* Nimble.framework */; platformFilter = ios; };
 		229A3B3F863B362D557EA12E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467B1DE76B88605AA8F086B /* AppDelegate.swift */; };
+		24DE85D5DBB989BAE661923B /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E999C85AD5BCA23665C1D7A /* RegiBusinessAddressViewController.swift */; };
 		2A9E1E6F451262F9802EE79C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; };
-		2D391947CB503553BA05E384 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22035A8B1DCF7CC4C64F8BAA /* Then.framework */; platformFilter = ios; };
-		2DA5E4D7D8696473F1699148 /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */; };
 		3309951B28199BE061E5D949 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3FB5F86F75DB4C2C3CA5A3F8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A6B3927175F05DBA0894C /* RxSwift.framework */; platformFilter = ios; };
+		3CB9F4CC7A8809A030B04C90 /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112D290B4BE2F6241EA443B /* SearchKakaoPostCodeViewController.swift */; };
 		42B8D0200DCF21C352BB8B9B /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9396A785F0CDEE8DAF9F7FF /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
 		4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */; };
 		4AC3E64C0ADE9DDC82F00ECD /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11453C448FB8D9845B17A934 /* CwlCatchException.framework */; platformFilter = ios; };
@@ -36,31 +34,27 @@
 		576C6898E1A19118657721DE /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5871A800B0D2C8496704C2C2 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB99ECD3279378E6E07FD805 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58DAD08A3FE96C02DB3C7573 /* RegisterBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDFDA47E2C63BC820C5C91 /* RegisterBusiness.framework */; platformFilter = ios; };
+		5945D19932AC95B6D4B25F78 /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E999C85AD5BCA23665C1D7A /* RegiBusinessAddressViewController.swift */; };
 		5A0E94A6B940AE2AD30A8970 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6E7E28DF2E9685908B3879 /* RxNimble.framework */; platformFilter = ios; };
 		5BEA7B17E405C1871287E836 /* RegiBusinessOperatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */; };
 		5C7FDE8DFEC89365EB1D12E5 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95954B63C171472730F240 /* TimePickerViewController.swift */; };
 		5D6F27BE2BB0218E890DB63F /* ReactorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E59239A0D887722C24A36A2 /* ReactorKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6D676667D69A781973DBB020 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BFB7F3FC0C872D014894C4 /* CommonUI.framework */; platformFilter = ios; };
 		6E8175DDE951E58715DA78AE /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55C6020372209921286DC1 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
+		74FD010EFFC2CA5FB1B958E5 /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112D290B4BE2F6241EA443B /* SearchKakaoPostCodeViewController.swift */; };
 		7885FD69863E03394CCD0605 /* RegiBusinessStoreNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */; };
 		7BAA39DE2391A110E1A757EC /* RegiBusinessStoreNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */; };
 		7CA51C06F3C06FA31E7389A6 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E28F677BBE25918CCBC29 /* AppTests.swift */; };
 		7EB2C955DBA57EE20B3953F6 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */; };
 		7EE5B422D12A4D59B9738F0A /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBA23362E7C99A8CEECB0AF /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		828CEB725B6DCDFE24ED40C8 /* RxCocoaRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 172FB34452D92CA4716C871A /* RxCocoaRuntime.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		917E15AABDAFEA5F5B07BA87 /* RegisterBusinessOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C8E1E2E0666ECA1681DD5 /* RegisterBusinessOneViewController.swift */; };
-		9B85043D29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */; };
-		9B85043E29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */; };
-		9B85044129A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */; };
-		9B85044229A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */; };
 		9D97DE190816BF804CEA6E6F /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; };
 		A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */; };
 		A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */; };
 		A68273323460926EF62C6EBF /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; };
-		AAD9BD6A391DD176866BE31E /* RegiBusinessAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */; };
 		AD5352984640F0EB9509E39A /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55C6020372209921286DC1 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		B6FF432F3B7DD00291447293 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AC58B31CE5D330DF01DCA0 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
-		BAAF0CC7802A8CECE21FD924 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108A2AF267BE9CD2A14DDA10 /* RxCocoa.framework */; platformFilter = ios; };
+		BEEA869D1CB53C5DD10DEE0D /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E776B813FDA61986741BB5B /* RegiBusinessAddressReactor.swift */; };
 		C603B66760B77B45129B89EF /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBA23362E7C99A8CEECB0AF /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		C69E62F608C7B1DDA4B4F3A6 /* RegiBusinessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */; };
 		C8C14C0F8948B0EB15556FE3 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6E7E28DF2E9685908B3879 /* RxNimble.framework */; platformFilter = ios; };
@@ -176,7 +170,9 @@
 		2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessCategoryViewController.swift; sourceTree = "<group>"; };
 		2E8F38E923048AD0602FDCF9 /* RegisterBusinessDemoApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessDemoApp-Info.plist"; sourceTree = "<group>"; };
 		3C6B1A5A22822F97EE0FBF70 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E776B813FDA61986741BB5B /* RegiBusinessAddressReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessAddressReactor.swift; sourceTree = "<group>"; };
 		4A39C99A6762814429BBF9E1 /* RegisterBusinessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessTests-Info.plist"; sourceTree = "<group>"; };
+		5112D290B4BE2F6241EA443B /* SearchKakaoPostCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKakaoPostCodeViewController.swift; sourceTree = "<group>"; };
 		53399836ECE38F4D4146AB26 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		7A95954B63C171472730F240 /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
@@ -184,8 +180,7 @@
 		8A6E7E28DF2E9685908B3879 /* RxNimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E59239A0D887722C24A36A2 /* ReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECF5FE88C48119B2AC7E9F1 /* RegisterBusinessDemoAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessDemoAppTests-Info.plist"; sourceTree = "<group>"; };
-		9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessAddressReactor.swift; sourceTree = "<group>"; };
-		9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKakaoPostCodeViewController.swift; sourceTree = "<group>"; };
+		9E999C85AD5BCA23665C1D7A /* RegiBusinessAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessAddressViewController.swift; sourceTree = "<group>"; };
 		9F76F975AE32A2B3ADAFAE78 /* RegisterBusiness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusiness-Info.plist"; sourceTree = "<group>"; };
 		A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessNumberViewController.swift; sourceTree = "<group>"; };
 		A9396A785F0CDEE8DAF9F7FF /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,13 +190,11 @@
 		C1854A10E1571AB74AF2D3AD /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8395769F6A237911956CC5F /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ED61C167AF05910E327C34 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D54D8AD860544E5F81833949 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB99ECD3279378E6E07FD805 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE91FA582D46B8B4604A0DDC /* RegiBusinessStoreNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessStoreNumberViewController.swift; sourceTree = "<group>"; };
 		DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessOperatingTimeViewController.swift; sourceTree = "<group>"; };
 		DFD67F62724F7A4FE5471979 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01E28F677BBE25918CCBC29 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessAddressViewController.swift; sourceTree = "<group>"; };
 		FFDC78DD782FEBB8C2E19924 /* RxMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -245,15 +238,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D31A20567E073EA29308F9 /* BonMot.framework in Frameworks */,
 				6D676667D69A781973DBB020 /* CommonUI.framework in Frameworks */,
 				9D97DE190816BF804CEA6E6F /* Moya.framework in Frameworks */,
 				51CAFE4B46CFC58A47A2984E /* ReactorKit.framework in Frameworks */,
-				BAAF0CC7802A8CECE21FD924 /* RxCocoa.framework in Frameworks */,
 				CCC70A5D64171E510D08EB63 /* RxMoya.framework in Frameworks */,
-				3FB5F86F75DB4C2C3CA5A3F8 /* RxSwift.framework in Frameworks */,
-				02092CA3CE508DA58B448B66 /* SnapKit.framework in Frameworks */,
-				2D391947CB503553BA05E384 /* Then.framework in Frameworks */,
 				E31240CE74A450F26605E4B4 /* Util.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +286,16 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		49D400BD8EB3C0D285DE463E /* RegiBusinessAddress */ = {
+			isa = PBXGroup;
+			children = (
+				3E776B813FDA61986741BB5B /* RegiBusinessAddressReactor.swift */,
+				9E999C85AD5BCA23665C1D7A /* RegiBusinessAddressViewController.swift */,
+				5112D290B4BE2F6241EA443B /* SearchKakaoPostCodeViewController.swift */,
+			);
+			path = RegiBusinessAddress;
+			sourceTree = "<group>";
+		};
 		6FF611B147322339D77763AF /* Derived */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,16 +322,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		9B85043F29A1DCD700B7F0FF /* RegiBusinessAddress */ = {
-			isa = PBXGroup;
-			children = (
-				F18BA9CBF0D273B844326EA0 /* RegiBusinessAddressViewController.swift */,
-				9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */,
-				9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */,
-			);
-			path = RegiBusinessAddress;
-			sourceTree = "<group>";
-		};
 		CC8A448B3CEBFD0AF0BA30CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,7 +332,7 @@
 		E792571968DF24C5659EF398 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				9B85043F29A1DCD700B7F0FF /* RegiBusinessAddress */,
+				49D400BD8EB3C0D285DE463E /* RegiBusinessAddress */,
 				5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */,
 				2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */,
 				A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */,
@@ -381,7 +369,6 @@
 				DB99ECD3279378E6E07FD805 /* RxRelay.framework */,
 				857A6B3927175F05DBA0894C /* RxSwift.framework */,
 				C8395769F6A237911956CC5F /* RxTest.framework */,
-				D54D8AD860544E5F81833949 /* SnapKit.framework */,
 				22035A8B1DCF7CC4C64F8BAA /* Then.framework */,
 				C1854A10E1571AB74AF2D3AD /* Util.framework */,
 			);
@@ -554,12 +541,12 @@
 			files = (
 				229A3B3F863B362D557EA12E /* AppDelegate.swift in Sources */,
 				7EB2C955DBA57EE20B3953F6 /* CategoryPickerViewController.swift in Sources */,
-				AAD9BD6A391DD176866BE31E /* RegiBusinessAddressViewController.swift in Sources */,
+				1464C643405C92C7E32E69AE /* RegiBusinessAddressReactor.swift in Sources */,
+				5945D19932AC95B6D4B25F78 /* RegiBusinessAddressViewController.swift in Sources */,
+				74FD010EFFC2CA5FB1B958E5 /* SearchKakaoPostCodeViewController.swift in Sources */,
 				FC25C4149E793CF97E404BFE /* RegiBusinessCategoryViewController.swift in Sources */,
 				C69E62F608C7B1DDA4B4F3A6 /* RegiBusinessNumberViewController.swift in Sources */,
-				9B85044229A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */,
 				A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
-				9B85043E29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */,
 				7885FD69863E03394CCD0605 /* RegiBusinessStoreNumberViewController.swift in Sources */,
 				5C7FDE8DFEC89365EB1D12E5 /* TimePickerViewController.swift in Sources */,
 			);
@@ -571,12 +558,12 @@
 			files = (
 				CB27EF21229846803B2A3A77 /* AppDelegate.swift in Sources */,
 				ED35412AED793B9FE59F46B6 /* CategoryPickerViewController.swift in Sources */,
-				2DA5E4D7D8696473F1699148 /* RegiBusinessAddressViewController.swift in Sources */,
+				BEEA869D1CB53C5DD10DEE0D /* RegiBusinessAddressReactor.swift in Sources */,
+				24DE85D5DBB989BAE661923B /* RegiBusinessAddressViewController.swift in Sources */,
+				3CB9F4CC7A8809A030B04C90 /* SearchKakaoPostCodeViewController.swift in Sources */,
 				4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */,
 				A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */,
-				9B85044129A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */,
 				5BEA7B17E405C1871287E836 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
-				9B85043D29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */,
 				7BAA39DE2391A110E1A757EC /* RegiBusinessStoreNumberViewController.swift in Sources */,
 				F3B3FF64935D0419D2376C29 /* TimePickerViewController.swift in Sources */,
 			);
@@ -621,7 +608,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -649,7 +640,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -674,7 +669,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessTests;
 				PRODUCT_NAME = RegisterBusinessTests;
 				SDKROOT = iphoneos;
@@ -749,9 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -761,7 +758,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessDemoApp;
 				PRODUCT_NAME = RegisterBusinessDemoApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -818,7 +814,11 @@
 					"$(inherited)",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.Tests;
 				PRODUCT_NAME = RegisterBusinessDemoAppTests;
 				SDKROOT = iphoneos;
@@ -867,9 +867,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -879,7 +877,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = team.io.RegisterBusinessDemoApp;
 				PRODUCT_NAME = RegisterBusinessDemoApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
