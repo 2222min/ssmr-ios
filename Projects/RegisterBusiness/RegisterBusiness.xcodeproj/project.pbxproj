@@ -28,6 +28,8 @@
 		51149048E76D34AB8BA1A02A /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11453C448FB8D9845B17A934 /* CwlCatchException.framework */; platformFilter = ios; };
 		51CAFE4B46CFC58A47A2984E /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E59239A0D887722C24A36A2 /* ReactorKit.framework */; platformFilter = ios; };
 		54819C1C7FFB3D8235E1094B /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5BFB7F3FC0C872D014894C4 /* CommonUI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		54AFA57829A3C01800D28085 /* RegiBusinessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AFA57729A3C01800D28085 /* RegiBusinessPage.swift */; };
+		54AFA57929A3C35900D28085 /* RegiBusinessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AFA57729A3C01800D28085 /* RegiBusinessPage.swift */; };
 		5521198C8AE541689EB9C7C4 /* BonMot.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAB066AA73F22FD453422F93 /* BonMot.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5871A800B0D2C8496704C2C2 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB99ECD3279378E6E07FD805 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58DAD08A3FE96C02DB3C7573 /* RegisterBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDFDA47E2C63BC820C5C91 /* RegisterBusiness.framework */; platformFilter = ios; };
@@ -45,6 +47,11 @@
 		7EB2C955DBA57EE20B3953F6 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */; };
 		7EE5B422D12A4D59B9738F0A /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBA23362E7C99A8CEECB0AF /* CwlPreconditionTesting.framework */; platformFilter = ios; };
 		828CEB725B6DCDFE24ED40C8 /* RxCocoaRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 172FB34452D92CA4716C871A /* RxCocoaRuntime.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B85043D29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */; };
+		9B85043E29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85043C29A1DB9900B7F0FF /* RegiBusinessAddressReactor.swift */; };
+		9B85044129A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */; };
+		9B85044229A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85044029A1DEBA00B7F0FF /* SearchKakaoPostCodeViewController.swift */; };
+		9D97DE190816BF804CEA6E6F /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B1A5A22822F97EE0FBF70 /* Moya.framework */; platformFilter = ios; };
 		A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */; };
 		A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF65908CCCBCBF7BC591A17 /* RegiBusinessOperatingTimeViewController.swift */; };
 		A68273323460926EF62C6EBF /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8395769F6A237911956CC5F /* RxTest.framework */; platformFilter = ios; };
@@ -165,6 +172,7 @@
 		4A39C99A6762814429BBF9E1 /* RegisterBusinessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RegisterBusinessTests-Info.plist"; sourceTree = "<group>"; };
 		5112D290B4BE2F6241EA443B /* SearchKakaoPostCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKakaoPostCodeViewController.swift; sourceTree = "<group>"; };
 		53399836ECE38F4D4146AB26 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54AFA57729A3C01800D28085 /* RegiBusinessPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiBusinessPage.swift; sourceTree = "<group>"; };
 		5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		7A95954B63C171472730F240 /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
 		857A6B3927175F05DBA0894C /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +289,12 @@
 				5112D290B4BE2F6241EA443B /* SearchKakaoPostCodeViewController.swift */,
 			);
 			path = RegiBusinessAddress;
+		54AFA57629A3BFBE00D28085 /* ReuseableUI */ = {
+			isa = PBXGroup;
+			children = (
+				54AFA57729A3C01800D28085 /* RegiBusinessPage.swift */,
+			);
+			path = ReuseableUI;
 			sourceTree = "<group>";
 		};
 		6FF611B147322339D77763AF /* Derived */ = {
@@ -320,6 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				49D400BD8EB3C0D285DE463E /* RegiBusinessAddress */,
+				54AFA57629A3BFBE00D28085 /* ReuseableUI */,
+				9B85043F29A1DCD700B7F0FF /* RegiBusinessAddress */,
 				5B454C7A85F90F8FBDF96ACC /* CategoryPickerViewController.swift */,
 				2D2FDB25EDE4CF817BB9423A /* RegiBusinessCategoryViewController.swift */,
 				A65F015F6C799A6F01E65439 /* RegiBusinessNumberViewController.swift */,
@@ -528,6 +544,8 @@
 				1464C643405C92C7E32E69AE /* RegiBusinessAddressReactor.swift in Sources */,
 				5945D19932AC95B6D4B25F78 /* RegiBusinessAddressViewController.swift in Sources */,
 				74FD010EFFC2CA5FB1B958E5 /* SearchKakaoPostCodeViewController.swift in Sources */,
+				AAD9BD6A391DD176866BE31E /* RegiBusinessAddressViewController.swift in Sources */,
+				54AFA57929A3C35900D28085 /* RegiBusinessPage.swift in Sources */,
 				FC25C4149E793CF97E404BFE /* RegiBusinessCategoryViewController.swift in Sources */,
 				C69E62F608C7B1DDA4B4F3A6 /* RegiBusinessNumberViewController.swift in Sources */,
 				A5EE4C39A84E7EF3979162C4 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
@@ -545,6 +563,8 @@
 				BEEA869D1CB53C5DD10DEE0D /* RegiBusinessAddressReactor.swift in Sources */,
 				24DE85D5DBB989BAE661923B /* RegiBusinessAddressViewController.swift in Sources */,
 				3CB9F4CC7A8809A030B04C90 /* SearchKakaoPostCodeViewController.swift in Sources */,
+				2DA5E4D7D8696473F1699148 /* RegiBusinessAddressViewController.swift in Sources */,
+				54AFA57829A3C01800D28085 /* RegiBusinessPage.swift in Sources */,
 				4ABF64CF8DD54DD392253355 /* RegiBusinessCategoryViewController.swift in Sources */,
 				A34FA418E965AD4C4A84B042 /* RegiBusinessNumberViewController.swift in Sources */,
 				5BEA7B17E405C1871287E836 /* RegiBusinessOperatingTimeViewController.swift in Sources */,
@@ -733,6 +753,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 842FZARC28;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -852,6 +875,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 842FZARC28;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/RegisterBusinessDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

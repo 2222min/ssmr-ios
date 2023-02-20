@@ -59,13 +59,15 @@ class RegiBusinessContactViewController: BaseViewController {
         $0.imageEdgeInsets = .init(top: 2, left: 0, bottom: 0, right: 0)
         $0.titleEdgeInsets = .init(top: 0, left: 4, bottom: 0, right: -4)
     }
-   
     private let nextButton = CTAButton().then {
         $0.setAttributedTitle(
             Constants.nextButtonText,
             for: .normal
         )
         $0.isEnabled = true
+    }
+    private let pageView = RegiBusinessPage().then {
+        $0.makePage(pageNumber: 5, currentPage: 4)
     }
     
     // MARK: View Life Cycle
@@ -81,7 +83,8 @@ class RegiBusinessContactViewController: BaseViewController {
             self.subTitleLabel,
             self.telTextField,
             self.telTextFieldGuideLabel,
-            self.nextButton
+            self.nextButton,
+            self.pageView
         ]
             .forEach(self.view.addSubview)
     }
@@ -109,6 +112,10 @@ class RegiBusinessContactViewController: BaseViewController {
         self.nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-50)
             $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        self.pageView.snp.makeConstraints {
+            $0.top.equalTo(self.navigationTopBar.snp.top).offset(24)
+            $0.trailing.equalTo(self.navigationTopBar.snp.trailing).offset(-16)
         }
     }
     

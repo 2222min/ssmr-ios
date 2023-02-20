@@ -90,6 +90,9 @@ class RegiBusinessAddressViewController: BaseViewController, ReactorKit.View  {
         )
         $0.isEnabled = true
     }
+    private let pageView = RegiBusinessPage().then {
+        $0.makePage(pageNumber: 5, currentPage: 3)
+    }
     
     // MARK: Initializing
     
@@ -107,9 +110,11 @@ class RegiBusinessAddressViewController: BaseViewController, ReactorKit.View  {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
     }
     
     override func configureUI() {
+        super.configureUI()
         [
             self.titleLabel,
             self.subTitleLabel,
@@ -117,15 +122,17 @@ class RegiBusinessAddressViewController: BaseViewController, ReactorKit.View  {
             self.nameTextFieldGuideLabel,
             self.addressTextField,
             self.searchButton,
-            self.nextButton
+            self.nextButton,
+            self.pageView
         ]
             .forEach(self.view.addSubview)
     }
     
     // MARK: Constraints
     override func setupConstraints() {
+        super.setupConstraints()
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(16)
         }
         self.subTitleLabel.snp.makeConstraints {
@@ -156,6 +163,14 @@ class RegiBusinessAddressViewController: BaseViewController, ReactorKit.View  {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(48)
         }
+        self.pageView.snp.makeConstraints {
+            $0.top.equalTo(self.navigationTopBar.snp.top).offset(24)
+            $0.trailing.equalTo(self.navigationTopBar.snp.trailing).offset(-16)
+        }
+    }
+    
+    override func subscribeUI() {
+        super.subscribeUI()
     }
     
     func bind(reactor: Reactor) {
