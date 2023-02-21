@@ -37,26 +37,26 @@ public class RegiBusinessPage: UIStackView {
     }
     
     func makePage(pageNumber: Int, currentPage: Int) {
-        for number in 1...pageNumber {
-            let numberCircle = UIButton().then {
-                $0.isEnabled = false
-                $0.layer.cornerRadius = 10
-                $0.setTitle(String(number), for: .normal)
-                $0.titleLabel?.font = CoreTypo.ButtomSmall.style.font
-                $0.titleEdgeInsets = .init(top: 0, left: 0, bottom: 1, right: 0)
-                $0.setTitleColor(
-                    number == currentPage ? .white : CommonUIAsset.grey.color,
-                    for: .normal
-                )
-                $0.backgroundColor = number == currentPage
+        let numberCircles = (1...pageNumber).map { number -> UIButton in
+            let button = UIButton()
+            button.isEnabled = false
+            button.layer.cornerRadius = 10
+            button.setTitle(String(number), for: .normal)
+            button.titleLabel?.font = CoreTypo.ButtomSmall.style.font
+            button.titleEdgeInsets = .init(top: 0, left: 0, bottom: 1, right: 0)
+            button.setTitleColor(
+                number == currentPage ? .white : CommonUIAsset.grey.color,
+                for: .normal
+            )
+            button.backgroundColor = number == currentPage
                 ? CommonUIAsset.pointColor.color
                 : CommonUIAsset.whiteGrey.color
-            }
-            numberCircle.snp.makeConstraints {
+            button.snp.makeConstraints {
                 $0.height.equalTo(20)
                 $0.width.equalTo(20)
             }
-            stackView.addArrangedSubview(numberCircle)
+            return button
         }
+        numberCircles.forEach { stackView.addArrangedSubview($0) }
     }
 }
