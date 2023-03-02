@@ -196,6 +196,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6FAC24235EF51D98FC065595"
+               BuildableName = "Domain.framework"
+               BlueprintName = "Domain"
+               ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADDBEB1C771D19D7F93E002E"
                BuildableName = "FindUserInfo.framework"
                BlueprintName = "FindUserInfo"
@@ -252,20 +266,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF8CE03A2759141C3B1EAC1D"
-               BuildableName = "Login.framework"
-               BlueprintName = "Login"
-               ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "AFB6321CC7768949CDA5C44C"
                BuildableName = "LoginDemoApp.app"
                BlueprintName = "LoginDemoApp"
@@ -283,20 +283,6 @@
                BlueprintIdentifier = "A2CA833B76BD3A488901673C"
                BuildableName = "LoginDemoAppTests.xctest"
                BlueprintName = "LoginDemoAppTests"
-               ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8EC12D40A59F4E845C71699F"
-               BuildableName = "LoginTests.xctest"
-               BlueprintName = "LoginTests"
                ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -382,6 +368,20 @@
                BuildableName = "OnboardingTests.xctest"
                BlueprintName = "OnboardingTests"
                ReferencedContainer = "container:Projects/Onboarding/Onboarding.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "088311ED2EBB304212785036"
+               BuildableName = "Presentation.framework"
+               BlueprintName = "Presentation"
+               ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -785,16 +785,6 @@
                BlueprintIdentifier = "A2CA833B76BD3A488901673C"
                BuildableName = "LoginDemoAppTests.xctest"
                BlueprintName = "LoginDemoAppTests"
-               ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8EC12D40A59F4E845C71699F"
-               BuildableName = "LoginTests.xctest"
-               BlueprintName = "LoginTests"
                ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
             </BuildableReference>
          </TestableReference>

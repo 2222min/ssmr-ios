@@ -8,7 +8,13 @@
          location = "group:CommonUI/CommonUI.xcodeproj">
       </FileRef>
       <FileRef
+         location = "group:Core/Core.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Login/Login.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Util/Util.xcodeproj">
       </FileRef>
    </Group>
    <Group

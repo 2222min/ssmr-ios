@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF8CE03A2759141C3B1EAC1D"
-               BuildableName = "Login.framework"
-               BlueprintName = "Login"
+               BlueprintIdentifier = "6FAC24235EF51D98FC065595"
+               BuildableName = "Domain.framework"
+               BlueprintName = "Domain"
                ReferencedContainer = "container:Login.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,18 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      disableMainThreadChecker = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8EC12D40A59F4E845C71699F"
-               BuildableName = "LoginTests.xctest"
-               BlueprintName = "LoginTests"
-               ReferencedContainer = "container:Login.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -53,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EF8CE03A2759141C3B1EAC1D"
-            BuildableName = "Login.framework"
-            BlueprintName = "Login"
+            BlueprintIdentifier = "6FAC24235EF51D98FC065595"
+            BuildableName = "Domain.framework"
+            BlueprintName = "Domain"
             ReferencedContainer = "container:Login.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EF8CE03A2759141C3B1EAC1D"
-            BuildableName = "Login.framework"
-            BlueprintName = "Login"
+            BlueprintIdentifier = "6FAC24235EF51D98FC065595"
+            BuildableName = "Domain.framework"
+            BlueprintName = "Domain"
             ReferencedContainer = "container:Login.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

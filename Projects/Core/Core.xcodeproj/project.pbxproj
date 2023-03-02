@@ -14,9 +14,7 @@
 		76282E924DFC50F4AB3BB0A1 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C775CF115353685E3870E9AC /* RxNimble.framework */; platformFilter = ios; };
 		78DE9E2870EA091066A98F3E /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6260F75C087362295DDE52AE /* Moya.framework */; platformFilter = ios; };
 		9060C2B7CDED68E64B681A07 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B20867666B25EBB5BD1126 /* RxBlocking.framework */; platformFilter = ios; };
-		B0C66E00F360A568525A4D2F /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0D6E960FCD0D1D11F8439F /* LoginEntity.swift */; };
 		B1B5E7B243805E10B366C831 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDD3FE52D7D876F58B41949 /* RxTest.framework */; platformFilter = ios; };
-		B1B95EDBE9BCAB9D3F90210F /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9FCD8FE8D32254A081DCDD /* LoginApi.swift */; };
 		BC8595A1E286E2F5B6EF15C9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0FA7F85F3573FB522F9478 /* Core.framework */; platformFilter = ios; };
 		C3F434441B5823FD0BE13D47 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1652AAA9D3EE915C02A774 /* BaseApi.swift */; };
 		C4B19E5C873780D6AA661A00 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C59ACF63375043BBA6AB53F /* RxSwift.framework */; platformFilter = ios; };
@@ -72,13 +70,11 @@
 		3E313EC3E53C9ED17660FD3F /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1652AAA9D3EE915C02A774 /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		56F479885111F5C069972732 /* CwlMachBadInstructionHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlMachBadInstructionHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D9FCD8FE8D32254A081DCDD /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
 		6260F75C087362295DDE52AE /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C59ACF63375043BBA6AB53F /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDD3FE52D7D876F58B41949 /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D15C22FDC1538D3F9844238 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14CBE9184D30333B845C7C8 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		AA0D6E960FCD0D1D11F8439F /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		AC0E7A7D8E049C47C0D8DBAF /* RxMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2A0D9A3340910FB973FAA1 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		C35951B97FE651C6B62B528D /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,8 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				3F1652AAA9D3EE915C02A774 /* BaseApi.swift */,
-				5D9FCD8FE8D32254A081DCDD /* LoginApi.swift */,
-				AA0D6E960FCD0D1D11F8439F /* LoginEntity.swift */,
 				BC2A0D9A3340910FB973FAA1 /* Networking.swift */,
 			);
 			path = Sources;
@@ -304,8 +298,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F434441B5823FD0BE13D47 /* BaseApi.swift in Sources */,
-				B1B95EDBE9BCAB9D3F90210F /* LoginApi.swift in Sources */,
-				B0C66E00F360A568525A4D2F /* LoginEntity.swift in Sources */,
 				6CEED840EFCEB1880BE5E2D7 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
