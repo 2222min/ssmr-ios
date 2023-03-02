@@ -21,9 +21,8 @@ let project = Project.frameworkWithDemoApp(name: projectName,
                                            infoPlist: infoPlist,
                                            dependencies: [
                                             .external(name: "ReactorKit"),
-                                            .external(name: "Moya"),
-                                            .external(name: "RxMoya"),
                                             .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
-                                            .project(target: "Util", path: .relativeToCurrentFile("../Util"))
+                                            .project(target: "Util", path: .relativeToCurrentFile("../Util")),
+                                            .project(target: "Core", path: "../Core")
                                            ])
 

@@ -12,6 +12,7 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 import UIKit
+import Core
 
 final public class LoginReactor: Reactor {
     
@@ -20,9 +21,11 @@ final public class LoginReactor: Reactor {
 
     // MARK: Properties
     public let initialState: State = State()
-
+    private let effector: LoginEffectorProtocol
     // MARK: Initializing
-    init() {}
+    init(effector: LoginEffectorProtocol) {
+        self.effector = effector
+    }
     
     // MARK: Action
     public enum Action {
@@ -39,14 +42,20 @@ final public class LoginReactor: Reactor {
         var isShowLoginFailView = false
     }
     
-    
     public func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .didTapCTAButton:
-            return Observable.concat(
-                Observable.just(.showLoginFailView(true)),
-                Observable.just(.showLoginFailView(false))
-            )
+            return self.effector.login(parmas: LoginEntity.init(userId: "jun", password: "1234"))
+                .flatMap { data -> Observable<Mutation> in
+                    print("로그인 성공")
+                    return .empty()
+                }
+                .catch { error -> Observable<Mutation>in
+                    return Observable.concat(
+                        Observable.just(.showLoginFailView(true)),
+                        Observable.just(.showLoginFailView(false))
+                    )
+                }
         }
     }
     
@@ -60,3 +69,7 @@ final public class LoginReactor: Reactor {
     }
     
 }
+
+
+
+

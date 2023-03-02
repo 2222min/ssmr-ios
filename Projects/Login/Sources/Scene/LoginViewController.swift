@@ -9,6 +9,7 @@
 import UIKit
 import CommonUI
 import ReactorKit
+import Core
 
 class LoginViewController: BaseViewController, ReactorKit.View {
     
@@ -198,7 +199,7 @@ extension LoginViewController {
 // MARK: Func
 extension LoginViewController {
     public static func create() -> LoginViewController {
-        let reactor: LoginReactor = .init()
+        let reactor: LoginReactor = LoginReactor(effector: LoginEffector(networking: Networking()))
         let viewController = LoginViewController.init(reactor: reactor)
         
         return viewController
