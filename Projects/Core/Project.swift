@@ -13,8 +13,6 @@ private let iOSTargetVersion = "14.0"
 
 let project = Project.framework(
     name: projectName,
-    platform: .iOS,
-    iOSTargetVersion: iOSTargetVersion,
     dependencies: [
         .external(name: "Moya"),
         .external(name: "RxMoya"),

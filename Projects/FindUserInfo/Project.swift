@@ -16,8 +16,6 @@ let infoPlist: [String: InfoPlist.Value] = [
 ]
 
 let project = Project.frameworkWithDemoApp(name: projectName,
-                                           platform: .iOS,
-                                           iOSTargetVersion: iOSTargetVersion,
                                            infoPlist: infoPlist,
                                            dependencies: [
                                             .external(name: "ReactorKit"),
