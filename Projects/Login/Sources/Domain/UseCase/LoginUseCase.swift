@@ -10,18 +10,18 @@ import Foundation
 import RxSwift
 import Core
 
-protocol LoginEffectorProtocol {
+public protocol LoginUseCaseProtocol {
     func login(parmas: LoginEntity) -> Observable<LoginReponse>
 }
 
-class LoginEffector: LoginEffectorProtocol {
+public class LoginUseCase: LoginUseCaseProtocol {
     let networking: NetworkingProtocol
     
-    init(networking: NetworkingProtocol) {
+    public init(networking: NetworkingProtocol) {
         self.networking = networking
     }
     
-    func login(parmas: LoginEntity) -> Observable<LoginReponse> {
+    public func login(parmas: LoginEntity) -> Observable<LoginReponse> {
         return self.networking.request(LoginApi.login(parmas))
             .asObservable()
             .map(LoginReponse.self)

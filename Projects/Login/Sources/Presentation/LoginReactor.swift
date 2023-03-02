@@ -12,7 +12,7 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 import UIKit
-import Core
+import Domain
 
 final public class LoginReactor: Reactor {
     
@@ -21,9 +21,9 @@ final public class LoginReactor: Reactor {
 
     // MARK: Properties
     public let initialState: State = State()
-    private let effector: LoginEffectorProtocol
+    private let effector: LoginUseCaseProtocol
     // MARK: Initializing
-    init(effector: LoginEffectorProtocol) {
+    init(effector: LoginUseCaseProtocol) {
         self.effector = effector
     }
     

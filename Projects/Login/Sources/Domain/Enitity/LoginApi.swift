@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Core
 import Moya
 
 public enum LoginApi {
