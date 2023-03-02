@@ -16,13 +16,11 @@ let infoPlist: [String: InfoPlist.Value] = [
 ]
 
 let project = Project.frameworkWithDemoApp(name: projectName,
-                                           platform: .iOS,
-                                           iOSTargetVersion: iOSTargetVersion,
+                                           targets: [
+                                            .LoginTargets.presentation.target,
+                                            .LoginTargets.domain.target
+                                           ],
                                            infoPlist: infoPlist,
-                                           dependencies: [
-                                            .external(name: "ReactorKit"),
-                                            .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
-                                            .project(target: "Util", path: .relativeToCurrentFile("../Util")),
-                                            .project(target: "Core", path: "../Core")
-                                           ])
+                                           demoDependencies: Target.LoginTargets.allCases.map { .target(name: $0.rawValue)}
+)
 
