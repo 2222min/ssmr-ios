@@ -259,6 +259,9 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
         $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
         $0.textColor = CommonUIAsset.grey.color
     }
+    private let pageView = RegiBusinessPage().then {
+        $0.makePage(pageNumber: 5, currentPage: 5)
+    }
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -303,7 +306,8 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
             self.thuTime,
             self.friTime,
             self.satTime,
-            self.sunTime
+            self.sunTime,
+            self.pageView
         ]
             .forEach(self.view.addSubview)
     }
@@ -409,6 +413,10 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
         self.sunTime.snp.makeConstraints {
             $0.top.equalTo(self.satTime.snp.bottom).offset(4)
             $0.leading.equalTo(self.sunLabel.snp.trailing).offset(8)
+        }
+        self.pageView.snp.makeConstraints {
+            $0.top.equalTo(self.navigationTopBar.snp.top).offset(24)
+            $0.trailing.equalTo(self.navigationTopBar.snp.trailing).offset(-16)
         }
     }
     

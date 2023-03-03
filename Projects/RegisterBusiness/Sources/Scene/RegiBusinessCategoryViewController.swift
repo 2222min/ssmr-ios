@@ -88,6 +88,10 @@ class RegiBusinessCategoryViewController: BaseViewController {
         $0.isEnabled = true
     }
     
+    private let pageView = RegiBusinessPage().then {
+        $0.makePage(pageNumber: 5, currentPage: 2)
+    }
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +108,8 @@ class RegiBusinessCategoryViewController: BaseViewController {
             self.largeCategory,
             self.mediumCategory,
             self.businessNameTextField,
-            self.nextButton
+            self.nextButton,
+            self.pageView
         ]
             .forEach(self.view.addSubview)
     }
@@ -142,6 +147,10 @@ class RegiBusinessCategoryViewController: BaseViewController {
         self.nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-50)
             $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        self.pageView.snp.makeConstraints {
+            $0.top.equalTo(self.navigationTopBar.snp.top).offset(24)
+            $0.trailing.equalTo(self.navigationTopBar.snp.trailing).offset(-16)
         }
     }
     

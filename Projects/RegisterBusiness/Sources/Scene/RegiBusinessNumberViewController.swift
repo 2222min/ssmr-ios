@@ -10,10 +10,6 @@ import UIKit
 import CommonUI
 import RxSwift
 
-import UIKit
-import CommonUI
-import RxSwift
-
 class RegiBusinessNumberViewController: BaseViewController {
 
     // MARK: Constants
@@ -128,6 +124,10 @@ class RegiBusinessNumberViewController: BaseViewController {
         $0.isEnabled = true
     }
     
+    private let pageView = RegiBusinessPage().then {
+        $0.makePage(pageNumber: 5, currentPage: 1)
+    }
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,7 +150,8 @@ class RegiBusinessNumberViewController: BaseViewController {
             self.businessNumberTextField,
             self.checkButton,
             self.checkBusinessNumber,
-            self.nextButton
+            self.nextButton,
+            self.pageView
         ]
             .forEach(self.view.addSubview)
     }
@@ -197,6 +198,10 @@ class RegiBusinessNumberViewController: BaseViewController {
         self.nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-50)
             $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        self.pageView.snp.makeConstraints {
+            $0.top.equalTo(self.navigationTopBar.snp.top).offset(24)
+            $0.trailing.equalTo(self.navigationTopBar.snp.trailing).offset(-16)
         }
     }
     
