@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDAB8291F2D457496E91E9DD"
-               BuildableName = "CommonUITests.xctest"
-               BlueprintName = "CommonUITests"
-               ReferencedContainer = "container:CommonUI.xcodeproj">
+               BlueprintIdentifier = "0525526DEC930767FAAC452D"
+               BuildableName = "Presentation.framework"
+               BlueprintName = "Presentation"
+               ReferencedContainer = "container:SignUp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,18 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      disableMainThreadChecker = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDAB8291F2D457496E91E9DD"
-               BuildableName = "CommonUITests.xctest"
-               BlueprintName = "CommonUITests"
-               ReferencedContainer = "container:CommonUI.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -53,10 +44,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EDAB8291F2D457496E91E9DD"
-            BuildableName = "CommonUITests.xctest"
-            BlueprintName = "CommonUITests"
-            ReferencedContainer = "container:CommonUI.xcodeproj">
+            BlueprintIdentifier = "0525526DEC930767FAAC452D"
+            BuildableName = "Presentation.framework"
+            BlueprintName = "Presentation"
+            ReferencedContainer = "container:SignUp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -69,10 +60,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EDAB8291F2D457496E91E9DD"
-            BuildableName = "CommonUITests.xctest"
-            BlueprintName = "CommonUITests"
-            ReferencedContainer = "container:CommonUI.xcodeproj">
+            BlueprintIdentifier = "0525526DEC930767FAAC452D"
+            BuildableName = "Presentation.framework"
+            BlueprintName = "Presentation"
+            ReferencedContainer = "container:SignUp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

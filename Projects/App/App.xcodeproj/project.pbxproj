@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		004FD1E183A2F52A4913C9DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7210F22777D23AD1713BCADE /* AppDelegate.swift */; };
 		010AE6840F0E57C6E2ACA685 /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89C20992702726C56B7CAEA1 /* CommonUI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0CC0950646F371A14FD7B655 /* SignUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87B052B51BF0110BC3797752 /* SignUp.framework */; platformFilter = ios; };
 		0F3EBD548A92D7401B1FC633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 057A3CD8D734F9C1B4948C18 /* LaunchScreen.storyboard */; };
 		1213F492DFDB231C76E1D9B2 /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62CEDA45163E401999541AF /* CwlCatchException.framework */; platformFilter = ios; };
 		182B3EBFF2DE257356AD6D47 /* RegisterBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC04F8669FD2212737960405 /* RegisterBusiness.framework */; platformFilter = ios; };
@@ -25,20 +24,16 @@
 		4787DFDD71F731243F3587AF /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEB75E9463ACE494A73BD36 /* Domain.framework */; platformFilter = ios; };
 		48C8C11205FA3D84C8A4A96C /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC50767C7E3F741B339EAA9 /* RxTest.framework */; platformFilter = ios; };
 		496A8328370DD45B758570F1 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1EBD7E352FEC5C7145F2B93 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55C10C02F203892AF5DFBEC5 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97590F8716CD862F585CC863 /* Moya.framework */; platformFilter = ios; };
 		5CC4FB34994C6DC7BA05BBB1 /* Util.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3971CE0F850EA4A76F58D45 /* Util.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6222971913F22EA554B23EFC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CA972BF68EF8FD34B1324 /* MainTabBarController.swift */; };
 		6755BB6F414D4958EE08EA52 /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C590ADEB83C752ECF101BCE /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
 		6C9F0162CAA028AFD3DAC1BC /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48A93D37532F9E97FAFA324 /* RxCocoa.framework */; platformFilter = ios; };
 		6E8362D867B53D4394477600 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97590F8716CD862F585CC863 /* Moya.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		724FA97703B163284DC953CF /* SignUp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87B052B51BF0110BC3797752 /* SignUp.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7436CD905FA1385015782E3D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D107B921DD1F561E141DA928 /* Nimble.framework */; platformFilter = ios; };
-		744D2DBD4295EC676A6AF96C /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D473CE2B88447108D34DD9 /* RxMoya.framework */; platformFilter = ios; };
 		791E438F57DB6775DD4A8170 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEB75E9463ACE494A73BD36 /* Domain.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81696857FDB47BE87CDCA12A /* RegisterBusiness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC04F8669FD2212737960405 /* RegisterBusiness.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		878CE210F7A21F38FF67903F /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523141A2ECC4BD824E7B0163 /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		881CA26EEB8AD26A368C1BC0 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C20992702726C56B7CAEA1 /* CommonUI.framework */; platformFilter = ios; };
-		94954E9161FD5F9656D4843D /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78A2B9655B81078CF38AFF2 /* BonMot.framework */; platformFilter = ios; };
 		A0B52FE3E6A31F72B031857F /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E131EFF7A47C384744125A1D /* Onboarding.framework */; platformFilter = ios; };
 		A180668F5D96529C95A7F7EF /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0F31A3FD6525BC1B79D53B2 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A711A6515B557DFD9A782AFD /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B797E549563338D6194D90D /* CwlPreconditionTesting.framework */; platformFilter = ios; };
@@ -104,7 +99,6 @@
 				2CF8AAE3848B5975255E54AB /* RxMoya.framework in Embed Frameworks */,
 				A180668F5D96529C95A7F7EF /* RxRelay.framework in Embed Frameworks */,
 				DCB2DBA4A000FC5900CD0275 /* RxSwift.framework in Embed Frameworks */,
-				724FA97703B163284DC953CF /* SignUp.framework in Embed Frameworks */,
 				E5CEBBADE66F8C5DC74CF6DA /* Then.framework in Embed Frameworks */,
 				5CC4FB34994C6DC7BA05BBB1 /* Util.framework in Embed Frameworks */,
 			);
@@ -131,7 +125,6 @@
 		6BEB75E9463ACE494A73BD36 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7210F22777D23AD1713BCADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7703DB5539953F38792597A5 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		87B052B51BF0110BC3797752 /* SignUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D6EB52070A21E2F8ECBDF4 /* App.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = App.plist; sourceTree = "<group>"; };
 		89688C338AD182298E5871B5 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		89C20992702726C56B7CAEA1 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,18 +170,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94954E9161FD5F9656D4843D /* BonMot.framework in Frameworks */,
 				881CA26EEB8AD26A368C1BC0 /* CommonUI.framework in Frameworks */,
 				4787DFDD71F731243F3587AF /* Domain.framework in Frameworks */,
-				55C10C02F203892AF5DFBEC5 /* Moya.framework in Frameworks */,
 				A0B52FE3E6A31F72B031857F /* Onboarding.framework in Frameworks */,
 				F8791705E402BF780055F988 /* Presentation.framework in Frameworks */,
 				44F418D4255B4F295188C675 /* ReactorKit.framework in Frameworks */,
 				182B3EBFF2DE257356AD6D47 /* RegisterBusiness.framework in Frameworks */,
 				6C9F0162CAA028AFD3DAC1BC /* RxCocoa.framework in Frameworks */,
-				744D2DBD4295EC676A6AF96C /* RxMoya.framework in Frameworks */,
 				E843BE55F05497E1A99940F4 /* RxSwift.framework in Frameworks */,
-				0CC0950646F371A14FD7B655 /* SignUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +294,6 @@
 				F0F31A3FD6525BC1B79D53B2 /* RxRelay.framework */,
 				13A421115315736B26FAF60E /* RxSwift.framework */,
 				DCC50767C7E3F741B339EAA9 /* RxTest.framework */,
-				87B052B51BF0110BC3797752 /* SignUp.framework */,
 				7703DB5539953F38792597A5 /* Then.framework */,
 				D3971CE0F850EA4A76F58D45 /* Util.framework */,
 			);

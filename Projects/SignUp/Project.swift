@@ -16,11 +16,11 @@ let infoPlist: [String: InfoPlist.Value] = [
 ]
 
 let project = Project.frameworkWithDemoApp(name: projectName,
+                                           targets: [
+                                            .SignUpTargets.presentation.target,
+                                            .SignUpTargets.domain.target
+                                           ],
                                            infoPlist: infoPlist,
-                                           dependencies: [
-                                            .external(name: "ReactorKit"),
-                                            .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
-                                            .project(target: "Util", path: .relativeToCurrentFile("../Util"))
-                                           ])
+                                           demoDependencies: Target.SignUpTargets.allCases.map { .target(name: $0.rawValue)})
 
 

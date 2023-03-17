@@ -10,6 +10,8 @@ import UIKit
 import CommonUI
 import ReactorKit
 import RxCocoa
+import Core
+import Domain
 
 class SignUpViewController: BaseViewController, ReactorKit.View {
     
@@ -307,6 +309,11 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
 // MARK: ReactorBind
 extension SignUpViewController {
     public func bind(reactor: Reactor) {
+        // State
+        self.bindState(isSuccessCheckedId: reactor)
+        // Action
+        self.bindAction(didTapDuplicationButton: reactor)
+        
         self.moveToNextPage()
         self.checkIdTextField()
         self.tapEyeImageOfPW()
@@ -315,10 +322,39 @@ extension SignUpViewController {
     }
 }
 
+// MARK: Action
+extension SignUpViewController {
+    public func bindAction(didTapDuplicationButton reactor: Reactor) {
+        self.duplicationButton.rx.tap
+            .asDriver()
+            .drive(with: self ,onNext: { owner, _ in
+                guard let userId = owner.idTextField.textField.text else { return }
+                reactor.action.onNext(.didTapDuplicationButton(userId))
+            })
+            .disposed(by: self.disposeBag)
+        
+    }
+}
+
+// MARK: State
+extension SignUpViewController {
+    public func bindState(isSuccessCheckedId reactor: Reactor) {
+        reactor.state.map(\.isSuccessCheckedId)
+            .filter { $0 != nil }
+            .distinctUntilChanged()
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(with: self, onNext: { owner, element in
+                print("result::",element)
+            })
+            .disposed(by: self.disposeBag)
+        
+    }
+}
+
 // MARK: Func
 extension SignUpViewController {
     public static func create() -> SignUpViewController {
-        let reactor: SignUpReactor = .init()
+        let reactor: SignUpReactor = .init(effector: SignUpUseCase(networking: Networking()))
         let viewController = SignUpViewController.init(reactor: reactor)
         
         return viewController
@@ -338,7 +374,7 @@ extension SignUpViewController {
             .withUnretained(self)
             .subscribe(onNext: { owner, text in
                 guard let text = text else { return }
-                owner.duplicationButton.isEnabled = text.count > 4
+                owner.duplicationButton.isEnabled = text.count > 1
             })
             .disposed(by: disposeBag)
     }

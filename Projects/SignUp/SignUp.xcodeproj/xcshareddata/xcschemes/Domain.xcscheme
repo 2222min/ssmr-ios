@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "574B48093AE4DBBAEF6C828C"
-               BuildableName = "SignUp.framework"
-               BlueprintName = "SignUp"
+               BlueprintIdentifier = "530A08A642F62C52BA4802B4"
+               BuildableName = "Domain.framework"
+               BlueprintName = "Domain"
                ReferencedContainer = "container:SignUp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,18 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      disableMainThreadChecker = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F158B9B120E3FDBA2B24256"
-               BuildableName = "SignUpTests.xctest"
-               BlueprintName = "SignUpTests"
-               ReferencedContainer = "container:SignUp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -53,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "574B48093AE4DBBAEF6C828C"
-            BuildableName = "SignUp.framework"
-            BlueprintName = "SignUp"
+            BlueprintIdentifier = "530A08A642F62C52BA4802B4"
+            BuildableName = "Domain.framework"
+            BlueprintName = "Domain"
             ReferencedContainer = "container:SignUp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "574B48093AE4DBBAEF6C828C"
-            BuildableName = "SignUp.framework"
-            BlueprintName = "SignUp"
+            BlueprintIdentifier = "530A08A642F62C52BA4802B4"
+            BuildableName = "Domain.framework"
+            BlueprintName = "Domain"
             ReferencedContainer = "container:SignUp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
