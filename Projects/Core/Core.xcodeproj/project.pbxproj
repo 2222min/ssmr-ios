@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		0154E050002514ACF162C606 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C59ACF63375043BBA6AB53F /* RxSwift.framework */; platformFilter = ios; };
 		07897CF48250E12FD0CDDABF /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0E7A7D8E049C47C0D8DBAF /* RxMoya.framework */; platformFilter = ios; };
+		4CDA0FA96CC533CEE7BD9EAB /* TuistBundle+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA284D46F06DE7F69A1C1A /* TuistBundle+Core.swift */; };
 		51EC450960D033FA27CC54DE /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C3780FB510BED8AA844B85 /* CwlPreconditionTesting.framework */; platformFilter = ios; };
+		5CE0626BFB38856D543C1A19 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0267382BBA2AAA688B4EDD97 /* Asset.xcassets */; };
 		6CEED840EFCEB1880BE5E2D7 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2A0D9A3340910FB973FAA1 /* Networking.swift */; };
 		76282E924DFC50F4AB3BB0A1 /* RxNimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C775CF115353685E3870E9AC /* RxNimble.framework */; platformFilter = ios; };
 		78DE9E2870EA091066A98F3E /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6260F75C087362295DDE52AE /* Moya.framework */; platformFilter = ios; };
@@ -62,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		01C244225673E8BF5D71ABB6 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0267382BBA2AAA688B4EDD97 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		08C3780FB510BED8AA844B85 /* CwlPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B20867666B25EBB5BD1126 /* RxBlocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBlocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26BDD2D3E7FED8CDE9A52F46 /* Core-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Core-Info.plist"; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		A14CBE9184D30333B845C7C8 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		AC0E7A7D8E049C47C0D8DBAF /* RxMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2A0D9A3340910FB973FAA1 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		C0AA284D46F06DE7F69A1C1A /* TuistBundle+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+Core.swift"; sourceTree = "<group>"; };
 		C35951B97FE651C6B62B528D /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A9E95561B5BADCE0E70B1E /* CwlCatchException.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchException.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C775CF115353685E3870E9AC /* RxNimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +142,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		398DDE8FB7FF757B796B9A2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0267382BBA2AAA688B4EDD97 /* Asset.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39ACB6D6CDBC910D866B189E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C0AA284D46F06DE7F69A1C1A /* TuistBundle+Core.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		4B97075397CA6D3C7DEE06A1 /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				F631B3543A0C26BDC2DE72DD /* Derived */,
+				398DDE8FB7FF757B796B9A2B /* Resources */,
 				81104ECEC5CD1B0F5111557B /* Sources */,
 				63037CB7FC8FAFF8B871B8BF /* Tests */,
 			);
@@ -194,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				4B97075397CA6D3C7DEE06A1 /* InfoPlists */,
+				39ACB6D6CDBC910D866B189E /* Sources */,
 			);
 			path = Derived;
 			sourceTree = "<group>";
@@ -279,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE0626BFB38856D543C1A19 /* Asset.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDA0FA96CC533CEE7BD9EAB /* TuistBundle+Core.swift in Sources */,
 				C3F434441B5823FD0BE13D47 /* BaseApi.swift in Sources */,
 				6CEED840EFCEB1880BE5E2D7 /* Networking.swift in Sources */,
 			);

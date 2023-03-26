@@ -10,9 +10,6 @@
 #elseif os(tvOS) || os(watchOS)
   import UIKit
 #endif
-#if canImport(SwiftUI)
-  import SwiftUI
-#endif
 
 // swiftlint:disable superfluous_disable_command file_length implicit_return
 
@@ -49,13 +46,6 @@ public struct LoginDemoAppImages {
     }
     return result
   }
-
-  #if canImport(SwiftUI)
-  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-  public var swiftUIImage: SwiftUI.Image {
-    SwiftUI.Image(asset: self)
-  }
-  #endif
 }
 
 public extension LoginDemoAppImages.Image {
@@ -72,26 +62,6 @@ public extension LoginDemoAppImages.Image {
     #endif
   }
 }
-
-#if canImport(SwiftUI)
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-public extension SwiftUI.Image {
-  init(asset: LoginDemoAppImages) {
-    let bundle = LoginDemoAppResources.bundle
-    self.init(asset.name, bundle: bundle)
-  }
-
-  init(asset: LoginDemoAppImages, label: Text) {
-    let bundle = LoginDemoAppResources.bundle
-    self.init(asset.name, bundle: bundle, label: label)
-  }
-
-  init(decorative asset: LoginDemoAppImages) {
-    let bundle = LoginDemoAppResources.bundle
-    self.init(decorative: asset.name, bundle: bundle)
-  }
-}
-#endif
 
 // swiftlint:enable all
 // swiftformat:enable all

@@ -512,10 +512,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				088311ED2EBB304212785036 /* Presentation */,
+				A2CA833B76BD3A488901673C /* LoginDemoAppTests */,
 				6FAC24235EF51D98FC065595 /* Domain */,
 				AFB6321CC7768949CDA5C44C /* LoginDemoApp */,
-				A2CA833B76BD3A488901673C /* LoginDemoAppTests */,
+				088311ED2EBB304212785036 /* Presentation */,
 			);
 		};
 /* End PBXProject section */

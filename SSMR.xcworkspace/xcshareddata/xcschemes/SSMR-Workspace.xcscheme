@@ -322,6 +322,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ECDDC65A77E06D0CD4946B1C"
+               BuildableName = "Notification.framework"
+               BlueprintName = "Notification"
+               ReferencedContainer = "container:Projects/Notification/Notification.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF00706FEDEF04C73DA2C470"
+               BuildableName = "NotificationDemoApp.app"
+               BlueprintName = "NotificationDemoApp"
+               ReferencedContainer = "container:Projects/Notification/Notification.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "61B57D2D802EB4473C6432E8"
+               BuildableName = "NotificationDemoAppTests.xctest"
+               BlueprintName = "NotificationDemoAppTests"
+               ReferencedContainer = "container:Projects/Notification/Notification.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD0F2F9BD09F13A37286834F"
+               BuildableName = "NotificationTests.xctest"
+               BlueprintName = "NotificationTests"
+               ReferencedContainer = "container:Projects/Notification/Notification.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "E73A33D74D8CBEC91B1DCFAB"
                BuildableName = "Onboarding.framework"
                BlueprintName = "Onboarding"
@@ -786,6 +842,26 @@
                BuildableName = "LoginDemoAppTests.xctest"
                BlueprintName = "LoginDemoAppTests"
                ReferencedContainer = "container:Projects/Login/Login.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "61B57D2D802EB4473C6432E8"
+               BuildableName = "NotificationDemoAppTests.xctest"
+               BlueprintName = "NotificationDemoAppTests"
+               ReferencedContainer = "container:Projects/Notification/Notification.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD0F2F9BD09F13A37286834F"
+               BuildableName = "NotificationTests.xctest"
+               BlueprintName = "NotificationTests"
+               ReferencedContainer = "container:Projects/Notification/Notification.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
