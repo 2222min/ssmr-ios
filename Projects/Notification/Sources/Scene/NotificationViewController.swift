@@ -7,24 +7,53 @@
 //
 
 import UIKit
+import CommonUI
+import RxSwift
 
-class NotificationViewController: UIViewController {
+class NotificationViewController: BaseViewController {
+    
+    // For Test
+    private let typeArray = ["전ㅋㅋㅋ체", "전체", "전체", "전체", "전체", "전체", "전체"]
+    
+    private let typeCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 12
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(NotiTypeCell.self, forCellWithReuseIdentifier: NotiTypeCell.cellIdentifier)
+        return collectionView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        // Do any additional setup after loading the view.
+        self.navigationTopBar.titleLabel.text = "알림"
+        setNotiType()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func configureUI() {
+        super.configureUI()
+        self.view.addSubview(typeCollectionView)
     }
-    */
-
+    
+    override func setupConstraints() {
+        super.setupConstraints()
+        self.typeCollectionView.snp.makeConstraints {
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(12)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(48)
+        }
+    }
+    
+    private func setNotiType() {
+        Observable.just(self.typeArray)
+            .bind(to: typeCollectionView.rx.items(cellIdentifier: NotiTypeCell.cellIdentifier, cellType: NotiTypeCell.self)) { index, title, cell in
+                cell.setTypeButtonTitle(title)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    // TODO: Dynamic cell width
 }
