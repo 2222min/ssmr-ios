@@ -11,6 +11,9 @@ import ProjectDescription
 private let projectName = "Util"
 private let iOSTargetVersion = "14.0"
 
-let project = Project.framework(name: projectName)
+let project = Project.framework(
+    name: projectName,
+    dependencies: [.external(name: "RxSwift")]
+)
 
 

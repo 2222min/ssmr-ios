@@ -5,28 +5,13 @@
       location = "group:Projects"
       name = "Projects">
       <FileRef
-         location = "group:App/App.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:CommonUI/CommonUI.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:Core/Core.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:FindUserInfo/FindUserInfo.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Login/Login.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Onboarding/Onboarding.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:RegisterBusiness/RegisterBusiness.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:SignUp/SignUp.xcodeproj">
+         location = "group:Search/Search.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:Util/Util.xcodeproj">
@@ -54,16 +39,7 @@
                      location = "group:BonMot/BonMot.xcodeproj">
                   </FileRef>
                   <FileRef
-                     location = "group:CwlCatchException/CwlCatchException.xcodeproj">
-                  </FileRef>
-                  <FileRef
-                     location = "group:CwlPreconditionTesting/CwlPreconditionTesting.xcodeproj">
-                  </FileRef>
-                  <FileRef
                      location = "group:Moya/Moya.xcodeproj">
-                  </FileRef>
-                  <FileRef
-                     location = "group:Nimble/Nimble.xcodeproj">
                   </FileRef>
                   <FileRef
                      location = "group:ReactorKit/ReactorKit.xcodeproj">
@@ -72,7 +48,7 @@
                      location = "group:ReusableKit/ReusableKit.xcodeproj">
                   </FileRef>
                   <FileRef
-                     location = "group:RxNimble/RxNimble.xcodeproj">
+                     location = "group:RxDataSources/RxDataSources.xcodeproj">
                   </FileRef>
                   <FileRef
                      location = "group:RxSwift/RxSwift.xcodeproj">
