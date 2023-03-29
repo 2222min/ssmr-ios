@@ -19,6 +19,7 @@ let project = Project.frameworkWithDemoApp(name: projectName,
                                            infoPlist: infoPlist,
                                            dependencies: [
                                             .external(name: "ReactorKit"),
+                                            .external(name: "RxDataSources"),
                                             .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
                                             .project(target: "Util", path: .relativeToCurrentFile("../Util"))
                                            ])
