@@ -38,7 +38,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     }
     
     // MARK: UI Properties
-    
+    private let serachTopBar = SerachTopBar()
     private lazy var collectionView: DynamicHeightCollectionView = .init(
         frame: .zero,
         collectionViewLayout: self.flowLayout
@@ -61,7 +61,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationTopBar.isHidden = true
         self.reactor?.action.onNext(.viewDidLoad)
         
     }
@@ -70,14 +70,19 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         super.configureUI()
         self.view.backgroundColor = CommonUIAsset.pointColor.color
         self.navigationTopBar.backgroundColor = CommonUIAsset.pointColor.color
+        self.view.addSubview(self.serachTopBar)
         self.view.addSubview(self.collectionView)
     }
     
     // MARK: Constraints
     override func setupConstraints() {
         super.setupConstraints()
+        self.serachTopBar.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
         self.collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.navigationTopBar.snp.bottom)
+            $0.top.equalTo(self.serachTopBar.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -153,6 +158,24 @@ extension SearchViewController {
     
     private func collectionViewDelegateBind(reactor: Reactor) {
         self.collectionView.rx.setDelegate(self).disposed(by: self.disposeBag)
+    }
+    
+    private func bindDidTapSearchButton() {
+        self.serachTopBar.rx.searchButtonDidTap
+            .asDriver()
+            .drive(with: self, onNext: { _,_  in
+                print("serachTopBar")
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindDidTapBackButton() {
+        self.serachTopBar.rx.backButtonDidTap
+            .asDriver()
+            .drive(with: self, onNext: { _,_  in
+                self.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 

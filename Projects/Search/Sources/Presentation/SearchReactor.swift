@@ -108,16 +108,6 @@ extension SearchReactor.State {
             guard case let .category(reactor) = section.identity else { return }
             let isExpand = reactor.currentState.isExpand
             let items = self.sectionMap[reactor.currentState.name].value ?? []
-            print(self.sectionMap[reactor.currentState.name].value.flatMap{
-                $0.flatMap {
-                    switch $0 {
-                    case let .categoryItem(value):
-                        value.currentState.cellReactor.flatMap {
-                            print($0.currentState.name)
-                        }
-                    }
-                }
-            })
             self.sections[index].items = isExpand ? items : []
         }
     }

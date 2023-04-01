@@ -25,8 +25,14 @@ final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit
 	// MARK: Propertie
 
 	// MARK: UI Properties
-    fileprivate let categoryButton = UIButton()
-    private let nameLabel = UILabel()
+    fileprivate let categoryButton: UIButton = UIButton().then {
+        $0.tintColor = .black
+        $0.semanticContentAttribute = .forceRightToLeft
+        $0.contentHorizontalAlignment = .trailing
+        $0.titleEdgeInsets = .init(top: 14, left: 16, bottom: 14, right: 0)
+        $0.imageEdgeInsets = .init(top: 12, left: 16 , bottom: 12, right: 0)
+    }
+    
 	// MARK: Initializing
 
     override func prepareForReuse() {
@@ -44,7 +50,6 @@ final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit
 	override func configureUI() {
 		super.configureUI()
         self.addSubview(self.categoryButton)
-        self.categoryButton.addSubview(self.nameLabel)
 	}
 
 	// MARK: Constraints
@@ -53,10 +58,6 @@ final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit
         self.categoryButton.snp.makeConstraints {
             $0.edges.equalToSuperview()
             $0.height.equalTo(52)
-        }
-        self.nameLabel.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(12)
-            $0.leading.equalToSuperview().offset(16)
         }
 	}
 
@@ -67,7 +68,7 @@ final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit
         reactor.state.map { $0.name }
             .asDriver(onErrorDriveWith: .empty())
             .map { $0.styled(typo: .DDaengH3)}
-            .drive(self.nameLabel.rx.attributedText)
+            .drive(self.categoryButton.rx.attributedTitle())
             .disposed(by: self.disposeBag)
         
         reactor.state.map { $0.isExpand }
