@@ -17,8 +17,7 @@ let dependencies = Dependencies(
             .remote(url: "https://github.com/RxSwiftCommunity/RxNimble.git", requirement: .upToNextMajor(from: "5.0.0")),
             .remote(url: "https://github.com/Moya/Moya.git", requirement: .upToNextMajor(from: "15.0.0")),
             .remote(url: "https://github.com/Rightpoint/BonMot", requirement: .upToNextMinor(from: "6.1.1")),
-            .remote(url: "https://github.com/2222min/ReusableKit", requirement: .branch("master")),
-            .remote(url: "https://github.com/RxSwiftCommunity/RxDataSources.git", requirement: .upToNextMajor(from: "5.0.0"))
+            .remote(url: "https://github.com/2222min/ReusableKit", requirement: .branch("master"))
          ],
          productTypes: [
             "ReactorKit": .framework,
@@ -27,8 +26,7 @@ let dependencies = Dependencies(
             "RxMoya": .framework,
             "Alamofire": .framework,
             "BonMot": .framework,
-            "ReusableKit": .framework,
-            "RxDataSources": .framework
+            "ReusableKit": .framework
          ]
      ),
      platforms: [.iOS]
