@@ -1,0 +1,37 @@
+//
+//  SearchCategorySection.swift
+//  Presentation
+//
+//  Created by mincheol on 2023/03/19.
+//  Copyright © 2023 team.io. All rights reserved.
+//
+
+import RxDataSources
+
+struct SearchCategorySection: Hashable {
+    enum Identity: Hashable {
+        case tag(CategoryTagCellReactor)
+        case category(SearchCategoryCellReactor)
+    }
+    let identity: Identity
+    var items: [Item]
+}
+
+extension SearchCategorySection: AnimatableSectionModelType {
+    init(original: SearchCategorySection, items: [Item]) {
+        self = SearchCategorySection(identity: original.identity, items: items)
+    }
+}
+
+extension SearchCategorySection {
+    enum Item: Hashable {
+        case tagItem(CategoryTagItemCellReactor)
+        case categoryItem(SearchCategoryItemCellReactor)
+    }
+}
+
+extension SearchCategorySection.Item: IdentifiableType {
+    var identity: String {
+        return "\(self.hashValue)"
+    }
+}

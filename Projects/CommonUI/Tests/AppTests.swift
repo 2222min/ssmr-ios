@@ -6,4 +6,23 @@
 //  Copyright © 2022 team.io. All rights reserved.
 //
 
-import Foundation
+import XCTest
+
+final class FindaTests: XCTestCase {
+
+    override func setUpWithError() throws {
+      try super.setUpWithError()
+    }
+
+    override func tearDownWithError() throws {
+      try super.tearDownWithError()
+    }
+}
+
+extension FindaTests {
+    func test_temp() {
+        let a = 1
+        XCTAssertEqual(1, a)
+    }
+}
+
