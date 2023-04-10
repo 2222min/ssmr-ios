@@ -10,6 +10,7 @@ import RxDataSources
 
 struct SearchCategorySection: Hashable {
     enum Identity: Hashable {
+        case tag(CategoryTagCellReactor)
         case category(SearchCategoryCellReactor)
     }
     let identity: Identity
@@ -24,7 +25,8 @@ extension SearchCategorySection: AnimatableSectionModelType {
 
 extension SearchCategorySection {
     enum Item: Hashable {
-        case categoryItem(SearchCategoryItemsCellReactor)
+        case tagItem(CategoryTagItemCellReactor)
+        case categoryItem(SearchCategoryItemCellReactor)
     }
 }
 

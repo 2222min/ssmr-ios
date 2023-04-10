@@ -1,8 +1,8 @@
 //
-//  SearchCategoryItemsCellReactor.swift
+//  CategoryTagItemCellReactor.swift
 //  Search
 //
-//  Created mincheol on 2023/03/19.
+//  Created mincheol on 2023/04/02.
 //  Copyright © 2023 team.io. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import ReactorKit
 
-final class SearchCategoryItemsCellReactor: Reactor, IdentityHashable {
+final class CategoryTagItemCellReactor: Reactor, IdentityHashable {
 	
 	// MARK: Constants
 	private enum Constants { }
@@ -26,12 +26,12 @@ final class SearchCategoryItemsCellReactor: Reactor, IdentityHashable {
 
 	// MARK: State
 	struct State {
-        var cellReactor: [SearchCategoryItemCellReactor]
+        var name: String
     }
 
 	// MARK: Initializing
-    init(cellReactor: [SearchCategoryItemCellReactor]) {
+    init(name: String) {
 		defer { _ = self.state }
-        self.initialState = State(cellReactor: cellReactor)
+        self.initialState = State(name: name)
 	}
 }

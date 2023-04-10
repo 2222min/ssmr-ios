@@ -42,6 +42,7 @@ final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit
     
 	func configure(reactor: Reactor) {
 		super.configure()
+        self.contentView.backgroundColor = .white
 		self.reactor = reactor
 	}
 
@@ -77,12 +78,6 @@ final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit
             .map { $0.withRenderingMode(.alwaysTemplate) }
             .drive(self.categoryButton.rx.image())
             .disposed(by: self.disposeBag)
-    }
-    
-    // MARK: CellSize
-    static func size(width: CGFloat) -> CGSize {
-        let height: CGFloat = 52
-        return CGSize(width: width, height: height)
     }
 }
 

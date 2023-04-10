@@ -8,5 +8,5 @@
 import ProjectDescription
 
 extension DeploymentTarget {
-    static let targetVersion: DeploymentTarget = .iOS(targetVersion: "14.0", devices: [.iphone])
+    static let targetVersion: DeploymentTarget = .iOS(targetVersion: "16.0", devices: [.iphone])
 }

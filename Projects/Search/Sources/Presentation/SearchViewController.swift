@@ -25,24 +25,27 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     private enum Constants { }
     
     enum Reusable {
+        static let tagCell = ReusableView<CategoryTagCollectionViewCell>()
+        static let tagItemCell = ReusableCell<CategoryTagItemCollectionViewCell>()
         static let categoryCell = ReusableView<SearchCategoryCollectionViewCell>()
-        static let categoryItemCell = ReusableCell<SearchCategoryItemsCollectionViewCell>()
+        static let categoryItemCell = ReusableCell<SearchCategoryItemCollectionViewCell>()
     }
     
     // MARK: Properties
     private lazy var dataSource = self.createDataSource()
-    private let flowLayout = UICollectionViewFlowLayout().then {
-        $0.scrollDirection = .vertical
-        $0.minimumInteritemSpacing = 0
-        $0.minimumLineSpacing = 0
+    private lazy var compositionalLayout = self.createCompositionalLayout().then {
+        $0.register(SearchCategorySectionBackgroundView.self, forDecorationViewOfKind: "background")
     }
     
     // MARK: UI Properties
     private let serachTopBar = SerachTopBar()
-    private lazy var collectionView: DynamicHeightCollectionView = .init(
+    private lazy var collectionView: UICollectionView = .init(
         frame: .zero,
-        collectionViewLayout: self.flowLayout
+        collectionViewLayout: self.compositionalLayout
     ).then {
+        $0.backgroundColor = .white
+        $0.register(Reusable.tagCell, kind: .header)
+        $0.register(Reusable.tagItemCell)
         $0.register(Reusable.categoryCell, kind: .header)
         $0.register(Reusable.categoryItemCell)
     }
@@ -86,14 +89,11 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
-    
-    
 }
 
 // MARK: ReactorBind
 extension SearchViewController {
     func bind(reactor: Reactor) {
-        self.collectionViewDelegateBind(reactor: reactor)
         self.bindState(sections: reactor)
     }
 }
@@ -125,39 +125,101 @@ extension SearchViewController {
         return .init(
             configureCell: {  _, collectionView, indexPath, sectionItem in
                 switch sectionItem {
+                case .tagItem(let reactor):
+                    return collectionView.dequeue(Reusable.tagItemCell, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
                 case .categoryItem(let reactor):
                     return collectionView.dequeue(Reusable.categoryItemCell, for: indexPath).then { cell in
                         if cell.reactor !== reactor {
                             cell.configure(reactor: reactor)
+                            cell.rx.itemSelected.asDriver()
+                                .throttle(.milliseconds(300))
+                                .drive(onNext: { [weak self] _ in
+                                    guard let self = self,
+                                          let reactor = self.reactor else { return }
+                                    reactor.action.onNext(.didTapCategoryItem)
+                                })
+                                .disposed(by: cell.disposeBag)
                         }
                     }
                 }
             },
             configureSupplementaryView: { [weak self] dataSource, collectionView, _, indexPath in
-              let section = dataSource[indexPath.section]
-              
-              switch section.identity {
-              case .category(let reactor):
-                  return collectionView.dequeue(Reusable.categoryCell, kind: .header ,for: indexPath).then { cell in
-                      if cell.reactor !== reactor {
-                          cell.configure(reactor: reactor)
-                          cell.rx.toggleExpand.asDriver()
-                              .throttle(.milliseconds(300))
-                              .drive(onNext: { [weak self] _ in
-                                  guard let self = self,
-                                        let reactor = self.reactor else { return }
-                                  reactor.action.onNext(.didTapCategorySection)
-                              })
-                              .disposed(by: cell.disposeBag)
-                      }
-                  }
-              }
+                let section = dataSource[indexPath.section]
+                
+                switch section.identity {
+                case .tag(let reactor):
+                    return collectionView.dequeue(Reusable.tagCell, kind: .header, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
+                case .category(let reactor):
+                    return collectionView.dequeue(Reusable.categoryCell, kind: .header ,for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                            cell.rx.toggleExpand.asDriver()
+                                .throttle(.milliseconds(300))
+                                .drive(onNext: { [weak self] _ in
+                                    guard let self = self,
+                                          let reactor = self.reactor else { return }
+                                    reactor.action.onNext(.didTapCategorySection)
+                                })
+                                .disposed(by: cell.disposeBag)
+                        }
+                    }
+                }
             }
         )
     }
     
-    private func collectionViewDelegateBind(reactor: Reactor) {
-        self.collectionView.rx.setDelegate(self).disposed(by: self.disposeBag)
+    private func createCompositionalLayout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout { (sectionIndex:Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            let itemSize = NSCollectionLayoutSize(
+                widthDimension: .estimated(60),
+                heightDimension: .absolute(36)
+            )
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .estimated(60)
+            )
+            
+            let group = NSCollectionLayoutGroup.horizontal(
+                layoutSize: groupSize,
+                subitems: [item]
+            )
+            
+            group.interItemSpacing = .fixed(12)
+            group.edgeSpacing = .init(leading: nil, top: .fixed(8), trailing: nil, bottom: nil)
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = .init(top: 0, leading: 12, bottom: 0, trailing: 12)
+            section.supplementariesFollowContentInsets = false
+            let config = UICollectionViewCompositionalLayoutConfiguration()
+            config.scrollDirection = .vertical
+            let layout = UICollectionViewCompositionalLayout(section: section)
+            layout.configuration = config
+            // Header
+            let headerSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .absolute(52)
+            )
+            let header = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .top
+            )
+            // Background
+            let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            
+            section.decorationItems = [sectionBackgroundDecoration]
+            section.boundarySupplementaryItems = [header]
+           
+            return section
+        }
     }
     
     private func bindDidTapSearchButton() {
@@ -176,31 +238,5 @@ extension SearchViewController {
                 self.navigationController?.popViewController(animated: true)
             })
             .disposed(by: self.disposeBag)
-    }
-}
-
-
-
-extension SearchViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let sectionItem = self.dataSource[indexPath]
-        let width = UIScreen.main.bounds.width
-        
-        switch sectionItem {
-        case let .categoryItem(cellReactor):
-            return Reusable.categoryItemCell.class.size(
-                width: width,
-                cellReactor: cellReactor
-            )
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-      let section = self.dataSource[section]
-      let width = collectionView.bounds.width
-      switch section.identity {
-      case .category: return Reusable.categoryCell.class.size(width: width)
-      }
     }
 }
