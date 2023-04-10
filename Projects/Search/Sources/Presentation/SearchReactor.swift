@@ -26,6 +26,7 @@ final class SearchReactor: Reactor {
         case viewDidLoad
         case didTapCategorySection
         case didTapCategoryItem
+        case didTapTagItem(String)
     }
     
     // MARK: State
@@ -40,6 +41,7 @@ final class SearchReactor: Reactor {
         case setSections
         case updateSection
         case updateTagSection
+        case deleteTag(String)
     }
     
     // MARK: Mutate
@@ -51,6 +53,8 @@ final class SearchReactor: Reactor {
             return .just(.updateSection)
         case .didTapCategoryItem:
             return .just(.updateTagSection)
+        case let .didTapTagItem(value):
+            return .just(.deleteTag(value))
         }
     }
     
@@ -64,6 +68,8 @@ final class SearchReactor: Reactor {
             newState.reduceChangeExpand()
         case .updateTagSection:
             newState.reduceChangeTagItems()
+        case let .deleteTag(value):
+            newState.reduceChangeTagItems(name: value)
         }
         return newState
     }
@@ -76,7 +82,10 @@ extension SearchReactor.State {
             .categoryItem(.init(name: "한식")),
             .categoryItem(.init(name: "중식")),
             .categoryItem(.init(name: "양식")),
-            .categoryItem(.init(name: "일식"))
+            .categoryItem(.init(name: "일식")),
+            .categoryItem(.init(name: "서양식")),
+            .categoryItem(.init(name: "세계음식")),
+            .categoryItem(.init(name: "기타"))
         ]
         let secondElements: [SearchCategorySection.Item] = [
             .categoryItem(.init(name: "전시관")),
@@ -87,24 +96,13 @@ extension SearchReactor.State {
             .categoryItem(.init(name: "기타"))
         ]
         let thirdElements: [SearchCategorySection.Item] = [
-            .categoryItem(.init(name: "전시관")),
-            .categoryItem(.init(name: "소공연장")),
-            .categoryItem(.init(name: "연극극장")),
-            .categoryItem(.init(name: "서점")),
-            .categoryItem(.init(name: "문화시설")),
+            .categoryItem(.init(name: "볼링")),
+            .categoryItem(.init(name: "탁구")),
+            .categoryItem(.init(name: "당구")),
+            .categoryItem(.init(name: "스키장")),
+            .categoryItem(.init(name: "썰매장")),
+            .categoryItem(.init(name: "골프장")),
             .categoryItem(.init(name: "기타")),
-            .categoryItem(.init(name: "전시관")),
-            .categoryItem(.init(name: "소공연장")),
-            .categoryItem(.init(name: "연극극장")),
-            .categoryItem(.init(name: "서점")),
-            .categoryItem(.init(name: "문화시설")),
-            .categoryItem(.init(name: "기타")),
-            .categoryItem(.init(name: "전시관")),
-            .categoryItem(.init(name: "소공연장")),
-            .categoryItem(.init(name: "연극극장")),
-            .categoryItem(.init(name: "서점")),
-            .categoryItem(.init(name: "문화시설")),
-            .categoryItem(.init(name: "기타"))
         ]
         
         let mock: [SearchCategorySection] = [
@@ -141,7 +139,7 @@ extension SearchReactor.State {
                 switch item {
                 case let .categoryItem(reactor):
                     if reactor.currentState.isSelected {
-                        tagItem.append(item)
+                        tagItem.append(.tagItem(.init(name: reactor.currentState.name)))
                     }
                 default:
                     return
@@ -151,10 +149,43 @@ extension SearchReactor.State {
         
         self.sections = self.sections.compactMap { section in
             switch section.identity {
-            case .tag:
-                return .init(identity: .tag(.init()), items: tagItem)
-            default:
+            case .category:
                 return section
+            case let .tag(reactor):
+                return .init(identity: .tag(reactor), items: tagItem)
+            }
+        }
+    }
+    fileprivate mutating func reduceChangeTagItems(name: String) {
+        var tagItem: [SearchCategorySection.Item] = []
+        var categorySection: [SearchCategorySection] = []
+        categorySection = self.sections.compactMap { section -> SearchCategorySection in
+            return .init(identity: section.identity, items: section.items.compactMap { item -> SearchCategorySection.Item in
+                switch item {
+                case let .categoryItem(reactor):
+                    if reactor.currentState.isSelected {
+                        if reactor.currentState.name != name {
+                            tagItem.append(.tagItem(.init(name: reactor.currentState.name)))
+                            return .categoryItem(reactor)
+                        } else {
+                            return .categoryItem(.init(name: reactor.currentState.name, isSelected: !reactor.currentState.isSelected))
+                        }
+                    } else {
+                        return .categoryItem(reactor)
+                    }
+                        
+                case let .tagItem(reactor):
+                    return .tagItem(reactor)
+                }
+            })
+        }
+        
+        self.sections = categorySection.compactMap { section in
+            switch section.identity {
+            case .category:
+                return section
+            case let .tag(reactor):
+                return .init(identity: .tag(reactor), items: tagItem)
             }
         }
     }

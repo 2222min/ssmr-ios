@@ -31,13 +31,16 @@ final class SearchCategoryItemCellReactor: Reactor, IdentityHashable {
 	// MARK: State
 	struct State {
         var name: String
-        var isSelected: Bool = false
+        var isSelected: Bool
     }
 
 	// MARK: Initializing
-    init(name: String) {
+    init(name: String, isSelected: Bool = false) {
 		defer { _ = self.state }
-        self.initialState = State(name: name)
+        self.initialState = State(
+            name: name,
+            isSelected: isSelected
+        )
 	}
     
     // MARK: Mutate

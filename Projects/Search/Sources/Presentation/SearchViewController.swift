@@ -129,6 +129,14 @@ extension SearchViewController {
                     return collectionView.dequeue(Reusable.tagItemCell, for: indexPath).then { cell in
                         if cell.reactor !== reactor {
                             cell.configure(reactor: reactor)
+                            cell.rx.itemSelected.asDriver()
+                                .throttle(.milliseconds(300))
+                                .drive(onNext: { [weak self]  in
+                                    guard let self = self,
+                                          let reactor = self.reactor else { return }
+                                    reactor.action.onNext(.didTapTagItem($0))
+                                })
+                                .disposed(by: cell.disposeBag)
                         }
                     }
                 case .categoryItem(let reactor):
