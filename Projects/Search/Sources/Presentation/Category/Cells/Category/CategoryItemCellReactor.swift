@@ -1,5 +1,5 @@
 //
-//  SearchCategoryCellReactor.swift
+//  CategoryItemCellReactor.swift
 //  Search
 //
 //  Created mincheol on 2023/03/19.
@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import ReactorKit
 
-final class SearchCategoryCellReactor: Reactor, IdentityHashable {
+final class CategoryItemCellReactor: Reactor, IdentityHashable {
 	
 	// MARK: Constants
 	private enum Constants { }
@@ -20,33 +20,34 @@ final class SearchCategoryCellReactor: Reactor, IdentityHashable {
 
 	// MARK: Action 
 	enum Action {
-        case didTapCategoryButton
+        case didTapNameButton
     }
 
-	// MARK: Mutation
-	enum Mutation {
-        case setIsExpand(Bool)
+    // MARK: Mutation
+    enum Mutation {
+        case setIsSelected(Bool)
     }
-
+    
 	// MARK: State
 	struct State {
         var name: String
-        var isExpand: Bool = false
+        var isSelected: Bool
     }
 
 	// MARK: Initializing
-    init(
-        name: String
-    ) {
+    init(name: String, isSelected: Bool = false) {
 		defer { _ = self.state }
-        self.initialState = State(name: name)
+        self.initialState = State(
+            name: name,
+            isSelected: isSelected
+        )
 	}
     
     // MARK: Mutate
     func mutate(action: Action) -> Observable<Mutation> {
     switch action {
-    case .didTapCategoryButton:
-        return .just(.setIsExpand(!currentState.isExpand))
+    case .didTapNameButton:
+        return .just(.setIsSelected(!currentState.isSelected))
     }
       }
 
@@ -54,11 +55,10 @@ final class SearchCategoryCellReactor: Reactor, IdentityHashable {
     func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
     switch mutation {
-    case let .setIsExpand(value):
-        newState.isExpand = value
+    case let .setIsSelected(value):
+        newState.isSelected = value
     }
     return newState
   }
     
 }
-

@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  CategoryViewController.swift
 //  Search
 //
 //  Created mincheol on 2023/03/17.
@@ -18,23 +18,23 @@ import RxDataSources
 import ReusableKit
 import Util
 
-final class SearchViewController: BaseViewController, ReactorKit.View {
-    typealias Reactor = SearchReactor
-    typealias Category = RxCollectionViewSectionedAnimatedDataSource<SearchCategorySection>
+final class CategoryViewController: BaseViewController, ReactorKit.View {
+    typealias Reactor = CategoryReactor
+    typealias Category = RxCollectionViewSectionedAnimatedDataSource<CategorySection>
     // MARK: Constants
     private enum Constants { }
     
     enum Reusable {
         static let tagCell = ReusableView<CategoryTagCollectionViewCell>()
         static let tagItemCell = ReusableCell<CategoryTagItemCollectionViewCell>()
-        static let categoryCell = ReusableView<SearchCategoryCollectionViewCell>()
-        static let categoryItemCell = ReusableCell<SearchCategoryItemCollectionViewCell>()
+        static let categoryCell = ReusableView<CategoryHeaderCollectionViewCell>()
+        static let categoryItemCell = ReusableCell<CategoryItemCollectionViewCell>()
     }
     
     // MARK: Properties
     private lazy var dataSource = self.createDataSource()
     private lazy var compositionalLayout = self.createCompositionalLayout().then {
-        $0.register(SearchCategorySectionBackgroundView.self, forDecorationViewOfKind: "background")
+        $0.register(CategorySectionBackgroundView.self, forDecorationViewOfKind: "background")
     }
     
     // MARK: UI Properties
@@ -92,17 +92,17 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
 }
 
 // MARK: ReactorBind
-extension SearchViewController {
+extension CategoryViewController {
     func bind(reactor: Reactor) {
         self.bindState(sections: reactor)
     }
 }
 
 // MARK: Action
-extension SearchViewController {}
+extension CategoryViewController {}
 
 // MARK: State
-extension SearchViewController {
+extension CategoryViewController {
     private func bindState(sections reactor: Reactor) {
         reactor.state.map { $0.sections }
             .asDriver(onErrorJustReturn: [])
@@ -113,10 +113,10 @@ extension SearchViewController {
 
 // MARK: Func
 
-extension SearchViewController {
-    public static func create() -> SearchViewController {
-        let reactor: SearchReactor = .init()
-        let viewController = SearchViewController.init(reactor: reactor)
+extension CategoryViewController {
+    public static func create() -> CategoryViewController {
+        let reactor: CategoryReactor = .init()
+        let viewController = CategoryViewController.init(reactor: reactor)
         
         return viewController
     }

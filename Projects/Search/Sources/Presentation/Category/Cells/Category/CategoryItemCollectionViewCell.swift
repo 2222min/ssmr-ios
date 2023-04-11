@@ -1,5 +1,5 @@
 //
-//  SearchCategoryItemCollectionViewCell.swift
+//  CategoryItemCollectionViewCell.swift
 //  Search
 //
 //  Created mincheol on 2023/03/25.
@@ -15,9 +15,9 @@ import RxSwift
 import ReactorKit
 import CommonUI
 
-final class SearchCategoryItemCollectionViewCell: BaseCollectionViewCell, ReactorKit.View {
+final class CategoryItemCollectionViewCell: BaseCollectionViewCell, ReactorKit.View {
 
-    typealias Reactor = SearchCategoryItemCellReactor
+    typealias Reactor = CategoryItemCellReactor
 
     // MARK: Constants
     private enum Constants { }
@@ -70,7 +70,7 @@ final class SearchCategoryItemCollectionViewCell: BaseCollectionViewCell, Reacto
 
 // MARK: State
 
-extension SearchCategoryItemCollectionViewCell {
+extension CategoryItemCollectionViewCell {
     private func bindState(name reactor: Reactor) {
         reactor.state.map { $0.name }
             .asDriver(onErrorDriveWith: .empty())
@@ -90,7 +90,7 @@ extension SearchCategoryItemCollectionViewCell {
 
 // MARK: Action
 
-extension SearchCategoryItemCollectionViewCell {
+extension CategoryItemCollectionViewCell {
     private func bindAction(didTapCategoryButton reactor: Reactor) {
         self.nameButton.rx.tap.asDriver()
             .map { Reactor.Action.didTapNameButton }
@@ -99,7 +99,7 @@ extension SearchCategoryItemCollectionViewCell {
     }
 }
 
-extension Reactive where Base: SearchCategoryItemCollectionViewCell {
+extension Reactive where Base: CategoryItemCollectionViewCell {
   
   var itemSelected: ControlEvent<Bool> {
     let source = self.base.nameButton.rx.tap

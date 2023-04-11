@@ -1,5 +1,5 @@
 //
-//  SearchReactor.swift
+//  CategoryReactor.swift
 //  Search
 //
 //  Created mincheol on 2023/03/17.
@@ -10,7 +10,7 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 
-final class SearchReactor: Reactor {
+final class CategoryReactor: Reactor {
     
     // MARK: Constants
     private enum Constants { }
@@ -31,9 +31,9 @@ final class SearchReactor: Reactor {
     
     // MARK: State
     struct State {
-        var sections: [SearchCategorySection] = []
-        var sectionMap: [String: [SearchCategorySection.Item]] = [:]
-        var selectedTag: [SearchCategorySection.Item] = []
+        var sections: [CategorySection] = []
+        var sectionMap: [String: [CategorySection.Item]] = [:]
+        var selectedTag: [CategorySection.Item] = []
     }
     
     // MARK: Mutation
@@ -75,10 +75,10 @@ final class SearchReactor: Reactor {
     }
 }
 
-extension SearchReactor.State {
+extension CategoryReactor.State {
     fileprivate mutating func createSection() {
         self.sections = []
-        let firstElements: [SearchCategorySection.Item] = [
+        let firstElements: [CategorySection.Item] = [
             .categoryItem(.init(name: "한식")),
             .categoryItem(.init(name: "중식")),
             .categoryItem(.init(name: "양식")),
@@ -87,7 +87,7 @@ extension SearchReactor.State {
             .categoryItem(.init(name: "세계음식")),
             .categoryItem(.init(name: "기타"))
         ]
-        let secondElements: [SearchCategorySection.Item] = [
+        let secondElements: [CategorySection.Item] = [
             .categoryItem(.init(name: "전시관")),
             .categoryItem(.init(name: "소공연장")),
             .categoryItem(.init(name: "연극극장")),
@@ -95,7 +95,7 @@ extension SearchReactor.State {
             .categoryItem(.init(name: "문화시설")),
             .categoryItem(.init(name: "기타"))
         ]
-        let thirdElements: [SearchCategorySection.Item] = [
+        let thirdElements: [CategorySection.Item] = [
             .categoryItem(.init(name: "볼링")),
             .categoryItem(.init(name: "탁구")),
             .categoryItem(.init(name: "당구")),
@@ -105,7 +105,7 @@ extension SearchReactor.State {
             .categoryItem(.init(name: "기타")),
         ]
         
-        let mock: [SearchCategorySection] = [
+        let mock: [CategorySection] = [
             .init(identity: .tag(.init()), items: []),
             .init(
                 identity: .category(.init(name: "음식점")),
@@ -133,7 +133,7 @@ extension SearchReactor.State {
     }
     
     fileprivate mutating func reduceChangeTagItems() {
-        var tagItem: [SearchCategorySection.Item] = []
+        var tagItem: [CategorySection.Item] = []
         let _ = self.sections.flatMap { section in
             section.items.compactMap { item in
                 switch item {
@@ -157,10 +157,10 @@ extension SearchReactor.State {
         }
     }
     fileprivate mutating func reduceChangeTagItems(name: String) {
-        var tagItem: [SearchCategorySection.Item] = []
-        var categorySection: [SearchCategorySection] = []
-        categorySection = self.sections.compactMap { section -> SearchCategorySection in
-            return .init(identity: section.identity, items: section.items.compactMap { item -> SearchCategorySection.Item in
+        var tagItem: [CategorySection.Item] = []
+        var categorySection: [CategorySection] = []
+        categorySection = self.sections.compactMap { section -> CategorySection in
+            return .init(identity: section.identity, items: section.items.compactMap { item -> CategorySection.Item in
                 switch item {
                 case let .categoryItem(reactor):
                     if reactor.currentState.isSelected {

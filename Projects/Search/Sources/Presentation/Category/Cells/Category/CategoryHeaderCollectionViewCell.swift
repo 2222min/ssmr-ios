@@ -1,5 +1,5 @@
 //
-//  SearchCategoryCollectionViewCell.swift
+//  CategoryHeaderCollectionViewCell.swift
 //  Search
 //
 //  Created mincheol on 2023/03/19.
@@ -15,9 +15,9 @@ import RxSwift
 import ReactorKit
 import CommonUI
 
-final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit.View {
+final class CategoryHeaderCollectionViewCell: BaseCollectionViewCell, ReactorKit.View {
 
-	typealias Reactor = SearchCategoryCellReactor
+	typealias Reactor = CategoryHeaderCellReactor
 
 	// MARK: Constants
 	private enum Constants { }
@@ -81,7 +81,7 @@ final class SearchCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit
     }
 }
 
-extension SearchCategoryCollectionViewCell {
+extension CategoryHeaderCollectionViewCell {
     private func bindAction(didTapCategoryButton reactor: Reactor) {
         self.categoryButton.rx.tap.asDriver()
             .map { Reactor.Action.didTapCategoryButton }
@@ -90,7 +90,7 @@ extension SearchCategoryCollectionViewCell {
     }
 }
 
-extension Reactive where Base: SearchCategoryCollectionViewCell {
+extension Reactive where Base: CategoryHeaderCollectionViewCell {
   
   var toggleExpand: ControlEvent<Bool> {
     let source = self.base.categoryButton.rx.tap
