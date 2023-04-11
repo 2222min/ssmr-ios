@@ -52,7 +52,7 @@ class SerachTopBar: UIView {
     private let searchButtonImage: UIImageView = UIImageView().then {
         $0.image = CommonUIAsset.search.image
     }
-    private let searchButtonTextFiled: UITextField = UITextField().then {
+    fileprivate let searchButtonTextFiled: UITextField = UITextField().then {
         $0.attributedPlaceholder = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
     }
     private let deleteButton: UIButton = UIButton().then {
@@ -79,7 +79,7 @@ class SerachTopBar: UIView {
             .forEach {
                 self.searchButton.addSubview($0)
             }
-       
+        
         [
             self.backButton,
             self.searchButton
@@ -134,5 +134,18 @@ extension Reactive where Base: SerachTopBar {
     
     var backButtonDidTap: ControlEvent<Void> {
         return self.base.backButton.rx.tap
+    }
+    
+    var textFieldIsEditing: ControlProperty<String?> {
+        return self.base.searchButtonTextFiled.rx.controlProperty(
+            editingEvents: [.editingChanged, .valueChanged],
+            getter: { textField in
+                textField.text
+            }, setter: { textField, value in
+                if textField.text != value {
+                    textField.text = value
+                }
+            })
+        
     }
 }
