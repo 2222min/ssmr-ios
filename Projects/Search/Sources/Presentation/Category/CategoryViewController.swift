@@ -38,7 +38,9 @@ final class CategoryViewController: BaseViewController, ReactorKit.View {
     }
     
     // MARK: UI Properties
-    private let serachTopBar = SerachTopBar()
+    private let serachTopBar = SerachTopBar().then {
+        $0.textFieldIsEnabled = false
+    }
     private lazy var collectionView: UICollectionView = .init(
         frame: .zero,
         collectionViewLayout: self.compositionalLayout
@@ -95,6 +97,8 @@ final class CategoryViewController: BaseViewController, ReactorKit.View {
 extension CategoryViewController {
     func bind(reactor: Reactor) {
         self.bindState(sections: reactor)
+        self.bindDidTapBackButton()
+        self.bindDidTapSearchButton()
     }
 }
 
@@ -184,57 +188,12 @@ extension CategoryViewController {
         )
     }
     
-    private func createCompositionalLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { (sectionIndex:Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(
-                widthDimension: .estimated(60),
-                heightDimension: .absolute(36)
-            )
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .estimated(60)
-            )
-            
-            let group = NSCollectionLayoutGroup.horizontal(
-                layoutSize: groupSize,
-                subitems: [item]
-            )
-            
-            group.interItemSpacing = .fixed(12)
-            group.edgeSpacing = .init(leading: nil, top: .fixed(8), trailing: nil, bottom: nil)
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = .init(top: 0, leading: 12, bottom: 0, trailing: 12)
-            section.supplementariesFollowContentInsets = false
-            let config = UICollectionViewCompositionalLayoutConfiguration()
-            config.scrollDirection = .vertical
-            let layout = UICollectionViewCompositionalLayout(section: section)
-            layout.configuration = config
-            // Header
-            let headerSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(52)
-            )
-            let header = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: headerSize,
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top
-            )
-            // Background
-            let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            
-            section.decorationItems = [sectionBackgroundDecoration]
-            section.boundarySupplementaryItems = [header]
-           
-            return section
-        }
-    }
-    
     private func bindDidTapSearchButton() {
         self.serachTopBar.rx.searchButtonDidTap
             .asDriver()
             .drive(with: self, onNext: { _,_  in
-                print("serachTopBar")
+                let vc = SearchViewController.init(reactor: .init())
+                self.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: self.disposeBag)
     }
