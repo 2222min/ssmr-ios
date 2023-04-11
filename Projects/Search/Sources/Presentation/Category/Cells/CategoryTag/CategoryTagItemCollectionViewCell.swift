@@ -32,7 +32,7 @@ final class CategoryTagItemCollectionViewCell: BaseCollectionViewCell, ReactorKi
     }
     private let nameLabel: UILabel = UILabel()
     private let imageView: UIImageView = UIImageView().then {
-        $0.image = CommonUIAsset.searchClose.image
+        $0.image = CommonUIAsset.tagClose.image
     }
     // MARK: Initializing
     

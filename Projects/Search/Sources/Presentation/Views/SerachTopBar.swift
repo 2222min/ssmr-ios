@@ -30,6 +30,9 @@ class SerachTopBar: UIView {
         let title = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
         $0.attributedText = title
     }
+    private let deleteButton: UIButton = UIButton().then {
+        $0.setImage(CommonUIAsset.searchClose.image, for: .normal)
+    }
     init() {
         super.init(frame: .zero)
         
@@ -44,7 +47,8 @@ class SerachTopBar: UIView {
         self.addSubview(self.container)
         [
             self.searchButtonImage,
-            self.serachButtonLabel
+            self.serachButtonLabel,
+            self.deleteButton
         ]
             .forEach {
                 self.searchButton.addSubview($0)
@@ -84,10 +88,14 @@ class SerachTopBar: UIView {
         }
         self.serachButtonLabel.snp.makeConstraints {
             $0.leading.equalTo(self.searchButtonImage.snp.trailing).offset(10)
-            $0.trailing.equalToSuperview()
+            $0.trailing.equalTo(self.deleteButton.snp.leading).offset(10)
             $0.centerY.equalToSuperview()
         }
-        
+        self.deleteButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.size.equalTo(24)
+            $0.trailing.equalToSuperview().inset(16)
+        }
     }
     
 }
