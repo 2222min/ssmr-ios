@@ -13,6 +13,14 @@ import RxCocoa
 
 class SerachTopBar: UIView {
     
+    // MARK: Properties
+    
+    var deleteButtonIsHidden: Bool = true {
+        didSet {
+            self.deleteButton.isHidden = deleteButtonIsHidden
+        }
+    }
+    
     // MARK: UIProperties
     
     private let container = UIView()
@@ -26,12 +34,12 @@ class SerachTopBar: UIView {
     private let searchButtonImage: UIImageView = UIImageView().then {
         $0.image = CommonUIAsset.search.image
     }
-    private let serachButtonLabel: UILabel = UILabel().then {
-        let title = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
-        $0.attributedText = title
+    private let searchButtonTextFiled: UITextField = UITextField().then {
+        $0.attributedPlaceholder = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
     }
     private let deleteButton: UIButton = UIButton().then {
         $0.setImage(CommonUIAsset.searchClose.image, for: .normal)
+        $0.isHidden = true
     }
     init() {
         super.init(frame: .zero)
@@ -47,7 +55,7 @@ class SerachTopBar: UIView {
         self.addSubview(self.container)
         [
             self.searchButtonImage,
-            self.serachButtonLabel,
+            self.searchButtonTextFiled,
             self.deleteButton
         ]
             .forEach {
@@ -86,7 +94,7 @@ class SerachTopBar: UIView {
             $0.centerY.equalToSuperview()
             $0.size.equalTo(24)
         }
-        self.serachButtonLabel.snp.makeConstraints {
+        self.searchButtonTextFiled.snp.makeConstraints {
             $0.leading.equalTo(self.searchButtonImage.snp.trailing).offset(10)
             $0.trailing.equalTo(self.deleteButton.snp.leading).offset(10)
             $0.centerY.equalToSuperview()
