@@ -18,7 +18,8 @@ import UIKit
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         let viewController = CategoryViewController.create()
-        window?.rootViewController = viewController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }
