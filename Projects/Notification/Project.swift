@@ -18,7 +18,7 @@ let infoPlist: [String: InfoPlist.Value] = [
 let project = Project.frameworkWithDemoApp(name: projectName,
                                            infoPlist: infoPlist,
                                            dependencies: [
-                                            .external(name: "ReactorKit"),
+                                            .project(target: "RxPresentationProxy", path: .relativeToCurrentFile("../RxPresentationProxy")),
                                             .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
                                             .project(target: "Util", path: .relativeToCurrentFile("../Util"))
                                            ])
