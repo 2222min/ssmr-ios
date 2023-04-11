@@ -19,15 +19,8 @@ final class SearchReactor: Reactor {
 	let initialState: State = State()
 
 	// MARK: Initializing
-	let effector: SearchEffectorProtocol
 	
-	init(effector: SearchEffectorProtocol) {
-		self.effector = effector
-	}
-
-	deinit {
-		DebugLog(self)
-	}
+	init() {}
 
 	// MARK: Action
 	enum Action {}

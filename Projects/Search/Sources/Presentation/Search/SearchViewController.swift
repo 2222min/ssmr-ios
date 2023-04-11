@@ -10,11 +10,11 @@ import UIKit
 
 import SnapKit
 import Then
-import RxViewController
 import ReactorKit
 import RxCocoa
 import RxSwift
-import RxOptional
+import CommonUI
+import Util
 
 final class SearchViewController: BaseViewController, ReactorKit.View {
 
@@ -26,7 +26,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
 	// MARK: Properties
 	
 	// MARK: UI Properties
-
+    
 
 	// MARK: Initializing
 	init(reactor: Reactor) {
