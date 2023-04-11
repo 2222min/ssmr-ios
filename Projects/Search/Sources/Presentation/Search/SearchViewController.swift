@@ -26,7 +26,11 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
 	// MARK: Properties
 	
 	// MARK: UI Properties
-    
+    private let serachTopBar = SerachTopBar().then {
+        $0.deleteButtonIsHidden = false
+        $0.borderColor = CommonUIAsset.pointColor.color.cgColor
+        $0.borderWidth = 2
+    }
 
 	// MARK: Initializing
 	init(reactor: Reactor) {
@@ -35,7 +39,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
 		}
 		super.init()
 	}
-
+    
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -43,15 +47,21 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
 	// MARK: View Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        self.navigationTopBar.isHidden = true
 	}
 
 	override func configureUI() {
 		super.configureUI()
+        self.view.addSubview(self.serachTopBar)
 	}
 
 	// MARK: Constraints
 	override func setupConstraints() {
 		super.setupConstraints()
+        self.serachTopBar.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
 	}
 }
 
@@ -68,4 +78,13 @@ extension SearchViewController {}
 extension SearchViewController {}
 
 // MARK: Func
-extension SearchViewController {}
+extension SearchViewController {
+    private func bindDidTapBackButton() {
+        self.serachTopBar.rx.backButtonDidTap
+            .asDriver()
+            .drive(with: self, onNext: { _,_  in
+                self.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: self.disposeBag)
+    }
+}
