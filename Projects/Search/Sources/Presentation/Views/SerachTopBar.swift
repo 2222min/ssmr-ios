@@ -21,6 +21,24 @@ class SerachTopBar: UIView {
         }
     }
     
+    var textFieldIsEnabled: Bool = true {
+        didSet {
+            self.searchButtonTextFiled.isEnabled = textFieldIsEnabled
+        }
+    }
+    
+    var borderWidth: CGFloat = 0 {
+        didSet {
+            self.searchButton.layer.borderWidth = borderWidth
+        }
+    }
+    
+    var borderColor: CGColor? {
+        didSet {
+            self.searchButton.layer.borderColor = borderColor
+        }
+    }
+    
     // MARK: UIProperties
     
     private let container = UIView()
