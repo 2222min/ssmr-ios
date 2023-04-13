@@ -13,10 +13,12 @@ open class NotiTypeCell: UICollectionViewCell {
     static let cellIdentifier = "NotiTypeCell"
     
     public let typeButton = UIButton().then {
-        $0.setBackgroundColor(color: CommonUIAsset.whiteGrey.color, forState: .normal)
+        $0.setBackgroundColor(color: CommonUIAsset.cream.color, forState: .normal)
         $0.setBackgroundColor(color: CommonUIAsset.pointColor.color, forState: .selected)
         $0.titleEdgeInsets = .init(top: 0, left: 0, bottom: 4, right: 0)
         $0.layer.cornerRadius = 18
+        $0.layer.borderColor = CommonUIAsset.whiteGrey.color.cgColor
+        $0.layer.borderWidth = 1
     }
     
     override init(frame: CGRect) {

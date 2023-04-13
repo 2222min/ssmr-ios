@@ -79,6 +79,8 @@ class NotificationViewController: BaseViewController {
                 cell.setTypeButtonTitle(title)
             }
             .disposed(by: disposeBag)
+        
+        typeCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
     private func bind() {
@@ -103,6 +105,19 @@ class NotificationViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         notiTableView.rx.setDelegate(self).disposed(by: disposeBag)
+    }
+}
+
+extension NotificationViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let label = UILabel()
+        label.text = self.typeArray[indexPath.row]
+        label.font = CoreTypo.ButtonLarge.style.font
+        label.sizeToFit()
+        
+        let width = label.frame.width + 32
+        
+        return CGSize(width: width, height: collectionView.frame.height)
     }
 }
 
