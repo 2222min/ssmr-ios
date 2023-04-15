@@ -24,7 +24,7 @@ final class CategoryViewController: BaseViewController, ReactorKit.View {
     // MARK: Constants
     private enum Constants { }
     
-    enum Reusable {
+    private enum Reusable {
         static let tagCell = ReusableView<CategoryTagCollectionViewCell>()
         static let tagItemCell = ReusableCell<CategoryTagItemCollectionViewCell>()
         static let categoryCell = ReusableView<CategoryHeaderCollectionViewCell>()
