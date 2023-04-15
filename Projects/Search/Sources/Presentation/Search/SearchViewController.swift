@@ -15,16 +15,22 @@ import RxCocoa
 import RxSwift
 import CommonUI
 import Util
+import ReusableKit
+import RxDataSources
 
 final class SearchViewController: BaseViewController, ReactorKit.View {
     
     typealias Reactor = SearchReactor
-    
-    // MARK: Constants
-    private enum Constants { }
+    typealias Search = RxCollectionViewSectionedReloadDataSource<SearchSection>
+    // MARK: Reusable
+    private enum Reusable {
+        static let recentSearchHeaderView = ReusableView<RecentSearchHeaderCollectionViewCell>()
+        static let recentSearchCell = ReusableCell<RecentSearchCollectionViewCell>()
+        static let relatedSearchCell = ReusableCell<RelatedSearchCollectionViewCell>()
+    }
     
     // MARK: Properties
-    
+    private lazy var dataSource = self.createDataSource()
     // MARK: UI Properties
     private let serachTopBar = SerachTopBar().then {
         $0.deleteButtonIsHidden = false
@@ -32,7 +38,14 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         $0.borderWidth = 2
     }
     
-    private let contentContainer = UIView()
+    private lazy var collectionView: UICollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: self.createCompositionalLayout()
+    ).then {
+        $0.register(Reusable.recentSearchHeaderView, kind: .header)
+        $0.register(Reusable.recentSearchCell)
+        $0.register(Reusable.relatedSearchCell)
+    }
     
     // MARK: Initializing
     init(reactor: Reactor) {
@@ -54,9 +67,9 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     
     override func configureUI() {
         super.configureUI()
-       
+        
         self.view.addSubview(self.serachTopBar)
-        self.view.addSubview(self.contentContainer)
+        self.view.addSubview(self.collectionView)
     }
     
     // MARK: Constraints
@@ -66,7 +79,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
         }
-        self.contentContainer.snp.makeConstraints {
+        self.collectionView.snp.makeConstraints {
             $0.top.equalTo(self.serachTopBar.snp.bottom).offset(12)
             $0.leading.trailing.bottom.equalToSuperview()
         }
@@ -76,16 +89,43 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
 // MARK: ReactorBind
 extension SearchViewController {
     func bind(reactor: Reactor) {
+        // Func
         self.bindDidTapBackButton()
-        self.bindTextFieldIsEditing()
+        // Action
+        self.bindTextFieldIsEditing(show: reactor)
+        // State
+        self.bindState(searchView: reactor)
     }
 }
 
 // MARK: Action
-extension SearchViewController {}
+extension SearchViewController {
+    private func bindTextFieldIsEditing(show reactor: Reactor) {
+        self.serachTopBar.rx.textFieldIsEditing
+            .asDriver()
+            .drive(with: self, onNext: { _, text in
+                guard let text = text,
+                      !text.isEmpty
+                else {
+                    reactor.action.onNext(.showRecentSearchView)
+                    return
+                }
+                reactor.action.onNext(.showResultSearchView)
+            })
+            .disposed(by: self.disposeBag)
+    }
+}
 
 // MARK: State
-extension SearchViewController {}
+extension SearchViewController {
+    private func bindState(searchView reactor: Reactor) {
+        reactor.state.map { $0.searchView }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: [])
+            .drive(self.collectionView.rx.items(dataSource: self.dataSource))
+            .disposed(by: self.disposeBag)
+    }
+}
 
 // MARK: Func
 extension SearchViewController {
@@ -97,43 +137,37 @@ extension SearchViewController {
             })
             .disposed(by: self.disposeBag)
     }
-    private func bindTextFieldIsEditing() {
-        self.serachTopBar.rx.textFieldIsEditing
-            .asDriver()
-            .drive(with: self, onNext: { _, text in
-                guard let text = text,
-                      !text.isEmpty
-                else {
-                    self.addRecentSearchView()
-                    return
+    
+    fileprivate func createDataSource() -> Search {
+        return .init(
+            configureCell: {  _, collectionView, indexPath, sectionItem in
+                switch sectionItem {
+                case let .recentSearch(reactor) :
+                    return collectionView.dequeue(Reusable.recentSearchCell, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
+                case let .relatedSearch(reactor):
+                    return collectionView.dequeue(Reusable.relatedSearchCell, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
                 }
-                self.addReusltSearchView()
-            })
-            .disposed(by: self.disposeBag)
-    }
-    private func addRecentSearchView() {
-        if self.contentContainer.subviews.compactMap({ $0 as? RecentSearchView }).first != nil {
-            return
-        } else {
-            let recentSearchView = RecentSearchView.init()
-            self.contentContainer.subviews.forEach {
-                $0.removeFromSuperview()
+            },
+            configureSupplementaryView: { [weak self] dataSource, collectionView, _, indexPath in
+                let section = dataSource[indexPath.section]
+                
+                switch section.identity {
+                case let .recent(reactor):
+                    return collectionView.dequeue(Reusable.recentSearchHeaderView, kind: .header, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
+                }
             }
-            self.contentContainer.addSubview(recentSearchView)
-            recentSearchView.snp.makeConstraints { $0.edges.equalToSuperview() }
-        }
+        )
     }
-    private func addReusltSearchView() {
-        if self.contentContainer.subviews.compactMap({ $0 as? ResultSearchView }).first != nil {
-            return
-        } else {
-            let resultSearchView = ResultSearchView.init()
-            self.contentContainer.subviews.forEach {
-                $0.removeFromSuperview()
-            }
-            self.contentContainer.addSubview(resultSearchView)
-            resultSearchView.snp.makeConstraints { $0.edges.equalToSuperview() }
-        }
-    }
-
 }
