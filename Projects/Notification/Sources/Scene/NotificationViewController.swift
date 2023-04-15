@@ -45,7 +45,32 @@ class NotificationViewController: BaseViewController {
         $0.backgroundColor = .white
         $0.separatorStyle = .none
         $0.register(NotiElementCell.self, forCellReuseIdentifier: NotiElementCell.cellIdentifier)
+        $0.isHidden = true
     }
+    
+    private let emptyStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 4
+        $0.alignment = .center
+        $0.isHidden = false
+    }
+    
+    private let emptyImage = UIImageView().then {
+        $0.image = UIImage(asset: CommonUIAsset.bell)
+    }
+
+    private let emptyTitle = UILabel().then {
+        $0.text = "땡!"
+        $0.textColor = CommonUIAsset.grey.color
+        $0.font = CoreTypo.DDaengH1.style.font
+    }
+    
+    private let emptyContent = UILabel().then {
+        $0.text = "알림이 없어요."
+        $0.textColor = CommonUIAsset.grey.color
+        $0.font = CoreTypo.DDaengB1.style.font
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +83,14 @@ class NotificationViewController: BaseViewController {
         super.configureUI()
         self.view.addSubview(typeCollectionView)
         self.view.addSubview(notiTableView)
+        self.view.addSubview(emptyStackView)
+        
+        [
+            self.emptyImage,
+            self.emptyTitle,
+            self.emptyContent
+        ]
+            .forEach(self.emptyStackView.addArrangedSubview)
     }
     
     override func setupConstraints() {
@@ -71,6 +104,10 @@ class NotificationViewController: BaseViewController {
             $0.top.equalTo(self.typeCollectionView.snp.bottom).offset(4)
             $0.leading.trailing.bottom.equalToSuperview()
         }
+        self.emptyStackView.snp.makeConstraints {
+            $0.centerY.centerX.equalToSuperview()
+        }
+        self.emptyStackView.setCustomSpacing(28, after: self.emptyImage)
     }
     
     private func setNotiType() {
@@ -85,17 +122,16 @@ class NotificationViewController: BaseViewController {
     
     private func bind() {
         let dataSource = RxTableViewSectionedReloadDataSource<NotiElementSection>(
-            configureCell: { _, tableView, indexPath, item in
+            configureCell: { [weak self] _, tableView, indexPath, item in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: NotiElementCell.cellIdentifier) as? NotiElementCell
                 else { return UITableViewCell() }
-                
+                self?.showNotiTableView()
                 cell.configureCell(item)
-                tableView.rowHeight = UITableView.automaticDimension
                 
                 let backgroundView = UIView()
                 backgroundView.backgroundColor = CommonUIAsset.mLightOrange.color
-                
                 cell.selectedBackgroundView = backgroundView
+                tableView.rowHeight = UITableView.automaticDimension
                 return cell
             }
         )
@@ -105,6 +141,13 @@ class NotificationViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         notiTableView.rx.setDelegate(self).disposed(by: disposeBag)
+    }
+    
+    private func showNotiTableView() {
+        DispatchQueue.main.async {
+            self.notiTableView.isHidden = false
+            self.emptyStackView.isHidden = true
+        }
     }
 }
 
