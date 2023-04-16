@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  CategoryViewController.swift
 //  Search
 //
 //  Created mincheol on 2023/03/17.
@@ -18,27 +18,29 @@ import RxDataSources
 import ReusableKit
 import Util
 
-final class SearchViewController: BaseViewController, ReactorKit.View {
-    typealias Reactor = SearchReactor
-    typealias Category = RxCollectionViewSectionedAnimatedDataSource<SearchCategorySection>
+final class CategoryViewController: BaseViewController, ReactorKit.View {
+    typealias Reactor = CategoryReactor
+    typealias Category = RxCollectionViewSectionedAnimatedDataSource<CategorySection>
     // MARK: Constants
     private enum Constants { }
     
-    enum Reusable {
+    private enum Reusable {
         static let tagCell = ReusableView<CategoryTagCollectionViewCell>()
         static let tagItemCell = ReusableCell<CategoryTagItemCollectionViewCell>()
-        static let categoryCell = ReusableView<SearchCategoryCollectionViewCell>()
-        static let categoryItemCell = ReusableCell<SearchCategoryItemCollectionViewCell>()
+        static let categoryCell = ReusableView<CategoryHeaderCollectionViewCell>()
+        static let categoryItemCell = ReusableCell<CategoryItemCollectionViewCell>()
     }
     
     // MARK: Properties
     private lazy var dataSource = self.createDataSource()
     private lazy var compositionalLayout = self.createCompositionalLayout().then {
-        $0.register(SearchCategorySectionBackgroundView.self, forDecorationViewOfKind: "background")
+        $0.register(CategorySectionBackgroundView.self, forDecorationViewOfKind: "background")
     }
     
     // MARK: UI Properties
-    private let serachTopBar = SerachTopBar()
+    private let serachTopBar = SerachTopBar().then {
+        $0.textFieldIsEnabled = false
+    }
     private lazy var collectionView: UICollectionView = .init(
         frame: .zero,
         collectionViewLayout: self.compositionalLayout
@@ -92,17 +94,19 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
 }
 
 // MARK: ReactorBind
-extension SearchViewController {
+extension CategoryViewController {
     func bind(reactor: Reactor) {
         self.bindState(sections: reactor)
+        self.bindDidTapBackButton()
+        self.bindDidTapSearchButton()
     }
 }
 
 // MARK: Action
-extension SearchViewController {}
+extension CategoryViewController {}
 
 // MARK: State
-extension SearchViewController {
+extension CategoryViewController {
     private func bindState(sections reactor: Reactor) {
         reactor.state.map { $0.sections }
             .asDriver(onErrorJustReturn: [])
@@ -113,10 +117,10 @@ extension SearchViewController {
 
 // MARK: Func
 
-extension SearchViewController {
-    public static func create() -> SearchViewController {
-        let reactor: SearchReactor = .init()
-        let viewController = SearchViewController.init(reactor: reactor)
+extension CategoryViewController {
+    public static func create() -> CategoryViewController {
+        let reactor: CategoryReactor = .init()
+        let viewController = CategoryViewController.init(reactor: reactor)
         
         return viewController
     }
@@ -129,6 +133,14 @@ extension SearchViewController {
                     return collectionView.dequeue(Reusable.tagItemCell, for: indexPath).then { cell in
                         if cell.reactor !== reactor {
                             cell.configure(reactor: reactor)
+                            cell.rx.itemSelected.asDriver()
+                                .throttle(.milliseconds(300))
+                                .drive(onNext: { [weak self]  in
+                                    guard let self = self,
+                                          let reactor = self.reactor else { return }
+                                    reactor.action.onNext(.didTapTagItem($0))
+                                })
+                                .disposed(by: cell.disposeBag)
                         }
                     }
                 case .categoryItem(let reactor):
@@ -176,57 +188,12 @@ extension SearchViewController {
         )
     }
     
-    private func createCompositionalLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { (sectionIndex:Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(
-                widthDimension: .estimated(60),
-                heightDimension: .absolute(36)
-            )
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .estimated(60)
-            )
-            
-            let group = NSCollectionLayoutGroup.horizontal(
-                layoutSize: groupSize,
-                subitems: [item]
-            )
-            
-            group.interItemSpacing = .fixed(12)
-            group.edgeSpacing = .init(leading: nil, top: .fixed(8), trailing: nil, bottom: nil)
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = .init(top: 0, leading: 12, bottom: 0, trailing: 12)
-            section.supplementariesFollowContentInsets = false
-            let config = UICollectionViewCompositionalLayoutConfiguration()
-            config.scrollDirection = .vertical
-            let layout = UICollectionViewCompositionalLayout(section: section)
-            layout.configuration = config
-            // Header
-            let headerSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(52)
-            )
-            let header = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: headerSize,
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top
-            )
-            // Background
-            let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            
-            section.decorationItems = [sectionBackgroundDecoration]
-            section.boundarySupplementaryItems = [header]
-           
-            return section
-        }
-    }
-    
     private func bindDidTapSearchButton() {
         self.serachTopBar.rx.searchButtonDidTap
             .asDriver()
             .drive(with: self, onNext: { _,_  in
-                print("serachTopBar")
+                let vc = SearchViewController.init(reactor: .init())
+                self.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: self.disposeBag)
     }

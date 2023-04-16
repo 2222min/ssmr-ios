@@ -1,5 +1,5 @@
 //
-//  SearchCategorySectionBackgroundView.swift
+//  CategorySectionBackgroundView.swift
 //  Presentation
 //
 //  Created by mincheol on 2023/04/10.
@@ -9,7 +9,7 @@
 import UIKit
 import CommonUI
 
-class SearchCategorySectionBackgroundView: UICollectionReusableView {
+class CategorySectionBackgroundView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()

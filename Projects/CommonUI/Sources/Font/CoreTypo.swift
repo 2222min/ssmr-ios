@@ -22,7 +22,8 @@ public enum CoreTypo {
     case DDaengH3
     case DDaengB1
     case DDaengMB2
-    case DDaenMB3_Bold
+    case DDaengMB3_Bold
+    case DDaengMB3_Regular
     case DDaengC1
     case DDaengC2
     case DDaengOverLine
@@ -34,6 +35,7 @@ extension CoreTypo {
         return .init([
             .font(self.font!),
             .minimumLineHeight(self.lineHeight),
+            .maximumLineHeight(self.lineHeight),
             .tracking(.point(self.letterSpacing))
         ])
     }
@@ -51,8 +53,10 @@ extension CoreTypo {
             return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 18)
         case .DDaengMB2:
             return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 17)
-        case .DDaenMB3_Bold:
+        case .DDaengMB3_Bold:
             return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 14)
+        case .DDaengMB3_Regular:
+            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 14)
         case .DDaengC1:
             return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 12)
         case .DDaengC2:
@@ -72,7 +76,8 @@ extension CoreTypo {
         case .DDaengH3: return 28
         case .DDaengB1: return 24
         case .DDaengMB2: return 24
-        case .DDaenMB3_Bold: return 16
+        case .DDaengMB3_Bold: return 16
+        case .DDaengMB3_Regular: return 16
         case .DDaengC1: return 16
         case .DDaengC2: return 16
         case .DDaengOverLine: return 16
@@ -88,7 +93,8 @@ extension CoreTypo {
       case .DDaengH3: return 0
       case .DDaengB1: return 0
       case .DDaengMB2: return 0
-      case .DDaenMB3_Bold: return 0
+      case .DDaengMB3_Bold: return 0
+      case .DDaengMB3_Regular: return 0.95
       case .DDaengC1: return 0
       case .DDaengC2: return 0
       case .DDaengOverLine: return 0

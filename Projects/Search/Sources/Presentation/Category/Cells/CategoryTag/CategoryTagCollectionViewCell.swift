@@ -34,7 +34,7 @@ final class CategoryTagCollectionViewCell: BaseCollectionViewCell, ReactorKit.Vi
     private let confirmButton: UIButton = UIButton().then {
         $0.setAttributedTitle(
             "완료".styled(
-                typo: .DDaenMB3_Bold,
+                typo: .DDaengMB3_Bold,
                 byAdding: [.color(CommonUIAsset.deepGrey.color)]
             ),
             for: .normal

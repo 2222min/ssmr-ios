@@ -26,13 +26,13 @@ final class CategoryTagItemCollectionViewCell: BaseCollectionViewCell, ReactorKi
     // MARK: Propertie
     
     // MARK: UI Properties
-    private let button: UIButton = UIButton().then {
+    fileprivate let button: UIButton = UIButton().then {
         $0.backgroundColor = CommonUIAsset.mOrange.color
         $0.layer.cornerRadius = 8
     }
     private let nameLabel: UILabel = UILabel()
     private let imageView: UIImageView = UIImageView().then {
-        $0.image = CommonUIAsset.searchClose.image
+        $0.image = CommonUIAsset.tagClose.image
     }
     // MARK: Initializing
     
@@ -42,6 +42,7 @@ final class CategoryTagItemCollectionViewCell: BaseCollectionViewCell, ReactorKi
     
     func configure(reactor: Reactor) {
         super.configure()
+        self.contentView.backgroundColor = .clear
         self.reactor = reactor
     }
     
@@ -71,6 +72,7 @@ final class CategoryTagItemCollectionViewCell: BaseCollectionViewCell, ReactorKi
         }
         self.imageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
             $0.leading.equalTo(self.nameLabel.snp.trailing).offset(8)
             $0.size.equalTo(16)
         }
@@ -91,7 +93,7 @@ extension CategoryTagItemCollectionViewCell {
             .distinctUntilChanged()
             .asDriver(onErrorDriveWith: .empty())
             .map { $0.styled(
-                typo: .DDaenMB3_Bold,
+                typo: .DDaengMB3_Bold,
                 byAdding: [.color(CommonUIAsset.deepGrey.color)]
             )
             }
@@ -99,3 +101,14 @@ extension CategoryTagItemCollectionViewCell {
             .disposed(by: self.disposeBag)
     }
 }
+
+extension Reactive where Base: CategoryTagItemCollectionViewCell {
+  var itemSelected: ControlEvent<String> {
+    let source = self.base.button.rx.tap
+      .compactMap { [weak base] _ in
+          base?.reactor?.currentState.name
+      }
+    return ControlEvent(events: source)
+  }
+}
+

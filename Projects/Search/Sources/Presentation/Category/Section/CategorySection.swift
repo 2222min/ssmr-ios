@@ -8,29 +8,29 @@
 
 import RxDataSources
 
-struct SearchCategorySection: Hashable {
+struct CategorySection: Hashable {
     enum Identity: Hashable {
         case tag(CategoryTagCellReactor)
-        case category(SearchCategoryCellReactor)
+        case category(CategoryHeaderCellReactor)
     }
     let identity: Identity
     var items: [Item]
 }
 
-extension SearchCategorySection: AnimatableSectionModelType {
-    init(original: SearchCategorySection, items: [Item]) {
-        self = SearchCategorySection(identity: original.identity, items: items)
+extension CategorySection: AnimatableSectionModelType {
+    init(original: CategorySection, items: [Item]) {
+        self = CategorySection(identity: original.identity, items: items)
     }
 }
 
-extension SearchCategorySection {
+extension CategorySection {
     enum Item: Hashable {
         case tagItem(CategoryTagItemCellReactor)
-        case categoryItem(SearchCategoryItemCellReactor)
+        case categoryItem(CategoryItemCellReactor)
     }
 }
 
-extension SearchCategorySection.Item: IdentifiableType {
+extension CategorySection.Item: IdentifiableType {
     var identity: String {
         return "\(self.hashValue)"
     }

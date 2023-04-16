@@ -13,6 +13,32 @@ import RxCocoa
 
 class SerachTopBar: UIView {
     
+    // MARK: Properties
+    
+    var deleteButtonIsHidden: Bool = true {
+        didSet {
+            self.deleteButton.isHidden = deleteButtonIsHidden
+        }
+    }
+    
+    var textFieldIsEnabled: Bool = true {
+        didSet {
+            self.searchButtonTextFiled.isEnabled = textFieldIsEnabled
+        }
+    }
+    
+    var borderWidth: CGFloat = 0 {
+        didSet {
+            self.searchButton.layer.borderWidth = borderWidth
+        }
+    }
+    
+    var borderColor: CGColor? {
+        didSet {
+            self.searchButton.layer.borderColor = borderColor
+        }
+    }
+    
     // MARK: UIProperties
     
     private let container = UIView()
@@ -26,9 +52,12 @@ class SerachTopBar: UIView {
     private let searchButtonImage: UIImageView = UIImageView().then {
         $0.image = CommonUIAsset.search.image
     }
-    private let serachButtonLabel: UILabel = UILabel().then {
-        let title = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
-        $0.attributedText = title
+    fileprivate let searchButtonTextFiled: UITextField = UITextField().then {
+        $0.attributedPlaceholder = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
+    }
+    private let deleteButton: UIButton = UIButton().then {
+        $0.setImage(CommonUIAsset.searchClose.image, for: .normal)
+        $0.isHidden = true
     }
     init() {
         super.init(frame: .zero)
@@ -44,12 +73,13 @@ class SerachTopBar: UIView {
         self.addSubview(self.container)
         [
             self.searchButtonImage,
-            self.serachButtonLabel
+            self.searchButtonTextFiled,
+            self.deleteButton
         ]
             .forEach {
                 self.searchButton.addSubview($0)
             }
-       
+        
         [
             self.backButton,
             self.searchButton
@@ -82,12 +112,16 @@ class SerachTopBar: UIView {
             $0.centerY.equalToSuperview()
             $0.size.equalTo(24)
         }
-        self.serachButtonLabel.snp.makeConstraints {
+        self.searchButtonTextFiled.snp.makeConstraints {
             $0.leading.equalTo(self.searchButtonImage.snp.trailing).offset(10)
-            $0.trailing.equalToSuperview()
+            $0.trailing.equalTo(self.deleteButton.snp.leading).offset(10)
             $0.centerY.equalToSuperview()
         }
-        
+        self.deleteButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.size.equalTo(24)
+            $0.trailing.equalToSuperview().inset(16)
+        }
     }
     
 }
@@ -100,5 +134,18 @@ extension Reactive where Base: SerachTopBar {
     
     var backButtonDidTap: ControlEvent<Void> {
         return self.base.backButton.rx.tap
+    }
+    
+    var textFieldIsEditing: ControlProperty<String?> {
+        return self.base.searchButtonTextFiled.rx.controlProperty(
+            editingEvents: [.editingChanged, .valueChanged],
+            getter: { textField in
+                textField.text
+            }, setter: { textField, value in
+                if textField.text != value {
+                    textField.text = value
+                }
+            })
+        
     }
 }
