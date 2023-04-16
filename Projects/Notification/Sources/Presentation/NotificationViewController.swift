@@ -10,25 +10,29 @@ import UIKit
 import CommonUI
 import RxSwift
 import RxDataSources
+import ReusableKit
+import ReactorKit
 
-class NotificationViewController: BaseViewController {
+class NotificationViewController: BaseViewController, ReactorKit.View {
+    typealias Reactor = NotificationReactor
     
     // For Test
     private let typeArray = ["전체", "오늘의 할인", "나의 리뷰", "공지사항"]
-    private let notiArray = [
+    private let notiArray: [NotiElementSection] = [
         NotiElementSection(header: "3.24 오늘", items: [
-            NotiElement(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요?")
+            NotiElementEntity(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요?")
         ]),
         NotiElementSection(header: "3.23 어제", items: [
-            NotiElement(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요? 괜찮으셨다면 애정마라탕을 위한 리뷰를 남겨주세요."),
-            NotiElement(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요? 괜찮으셨다면 애정마라탕을 위한 리뷰를 남겨주세요.")
+            NotiElementEntity(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요? 괜찮으셨다면 애정마라탕을 위한 리뷰를 남겨주세요."),
+            NotiElementEntity(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요? 괜찮으셨다면 애정마라탕을 위한 리뷰를 남겨주세요.")
         ]),
         NotiElementSection(header: "3.22 수요일", items: [
-            NotiElement(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요?"),
-            NotiElement(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요? 괜찮으셨다면 애정마라탕을 위한 리뷰를 남겨주세요.")
+            NotiElementEntity(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요?"),
+            NotiElementEntity(type: "나의 리뷰", content: "애정마라탕에서의 식사 어떠셨나요? 괜찮으셨다면 애정마라탕을 위한 리뷰를 남겨주세요.")
         ])
     ]
     
+    // MARK: UI Properties
     private let typeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
         $0.minimumLineSpacing = 12
@@ -71,7 +75,19 @@ class NotificationViewController: BaseViewController {
         $0.font = CoreTypo.DDaengB1.style.font
     }
     
+    // MARK: Initializing
+    init(reactor: Reactor) {
+        defer {
+            self.reactor = reactor
+        }
+        super.init()
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationTopBar.titleLabel.text = "알림"
@@ -93,6 +109,7 @@ class NotificationViewController: BaseViewController {
             .forEach(self.emptyStackView.addArrangedSubview)
     }
     
+    // MARK: Constraints
     override func setupConstraints() {
         super.setupConstraints()
         self.typeCollectionView.snp.makeConstraints {
@@ -151,6 +168,21 @@ class NotificationViewController: BaseViewController {
     }
 }
 
+extension NotificationViewController {
+    func bind(reactor: Reactor) {
+        
+    }
+}
+
+extension NotificationViewController {
+    public static func create() -> NotificationViewController {
+        let reactor: NotificationReactor = .init()
+        let viewController = NotificationViewController.init(reactor: reactor)
+        
+        return viewController
+    }
+}
+
 extension NotificationViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel()
@@ -197,27 +229,5 @@ extension NotificationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 48
-    }
-}
-
-struct NotiElement {
-    let type: String
-    let content: String
-}
-
-struct NotiElementSection {
-    let header: String
-    var items: [NotiElement]
-    
-    init(header: String, items: [NotiElement]) {
-        self.header = header
-        self.items = items
-    }
-}
-
-extension NotiElementSection: SectionModelType {
-    init(original: NotiElementSection, items: [NotiElement]) {
-        self = original
-        self.items = items
     }
 }

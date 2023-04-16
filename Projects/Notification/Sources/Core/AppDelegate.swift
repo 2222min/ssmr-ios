@@ -17,7 +17,7 @@ import UIKit
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = NotificationViewController()
+        let viewController = NotificationViewController.create()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true

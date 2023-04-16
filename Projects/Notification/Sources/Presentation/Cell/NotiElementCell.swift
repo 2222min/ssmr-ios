@@ -13,7 +13,7 @@ class NotiElementCell: UITableViewCell {
     static let cellIdentifier = "NotiElementCell"
     
     private let notiImage = UIImageView().then {
-        $0.image = CommonUIAsset.watchImage.image // 41 41
+        $0.image = CommonUIAsset.watchImage.image
     }
     
     private let notiTypeLabel = UILabel().then {
@@ -63,7 +63,7 @@ class NotiElementCell: UITableViewCell {
         }
     }
     
-    func configureCell(_ element: NotiElement) {
+    func configureCell(_ element: NotiElementEntity) {
         self.notiTypeLabel.text = element.type
         self.notiContentLabel.text = element.content
     }
