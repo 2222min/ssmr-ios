@@ -66,7 +66,7 @@ extension Target.SearchTargets {
                 .glob(.relativeToManifest("Sources/Domain/**"))
             ],
             resources: [
-                .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
+                .glob(pattern: .relativeToManifest("Resources/Domain/**"))
             ],
             dependencies: [
                 .project(target: "Core", path: .relativeToManifest("../Core"))
