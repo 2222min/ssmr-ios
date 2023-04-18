@@ -56,10 +56,32 @@ extension Project {
                        organizationName: organizationName,
                        targets: targets)
     }
+    
+    public static func proxyFramework(name: String,
+                                      dependencies: [TargetDependency] = []) -> Project {
+        let targets = makeProxyFrameWork(name: name,
+                                           dependencies: dependencies)
+        return Project(name: name,
+                       organizationName: organizationName,
+                       targets: targets)
+    }
 }
 
 private extension Project {
 
+    static func makeProxyFrameWork(name: String,
+                                   dependencies: [TargetDependency] = []) -> [Target]{
+        let sources = Target(name: name,
+                             platform: .platform_ios,
+                             product: .framework,
+                             bundleId: "team.io.\(name)",
+                             deploymentTarget: .targetVersion,
+                             infoPlist: .default,
+                             dependencies: dependencies)
+        
+        return [sources]
+    }
+    
     static func makeFrameworkTargets(name: String, dependencies: [TargetDependency] = []) -> [Target] {
         let sources = Target(name: name,
                              platform: .platform_ios,
