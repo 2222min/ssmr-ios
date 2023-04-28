@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import SnapKit
 import Then
 import ReactorKit
@@ -21,11 +20,25 @@ final public class HomeViewController: BaseViewController, ReactorKit.View {
 	private enum Constants { }
 
 	// MARK: Properties
+    
+    private let sectionA = SectionAViewController()
+    private let sectionB = SectionBViewController()
+    private let sectionC = SectionCViewController()
+    private let sectionD = SectionDViewController()
+    private let sectionE = SectionEViewController()
 
 	// MARK: UI Properties
-    private let container = UIView().then {
-        $0.backgroundColor = .blue
+    
+    private let scrollView = UIScrollView().then {
+        $0.backgroundColor = .white
     }
+    
+    private let container = UIStackView().then {
+        $0.backgroundColor = .white
+        $0.axis = .vertical
+        $0.spacing = 36
+    }
+    
 	// MARK: Initializing
     public init(reactor: HomeReactor) {
 		defer {
@@ -45,15 +58,33 @@ final public class HomeViewController: BaseViewController, ReactorKit.View {
 
     override public func configureUI() {
         super.configureUI()
-        self.view.addSubview(self.container)
+        hideNavigationBar()
+        
+        self.view.addSubview(self.scrollView)
+        self.scrollView.addSubview(container)
+        [
+            self.sectionA.view,
+            self.sectionB.view,
+            self.sectionC.view,
+            self.sectionD.view,
+            self.sectionE.view
+        ].forEach(self.container.addArrangedSubview)
 	}
 
 	// MARK: Constraints
     override public func setupConstraints() {
         super.setupConstraints()
+        self.scrollView.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
         self.container.snp.makeConstraints {
             $0.edges.equalToSuperview()
+            $0.width.equalTo(self.scrollView)
         }
+        
+        self.container.setCustomSpacing(24, after: self.sectionA.view)
 	}
 }
 
