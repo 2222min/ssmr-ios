@@ -43,6 +43,7 @@ extension Target.HomeTargets {
                 .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
             ],
             dependencies: [
+                .external(name: "Kingfisher"),
                 .project(target: "RxPresentationProxy", path: .relativeToManifest("../RxPresentationProxy")),
                 .project(target: "CommonUI", path: .relativeToManifest("../CommonUI")),
                 .project(target: "Util", path: .relativeToManifest("../Util")),
