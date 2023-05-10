@@ -7,20 +7,16 @@
 
 import ProjectDescription
 import ProjectDescriptionHelpers
+import UtilityPlugin
 
 private let projectName = "App"
 private let iOSTargetVersion = "14.0"
 
 let infoPlistPath: String = "Resources/App.plist"
-let loginTargets: [TargetDependency]  = Target.LoginTargets.allCases.map { .project(target: $0.rawValue, path: .relativeToManifest("../Login"))}
-let project = Project.app(name: projectName,
-                          infoPlist: infoPlistPath,
-                          dependencies: [                            .project(target: "Onboarding", path: .relativeToCurrentFile("../Onboarding")),
-                            .project(target: "SignUp", path: .relativeToCurrentFile("../SignUp")),
-                            .project(target: "CommonUI", path: .relativeToCurrentFile("../CommonUI")),
-                            .project(target: "RegisterBusiness", path: .relativeToCurrentFile("../RegisterBusiness")),
-                            .project(target: "Notification", path:
-                                    .relativeToCurrentFile("../Notification"))
-                            
-                          ] + loginTargets
+let project = Project.app(
+    name: projectName,
+    infoPlist: infoPlistPath,
+    dependencies: [
+        .project(target: "Features", path: .relativeToManifest("../Features"))
+    ]
 )

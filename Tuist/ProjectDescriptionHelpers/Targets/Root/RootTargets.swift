@@ -6,6 +6,7 @@
 //
 
 import ProjectDescription
+import UtilityPlugin
 
 extension Target {
     public enum RootTarget: String, CaseIterable {
@@ -43,10 +44,7 @@ extension Target.RootTarget {
                 .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
             ],
             dependencies: [
-//                .project(target: "RxPresentationProxy", path: .relativeToManifest("../RxPresentationProxy")),
-                .project(target: "CommonUI", path: .relativeToManifest("../CommonUI")),
-                .project(target: "Util", path: .relativeToManifest("../Util")),
-                .project(target: "HomePresentation", path: .relativeToManifest("../Home")),
+                .project(target: "HomePresentation", path: .relativeToFeature("Home")),
                 .target(name: "RootDomain")
             ]
         )
@@ -68,7 +66,7 @@ extension Target.RootTarget {
                 .glob(pattern: .relativeToManifest("Resources/Domain/**"))
             ],
             dependencies: [
-                .project(target: "Core", path: .relativeToManifest("../Core"))
+                .project(target: "Core", path: .relativeToCore())
             ]
         )
     }

@@ -7,10 +7,18 @@
 //
 
 import CommonUI
-import Onboarding
+import OnboardingPresentation
 
 import UIKit
-import SignUp
+
+import DI
+import LoginDomain
+import LoginPresentation
+import RootDomain
+import RootPresentation
+
+import Core
+
 
 @main class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -22,14 +30,46 @@ import SignUp
     ) -> Bool {
         sleep(2) // delay 2 seconds
         window = UIWindow(frame: UIScreen.main.bounds)
+        Injection().makeInjection()
+       
+        let onboardingVC = OnboardingViewController.create(dependency: .init(loginVC: dependencyInjectionContainer.resolve(LoginViewControllerFactoryType.self)!))!
         
-        let onboardingVC = OnboardingViewController.create() ?? UIViewController()
-        
-        window?.rootViewController = onboardingVC
+        let rootViewController =  UINavigationController(rootViewController: onboardingVC)
+        rootViewController.navigationBar.isHidden = true
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
+        
         
         return true
     }
     
+}
+
+struct Injection {
+     func makeInjection() {
+         // MARK: Networking
+         dependencyInjectionContainer.register(Networking.self) { _ in
+             return Networking()
+         }.inObjectScope(.container)
+         
+         // MARK: LoginUseCaseProtocol
+        dependencyInjectionContainer.register(LoginUseCaseProtocol.self) { r in
+            return LoginUseCase(networking: r.resolve(Networking.self)!)
+        }.inObjectScope(.container)
+         
+         // MARK: LoginViewControllerFactoryType
+        dependencyInjectionContainer.register(LoginViewControllerFactoryType.self) { _ in
+              // 추상 뷰컨트롤러 팩토리 생성 시 `factoryClosure` 주입
+            LoginViewControllerFactoryType { payload in
+                return LoginViewController(reactor: LoginReactor(effector: dependencyInjectionContainer.resolve(LoginUseCaseProtocol.self)!), dependency: .init(rootVC: dependencyInjectionContainer.resolve(RootViewControllerFactoryType.self)!))
+              }
+            }
+         // MARK: RootViewControllerFactoryType
+         dependencyInjectionContainer.register(RootViewControllerFactoryType.self) { _ in
+             RootViewControllerFactoryType { payload in
+                 return RootViewController(reactor: RootReactor())
+               }
+         }
+    }
 }
 

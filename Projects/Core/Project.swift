@@ -7,6 +7,7 @@
 
 import ProjectDescription
 import ProjectDescriptionHelpers
+import UtilityPlugin
 
 private let projectName = "Core"
 private let iOSTargetVersion = "14.0"
@@ -14,10 +15,9 @@ private let iOSTargetVersion = "14.0"
 let project = Project.framework(
     name: projectName,
     dependencies: [
-        .external(name: "Moya"),
-        .external(name: "RxMoya"),
-        .external(name: "RxSwift"),
-        .external(name: "RxCocoa")
+        .project(target: "CommonUI", path: .relativeToCore("CommonUI")),
+        .project(target: "UI", path: .relativeToCore("UI")),
+        .project(target: "Util", path: .relativeToCore("Util"))
     ]
 )
 

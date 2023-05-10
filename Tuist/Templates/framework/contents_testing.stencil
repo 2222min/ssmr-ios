@@ -1,0 +1,6 @@
+import Foundation
+import {{ name }}
+
+public struct {{ name  }}TestingData {
+    public init() {}
+}

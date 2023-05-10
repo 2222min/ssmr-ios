@@ -6,11 +6,12 @@
 //
 
 import ProjectDescription
+import UtilityPlugin
 
 extension Target {
     public enum LoginTargets: String, CaseIterable {
-        case presentation = "Presentation"
-        case domain = "Domain"
+        case presentation = "LoginPresentation"
+        case domain = "LoginDomain"
     }
     
 }
@@ -33,7 +34,7 @@ extension Target.LoginTargets {
             platform: .platform_ios,
             product: .framework,
             productName: Self.presentation.rawValue,
-            bundleId: "team.io.\(Self.RawValue)",
+            bundleId: "team.io.\(Self.presentation.rawValue)",
             deploymentTarget: .targetVersion,
             infoPlist: .default,
             sources: [
@@ -43,10 +44,9 @@ extension Target.LoginTargets {
                 .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
             ],
             dependencies: [
-                .external(name: "ReactorKit"),
-                .project(target: "CommonUI", path: .relativeToManifest("../CommonUI")),
-                .project(target: "Util", path: .relativeToManifest("../Util")),
-                .target(name: "Domain")
+                .project(target: "DI", path: .relativeToRoot("Projects/DI")),
+                .project(target: "RootDomain", path: .relativeToFeature("Root")),
+                .target(name: "LoginDomain")
             ]
         )
     }
@@ -64,10 +64,10 @@ extension Target.LoginTargets {
                 .glob(.relativeToManifest("Sources/Domain/**"))
             ],
             resources: [
-                .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
+                .glob(pattern: .relativeToManifest("Resources/Domain/**"))
             ],
             dependencies: [
-                .project(target: "Core", path: .relativeToManifest("../Core"))
+                .project(target: "Core", path: .relativeToCore())
             ]
         )
     }

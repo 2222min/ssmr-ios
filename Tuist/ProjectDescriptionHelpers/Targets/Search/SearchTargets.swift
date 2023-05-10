@@ -6,11 +6,12 @@
 //
 
 import ProjectDescription
+import UtilityPlugin
 
 extension Target {
     public enum SearchTargets: String, CaseIterable {
-        case presentation = "Presentation"
-        case domain = "Domain"
+        case presentation = "SearchPresentation"
+        case domain = "SearchDomain"
     }
     
 }
@@ -43,12 +44,7 @@ extension Target.SearchTargets {
                 .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
             ],
             dependencies: [
-                .external(name: "ReactorKit"),
-                .external(name: "RxDataSources"),
-                .external(name: "ReusableKit"),
-                .project(target: "CommonUI", path: .relativeToManifest("../CommonUI")),
-                .project(target: "Util", path: .relativeToManifest("../Util")),
-                .target(name: "Domain")
+                .target(name: "SearchDomain")
             ]
         )
     }
@@ -69,7 +65,7 @@ extension Target.SearchTargets {
                 .glob(pattern: .relativeToManifest("Resources/Domain/**"))
             ],
             dependencies: [
-                .project(target: "Core", path: .relativeToManifest("../Core"))
+                .project(target: "Core", path: .relativeToCore())
             ]
         )
     }
