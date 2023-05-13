@@ -15,7 +15,8 @@ let project = Project.proxyFramework(
         .external(name: "BonMot"),
         .external(name: "ReusableKit"),
         .external(name: "RxDataSources"),
-        .external(name: "Swinject")
+        .external(name: "Swinject"),
+        .external(name: "Kingfisher")
     ]
 )
 
