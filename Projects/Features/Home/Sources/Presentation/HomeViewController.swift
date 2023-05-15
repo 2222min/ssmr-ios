@@ -23,7 +23,7 @@ final public class HomeViewController: BaseViewController, ReactorKit.View {
     
     private let sectionA = SectionAViewController()
     private let sectionB = MDPickSectionViewController()
-    private let sectionC = SectionCViewController()
+    private let sectionC = BossPickSectionViewController()
     private let sectionD = SectionDViewController()
     private let sectionE = SectionEViewController()
 
