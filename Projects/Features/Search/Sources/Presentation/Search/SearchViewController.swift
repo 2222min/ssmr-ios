@@ -32,10 +32,11 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     // MARK: Properties
     private lazy var dataSource = self.createDataSource()
     // MARK: UI Properties
-    private let serachTopBar = SerachTopBar().then {
+    private let searchTopBar = SearchTopBar().then {
         $0.deleteButtonIsHidden = false
         $0.borderColor = CommonUIAsset.pointColor.color.cgColor
         $0.borderWidth = 2
+        $0.placeholder = "점포 이름, 메뉴를 검색하세요."
     }
     
     private lazy var collectionView: UICollectionView = UICollectionView(
@@ -68,19 +69,19 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     override func configureUI() {
         super.configureUI()
         
-        self.view.addSubview(self.serachTopBar)
+        self.view.addSubview(self.searchTopBar)
         self.view.addSubview(self.collectionView)
     }
     
     // MARK: Constraints
     override func setupConstraints() {
         super.setupConstraints()
-        self.serachTopBar.snp.makeConstraints {
+        self.searchTopBar.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
         }
         self.collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.serachTopBar.snp.bottom).offset(12)
+            $0.top.equalTo(self.searchTopBar.snp.bottom).offset(12)
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -101,7 +102,7 @@ extension SearchViewController {
 // MARK: Action
 extension SearchViewController {
     private func bindTextFieldIsEditing(show reactor: Reactor) {
-        self.serachTopBar.rx.textFieldIsEditing
+        self.searchTopBar.rx.textFieldIsEditing
             .asDriver()
             .drive(with: self, onNext: { _, text in
                 guard let text = text,
@@ -130,7 +131,7 @@ extension SearchViewController {
 // MARK: Func
 extension SearchViewController {
     private func bindDidTapBackButton() {
-        self.serachTopBar.rx.backButtonDidTap
+        self.searchTopBar.rx.backButtonDidTap
             .asDriver()
             .drive(with: self, onNext: { _,_  in
                 self.navigationController?.popViewController(animated: true)

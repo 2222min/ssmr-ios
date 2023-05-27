@@ -21,7 +21,7 @@ final public class HomeViewController: BaseViewController, ReactorKit.View {
 
 	// MARK: Properties
     
-    private let sectionA = SectionAViewController()
+    private let sectionA = HomeSearchViewController()
     private let sectionB = MDPickSectionViewController()
     private let sectionC = SectionCViewController()
     private let sectionD = SectionDViewController()

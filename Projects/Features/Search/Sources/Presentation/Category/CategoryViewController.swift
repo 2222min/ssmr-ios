@@ -38,7 +38,7 @@ final class CategoryViewController: BaseViewController, ReactorKit.View {
     }
     
     // MARK: UI Properties
-    private let serachTopBar = SerachTopBar().then {
+    private let SearchTopBar = SearchTopBar().then {
         $0.textFieldIsEnabled = false
     }
     private lazy var collectionView: UICollectionView = .init(
@@ -75,19 +75,19 @@ final class CategoryViewController: BaseViewController, ReactorKit.View {
         super.configureUI()
         self.view.backgroundColor = CommonUIAsset.pointColor.color
         self.navigationTopBar.backgroundColor = CommonUIAsset.pointColor.color
-        self.view.addSubview(self.serachTopBar)
+        self.view.addSubview(self.SearchTopBar)
         self.view.addSubview(self.collectionView)
     }
     
     // MARK: Constraints
     override func setupConstraints() {
         super.setupConstraints()
-        self.serachTopBar.snp.makeConstraints {
+        self.SearchTopBar.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
         }
         self.collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.serachTopBar.snp.bottom)
+            $0.top.equalTo(self.SearchTopBar.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -189,7 +189,7 @@ extension CategoryViewController {
     }
     
     private func bindDidTapSearchButton() {
-        self.serachTopBar.rx.searchButtonDidTap
+        self.SearchTopBar.rx.searchButtonDidTap
             .asDriver()
             .drive(with: self, onNext: { _,_  in
                 let vc = SearchViewController.init(reactor: .init())
@@ -199,7 +199,7 @@ extension CategoryViewController {
     }
     
     private func bindDidTapBackButton() {
-        self.serachTopBar.rx.backButtonDidTap
+        self.SearchTopBar.rx.backButtonDidTap
             .asDriver()
             .drive(with: self, onNext: { _,_  in
                 self.navigationController?.popViewController(animated: true)

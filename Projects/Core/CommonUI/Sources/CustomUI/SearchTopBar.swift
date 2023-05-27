@@ -1,5 +1,5 @@
 //
-//  SerachTopBar.swift
+//  SearchTopBar.swift
 //  Presentation
 //
 //  Created by mincheol on 2023/04/01.
@@ -7,35 +7,40 @@
 //
 
 import UIKit
-import CommonUI
 import RxSwift
 import RxCocoa
 
-class SerachTopBar: UIView {
+public class SearchTopBar: UIView {
     
     // MARK: Properties
     
-    var deleteButtonIsHidden: Bool = true {
+    public var deleteButtonIsHidden: Bool = true {
         didSet {
             self.deleteButton.isHidden = deleteButtonIsHidden
         }
     }
     
-    var textFieldIsEnabled: Bool = true {
+    public var textFieldIsEnabled: Bool = true {
         didSet {
             self.searchButtonTextFiled.isEnabled = textFieldIsEnabled
         }
     }
     
-    var borderWidth: CGFloat = 0 {
+    public var borderWidth: CGFloat = 0 {
         didSet {
             self.searchButton.layer.borderWidth = borderWidth
         }
     }
     
-    var borderColor: CGColor? {
+    public var borderColor: CGColor? {
         didSet {
             self.searchButton.layer.borderColor = borderColor
+        }
+    }
+    
+    public var placeholder: String? {
+        didSet {
+            self.searchButtonTextFiled.attributedPlaceholder = placeholder?.styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
         }
     }
     
@@ -52,14 +57,12 @@ class SerachTopBar: UIView {
     private let searchButtonImage: UIImageView = UIImageView().then {
         $0.image = CommonUIAsset.search.image
     }
-    fileprivate let searchButtonTextFiled: UITextField = UITextField().then {
-        $0.attributedPlaceholder = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
-    }
+    fileprivate let searchButtonTextFiled: UITextField = UITextField()
     private let deleteButton: UIButton = UIButton().then {
         $0.setImage(CommonUIAsset.searchClose.image, for: .normal)
         $0.isHidden = true
     }
-    init() {
+    public init() {
         super.init(frame: .zero)
         
         self.configureUI()
@@ -126,17 +129,17 @@ class SerachTopBar: UIView {
     
 }
 
-extension Reactive where Base: SerachTopBar {
+extension Reactive where Base: SearchTopBar {
     
-    var searchButtonDidTap: ControlEvent<Void> {
+    public var searchButtonDidTap: ControlEvent<Void> {
         return self.base.searchButton.rx.tap
     }
     
-    var backButtonDidTap: ControlEvent<Void> {
+    public var backButtonDidTap: ControlEvent<Void> {
         return self.base.backButton.rx.tap
     }
     
-    var textFieldIsEditing: ControlProperty<String?> {
+    public var textFieldIsEditing: ControlProperty<String?> {
         return self.base.searchButtonTextFiled.rx.controlProperty(
             editingEvents: [.editingChanged, .valueChanged],
             getter: { textField in
