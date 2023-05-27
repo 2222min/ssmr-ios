@@ -14,6 +14,8 @@ import UIKit
 import DI
 import LoginDomain
 import LoginPresentation
+import FindUserInfoDomain
+import FindUserInfoPresentation
 import RootDomain
 import RootPresentation
 
@@ -69,6 +71,13 @@ struct Injection {
              RootViewControllerFactoryType { payload in
                  return RootViewController(reactor: RootReactor())
                }
+         }
+         
+         // MARK: FindUserInfoControllerFactoryType
+         dependencyInjectionContainer.register(FindUserInfoViewControllerFactoryType.self) { _ in
+             FindUserInfoViewControllerFactoryType { payload in
+                 return FindUserInfoViewController(reactor: FindUserInfoReactor(), dependency: .init(loginVC: dependencyInjectionContainer.resolve(LoginViewControllerFactoryType.self)!))
+             }
          }
     }
 }

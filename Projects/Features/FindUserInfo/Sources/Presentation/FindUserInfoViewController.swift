@@ -14,9 +14,19 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 
-public final class FindUserInfoViewController: BaseViewController, ReactorKit.View {
+import LoginDomain
+import FindUserInfoDomain
+
+public final class FindUserInfoViewController: BaseViewController, ReactorKit.View, FindUserInfoViewControllerType {
 
     public typealias Reactor = FindUserInfoReactor
+    
+    public struct Dependency {
+        let loginVC: LoginViewControllerFactoryType
+        public init(loginVC: LoginViewControllerFactoryType) {
+            self.loginVC = loginVC
+        }
+    }
 
 	// MARK: Constants
 	private enum Constants {
@@ -65,14 +75,20 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
     private let confirmButton = CTAButton().then {
         $0.title = "다음"
     }
-	// MARK: Initializing
-	init(reactor: Reactor) {
-		defer {
-			self.reactor = reactor
-		}
-		super.init()
-	}
-
+    
+    public var dependency: Dependency
+    // MARK: Initializing
+    public init(
+        reactor: Reactor,
+        dependency: Dependency
+    ) {
+        defer {
+            self.reactor = reactor
+        }
+        self.dependency = dependency
+        super.init()
+    }
+    
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -187,12 +203,6 @@ extension FindUserInfoViewController {
 
 // MARK: Func
 extension FindUserInfoViewController {
-    public static func create() -> FindUserInfoViewController {
-        let reactor: FindUserInfoReactor = .init()
-        let viewController = FindUserInfoViewController.init(reactor: reactor)
-        
-        return viewController
-    }
     private func setUpFindIdView() {
         self.contentContainerView.subviews.forEach {
             $0.removeFromSuperview()

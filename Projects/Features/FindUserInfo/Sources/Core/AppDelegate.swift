@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FindUserInfoDomain
+import DI
 
 @main class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -19,12 +21,9 @@ import UIKit
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // TODO: 나중에 바꾸기
-        let viewController = FindUserInfoViewController.create()
-        let rootViewController =  UINavigationController(rootViewController: viewController)
-        rootViewController.navigationBar.isHidden = true
-        window?.rootViewController = rootViewController
-        
-//        window?.rootViewController = viewController
+        let factory = dependencyInjectionContainer.resolve(FindUserInfoViewControllerFactoryType.self)!
+        let viewController = factory.create(payload: .init(paramA: ""))
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }
