@@ -18,6 +18,8 @@ import FindUserInfoDomain
 import FindUserInfoPresentation
 import SignUpDomain
 import SignUpPresentation
+import RegisterBusinessDomain
+import RegisterBusinessPresentation
 import RootDomain
 import RootPresentation
 
@@ -93,6 +95,13 @@ struct Injection {
         dependencyInjectionContainer.register(SignUpViewControllerFactoryType.self) { _ in
             SignUpViewControllerFactoryType { payload in
                 return SignUpViewController(reactor: SignUpReactor(), dependency: .init(loginVC: dependencyInjectionContainer.resolve(LoginViewControllerFactoryType.self)!))
+            }
+        }
+        
+        // MARK: RegisterBusinessViewControllerFactoryType
+        dependencyInjectionContainer.register(RegiBusinessViewControllerFactoryType.self) { _ in
+            RegiBusinessViewControllerFactoryType { payload in
+                return RegiBusinessNumberViewController(dependency: .init(signUpVC: dependencyInjectionContainer.resolve(SignUpViewControllerFactoryType.self)!))
             }
         }
     }
