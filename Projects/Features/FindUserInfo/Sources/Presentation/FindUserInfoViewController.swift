@@ -8,8 +8,6 @@
 import CommonUI
 
 import UIKit
-import SnapKit
-import Then
 import ReactorKit
 import RxCocoa
 import RxSwift
@@ -43,9 +41,6 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 	// MARK: Properties
 	
 	// MARK: UI Properties
-    private let topBar = NavigationTopBar().then {
-        $0.leftButton.setImage(CommonUIAsset.chevronLeft.image, for: .normal)
-    }
     
     private let titleLabel = UnderlineLabel().then {
         $0.labelText = "아이디/비밀번호 찾기"
@@ -96,13 +91,13 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 	// MARK: View Life Cycle
     public override func viewDidLoad() {
 		super.viewDidLoad()
+        subscribeUI()
 	}
 
     public override func configureUI() {
 		super.configureUI()
         
         [
-            self.topBar,
             self.titleLabel,
             self.stackView,
             self.confirmButton,
@@ -114,12 +109,8 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 	// MARK: Constraints
     public override func setupConstraints() {
 		super.setupConstraints()
-        self.topBar.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.left.right.equalToSuperview()
-        }
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(topBar.snp.bottom).offset(28)
+            $0.top.equalTo(navigationTopBar.snp.bottom).offset(28)
             $0.left.equalToSuperview().offset(16)
         }
         self.stackView.snp.makeConstraints {

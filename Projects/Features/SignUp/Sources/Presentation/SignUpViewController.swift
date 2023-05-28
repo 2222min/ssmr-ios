@@ -212,6 +212,7 @@ public final class SignUpViewController: BaseViewController, ReactorKit.View, Si
  
     public override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
     }
     
     public override func configureUI() {
@@ -307,10 +308,6 @@ public final class SignUpViewController: BaseViewController, ReactorKit.View, Si
             $0.top.equalTo(self.pwCheckTextField.snp.bottom).offset(12)
             $0.leading.equalToSuperview().offset(16)
         }
-    }
-    
-    public override func subscribeUI() {
-        super.subscribeUI()
     }
     
     private func moveToAddEMailPage() {

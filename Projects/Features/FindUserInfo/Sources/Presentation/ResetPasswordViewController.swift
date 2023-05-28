@@ -58,10 +58,6 @@ final class ResetPasswordViewController: BaseViewController, ReactorKit.View {
     // MARK: Properties
     
     // MARK: UI Properties
-    private let topBar = NavigationTopBar().then {
-        $0.leftButton.setImage(CommonUIAsset.chevronLeft.image
-                               , for: .normal)
-    }
     
     private let titleLabel = UnderlineLabel().then {
         $0.labelText = "비밀번호 재설정하기"
@@ -134,12 +130,12 @@ final class ResetPasswordViewController: BaseViewController, ReactorKit.View {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
     }
     
     override func configureUI() {
         super.configureUI()
         [
-            topBar,
             titleLabel,
             descriptionLabel,
             firstInputTextField,
@@ -154,12 +150,8 @@ final class ResetPasswordViewController: BaseViewController, ReactorKit.View {
     // MARK: Constraints
     override func setupConstraints() {
         super.setupConstraints()
-        self.topBar.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.left.right.equalToSuperview()
-        }
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.topBar.snp.bottom).offset(28)
+            $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
             $0.left.equalToSuperview().offset(16)
         }
         self.descriptionLabel.snp.makeConstraints {
