@@ -13,6 +13,7 @@ import Core
 import LoginDomain
 import RootDomain
 import FindUserInfoDomain
+import SignUpDomain
 
 public class LoginViewController: BaseViewController, ReactorKit.View, LoginViewControllerType {
     
@@ -21,12 +22,15 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     public struct Dependency {
         let rootVC: RootViewControllerFactoryType
         let findUserInfoVC: FindUserInfoViewControllerFactoryType
+        let signUpVC: SignUpViewControllerFactoryType
         public init(
             rootVC: RootViewControllerFactoryType,
-            findUserInfoVC: FindUserInfoViewControllerFactoryType
+            findUserInfoVC: FindUserInfoViewControllerFactoryType,
+            signUpVC: SignUpViewControllerFactoryType
         ) {
             self.rootVC = rootVC
             self.findUserInfoVC = findUserInfoVC
+            self.signUpVC = signUpVC
         }
     }
     
@@ -193,6 +197,9 @@ extension LoginViewController {
         // 아이디/비밀번호찾기 버튼
         self.bindAction(didTapFindInfoButton: reactor)
         self.bindState(didTapFindInfoButton: reactor)
+        // 회원가입하기 버튼
+        self.bindAction(didTapSignUpButton: reactor)
+        self.bindState(didTapSignUpButton: reactor)
     }
 }
 
@@ -209,6 +216,13 @@ extension LoginViewController {
         self.findInfoButton.rx.tap
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { Reactor.Action.didTapFindInfoButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    private func bindAction(didTapSignUpButton reactor: Reactor) {
+        self.signUpButton.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.didTapSignUpButton }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
@@ -234,6 +248,15 @@ extension LoginViewController {
             }
             .disposed(by: self.disposeBag)
     }
+    private func bindState(didTapSignUpButton reactor: Reactor) {
+        reactor.state.map { $0.isShowSignUpView }
+            .filter { $0 }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive { [weak self] _ in
+                self?.showSignUpView()
+            }
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: Func
@@ -249,5 +272,11 @@ extension LoginViewController {
             payload: .init(paramA: "")
         )
         self.navigationController?.pushViewController(findUserInfoView, animated: true)
+    }
+    func showSignUpView() {
+        let signUpView = dependency.signUpVC.create(
+            payload: .init(paramA: "")
+        )
+        self.navigationController?.pushViewController(signUpView, animated: true)
     }
 }

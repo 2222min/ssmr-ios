@@ -16,6 +16,8 @@ import LoginDomain
 import LoginPresentation
 import FindUserInfoDomain
 import FindUserInfoPresentation
+import SignUpDomain
+import SignUpPresentation
 import RootDomain
 import RootPresentation
 
@@ -48,37 +50,51 @@ import Core
 }
 
 struct Injection {
-     func makeInjection() {
-         // MARK: Networking
-         dependencyInjectionContainer.register(Networking.self) { _ in
-             return Networking()
-         }.inObjectScope(.container)
-         
-         // MARK: LoginUseCaseProtocol
+    func makeInjection() {
+        // MARK: Networking
+        dependencyInjectionContainer.register(Networking.self) { _ in
+            return Networking()
+        }.inObjectScope(.container)
+        
+        // MARK: LoginUseCaseProtocol
         dependencyInjectionContainer.register(LoginUseCaseProtocol.self) { r in
             return LoginUseCase(networking: r.resolve(Networking.self)!)
         }.inObjectScope(.container)
-         
-         // MARK: LoginViewControllerFactoryType
+        
+        // MARK: LoginViewControllerFactoryType
         dependencyInjectionContainer.register(LoginViewControllerFactoryType.self) { _ in
-              // 추상 뷰컨트롤러 팩토리 생성 시 `factoryClosure` 주입
+            // 추상 뷰컨트롤러 팩토리 생성 시 `factoryClosure` 주입
             LoginViewControllerFactoryType { payload in
-                return LoginViewController(reactor: LoginReactor(effector: dependencyInjectionContainer.resolve(LoginUseCaseProtocol.self)!), dependency: .init(rootVC: dependencyInjectionContainer.resolve(RootViewControllerFactoryType.self)!, findUserInfoVC: dependencyInjectionContainer.resolve(FindUserInfoViewControllerFactoryType.self)!))
-              }
+                return LoginViewController(
+                    reactor: LoginReactor(effector: dependencyInjectionContainer.resolve(LoginUseCaseProtocol.self)!),
+                    dependency: .init(
+                        rootVC: dependencyInjectionContainer.resolve(RootViewControllerFactoryType.self)!,
+                        findUserInfoVC: dependencyInjectionContainer.resolve(FindUserInfoViewControllerFactoryType.self)!,
+                        signUpVC: dependencyInjectionContainer.resolve(SignUpViewControllerFactoryType.self)!
+                    )
+                )
             }
-         // MARK: RootViewControllerFactoryType
-         dependencyInjectionContainer.register(RootViewControllerFactoryType.self) { _ in
-             RootViewControllerFactoryType { payload in
-                 return RootViewController(reactor: RootReactor())
-               }
-         }
-         
-         // MARK: FindUserInfoControllerFactoryType
-         dependencyInjectionContainer.register(FindUserInfoViewControllerFactoryType.self) { _ in
-             FindUserInfoViewControllerFactoryType { payload in
-                 return FindUserInfoViewController(reactor: FindUserInfoReactor(), dependency: .init(loginVC: dependencyInjectionContainer.resolve(LoginViewControllerFactoryType.self)!))
-             }
-         }
+        }
+        // MARK: RootViewControllerFactoryType
+        dependencyInjectionContainer.register(RootViewControllerFactoryType.self) { _ in
+            RootViewControllerFactoryType { payload in
+                return RootViewController(reactor: RootReactor())
+            }
+        }
+        
+        // MARK: FindUserInfoControllerFactoryType
+        dependencyInjectionContainer.register(FindUserInfoViewControllerFactoryType.self) { _ in
+            FindUserInfoViewControllerFactoryType { payload in
+                return FindUserInfoViewController(reactor: FindUserInfoReactor(), dependency: .init(loginVC: dependencyInjectionContainer.resolve(LoginViewControllerFactoryType.self)!))
+            }
+        }
+        
+        // MARK: SignUpViewControllerFactoryType
+        dependencyInjectionContainer.register(SignUpViewControllerFactoryType.self) { _ in
+            SignUpViewControllerFactoryType { payload in
+                return SignUpViewController(reactor: SignUpReactor(), dependency: .init(loginVC: dependencyInjectionContainer.resolve(LoginViewControllerFactoryType.self)!))
+            }
+        }
     }
 }
 
