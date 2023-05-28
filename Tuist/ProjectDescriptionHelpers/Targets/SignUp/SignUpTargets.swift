@@ -44,7 +44,8 @@ extension Target.SignUpTargets {
                 .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
             ],
             dependencies: [
-                .project(target: "Core", path: .relativeToCore()),
+                .project(target: "DI", path: .relativeToRoot("Projects/DI")),
+                .project(target: "LoginDomain", path: .relativeToFeature("Login")),
                 .target(name: "SignUpDomain")
             ]
         )
@@ -63,7 +64,7 @@ extension Target.SignUpTargets {
                 .glob(.relativeToManifest("Sources/Domain/**"))
             ],
             resources: [
-                .glob(pattern: .relativeToManifest("Resources/Presentation/**"))
+                .glob(pattern: .relativeToManifest("Resources/Domain/**"))
             ],
             dependencies: [
                 .project(target: "Core", path: .relativeToCore())
