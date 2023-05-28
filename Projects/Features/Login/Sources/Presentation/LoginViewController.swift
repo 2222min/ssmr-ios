@@ -12,6 +12,7 @@ import ReactorKit
 import Core
 import LoginDomain
 import RootDomain
+import FindUserInfoDomain
 
 public class LoginViewController: BaseViewController, ReactorKit.View, LoginViewControllerType {
     
@@ -19,8 +20,13 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     
     public struct Dependency {
         let rootVC: RootViewControllerFactoryType
-        public init(rootVC: RootViewControllerFactoryType) {
+        let findUserInfoVC: FindUserInfoViewControllerFactoryType
+        public init(
+            rootVC: RootViewControllerFactoryType,
+            findUserInfoVC: FindUserInfoViewControllerFactoryType
+        ) {
             self.rootVC = rootVC
+            self.findUserInfoVC = findUserInfoVC
         }
     }
     
@@ -181,8 +187,12 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
 // MARK: ReactorBind
 extension LoginViewController {
     public func bind(reactor: Reactor) {
+        // 로그인 버튼
         self.bindAction(didTapCTAButton: reactor)
         self.bindState(showLoginFailView: reactor)
+        // 아이디/비밀번호찾기 버튼
+        self.bindAction(didTapFindInfoButton: reactor)
+        self.bindState(didTapFindInfoButton: reactor)
     }
 }
 
@@ -192,6 +202,13 @@ extension LoginViewController {
         self.loginButton.rx.tap
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { Reactor.Action.didTapCTAButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    private func bindAction(didTapFindInfoButton reactor: Reactor) {
+        self.findInfoButton.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.didTapFindInfoButton }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
@@ -208,6 +225,15 @@ extension LoginViewController {
             }
             .disposed(by: self.disposeBag)
     }
+    private func bindState(didTapFindInfoButton reactor: Reactor) {
+        reactor.state.map { $0.isShowFindInfoView }
+            .filter { $0 }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive { [weak self] _ in
+                self?.showFindUserInfoView()
+            }
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: Func
@@ -217,5 +243,11 @@ extension LoginViewController {
         loginFailView.modalTransitionStyle = .crossDissolve
         loginFailView.modalPresentationStyle = .overCurrentContext
         self.present(loginFailView, animated: true)
+    }
+    func showFindUserInfoView() {
+        let findUserInfoView = dependency.findUserInfoVC.create(
+            payload: .init(paramA: "")
+        )
+        self.navigationController?.pushViewController(findUserInfoView, animated: true)
     }
 }

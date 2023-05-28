@@ -30,16 +30,19 @@ final public class LoginReactor: Reactor {
     // MARK: Action
     public enum Action {
         case didTapCTAButton
+        case didTapFindInfoButton
     }
     
     // MARK: Mutation
     public enum Mutation {
         case showLoginFailView(Bool)
+        case showFindInfoView(Bool)
     }
     
     // MARK: State
     public struct State {
         var isShowLoginFailView = false
+        var isShowFindInfoView = false
     }
     
     public func mutate(action: Action) -> Observable<Mutation> {
@@ -56,6 +59,8 @@ final public class LoginReactor: Reactor {
                         Observable.just(.showLoginFailView(false))
                     )
                 }
+        case .didTapFindInfoButton:
+            return Observable.just(.showFindInfoView(true))
         }
     }
     
@@ -64,6 +69,9 @@ final public class LoginReactor: Reactor {
         switch mutation {
         case .showLoginFailView(let isShow):
             newState.isShowLoginFailView = isShow
+            return newState
+        case .showFindInfoView(let isShow):
+            newState.isShowFindInfoView = isShow
             return newState
         }
     }

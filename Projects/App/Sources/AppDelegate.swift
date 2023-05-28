@@ -63,7 +63,7 @@ struct Injection {
         dependencyInjectionContainer.register(LoginViewControllerFactoryType.self) { _ in
               // 추상 뷰컨트롤러 팩토리 생성 시 `factoryClosure` 주입
             LoginViewControllerFactoryType { payload in
-                return LoginViewController(reactor: LoginReactor(effector: dependencyInjectionContainer.resolve(LoginUseCaseProtocol.self)!), dependency: .init(rootVC: dependencyInjectionContainer.resolve(RootViewControllerFactoryType.self)!))
+                return LoginViewController(reactor: LoginReactor(effector: dependencyInjectionContainer.resolve(LoginUseCaseProtocol.self)!), dependency: .init(rootVC: dependencyInjectionContainer.resolve(RootViewControllerFactoryType.self)!, findUserInfoVC: dependencyInjectionContainer.resolve(FindUserInfoViewControllerFactoryType.self)!))
               }
             }
          // MARK: RootViewControllerFactoryType
