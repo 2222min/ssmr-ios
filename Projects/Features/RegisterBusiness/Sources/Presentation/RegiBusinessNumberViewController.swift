@@ -10,8 +10,18 @@ import UIKit
 import CommonUI
 import RxSwift
 
-class RegiBusinessNumberViewController: BaseViewController {
+import SignUpDomain
+import RegisterBusinessDomain
 
+public final class RegiBusinessNumberViewController: BaseViewController, RegiBusinessViewControllerType {
+
+    public struct Dependency {
+        let signUpVC: SignUpViewControllerFactoryType
+        public init(signUpVC: SignUpViewControllerFactoryType) {
+            self.signUpVC = signUpVC
+        }
+    }
+    
     // MARK: Constants
     private enum Constants {
         static let titleLabelText = "사업자 등록하기"
@@ -128,13 +138,26 @@ class RegiBusinessNumberViewController: BaseViewController {
         $0.makePage(pageNumber: 5, currentPage: 1)
     }
     
+    public var dependency: Dependency
+    // MARK: Initializing
+    public init(
+        dependency: Dependency
+    ) {
+        self.dependency = dependency
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: View Life Cycle
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         subscribeUI()
     }
     
-    override func configureUI() {
+    public override func configureUI() {
         super.configureUI()
         [
             self.individualButton,
@@ -157,7 +180,7 @@ class RegiBusinessNumberViewController: BaseViewController {
     }
     
     // MARK: Constraints
-    override func setupConstraints() {
+    public override func setupConstraints() {
         super.setupConstraints()
         self.titleLabel.snp.makeConstraints {
             $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
@@ -205,7 +228,7 @@ class RegiBusinessNumberViewController: BaseViewController {
         }
     }
     
-    override func subscribeUI() {
+    public override func subscribeUI() {
         super.subscribeUI()
         self.individualButton.rx.tap
             .withUnretained(self)

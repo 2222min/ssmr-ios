@@ -1,22 +1,22 @@
 //
-//  SignUpTargets.swift
+//  RegisterBusinessTargets.swift
 //  ProjectDescriptionHelpers
 //
-//  Created by mincheol on 2023/05/10.
+//  Created by 정건호 on 2023/05/28.
 //
 
 import ProjectDescription
 import UtilityPlugin
 
 extension Target {
-    public enum SignUpTargets: String, CaseIterable {
-        case presentation = "SignUpPresentation"
-        case domain = "SignUpDomain"
+    public enum RegisterBusinessTargets: String, CaseIterable {
+        case presentation = "RegisterBusinessPresentation"
+        case domain = "RegisterBusinessDomain"
     }
     
 }
 
-extension Target.SignUpTargets {
+extension Target.RegisterBusinessTargets {
     public var target: Target {
         switch self {
         case .presentation:
@@ -27,7 +27,7 @@ extension Target.SignUpTargets {
     }
 }
 
-extension Target.SignUpTargets {
+extension Target.RegisterBusinessTargets {
     func makePrentationTarget() -> Target {
         return Target (
             name: Self.presentation.rawValue,
@@ -45,8 +45,8 @@ extension Target.SignUpTargets {
             ],
             dependencies: [
                 .project(target: "DI", path: .relativeToRoot("Projects/DI")),
-                .project(target: "LoginDomain", path: .relativeToFeature("Login")),
-                .target(name: "SignUpDomain")
+                .project(target: "SignUpDomain", path: .relativeToFeature("SignUp")),
+                .target(name: "RegisterBusinessDomain")
             ]
         )
     }

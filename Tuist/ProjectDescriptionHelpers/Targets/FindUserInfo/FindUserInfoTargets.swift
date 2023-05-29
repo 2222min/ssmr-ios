@@ -1,22 +1,22 @@
 //
-//  SignUpTargets.swift
+//  FindUserInfoTargets.swift
 //  ProjectDescriptionHelpers
 //
-//  Created by mincheol on 2023/05/10.
+//  Created by 정건호 on 2023/05/27.
 //
 
 import ProjectDescription
 import UtilityPlugin
 
 extension Target {
-    public enum SignUpTargets: String, CaseIterable {
-        case presentation = "SignUpPresentation"
-        case domain = "SignUpDomain"
+    public enum FindUserInfoTargets: String, CaseIterable {
+        case presentation = "FindUserInfoPresentation"
+        case domain = "FindUserInfoDomain"
     }
     
 }
 
-extension Target.SignUpTargets {
+extension Target.FindUserInfoTargets {
     public var target: Target {
         switch self {
         case .presentation:
@@ -27,7 +27,7 @@ extension Target.SignUpTargets {
     }
 }
 
-extension Target.SignUpTargets {
+extension Target.FindUserInfoTargets {
     func makePrentationTarget() -> Target {
         return Target (
             name: Self.presentation.rawValue,
@@ -46,7 +46,7 @@ extension Target.SignUpTargets {
             dependencies: [
                 .project(target: "DI", path: .relativeToRoot("Projects/DI")),
                 .project(target: "LoginDomain", path: .relativeToFeature("Login")),
-                .target(name: "SignUpDomain")
+                .target(name: "FindUserInfoDomain")
             ]
         )
     }

@@ -10,34 +10,34 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 
-final class SignUpReactor: Reactor {
+public final class SignUpReactor: Reactor {
 
     // MARK: Constants
     private enum Constants { }
 
     // MARK: Properties
-    let initialState: State = State()
+    public let initialState: State = State()
 
     // MARK: Initializing
     
-    init() {}
+    public init() {}
     
     // MARK: Action
-    enum Action {}
+    public enum Action {}
     
     // MARK: State
-    struct State {}
+    public struct State {}
     
     // MARK: Mutation
-    enum Mutation {}
+    public enum Mutation {}
     
     // MARK: Mutate
-    func mutate(action: Action) -> Observable<Mutation> {
+    public func mutate(action: Action) -> Observable<Mutation> {
         switch action {}
     }
     
     // MARK: Reduce
-    func reduce(state: State, mutation: Mutation) -> State {
+    public func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {}
         return newState

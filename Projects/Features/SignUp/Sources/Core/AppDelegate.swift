@@ -1,19 +1,30 @@
-import Foundation
+//
+//  AppDelegate.swift
+//  SignUp
+//
+//  Created by mincheol on 2022/09/11.
+//  Copyright © 2022 cocaine.io. All rights reserved.
+//
+
 import UIKit
-import SignUp
+import SignUpDomain
+import DI
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@main class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var window: UIWindow?
-
-    internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let vc = UIViewController()
-        vc.title = "SignUp"
-        vc.view.backgroundColor = .systemYellow
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = UINavigationController(rootViewController: vc)
-        self.window?.makeKeyAndVisible()
-
+    
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+    ) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let factory = dependencyInjectionContainer.resolve(SignUpViewControllerFactoryType.self)!
+        let viewController = factory.create(payload: .init(paramA: ""))
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
         return true
     }
+    
 }

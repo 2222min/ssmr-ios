@@ -16,8 +16,10 @@ let infoPlist: [String: InfoPlist.Value] = [
 ]
 
 let project = Project.frameworkWithDemoApp(name: projectName,
+                                           targets: [
+                                            .RegisterBusinessTargets.presentation.target,
+                                            .RegisterBusinessTargets.domain.target
+                                           ],
                                            infoPlist: infoPlist,
-                                           dependencies: [
-                                            .project(target: "Core", path: .relativeToCore())
-                                           ])
-
+                                           demoDependencies: Target.RegisterBusinessTargets.allCases.map { .target(name: $0.rawValue)}
+)
