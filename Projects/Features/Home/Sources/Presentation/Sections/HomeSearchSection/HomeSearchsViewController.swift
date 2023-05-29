@@ -8,10 +8,13 @@
 
 import UIKit
 import CommonUI
+import ReactorKit
+import RxSwift
+import RxCocoa
 import ReusableKit
 import RxDataSources
 
-class HomeSearchViewController: BaseViewController {
+class HomeSearchViewController: BaseViewController, ReactorKit.View {
     
     typealias HashTag = RxCollectionViewSectionedReloadDataSource<HomeHashTagSection>
     
@@ -19,7 +22,7 @@ class HomeSearchViewController: BaseViewController {
     private enum Reusable {
         static let hashTagCell = ReusableCell<HomeHashTagCollectionViewCell>()
     }
-  
+    
     // MARK: Properties
     
     private lazy var dataSource = self.createDataSource()
@@ -41,12 +44,27 @@ class HomeSearchViewController: BaseViewController {
         frame: .zero,
         collectionViewLayout: self.createCompositionalLayout()
     ).then {
+        $0.showsHorizontalScrollIndicator = false
         $0.register(Reusable.hashTagCell)
+    }
+    
+    // MARK: Initializing
+    
+    public init(reactor: HomeSearchReactor) {
+        defer {
+            self.reactor = reactor
+        }
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
+        self.reactor?.action.onNext(.viewDidLoad)
     }
     
     override func configureUI() {
@@ -87,9 +105,42 @@ class HomeSearchViewController: BaseViewController {
             $0.height.equalTo(28)
         }
     }
-    
-    
 }
+
+// MARK: ReactorBind
+extension HomeSearchViewController {
+    public func bind(reactor: HomeSearchReactor) {
+        self.bindState(title: reactor)
+        self.bindState(hashTagList: reactor)
+    }
+}
+
+// MARK: Action
+extension HomeSearchViewController {}
+
+// MARK: State
+extension HomeSearchViewController {
+    private func bindState(title reactor: HomeSearchReactor) {
+        reactor.state.compactMap { $0.title }
+            .asDriver(onErrorDriveWith: .empty())
+            .map { $0.styled(
+                typo: .DDaengH2,
+                byAdding: [.color(CommonUIAsset.black.color)])
+            }
+            .drive(self.titleLabel.rx.attributedText)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindState(hashTagList reactor: HomeSearchReactor) {
+        reactor.state.compactMap { $0.hashTagList }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(self.collectionView.rx.items(dataSource: self.dataSource))
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: Func
+extension HomeSearchViewController {}
 
 extension HomeSearchViewController {
     fileprivate func createDataSource() -> HashTag {
@@ -109,41 +160,28 @@ extension HomeSearchViewController {
 }
 
 extension HomeSearchViewController {
-     func createCompositionalLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { (sectionIndex:Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(32)
-            )
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(32)
-            )
-            
-            let group = NSCollectionLayoutGroup.horizontal(
-                layoutSize: groupSize,
-                subitems: [item]
-            )
-            let section = NSCollectionLayoutSection(group: group)
-            let config = UICollectionViewCompositionalLayoutConfiguration()
-            config.scrollDirection = .vertical
-            let layout = UICollectionViewCompositionalLayout(section: section)
-            layout.configuration = config
-            // Header
-            let headerSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .estimated(0)
-            )
-            let header = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: headerSize,
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top
-            )
-            
-            section.boundarySupplementaryItems = [header]
-            
-            return section
-        }
+    func createCompositionalLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .estimated(52),
+            heightDimension: .absolute(28)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .estimated(52),
+            heightDimension: .absolute(28)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 12
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.scrollDirection = .horizontal
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        layout.configuration = config
+        
+        return layout
     }
 }

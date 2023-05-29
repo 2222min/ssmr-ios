@@ -25,11 +25,13 @@ final class HomeHashTagCellReactor: Reactor, IdentityHashable {
 	enum Mutation {}
 
 	// MARK: State
-	struct State {}
+	struct State {
+        var hashTag: String
+    }
 
 	// MARK: Initializing
-	init() {
+    init(hashTag: String) {
 		defer { _ = self.state }
-		self.initialState = State()
+		self.initialState = State(hashTag: hashTag)
 	}
 }
