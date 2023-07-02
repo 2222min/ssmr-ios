@@ -16,7 +16,7 @@ open class CategoryCell: UICollectionViewCell {
         $0.setBackgroundColor(color: CommonUIAsset.cream.color, forState: .normal)
         $0.setBackgroundColor(color: CommonUIAsset.pointColor.color, forState: .selected)
         $0.titleEdgeInsets = .init(top: 0, left: 0, bottom: 3, right: 0)
-        $0.layer.cornerRadius = 8
+        $0.layer.cornerRadius = 16
     }
     
     override init(frame: CGRect) {

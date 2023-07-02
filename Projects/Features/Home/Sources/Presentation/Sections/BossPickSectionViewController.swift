@@ -45,7 +45,7 @@ class BossPickSectionViewController: BaseViewController {
     private let categoryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
         $0.minimumLineSpacing = 8
-        $0.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        $0.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }).then {
         $0.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.cellIdentifier)
         $0.showsHorizontalScrollIndicator = false
@@ -105,7 +105,7 @@ class BossPickSectionViewController: BaseViewController {
         self.categoryCollectionView.snp.makeConstraints {
             $0.top.equalTo(self.sectionGuideLabel.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(115)
+            $0.height.equalTo(32)
         }
         self.reviewTableView.snp.makeConstraints {
             $0.top.equalTo(self.categoryCollectionView.snp.bottom)

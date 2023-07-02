@@ -24,8 +24,8 @@ final public class HomeViewController: BaseViewController, ReactorKit.View {
     private let sectionA = SectionAViewController()
     private let sectionB = MDPickSectionViewController()
     private let sectionC = BossPickSectionViewController()
-    private let sectionD = SectionDViewController()
-    private let sectionE = SectionEViewController()
+//    private let sectionD = SectionDViewController()
+    private let sectionE = UsageSectionViewController()
 
 	// MARK: UI Properties
     
@@ -66,7 +66,7 @@ final public class HomeViewController: BaseViewController, ReactorKit.View {
             self.sectionA.view,
             self.sectionB.view,
             self.sectionC.view,
-            self.sectionD.view,
+//            self.sectionD.view,
             self.sectionE.view
         ].forEach(self.container.addArrangedSubview)
 	}
