@@ -8,15 +8,23 @@
 import CommonUI
 
 import UIKit
-import SnapKit
-import Then
 import ReactorKit
 import RxCocoa
 import RxSwift
 
-public final class FindUserInfoViewController: BaseViewController, ReactorKit.View {
+import LoginDomain
+import FindUserInfoDomain
+
+public final class FindUserInfoViewController: BaseViewController, ReactorKit.View, FindUserInfoViewControllerType {
 
     public typealias Reactor = FindUserInfoReactor
+    
+    public struct Dependency {
+        let loginVC: LoginViewControllerFactoryType
+        public init(loginVC: LoginViewControllerFactoryType) {
+            self.loginVC = loginVC
+        }
+    }
 
 	// MARK: Constants
 	private enum Constants {
@@ -33,9 +41,6 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 	// MARK: Properties
 	
 	// MARK: UI Properties
-    private let topBar = NavigationTopBar().then {
-        $0.leftButton.setImage(CommonUIAsset.chevronLeft.image, for: .normal)
-    }
     
     private let titleLabel = UnderlineLabel().then {
         $0.labelText = "아이디/비밀번호 찾기"
@@ -65,14 +70,20 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
     private let confirmButton = CTAButton().then {
         $0.title = "다음"
     }
-	// MARK: Initializing
-	init(reactor: Reactor) {
-		defer {
-			self.reactor = reactor
-		}
-		super.init()
-	}
-
+    
+    public var dependency: Dependency
+    // MARK: Initializing
+    public init(
+        reactor: Reactor,
+        dependency: Dependency
+    ) {
+        defer {
+            self.reactor = reactor
+        }
+        self.dependency = dependency
+        super.init()
+    }
+    
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -80,13 +91,13 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 	// MARK: View Life Cycle
     public override func viewDidLoad() {
 		super.viewDidLoad()
+        subscribeUI()
 	}
 
     public override func configureUI() {
 		super.configureUI()
         
         [
-            self.topBar,
             self.titleLabel,
             self.stackView,
             self.confirmButton,
@@ -98,12 +109,8 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 	// MARK: Constraints
     public override func setupConstraints() {
 		super.setupConstraints()
-        self.topBar.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.left.right.equalToSuperview()
-        }
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(topBar.snp.bottom).offset(28)
+            $0.top.equalTo(navigationTopBar.snp.bottom).offset(28)
             $0.left.equalToSuperview().offset(16)
         }
         self.stackView.snp.makeConstraints {
@@ -187,12 +194,6 @@ extension FindUserInfoViewController {
 
 // MARK: Func
 extension FindUserInfoViewController {
-    public static func create() -> FindUserInfoViewController {
-        let reactor: FindUserInfoReactor = .init()
-        let viewController = FindUserInfoViewController.init(reactor: reactor)
-        
-        return viewController
-    }
     private func setUpFindIdView() {
         self.contentContainerView.subviews.forEach {
             $0.removeFromSuperview()

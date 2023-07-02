@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RegisterBusinessDomain
+import DI
 
 @main class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -16,13 +18,9 @@ import UIKit
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = RegiBusinessNumberViewController()
-        
-        // TODO: 나중에 바꾸기
-        let rootViewController =  UINavigationController(rootViewController: viewController)
-        window?.rootViewController = rootViewController
-        
-//        window?.rootViewController = viewController
+        let factory = dependencyInjectionContainer.resolve(RegiBusinessViewControllerFactoryType.self)!
+        let viewController = factory.create(payload: .init(paramA: ""))
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }

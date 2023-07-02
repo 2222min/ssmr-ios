@@ -11,9 +11,19 @@ import CommonUI
 import ReactorKit
 import RxCocoa
 
-class SignUpViewController: BaseViewController, ReactorKit.View {
+import LoginDomain
+import SignUpDomain
+
+public final class SignUpViewController: BaseViewController, ReactorKit.View, SignUpViewControllerType {
     
     public typealias Reactor = SignUpReactor
+    
+    public struct Dependency {
+        let loginVC: LoginViewControllerFactoryType
+        public init(loginVC: LoginViewControllerFactoryType) {
+            self.loginVC = loginVC
+        }
+    }
     
     // MARK: Constants
     private enum Constants {
@@ -183,11 +193,16 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
         )
     }
     
+    public var dependency: Dependency
     // MARK: Initializing
-    init(reactor: Reactor) {
+    public init(
+        reactor: Reactor,
+        dependency: Dependency
+    ) {
         defer {
             self.reactor = reactor
         }
+        self.dependency = dependency
         super.init()
     }
     
@@ -195,11 +210,12 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
         fatalError("init(coder:) has not been implemented")
     }
  
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
     }
     
-    override func configureUI() {
+    public override func configureUI() {
         super.configureUI()
         [
             self.signUpLabel,
@@ -222,7 +238,7 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
     }
     
     // MARK: Constraints
-    override func setupConstraints() {
+    public override func setupConstraints() {
         super.setupConstraints()
         self.signUpLabel.snp.makeConstraints {
             $0.top.equalTo(self.navigationTopBar.snp.bottom).offset(28)
@@ -294,10 +310,6 @@ class SignUpViewController: BaseViewController, ReactorKit.View {
         }
     }
     
-    override func subscribeUI() {
-        super.subscribeUI()
-    }
-    
     private func moveToAddEMailPage() {
         let addEMailVC = AddEmailViewController()
         self.navigationController?.pushViewController(addEMailVC, animated: true)
@@ -317,13 +329,6 @@ extension SignUpViewController {
 
 // MARK: Func
 extension SignUpViewController {
-    public static func create() -> SignUpViewController {
-        let reactor: SignUpReactor = .init()
-        let viewController = SignUpViewController.init(reactor: reactor)
-        
-        return viewController
-    }
-    
     private func moveToNextPage() {
         self.nextButton.rx.tap
             .withUnretained(self)

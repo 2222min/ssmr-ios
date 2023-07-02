@@ -17,7 +17,10 @@ let infoPlist: [String: InfoPlist.Value] = [
 ]
 
 let project = Project.frameworkWithDemoApp(name: projectName,
+                                           targets: [
+                                            .FindUserInfoTargets.presentation.target,
+                                            .FindUserInfoTargets.domain.target
+                                           ],
                                            infoPlist: infoPlist,
-                                           dependencies: [
-                                            .project(target: "Core", path: .relativeToCore())
-                                           ])
+                                           demoDependencies: Target.FindUserInfoTargets.allCases.map { .target(name: $0.rawValue)}
+)

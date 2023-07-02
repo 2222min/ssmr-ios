@@ -55,6 +55,7 @@ class SignUpSuccessViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func configureUI() {
@@ -94,5 +95,15 @@ class SignUpSuccessViewController: BaseViewController {
             $0.height.equalTo(48)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
+    }
+    
+    override func subscribeUI() {
+        super.subscribeUI()
+        
+        self.moveToMainButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                // TODO: 가입 성공 화면 -> 사업 등록 페이지 이동
+            }
+            .disposed(by: disposeBag)
     }
 }

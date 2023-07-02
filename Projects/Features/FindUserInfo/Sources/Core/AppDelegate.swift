@@ -1,12 +1,14 @@
 //
 //  AppDelegate.swift
-//  SignUp
+//  FindUserInfo
 //
-//  Created by mincheol on 2022/09/11.
-//  Copyright © 2022 cocaine.io. All rights reserved.
+//  Created by 이민철 on 2022/09/4.
+//  Copyright © 2022 team.io. All rights reserved.
 //
 
 import UIKit
+import FindUserInfoDomain
+import DI
 
 @main class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -17,13 +19,11 @@ import UIKit
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = SignUpViewController.create()
         
         // TODO: 나중에 바꾸기
-        let rootViewController =  UINavigationController(rootViewController: viewController)
-        window?.rootViewController = rootViewController
-        
-//        window?.rootViewController = viewController
+        let factory = dependencyInjectionContainer.resolve(FindUserInfoViewControllerFactoryType.self)!
+        let viewController = factory.create(payload: .init(paramA: ""))
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }
