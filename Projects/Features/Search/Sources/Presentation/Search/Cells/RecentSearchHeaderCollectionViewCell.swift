@@ -28,14 +28,14 @@ final class RecentSearchHeaderCollectionViewCell: BaseCollectionViewCell, Reacto
     private let container: UIView = UIView()
     private let titleLabel: UILabel = UILabel().then {
         $0.attributedText = "최근 검색어".styled(
-            typo: CoreTypo.DDaengMB3_Regular,
+            typo: CoreTypo.Body2_B,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }
     private let deleteButton: UIButton = UIButton().then {
         $0.setAttributedTitle(
             "전체삭제".styled(
-            typo: CoreTypo.DDaengMB3_Regular,
+            typo: CoreTypo.Body3,
             byAdding: [.color(CommonUIAsset.grey.color)]
             ), for: .normal
         )

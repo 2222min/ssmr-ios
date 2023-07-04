@@ -15,39 +15,39 @@ class CertificationViewController: BaseViewController {
     private enum Constants {
         static let signUpLabelText = "회원가입"
         static let guideLabelText = "입력하신 이메일 주소에\n메일을 발송했어요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let resendButtonText = "재전송".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let checkSuccessLabelText = "확인 완료".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkFailLabelText = "인증정보가 확인되지 않습니다.".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mRed.color)]
         )
         static let failTitleLabelText = "인증메일이 안와요".styled(
-            typo: .DDaengOverLine,
+            typo: .Caption2,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let failGuideLabel1Text = "스팸메일함을 확인해주세요!".styled(
-            typo: .DDaengC2,
+            typo: .Caption2,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let failGuideLabel2Text = "인증메일이 도착하지 않았을 경우,\n땡리단길 1:1 카카오톡 채널을 이용해주세요!".styled(
-            typo: .DDaengC2,
+            typo: .Caption2,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let resendSuccessLabelText = "메일이 재전송 되었습니다.".styled(
-            typo: .DDaengC2,
+            typo: .Caption2,
             byAdding: [.color(CommonUIAsset.mGreen.color)]
         )
     }
@@ -331,7 +331,7 @@ class CertificationViewController: BaseViewController {
             textField.rx.controlEvent(.editingChanged)
                 .withUnretained(self)
                 .subscribe(onNext: { owner, _ in
-                    textField.attributedText = textField.text?.styled(typo: .DDaengH1)
+                    textField.attributedText = textField.text?.styled(typo: .Display)
                     textField.textAlignment = .center
                     if textField.text?.count == 1 {
                         if textFields.count == textField.tag + 1 {

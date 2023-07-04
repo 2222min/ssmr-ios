@@ -26,47 +26,47 @@ public final class RegiBusinessNumberViewController: BaseViewController, RegiBus
     private enum Constants {
         static let titleLabelText = "사업자 등록하기"
         static let subTitleLabeltext = "입점을 위해\n사업자 등록 정보를 입력해주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let businessNumberlabelText = "사업자구분 및 번호".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let individualButtonText = "개인".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let individualButtonSelectedText = "개인".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let corporationButtonText = "법인".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let corporationButtonSelectedText = "법인".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let businessNumberTextFieldPlaceHolder = "사업자번호를 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let checkButtonText = "확인".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let checkBusinessNumberText = "사업자번호 확인".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkBusinessNumberSelectedText = "사업자번호 확인".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
     }

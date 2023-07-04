@@ -68,7 +68,7 @@ final class CategoryHeaderCollectionViewCell: BaseCollectionViewCell, ReactorKit
         
         reactor.state.map { $0.name }
             .asDriver(onErrorDriveWith: .empty())
-            .map { $0.styled(typo: .DDaengH3)}
+            .map { $0.styled(typo: .Subhead)}
             .drive(self.categoryButton.rx.attributedTitle())
             .disposed(by: self.disposeBag)
         

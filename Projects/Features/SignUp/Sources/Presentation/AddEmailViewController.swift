@@ -15,23 +15,23 @@ class AddEmailViewController: BaseViewController {
     private enum Constants {
         static let signUpLabelText = "회원가입"
         static let guideLabelText = "인증번호를 받을\n이메일 주소를 작성해 주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let infoLabelText = "아이디 분실 시 입력하신 이메일로 찾을 수 있어요.".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let emailTextFieldTitle = "이메일".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let emailTextFieldPlaceholder = "인증받을 이메일 주소를 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
     }

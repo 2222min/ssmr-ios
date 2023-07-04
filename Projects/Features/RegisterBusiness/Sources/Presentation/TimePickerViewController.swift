@@ -16,27 +16,27 @@ class TimePickerViewController: BaseViewController {
     // MARK: Constants
     private enum Constants {
         static let operatingTimeLabelText = "운영시간".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let offDayButtonNormalText = "휴무".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let offDayButtonSelectedText = "휴무".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let openLabelText = "OPEN".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let closeLabelText = "CLOSE".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let completionButtonText = "완료".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
     }

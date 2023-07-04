@@ -20,7 +20,7 @@ open class MDPickCell: UICollectionViewCell {
     
     public let title = UILabel().then {
         $0.text = "테스트"
-        $0.font = CoreTypo.ButtonLarge.style.font
+        $0.font = CoreTypo.Body2.style.font
         $0.textColor = CommonUIAsset.black.color
         $0.numberOfLines = 2
     }

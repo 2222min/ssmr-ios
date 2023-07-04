@@ -17,12 +17,12 @@ class NotiElementCell: UITableViewCell {
     }
     
     private let notiTypeLabel = UILabel().then {
-        $0.font = CoreTypo.ButtomSmall.style.font
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     
     private let notiContentLabel = UILabel().then {
-        $0.font = CoreTypo.DDaengMB2.style.font
+        $0.font = CoreTypo.Body2.style.font
         $0.textColor = CommonUIAsset.deepGrey.color
         $0.numberOfLines = 0
     }

@@ -42,7 +42,7 @@ public final class NavigationTopBar: UIView {
     
     fileprivate enum Typo {
         // TODO: 추후 네비게이션 타이틀 라벨 Font 정해지면 변경 필요
-        static let titleLabel = CoreTypo.DDaengMB2.style
+        static let titleLabel = CoreTypo.Body2.style
             .byAdding(.color(CommonUIAsset.black.color))
     }
     

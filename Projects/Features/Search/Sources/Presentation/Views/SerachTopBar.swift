@@ -53,7 +53,7 @@ class SerachTopBar: UIView {
         $0.image = CommonUIAsset.search.image
     }
     fileprivate let searchButtonTextFiled: UITextField = UITextField().then {
-        $0.attributedPlaceholder = "점포 이름, 메뉴를 검색하세요.".styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
+        $0.attributedPlaceholder = "점포 이름, 메뉴를 검색하세요.".styled(typo: .Body2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
     }
     private let deleteButton: UIButton = UIButton().then {
         $0.setImage(CommonUIAsset.searchClose.image, for: .normal)
