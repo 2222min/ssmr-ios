@@ -29,75 +29,75 @@ public final class SignUpViewController: BaseViewController, ReactorKit.View, Si
     private enum Constants {
         static let signUpLabelText = "회원가입"
         static let guideLabelText = "로그인에 사용할 이메일주소와\n비밀번호를 입력해 주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let duplicationButtonText = "중복확인".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let availableIDLabelText = "사용할 수 있는 아이디예요!".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let unavailableIDLabelText = "이미 존재하는 아이디예요!".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mRed.color)]
         )
         static let checkCapitalLetterText = "대소문자".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkSpecialLetterText = "특수문자".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkLetterLengthText = "8-20글자 이내".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkCapitalLetterSelectedText = "대소문자".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkSpecialLetterSelectedText = "특수문자".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkLetterLengthSelectedText = "8-20글자 이내".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkPasswordText = "비밀번호 일치".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkPasswordSelectedText = "비밀번호 일치".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let idTextFieldTitle = "아이디".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let idTextFieldPlaceholder = "아이디를 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let pwTextFieldTitle = "비밀번호".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let pwTextFieldPlaceholder = "비밀번호를 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let pwCheckTextFieldPlaceholder = "비밀번호를 재입력해 주세요.".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
     }

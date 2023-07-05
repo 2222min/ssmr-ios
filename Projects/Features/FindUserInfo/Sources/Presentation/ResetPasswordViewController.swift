@@ -22,35 +22,35 @@ final class ResetPasswordViewController: BaseViewController, ReactorKit.View {
     // MARK: Constants
     private enum Constants {
         static let descriptionLabel = "새로운 비밀번호를 설정해 주세요.".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let textFieldTitle = "비밀번호".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let firstInputPlaceholder = "비밀번호를 입력해주세요.".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let secondInputPlaceholder = "비밀번호를 재입력해 주세요.".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let checkCapitalLetterText = "대소문자".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkSpecialLetterText = "특수문자".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkLetterLengthText = "8-20글자 이내".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkPasswordText = "비밀번호 일치".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
     }

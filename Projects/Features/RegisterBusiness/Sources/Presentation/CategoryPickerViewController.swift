@@ -87,7 +87,7 @@ class CategoryPickerViewController: BaseViewController {
     
     public func setTitle(_ title: String) {
         self.categoryLabel.attributedText = title.styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
     }

@@ -14,15 +14,15 @@ class SignUpSuccessViewController: BaseViewController {
     // MARK: Constants
     private enum Constants {
         static let titleLabelText = "XXXX님,\n땡리단길 가입을\n축하드립니다 🎉".styled(
-            typo: .DDaengH1,
+            typo: .Display,
             byAdding: [.color(CommonUIAsset.black.color)]
         )
         static let subtitleLabelText = "혹시 대표님이신가요?\n가게 등록을 손쉽게 진행하고\n입점해 볼까요?".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let registerStoreButtonText = "3분만에 입점하기".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
     }

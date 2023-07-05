@@ -29,11 +29,11 @@ public final class FindUserInfoViewController: BaseViewController, ReactorKit.Vi
 	// MARK: Constants
 	private enum Constants {
         static let findIdLabel = "아이디 찾기".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(.black)]
         )
         static let findPwLabel = "비밀번호 찾기".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(.black)]
         )
     }

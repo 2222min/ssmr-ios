@@ -16,23 +16,23 @@ class RegiBusinessContactViewController: BaseViewController {
     private enum Constants {
         static let titleLabelText = "가게 정보 입력하기"
         static let subTitleLabeltext = "이게 거의 다왔어요!\n간단한 점포정보를 입력해주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let telTextFieldTitleText = "가게 전화번호".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let telTextFieldPlaceHolderText = "가게 전화번호를 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let telGuideLabelText = "전화번호 오입력으로 인한 사용자 신고 접수 시 서비스 이용이 영구\n제한될 수 있습니다".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
     }

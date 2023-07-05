@@ -42,7 +42,7 @@ public class RegiBusinessPage: UIStackView {
             button.isEnabled = false
             button.layer.cornerRadius = 10
             button.setTitle(String(number), for: .normal)
-            button.titleLabel?.font = CoreTypo.ButtomSmall.style.font
+            button.titleLabel?.font = CoreTypo.Caption1.style.font
             button.titleEdgeInsets = .init(top: 0, left: 0, bottom: 1, right: 0)
             button.setTitleColor(
                 number == currentPage ? .white : CommonUIAsset.grey.color,

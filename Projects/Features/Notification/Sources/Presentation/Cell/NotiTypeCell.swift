@@ -46,14 +46,14 @@ open class NotiTypeCell: UICollectionViewCell {
     func setTypeButtonTitle(_ text: String) {
         self.typeButton.setAttributedTitle(
             text.styled(
-                typo: .ButtonLarge,
+                typo: .Body2,
                 byAdding: [.color(CommonUIAsset.grey.color)]
             ),
             for: .normal
         )
         self.typeButton.setAttributedTitle(
             text.styled(
-                typo: .ButtonLarge,
+                typo: .Body2,
                 byAdding: [.color(CommonUIAsset.white.color)]
             ),
             for: .selected
