@@ -16,63 +16,63 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
     private enum Constants {
         static let titleLabelText = "가게 정보 입력하기"
         static let subTitleLabeltext = "이게 거의 다왔어요!\n간단한 점포정보를 입력해주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let operatingTimeLabelText = "운영시간".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let monButtonText = "월".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let tueButtonText = "화".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let wedButtonText = "수".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let thuButtonText = "목".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let friButtonText = "금".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let satButtonText = "토".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let sunButtonText = "일".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let operatingTimeTextFieldPlaceHolder = "운영시간을 선택해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let saveButtonText = "저장".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let operatingTimeGuideLabelText = "자세한 가게 운영시간 및 가게 정보는 가입 완료 후 수정 가능합니다".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let savedOperatingTimeLabelText = "저장된 운영시간 (모든 요일 필수)".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let savedOperatingTimeLabelSelectedText = "저장된 운영시간 (모든 요일 필수)".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
     }
@@ -191,72 +191,72 @@ class RegiBusinessOperatingTimeViewController: BaseViewController {
     }
     private let monLabel = UILabel().then {
         $0.text = "월"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let tueLabel = UILabel().then {
         $0.text = "화"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let wedLabel = UILabel().then {
         $0.text = "수"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let thuLabel = UILabel().then {
         $0.text = "목"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let friLabel = UILabel().then {
         $0.text = "금"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let satLabel = UILabel().then {
         $0.text = "토"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let sunLabel = UILabel().then {
         $0.text = "일"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let monTime = UILabel().then {
         $0.text = "없음"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let tueTime = UILabel().then {
         $0.text = "없음"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let wedTime = UILabel().then {
         $0.text = "없음"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let thuTime = UILabel().then {
         $0.text = "없음"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let friTime = UILabel().then {
         $0.text = "없음"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let satTime = UILabel().then {
         $0.text = "없음"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let sunTime = UILabel().then {
         $0.text = "없음"
-        $0.font = CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        $0.font = CoreTypo.Caption1.style.font
         $0.textColor = CommonUIAsset.grey.color
     }
     private let pageView = RegiBusinessPage().then {

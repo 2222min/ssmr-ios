@@ -67,7 +67,7 @@ extension RelatedSearchCollectionViewCell {
             .distinctUntilChanged()
             .asDriver(onErrorDriveWith: .empty())
             .map { $0.styled(
-                typo: .DDaengMB3_Regular,
+                typo: .Body3,
                 byAdding: [.color(CommonUIAsset.black.color)])
             }
             .drive { self.wordButton.setAttributedTitle($0, for: .normal) }

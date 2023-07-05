@@ -12,13 +12,13 @@ import CommonUI
 class LoginFailView: UIView {
     private let loginFailLabel = UILabel().then {
         $0.attributedText = "로그인에 실패했어요".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.black.color)])
     }
     
     private let failCountLabel = UILabel().then {
         $0.attributedText = "(1회 실패)".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }

@@ -15,39 +15,39 @@ class LoginFailViewController: BaseViewController {
     // MARK: Constants
     private enum Constants {
         static let confirmButtonText = "확인".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         
         static let guideLabelText = NSAttributedString.composed(
             of: [
                 "5회 오류 시 로그인이 ".styled(
-                    typo: .DDaengC1,
+                    typo: .Caption1,
                     byAdding: [.color(CommonUIAsset.black.color)]
                 ),
                 "1분간 ".styled(
-                    typo: .DDaengC1,
+                    typo: .Caption1,
                     byAdding: [.color(CommonUIAsset.mRed.color)]
                 ),
                 "제한되어\n아이디/비밀번호 찾기를 통해\n비밀번호를 재설정해 주세요".styled(
-                    typo: .DDaengC1,
+                    typo: .Caption1,
                     byAdding: [.color(CommonUIAsset.black.color)]
                 )
             ]
         )
         
         static let caution1Text = "땡리단길 회원이 아닌 경우".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.black.color)]
         )
         
         static let caution2Text = "아이디 또는 비밀번호를 잘못 입력한 경우".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.black.color)]
         )
         
         static let caution3Text = "5회 이상 입력 오류 시 개인정보 보호를 위해\n잠시 동안 로그인이 제한됩니다".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.black.color)]
         )
     }
@@ -72,13 +72,13 @@ class LoginFailViewController: BaseViewController {
     
     private let loginFailLabel = UILabel().then {
         $0.attributedText = "로그인에 실패했어요".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.black.color)])
     }
     
     private let failCountLabel = UILabel().then {
         $0.attributedText = "(1회 실패)".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }
@@ -109,7 +109,7 @@ class LoginFailViewController: BaseViewController {
     
     private let fiveLoginFailLabel = UILabel().then {
         $0.attributedText = "5회 이상 로그인에 실패했어요".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.black.color)])
     }
     

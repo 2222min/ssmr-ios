@@ -64,7 +64,7 @@ extension UnderlineLabel {
     public var labelText: String  {
         set {
             self.label.attributedText = newValue.styled(
-                typo: .DDaengH2,
+                typo: .Heading,
                 byAdding: [.color(CommonUIAsset.black.color)]
             )
         }

@@ -19,35 +19,35 @@ class RegiBusinessAddressViewController: BaseViewController, ReactorKit.View  {
     private enum Constants {
         static let titleLabelText = "사업자 등록하기"
         static let subTitleLabeltext = "입점을 위해\n사업자 등록 정보를 입력해주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let nameTextFieldTitleText = "대표자 성함".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let nameTextFieldPlaceHolderText = "대표님의 성함을 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let nameTextFieldGuideLabelText = "외국인 사업자의 경우, 영문명으로 입력해 주세요".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let addressTextFieldTitleText = "주소".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let addressTextFieldPlaceHolderText = "주소를 등록해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let searchButtonText = "검색".styled(
-            typo: .ButtomSmall,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
     }

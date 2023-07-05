@@ -37,22 +37,22 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     // MARK: Constants
     private enum Constants {
         static let loginButtonText = "로그인".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         
         static let findInfoButtonText = "아이디/비밀번호찾기".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         
         static let dividerText = "|".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         
         static let signUpButtonText = "회원가입하기".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }
@@ -65,7 +65,7 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     
     private let idTextField = UnderlineTextFieldWithTitle().then {
         $0.title.attributedText = "아이디".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)])
         $0.textField.attributedPlaceholder = NSAttributedString(
             string: "이메일 주소를 입력해 주세요.",
@@ -75,7 +75,7 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     
     private let pwTextField = UnderlineTextFieldWithTitle().then {
         $0.title.attributedText = "비밀번호".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)])
         $0.textField.attributedPlaceholder =  NSAttributedString(
             string: "비밀번호를 입력해 주세요.",

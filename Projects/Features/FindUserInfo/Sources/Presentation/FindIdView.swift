@@ -16,19 +16,19 @@ final class FindIdView: UIView {
     
     private enum Constants {
         static let title = "이메일 입력하기".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let emailPlaceholder = "인증했던 이메일 주소를 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let emailWarningDescription = "가입 시 인증했던 이메일을 입력해 주세요".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let emailErrorDescription = "가입 정보가 없는 이메일입니다".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mRed.color)]
         )
     }

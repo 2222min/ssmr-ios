@@ -46,7 +46,7 @@ public class CTAButton: UIButton {
     
     private func setTitleLabel(_ title: String) -> NSAttributedString {
         return title.styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(.white)]
         )
     }

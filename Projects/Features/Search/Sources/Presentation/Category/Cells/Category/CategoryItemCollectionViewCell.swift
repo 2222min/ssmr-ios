@@ -74,7 +74,7 @@ extension CategoryItemCollectionViewCell {
     private func bindState(name reactor: Reactor) {
         reactor.state.map { $0.name }
             .asDriver(onErrorDriveWith: .empty())
-            .map { $0.styled(typo: CoreTypo.DDaengMB3_Bold)}
+            .map { $0.styled(typo: CoreTypo.Body3_B)}
             .drive { self.nameButton.setAttributedTitle($0, for: .normal) }
             .disposed(by: self.disposeBag)
     }

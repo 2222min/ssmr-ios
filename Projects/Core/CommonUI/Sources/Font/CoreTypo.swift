@@ -17,18 +17,17 @@ extension String {
 }
 
 public enum CoreTypo {
-    case DDaengH1
-    case DDaengH2
-    case DDaengH3
-    case DDaengB1
-    case DDaengMB2
-    case DDaengMB3_Bold
-    case DDaengMB3_Regular
-    case DDaengC1
-    case DDaengC2
-    case DDaengOverLine
-    case ButtonLarge
-    case ButtomSmall
+    case Display
+    case Heading
+    case Subhead
+    case Body1
+    case Body2
+    case Body2_B
+    case Body3
+    case Body3_B
+    case Caption1_B
+    case Caption1
+    case Caption2
 }
 extension CoreTypo {
     public var style: BonMot.StringStyle {
@@ -43,63 +42,59 @@ extension CoreTypo {
 extension CoreTypo {
     var font: UIFont? {
         switch self {
-        case .DDaengH1:
-            return CommonUIFontFamily.AppleSDGothicNeoEB00.regular.font(size: 32)
-        case .DDaengH2:
-            return CommonUIFontFamily.AppleSDGothicNeoEB00.regular.font(size: 24)
-        case .DDaengH3:
-            return CommonUIFontFamily.AppleSDGothicNeoSB00.regular.font(size: 20)
-        case .DDaengB1:
-            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 18)
-        case .DDaengMB2:
-            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 17)
-        case .DDaengMB3_Bold:
-            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 14)
-        case .DDaengMB3_Regular:
-            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 14)
-        case .DDaengC1:
-            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 12)
-        case .DDaengC2:
-            return CommonUIFontFamily.AppleSDGothicNeoR00.regular.font(size: 11)
-        case .DDaengOverLine:
-            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 11)
-        case .ButtonLarge:
-            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 17)
-        case .ButtomSmall:
-            return CommonUIFontFamily.AppleSDGothicNeoB00.regular.font(size: 12)
+        case .Display:
+            return CommonUIFontFamily.Pretendard.extraBold.font(size: 32)
+        case .Heading:
+            return CommonUIFontFamily.Pretendard.extraBold.font(size: 24)
+        case .Subhead:
+            return CommonUIFontFamily.Pretendard.semiBold.font(size: 20)
+        case .Body1:
+            return CommonUIFontFamily.Pretendard.regular.font(size: 18)
+        case .Body2:
+            return CommonUIFontFamily.Pretendard.regular.font(size: 17)
+        case .Body2_B:
+            return CommonUIFontFamily.Pretendard.bold.font(size: 17)
+        case .Body3:
+            return CommonUIFontFamily.Pretendard.regular.font(size: 14)
+        case .Body3_B:
+            return CommonUIFontFamily.Pretendard.bold.font(size: 14)
+        case .Caption1_B:
+            return CommonUIFontFamily.Pretendard.bold.font(size: 12)
+        case .Caption1:
+            return CommonUIFontFamily.Pretendard.regular.font(size: 12)
+        case .Caption2:
+            return CommonUIFontFamily.Pretendard.regular.font(size: 11)
         }
     }
     var lineHeight: CGFloat {
         switch self {
-        case .DDaengH1: return 40
-        case .DDaengH2: return 32
-        case .DDaengH3: return 28
-        case .DDaengB1: return 24
-        case .DDaengMB2: return 24
-        case .DDaengMB3_Bold: return 16
-        case .DDaengMB3_Regular: return 16
-        case .DDaengC1: return 16
-        case .DDaengC2: return 16
-        case .DDaengOverLine: return 16
-        case .ButtonLarge: return 20.4
-        case .ButtomSmall: return 16
+        case .Display: return 40
+        case .Heading: return 32
+        case .Subhead: return 28
+        case .Body1: return 24
+        case .Body2: return 24
+        case .Body2_B: return 24
+        case .Body3: return 16
+        case .Body3_B: return 16
+        case .Caption1_B: return 16
+        case .Caption1: return 16
+        case .Caption2: return 12
         }
     }
     
     var letterSpacing: CGFloat {
       switch self {
-      case .DDaengH1: return -1.04
-      case .DDaengH2: return 0
-      case .DDaengH3: return 0
-      case .DDaengB1: return 0
-      case .DDaengMB2: return 0
-      case .DDaengMB3_Bold: return 0
-      case .DDaengMB3_Regular: return 0.95
-      case .DDaengC1: return 0
-      case .DDaengC2: return 0
-      case .DDaengOverLine: return 0
-      case .ButtonLarge: return 0
-      case .ButtomSmall: return 0
+      case .Display: return 0
+      case .Heading: return 0
+      case .Subhead: return 0
+      case .Body1: return 0
+      case .Body2: return 0
+      case .Body2_B: return 0
+      case .Body3: return 0
+      case .Body3_B: return 0
+      case .Caption1_B: return 0
+      case .Caption1: return 0
+      case .Caption2: return 0
       }
     }
 }

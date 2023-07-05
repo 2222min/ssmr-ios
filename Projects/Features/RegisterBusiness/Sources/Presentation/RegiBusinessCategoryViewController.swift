@@ -16,39 +16,39 @@ class RegiBusinessCategoryViewController: BaseViewController {
     private enum Constants {
         static let titleLabelText = "사업자 등록하기"
         static let subTitleLabeltext = "입점을 위해\n사업자 등록 정보를 입력해주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let businessCategorylabelText = "업태/업종".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let largeCategoryText = "대분류".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let largeCategorySelectedText = "대분류".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let mediumCategoryText = "중분류".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let mediumCategorySelectedText = "중분류".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
         static let businessNameTextFieldTitle = "상호명".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         static let businessNameTextFieldPlaceHolder = "상호명(법인명)을 입력해 주세요".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
     }

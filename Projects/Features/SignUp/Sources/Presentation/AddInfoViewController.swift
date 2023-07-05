@@ -17,63 +17,63 @@ class AddInfoViewController: BaseViewController {
     private enum Constants {
         static let signUpLabelText = "회원가입"
         static let guideLabelText = "사용하실 닉네임과\n생년월일을 입력해 주세요".styled(
-            typo: .DDaengB1,
+            typo: .Body1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let checkCountLetterText = "10글자 미만".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkSpaceText = "띄어쓰기 없음".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkAvailableText = "사용가능한 닉네임".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         static let checkCountLetterSelectedText = "10글자 미만".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkSpaceSelectedText = "띄어쓰기 없음".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let checkAvailableSelectedText = "사용가능한 닉네임".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.mBlue.color)]
         )
         static let nextButtonText = "다음".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let nicknameTextFieldTitle = "닉네임".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let nicknameTextFieldPlaceholder = "닉네임을 입력해주세요.".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let dateOfBirthTextFieldTitle = "생년월일".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let dateOfBirthTextFieldPlaceholder = "2021.07.02".styled(
-            typo: .DDaengMB2,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.whiteGrey.color)]
         )
         static let speechBallonViewText = "닉네임 결정하기 어렵다면?".styled(
-            typo: .DDaengC2,
+            typo: .Caption2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         static let cakeLabelText = "🎂".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
         static let recheckGuideLabelText = "멋진 날에 태어나셨네요~\n생년월일은 수정할 수 없으니 정확하게 기입되었는지 확인해 주세요!".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.blackGrey.color)]
         )
     }
