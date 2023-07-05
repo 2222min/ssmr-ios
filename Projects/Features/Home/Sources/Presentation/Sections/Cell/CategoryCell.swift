@@ -47,14 +47,14 @@ open class CategoryCell: UICollectionViewCell {
     func setCategoryButtonTitle(_ text: String) {
         self.catrgoryButton.setAttributedTitle(
             text.styled(
-                typo: .DDaengMB3_Bold,
+                typo: .Body3_B,
                 byAdding: [.color(CommonUIAsset.grey.color)]
             ),
             for: .normal
         )
         self.catrgoryButton.setAttributedTitle(
             text.styled(
-                typo: .DDaengMB3_Bold,
+                typo: .Body3_B,
                 byAdding: [.color(CommonUIAsset.white.color)]
             ),
             for: .selected

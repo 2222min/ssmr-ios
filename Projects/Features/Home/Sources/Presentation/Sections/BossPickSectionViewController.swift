@@ -38,7 +38,7 @@ class BossPickSectionViewController: BaseViewController {
     
     private let sectionGuideLabel = UILabel().then {
         $0.text = "사장님까지 PICK한 리뷰가 궁금하다면 여기로!"
-        $0.font = CoreTypo.DDaengMB3_Regular.style.font
+        $0.font = CoreTypo.Body3.style.font
         $0.textColor = CommonUIAsset.black.color
     }
     
@@ -65,7 +65,7 @@ class BossPickSectionViewController: BaseViewController {
         $0.setTitle("땡스레터로 가기", for: .normal)
         $0.setBackgroundColor(color: CommonUIAsset.cream.color, forState: .normal)
         $0.setTitleColor(CommonUIAsset.deepGrey.color, for: .normal)
-        $0.titleLabel?.font = CoreTypo.DDaengMB2.style.font
+        $0.titleLabel?.font = CoreTypo.Body2.style.font
         $0.layer.cornerRadius = 8
     }
     
@@ -139,7 +139,7 @@ extension BossPickSectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel()
         label.text = self.categoryDatas[indexPath.row]
-        label.font = CoreTypo.DDaengMB3_Bold.style.font
+        label.font = CoreTypo.Body3_B.style.font
         label.sizeToFit()
         
         let width = label.frame.width + 32

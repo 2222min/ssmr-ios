@@ -13,7 +13,7 @@ class ReviewCell: UITableViewCell {
     static let cellIdentifier = "ReviewCell"
     
     private let titleLabel = UILabel().then {
-        $0.font = CoreTypo.DDaengMB3_Bold.style.font
+        $0.font = CoreTypo.Body3_B.style.font
         $0.textColor = CommonUIAsset.deepGrey.color
     }
     
@@ -23,12 +23,12 @@ class ReviewCell: UITableViewCell {
     }
     
     private let reviewInfoLabel = UILabel().then {
-        $0.font = CoreTypo.DDaengC2.style.font
+        $0.font = CoreTypo.Caption2.style.font
         $0.textColor = CommonUIAsset.deepGrey.color
     }
     
     private let contentLabel = UILabel().then {
-        $0.font = CoreTypo.DDaengC2.style.font
+        $0.font = CoreTypo.Caption2.style.font
         $0.textColor = CommonUIAsset.grey.color
         $0.numberOfLines = 2
     }
@@ -116,11 +116,11 @@ class ReviewCell: UITableViewCell {
         self.contentLabel.text = review.content
         
         self.ratingButton.normalTitle =  String(review.rating).styled(
-            typo: .DDaengC2,
+            typo: .Caption2,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
         self.distanceButton.normalTitle =  String("매장까지 " + review.distance).styled(
-            typo: .DDaengC2,
+            typo: .Caption2,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
         )
     }
@@ -130,7 +130,7 @@ class ReviewCell: UITableViewCell {
             let button = UIButton().then {
                 $0.setTitle(title, for: .normal)
                 $0.setTitleColor(CommonUIAsset.pointColor.color, for: .normal)
-                $0.titleLabel?.font = CoreTypo.DDaengC2.style.font
+                $0.titleLabel?.font = CoreTypo.Caption2.style.font
                 $0.titleEdgeInsets = .init(top: 0, left: 0, bottom: 1, right: 0)
                 $0.layer.borderWidth = 1.4
                 $0.layer.cornerRadius = 10
