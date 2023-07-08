@@ -20,8 +20,8 @@ open class MDPickCell: UICollectionViewCell {
     
     public let title = UILabel().then {
         $0.text = "테스트"
-        $0.font = CoreTypo.Body2.style.font
-        $0.textColor = CommonUIAsset.black.color
+        $0.font = CoreTypo.Body2_B.style.font
+        $0.textColor = CommonUIAsset.white.color
         $0.numberOfLines = 2
     }
     
@@ -52,6 +52,9 @@ open class MDPickCell: UICollectionViewCell {
     
     func setImage(_ url: String) {
         guard let url = URL(string: url) else { return }
-        self.imageView.kf.setImage(with: url)
+        self.imageView.kf.setImage(
+            with: url,
+            placeholder: UIImage(asset: CommonUIAsset.readyImage)
+        )
     }
 }
