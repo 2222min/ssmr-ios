@@ -9,6 +9,11 @@
 import UIKit
 import CommonUI
 
+/*
+ 해당 셀 디자인 변경으로 인해
+ 땡스레터의 리뷰셀로 사용하면 됨
+ */
+
 class ReviewCell: UITableViewCell {
     static let cellIdentifier = "ReviewCell"
     
@@ -35,7 +40,6 @@ class ReviewCell: UITableViewCell {
     
     private let reviewImageView = UIImageView().then {
         $0.layer.cornerRadius = 8
-        $0.backgroundColor = .gray
     }
     
     private let ratingButton = LeftImageButton().then {
@@ -122,6 +126,10 @@ class ReviewCell: UITableViewCell {
         self.distanceButton.normalTitle =  String("매장까지 " + review.distance).styled(
             typo: .Caption2,
             byAdding: [.color(CommonUIAsset.deepGrey.color)]
+        )
+        self.reviewImageView.kf.setImage(
+            with: review.image,
+            placeholder: UIImage(asset: CommonUIAsset.readyImage)
         )
     }
     

@@ -28,10 +28,18 @@ class BossPickSectionViewController: BaseViewController {
         $0.backgroundColor = .white
     }
     private let sectionLabel = UILabel().then {
-        let attributedString = NSMutableAttributedString(string: "사장님's PICK ")
+        let attributedString = NSMutableAttributedString(
+            string: "사장님's PICK ",
+            attributes: [
+                NSAttributedString.Key.font: CommonUIFontFamily.Pretendard.semiBold.font(size: 20)
+            ]
+        )
         attributedString.append(NSAttributedString(
             string: "리뷰왕",
-            attributes: [NSAttributedString.Key.foregroundColor: CommonUIAsset.pointColor.color])
+            attributes: [
+                NSAttributedString.Key.foregroundColor: CommonUIAsset.pointColor.color,
+                NSAttributedString.Key.font: CommonUIFontFamily.Pretendard.semiBold.font(size: 20)
+            ])
         )
         $0.attributedText = attributedString
     }

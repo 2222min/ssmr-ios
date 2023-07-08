@@ -21,7 +21,7 @@ class MDPickSectionViewController: BaseViewController {
     }
     private let sectionLabel = UILabel().then {
         $0.text = "MD's PICK"
-        $0.font = CoreTypo.Body2.style.font
+        $0.font = CoreTypo.Subhead.style.font
         $0.textColor = CommonUIAsset.black.color
     }
     
