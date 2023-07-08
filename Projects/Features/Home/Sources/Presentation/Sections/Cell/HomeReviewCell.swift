@@ -23,7 +23,7 @@ open class HomeReviewCell: UICollectionViewCell {
     }
     
     public let storeName = UILabel().then {
-        $0.font = CoreTypo.Caption1.style.font
+        $0.font = CoreTypo.Body3_B.style.font
         $0.textColor = CommonUIAsset.black.color
         $0.numberOfLines = 1
     }
