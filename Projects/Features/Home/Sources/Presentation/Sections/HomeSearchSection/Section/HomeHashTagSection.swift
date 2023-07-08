@@ -10,7 +10,8 @@ import RxDataSources
 
 struct HomeHashTagSection: Hashable {
     enum Identity: Hashable {
-        case hashTag
+        case categoryTop
+        case categoryBottom
     }
     let identity: Identity
     var items: [Item]
@@ -24,7 +25,13 @@ extension HomeHashTagSection: AnimatableSectionModelType {
 
 extension HomeHashTagSection {
     enum Item: Hashable {
-        case hashTagItem(HomeHashTagCellReactor)
+        case categoryItem(HomeHashTagCellReactor)
+    }
+}
+
+extension HomeHashTagSection.Identity: IdentifiableType {
+    var identity: String {
+        return "\(self.hashValue)"
     }
 }
 

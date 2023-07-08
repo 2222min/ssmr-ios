@@ -15,7 +15,7 @@ import RxSwift
 import ReactorKit
 import CommonUI
 
-final class HomeHashTagCollectionViewCell: BaseCollectionViewCell, ReactorKit.View {
+final class HomeCategoryCollectionViewCell: BaseCollectionViewCell, ReactorKit.View {
 
 	// MARK: Constants
 	private enum Constants { }
@@ -23,12 +23,9 @@ final class HomeHashTagCollectionViewCell: BaseCollectionViewCell, ReactorKit.Vi
 	// MARK: Propertie
 
 	// MARK: UI Properties
-    private let container: UIButton = UIButton().then {
-        $0.layer.cornerRadius = 12.5
-        $0.layer.borderWidth = 1.4
-        $0.layer.borderColor = CommonUIAsset.cream.color.cgColor
-    }
-    private let hashTagLabel: UILabel = UILabel()
+    private let container: UIButton = UIButton()
+    private let imageView: UIImageView = UIImageView()
+    private let categoryLabel: UILabel = UILabel()
 
 	// MARK: Initializing
 
@@ -46,37 +43,51 @@ final class HomeHashTagCollectionViewCell: BaseCollectionViewCell, ReactorKit.Vi
 	override func configureUI() {
 		super.configureUI()
         self.addSubview(self.container)
-        self.container.addSubview(self.hashTagLabel)
+        self.addSubview(self.categoryLabel)
+        
+        self.container.addSubview(self.imageView)
 	}
 
 	// MARK: Constraints
 	override func setupConstraints() {
 		super.setupConstraints()
         self.container.snp.makeConstraints {
+            $0.top.left.right.equalToSuperview()
+            $0.bottom.equalTo(self.categoryLabel.snp.top).offset(-8)
+        }
+        self.imageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        self.hashTagLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(16)
+        self.categoryLabel.snp.makeConstraints {
+            $0.bottom.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(16)
         }
 	}
 
 	// MARK: ReactorBind
 	func bind(reactor: HomeHashTagCellReactor) {
         self.bindState(hasgTag: reactor)
+        self.bindState(image: reactor)
     }
 
 }
 
-extension HomeHashTagCollectionViewCell {
+extension HomeCategoryCollectionViewCell {
     private func bindState(hasgTag reactor: HomeHashTagCellReactor) {
         reactor.state.map { $0.hashTag }
             .asDriver(onErrorDriveWith: .empty())
             .map { $0.styled(
-                typo: .DDaengMB3_Regular,
-                byAdding: [.color(CommonUIAsset.deepGrey.color)]
+                typo: .Body3,
+                byAdding: [.color(CommonUIAsset.black.color)]
             )}
-            .drive(self.hashTagLabel.rx.attributedText)
+            .drive(self.categoryLabel.rx.attributedText)
+            .disposed(by: self.disposeBag)
+    }
+    private func bindState(image reactor: HomeHashTagCellReactor) {
+        reactor.state.map { $0.image }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(self.imageView.rx.image)
             .disposed(by: self.disposeBag)
     }
 }

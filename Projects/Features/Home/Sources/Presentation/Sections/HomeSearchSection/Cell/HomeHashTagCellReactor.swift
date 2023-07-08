@@ -6,9 +6,11 @@
 //  Copyright © 2023 team.io. All rights reserved.
 //
 
+import UIKit
 import RxCocoa
 import RxSwift
 import ReactorKit
+
 
 final class HomeHashTagCellReactor: Reactor, IdentityHashable {
 	
@@ -27,11 +29,18 @@ final class HomeHashTagCellReactor: Reactor, IdentityHashable {
 	// MARK: State
 	struct State {
         var hashTag: String
+        var image: UIImage
     }
 
 	// MARK: Initializing
-    init(hashTag: String) {
+    init(
+        hashTag: String,
+        image: UIImage
+    ) {
 		defer { _ = self.state }
-		self.initialState = State(hashTag: hashTag)
+		self.initialState = State(
+            hashTag: hashTag,
+            image: image
+        )
 	}
 }

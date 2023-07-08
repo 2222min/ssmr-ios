@@ -14,7 +14,7 @@ public class SerachButton: UIView {
     
     public var placeholder: String? {
         didSet {
-            self.searchButtonTextFiled.attributedPlaceholder = placeholder?.styled(typo: .DDaengMB2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
+            self.searchButtonTextFiled.attributedPlaceholder = placeholder?.styled(typo: .Body2, byAdding: [.color(CommonUIAsset.grey.color), .maximumLineHeight(19.89), .minimumLineHeight(19.89)])
         }
     }
     

@@ -20,7 +20,7 @@ class HomeSearchViewController: BaseViewController, ReactorKit.View {
     
     // MARK: Reusable
     private enum Reusable {
-        static let hashTagCell = ReusableCell<HomeHashTagCollectionViewCell>()
+        static let categoryCell = ReusableCell<HomeCategoryCollectionViewCell>()
     }
     
     // MARK: Properties
@@ -45,7 +45,7 @@ class HomeSearchViewController: BaseViewController, ReactorKit.View {
         collectionViewLayout: self.createCompositionalLayout()
     ).then {
         $0.showsHorizontalScrollIndicator = false
-        $0.register(Reusable.hashTagCell)
+        $0.register(Reusable.categoryCell)
     }
     
     // MARK: Initializing
@@ -98,11 +98,11 @@ class HomeSearchViewController: BaseViewController, ReactorKit.View {
             $0.leading.trailing.equalToSuperview().inset(16)
         }
         self.collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.searchButton.snp.bottom).offset(12)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview()
+            $0.top.equalTo(self.searchButton.snp.bottom).offset(28)
+            $0.leading.equalToSuperview().offset(28)
+            $0.trailing.equalToSuperview().inset(27)
             $0.bottom.equalToSuperview().inset(32)
-            $0.height.equalTo(28)
+            $0.height.equalTo(166)
         }
     }
 }
@@ -124,7 +124,7 @@ extension HomeSearchViewController {
         reactor.state.compactMap { $0.title }
             .asDriver(onErrorDriveWith: .empty())
             .map { $0.styled(
-                typo: .DDaengH2,
+                typo: .Heading,
                 byAdding: [.color(CommonUIAsset.black.color)])
             }
             .drive(self.titleLabel.rx.attributedText)
@@ -147,8 +147,8 @@ extension HomeSearchViewController {
         return .init(
             configureCell: {  _, collectionView, indexPath, sectionItem in
                 switch sectionItem {
-                case let .hashTagItem(reactor) :
-                    return collectionView.dequeue(Reusable.hashTagCell, for: indexPath).then { cell in
+                case let .categoryItem(reactor):
+                    return collectionView.dequeue(Reusable.categoryCell, for: indexPath).then { cell in
                         if cell.reactor !== reactor {
                             cell.configure(reactor: reactor)
                         }
@@ -161,26 +161,48 @@ extension HomeSearchViewController {
 
 extension HomeSearchViewController {
     func createCompositionalLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .estimated(52),
-            heightDimension: .absolute(28)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .estimated(52),
-            heightDimension: .absolute(28)
-        )
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex:Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+    
+            let itemSize = NSCollectionLayoutSize(
+                widthDimension: .absolute(44),
+                heightDimension: .absolute(68)
+            )
+            let topItem = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let topGroupSize: NSCollectionLayoutSize
+            
+            topGroupSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .absolute(68)
+            )
+            
+            let group = NSCollectionLayoutGroup.horizontal(
+                layoutSize: topGroupSize,
+                subitems: [topItem]
+            )
+            
+            if sectionIndex != 0 {
+                group.interItemSpacing = .fixed(52)
+            } else {
+                group.interItemSpacing = .fixed(48)
+            }
+            
+            
+            let section = NSCollectionLayoutSection(group: group)
+            
+            if sectionIndex != 0 {
+                section.contentInsets = .init(top: 0, leading: 42, bottom: 0, trailing: 42)
+            }
+            
+            return section
+        }
         
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            subitems: [item]
-        )
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 12
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.scrollDirection = .horizontal
-        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        config.scrollDirection = .vertical
+        config.interSectionSpacing = 20
         layout.configuration = config
+        
         
         return layout
     }
