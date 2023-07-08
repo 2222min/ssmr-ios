@@ -13,18 +13,18 @@ open class CategoryCell: UICollectionViewCell {
     static let cellIdentifier = "CategoryCell"
     
     public let catrgoryButton = UIButton().then {
-        $0.setBackgroundColor(color: CommonUIAsset.cream.color, forState: .normal)
+        $0.setBackgroundColor(color: CommonUIAsset.white.color, forState: .normal)
         $0.setBackgroundColor(color: CommonUIAsset.pointColor.color, forState: .selected)
-        $0.titleEdgeInsets = .init(top: 0, left: 0, bottom: 3, right: 0)
+        $0.titleEdgeInsets = .init(top: 0, left: 0, bottom: 2.5, right: 0)
         $0.layer.cornerRadius = 16
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = CommonUIAsset.whiteGrey.color.cgColor
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configureUI()
-        let name = Notification.Name(rawValue: "notificationKey")
-        NotificationCenter.default.post(name: name, object: nil)
     }
 
     required public init?(coder: NSCoder) {

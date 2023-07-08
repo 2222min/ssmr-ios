@@ -15,18 +15,17 @@ class BossPickSectionViewController: BaseViewController {
     
     // Test Data
     private let categoryDatas = ["음식점", "스포츠/레저", "문화/예술", "오락", "음료 전문점", "D.I.Y", "테마파크"]
-    private let reviewDatas = [
-        ReviewEntity(title: "애정 마라탕", hashTag: ["#맛있음", "#해시태그"], writer: "안*민", date: "2023.03", content: "리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰", rating: 5.0, distance: "500m", image: nil),
-        ReviewEntity(title: "애정 마라탕", hashTag: ["#맛있음", "#해시태그"], writer: "안*민", date: "2023.03", content: "리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰", rating: 5.0, distance: "500m", image: nil),
-        ReviewEntity(title: "애정 마라탕", hashTag: ["#맛있음", "#해시태그"], writer: "안*민", date: "2023.03", content: "리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰", rating: 5.0, distance: "500m", image: nil)
+    let homeReviewDatas = [
+        HomeReviewEntity(storeName: "애정마라탕탕탕탕탕애정마라탕탕탕탕탕", menuName: "애정꿔바로우", writer: "활보하는고양이이이", image: nil),
+        HomeReviewEntity(storeName: "애정마라탕", menuName: "애정꿔바로우애정꿔바로우", writer: "활보하는고양이이이", image: nil),
+        HomeReviewEntity(storeName: "애정마라탕", menuName: "애정꿔바로우", writer: "활보하는고양이이이활보하는고양이이이", image: nil),
+        HomeReviewEntity(storeName: "애정마라탕", menuName: "애정꿔바로우", writer: "활보하는고양이이이", image: nil)
     ]
-    
-    let selectedIndexPath = BehaviorRelay<IndexPath?>(value: nil)
-
     
     private let uiView = UIView().then {
         $0.backgroundColor = .white
     }
+    
     private let sectionLabel = UILabel().then {
         let attributedString = NSMutableAttributedString(
             string: "사장님's PICK ",
@@ -59,14 +58,12 @@ class BossPickSectionViewController: BaseViewController {
         $0.showsHorizontalScrollIndicator = false
     }
     
-    private let collectionViewImage = UIImageView().then {
-        // TODO: 사진 요청 후 삽입
-        $0.contentMode = .scaleAspectFill
-    }
-    
-    private let reviewTableView = UITableView(frame: CGRect(x: 0, y: 0, width: 300, height: 400)).then {
-        $0.register(ReviewCell.self, forCellReuseIdentifier: ReviewCell.cellIdentifier)
-        $0.separatorStyle = .none
+    private let reviewCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
+        $0.scrollDirection = .vertical
+    }).then {
+        $0.register(HomeReviewCell.self, forCellWithReuseIdentifier: HomeReviewCell.cellIdentifier)
+        $0.showsHorizontalScrollIndicator = false
+        $0.isScrollEnabled = false
     }
     
     private let thanksLetterButton = UIButton().then {
@@ -87,15 +84,16 @@ class BossPickSectionViewController: BaseViewController {
         self.uiView.addSubview(sectionLabel)
         self.uiView.addSubview(sectionGuideLabel)
         self.uiView.addSubview(categoryCollectionView)
-        self.uiView.addSubview(reviewTableView)
+        self.uiView.addSubview(reviewCollectionView)
         self.uiView.addSubview(thanksLetterButton)
         
-        self.categoryCollectionView.backgroundView = collectionViewImage
         self.categoryCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        self.reviewTableView.rx.setDelegate(self).disposed(by: disposeBag)
+        self.reviewCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
     override func setupConstraints() {
+        let padding = (UIScreen.main.bounds.width - 328) / 3
+        
         self.uiView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
@@ -115,13 +113,13 @@ class BossPickSectionViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(32)
         }
-        self.reviewTableView.snp.makeConstraints {
-            $0.top.equalTo(self.categoryCollectionView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(480)
+        self.reviewCollectionView.snp.makeConstraints {
+            $0.top.equalTo(self.categoryCollectionView.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(padding)
+            $0.height.equalTo(344)
         }
         self.thanksLetterButton.snp.makeConstraints {
-            $0.top.equalTo(self.reviewTableView.snp.bottom).offset(16)
+            $0.top.equalTo(self.reviewCollectionView.snp.bottom).offset(16)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(48)
             $0.bottom.equalToSuperview()
@@ -135,8 +133,8 @@ class BossPickSectionViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        Observable.just(self.reviewDatas)
-            .bind(to: reviewTableView.rx.items(cellIdentifier: ReviewCell.cellIdentifier, cellType: ReviewCell.self)) { index, review, cell in
+        Observable.just(self.homeReviewDatas)
+            .bind(to: reviewCollectionView.rx.items(cellIdentifier: HomeReviewCell.cellIdentifier, cellType: HomeReviewCell.self)) { index, review, cell in
                 cell.configureCell(review)
             }
             .disposed(by: disposeBag)
@@ -145,19 +143,17 @@ class BossPickSectionViewController: BaseViewController {
 
 extension BossPickSectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let label = UILabel()
-        label.text = self.categoryDatas[indexPath.row]
-        label.font = CoreTypo.Body3_B.style.font
-        label.sizeToFit()
-        
-        let width = label.frame.width + 32
-        
-        return CGSize(width: width, height: 32)
-    }
-}
-    
-extension BossPickSectionViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 159
+        if collectionView.isScrollEnabled {
+            let label = UILabel()
+            label.text = self.categoryDatas[indexPath.row]
+            label.font = CoreTypo.Body3_B.style.font
+            label.sizeToFit()
+            
+            let width = label.frame.width + 32
+            
+            return CGSize(width: width, height: 32)
+        } else {
+            return CGSize(width: 164, height: 164)
+        }
     }
 }
