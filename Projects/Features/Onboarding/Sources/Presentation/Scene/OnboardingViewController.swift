@@ -31,7 +31,7 @@ public class OnboardingViewController: BaseViewController, ReactorKit.View {
     // MARK: Constants
     private enum Constants {
         static let skipButtonText = "서비스 둘러보기".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }
@@ -205,15 +205,25 @@ extension OnboardingViewController {
             .filter { $0 }
             .asDriver(onErrorDriveWith: .empty())
             .drive (with: self, onNext: { (_, _) in
-                // TODO: Login 페이지로 이동하는 코드 작성
-                print("Move To Login Page")
-                let vc = self.dependency.loginVC.create(
+                let loginVC = self.dependency.loginVC.create(
                     payload: .init(paramA: "")
                 )
-                self.navigationController?.pushViewController(vc, animated: true)
+                
+                // rootViewController 변경
+                guard let window = UIApplication.shared.windows.first else { return }
+                let rootVC = UINavigationController(rootViewController: loginVC)
+                
+                UIView.transition(
+                    with: window,
+                    duration: 0.5,
+                    options: .transitionCrossDissolve,
+                    animations: {
+                        window.rootViewController = rootVC
+                    },
+                    completion: nil
+                )
             })
             .disposed(by: self.disposeBag)
-            
     }
 }
 

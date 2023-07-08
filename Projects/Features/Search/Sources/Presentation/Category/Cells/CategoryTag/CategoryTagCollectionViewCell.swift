@@ -27,14 +27,14 @@ final class CategoryTagCollectionViewCell: BaseCollectionViewCell, ReactorKit.Vi
 	// MARK: UI Properties
     private let label: UILabel = UILabel().then {
         $0.attributedText = "테마별 카테고리".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.pointColor.color)]
         )
     }
     private let confirmButton: UIButton = UIButton().then {
         $0.setAttributedTitle(
             "완료".styled(
-                typo: .DDaengMB3_Bold,
+                typo: .Body3_B,
                 byAdding: [.color(CommonUIAsset.deepGrey.color)]
             ),
             for: .normal

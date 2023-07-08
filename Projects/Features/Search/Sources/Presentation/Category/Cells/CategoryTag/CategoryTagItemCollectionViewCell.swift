@@ -93,7 +93,7 @@ extension CategoryTagItemCollectionViewCell {
             .distinctUntilChanged()
             .asDriver(onErrorDriveWith: .empty())
             .map { $0.styled(
-                typo: .DDaengMB3_Bold,
+                typo: .Body3_B,
                 byAdding: [.color(CommonUIAsset.deepGrey.color)]
             )
             }

@@ -66,13 +66,13 @@ class NotificationViewController: BaseViewController, ReactorKit.View {
     private let emptyTitle = UILabel().then {
         $0.text = "땡!"
         $0.textColor = CommonUIAsset.grey.color
-        $0.font = CoreTypo.DDaengH1.style.font
+        $0.font = CoreTypo.Display.style.font
     }
     
     private let emptyContent = UILabel().then {
         $0.text = "알림이 없어요."
         $0.textColor = CommonUIAsset.grey.color
-        $0.font = CoreTypo.DDaengB1.style.font
+        $0.font = CoreTypo.Body1.style.font
     }
     
     // MARK: Initializing
@@ -187,7 +187,7 @@ extension NotificationViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel()
         label.text = self.typeArray[indexPath.row]
-        label.font = CoreTypo.ButtonLarge.style.font
+        label.font = CoreTypo.Body2.style.font
         label.sizeToFit()
         
         let width = label.frame.width + 32
@@ -202,7 +202,7 @@ extension NotificationViewController: UITableViewDelegate {
         
         let headerLabel = UILabel().then {
             $0.textColor = CommonUIAsset.black.color
-            $0.font = CoreTypo.ButtonLarge.style.font
+            $0.font = CoreTypo.Body2.style.font
             $0.text = notiArray[section].header
         }
         

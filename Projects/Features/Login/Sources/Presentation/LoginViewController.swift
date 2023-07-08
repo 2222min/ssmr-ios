@@ -12,6 +12,8 @@ import ReactorKit
 import Core
 import LoginDomain
 import RootDomain
+import FindUserInfoDomain
+import SignUpDomain
 
 public class LoginViewController: BaseViewController, ReactorKit.View, LoginViewControllerType {
     
@@ -19,30 +21,38 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     
     public struct Dependency {
         let rootVC: RootViewControllerFactoryType
-        public init(rootVC: RootViewControllerFactoryType) {
+        let findUserInfoVC: FindUserInfoViewControllerFactoryType
+        let signUpVC: SignUpViewControllerFactoryType
+        public init(
+            rootVC: RootViewControllerFactoryType,
+            findUserInfoVC: FindUserInfoViewControllerFactoryType,
+            signUpVC: SignUpViewControllerFactoryType
+        ) {
             self.rootVC = rootVC
+            self.findUserInfoVC = findUserInfoVC
+            self.signUpVC = signUpVC
         }
     }
     
     // MARK: Constants
     private enum Constants {
         static let loginButtonText = "로그인".styled(
-            typo: .ButtonLarge,
+            typo: .Body2,
             byAdding: [.color(CommonUIAsset.white.color)]
         )
         
         static let findInfoButtonText = "아이디/비밀번호찾기".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         
         static let dividerText = "|".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
         
         static let signUpButtonText = "회원가입하기".styled(
-            typo: .DDaengC1,
+            typo: .Caption1,
             byAdding: [.color(CommonUIAsset.grey.color)]
         )
     }
@@ -55,7 +65,7 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     
     private let idTextField = UnderlineTextFieldWithTitle().then {
         $0.title.attributedText = "아이디".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)])
         $0.textField.attributedPlaceholder = NSAttributedString(
             string: "이메일 주소를 입력해 주세요.",
@@ -65,7 +75,7 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
     
     private let pwTextField = UnderlineTextFieldWithTitle().then {
         $0.title.attributedText = "비밀번호".styled(
-            typo: .DDaengH3,
+            typo: .Subhead,
             byAdding: [.color(CommonUIAsset.blackGrey.color)])
         $0.textField.attributedPlaceholder =  NSAttributedString(
             string: "비밀번호를 입력해 주세요.",
@@ -181,8 +191,15 @@ public class LoginViewController: BaseViewController, ReactorKit.View, LoginView
 // MARK: ReactorBind
 extension LoginViewController {
     public func bind(reactor: Reactor) {
+        // 로그인 버튼
         self.bindAction(didTapCTAButton: reactor)
         self.bindState(showLoginFailView: reactor)
+        // 아이디/비밀번호찾기 버튼
+        self.bindAction(didTapFindInfoButton: reactor)
+        self.bindState(didTapFindInfoButton: reactor)
+        // 회원가입하기 버튼
+        self.bindAction(didTapSignUpButton: reactor)
+        self.bindState(didTapSignUpButton: reactor)
     }
 }
 
@@ -192,6 +209,20 @@ extension LoginViewController {
         self.loginButton.rx.tap
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { Reactor.Action.didTapCTAButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    private func bindAction(didTapFindInfoButton reactor: Reactor) {
+        self.findInfoButton.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.didTapFindInfoButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    private func bindAction(didTapSignUpButton reactor: Reactor) {
+        self.signUpButton.rx.tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.didTapSignUpButton }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
@@ -208,6 +239,24 @@ extension LoginViewController {
             }
             .disposed(by: self.disposeBag)
     }
+    private func bindState(didTapFindInfoButton reactor: Reactor) {
+        reactor.state.map { $0.isShowFindInfoView }
+            .filter { $0 }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive { [weak self] _ in
+                self?.showFindUserInfoView()
+            }
+            .disposed(by: self.disposeBag)
+    }
+    private func bindState(didTapSignUpButton reactor: Reactor) {
+        reactor.state.map { $0.isShowSignUpView }
+            .filter { $0 }
+            .asDriver(onErrorDriveWith: .empty())
+            .drive { [weak self] _ in
+                self?.showSignUpView()
+            }
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: Func
@@ -217,5 +266,17 @@ extension LoginViewController {
         loginFailView.modalTransitionStyle = .crossDissolve
         loginFailView.modalPresentationStyle = .overCurrentContext
         self.present(loginFailView, animated: true)
+    }
+    func showFindUserInfoView() {
+        let findUserInfoView = dependency.findUserInfoVC.create(
+            payload: .init(paramA: "")
+        )
+        self.navigationController?.pushViewController(findUserInfoView, animated: true)
+    }
+    func showSignUpView() {
+        let signUpView = dependency.signUpVC.create(
+            payload: .init(paramA: "")
+        )
+        self.navigationController?.pushViewController(signUpView, animated: true)
     }
 }
