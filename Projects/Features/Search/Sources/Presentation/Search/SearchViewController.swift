@@ -36,7 +36,6 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         $0.deleteButtonIsHidden = false
         $0.borderColor = CommonUIAsset.pointColor.color.cgColor
         $0.borderWidth = 2
-        $0.placeholder = "점포 이름, 메뉴를 검색하세요."
     }
     
     private lazy var collectionView: UICollectionView = UICollectionView(
