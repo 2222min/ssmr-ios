@@ -29,7 +29,8 @@ let project = Project.framework(
         .project(target: "HomeDomain", path: "Home"),
         .project(target: "Notification", path: .relativeToFeature("Notification")),
         .project(target: "SearchPresentation", path: .relativeToFeature("Search")),
-        .project(target: "SearchDomain", path: "Search")
-        
+        .project(target: "SearchDomain", path: "Search"),
+        .project(target: "ThanksLetterPresentation", path: .relativeToFeature("ThanksLetter")),
+        .project(target: "ThanksLetterDomain", path: "ThanksLetter")
     ]
 )
