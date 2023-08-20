@@ -46,15 +46,12 @@ public final class NavigationTopBar: UIView {
             .byAdding(.color(CommonUIAsset.black.color))
     }
     
-    public let leftButton = UIButton().then {
-        $0.contentEdgeInsets = Constants.insetsLeftButton
+    public let leftButton = UIButton()
+    public let titleLabel = UILabel().then {
+        $0.font = CoreTypo.Subhead.font
     }
     
-    public let titleLabel = UILabel()
-    
-    public let rightButton = UIButton().then {
-        $0.contentEdgeInsets = Constants.insetsRightButton
-    }
+    public let rightButton = UIButton()
     
     
     public init() {
@@ -83,7 +80,7 @@ public final class NavigationTopBar: UIView {
         }
         
         self.leftButton.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.width.equalTo(Constants.widthLeftButton)
             $0.left.equalToSuperview().offset(Constants.offsetLeftLeftButton)
         }
@@ -93,7 +90,7 @@ public final class NavigationTopBar: UIView {
         }
         
         self.rightButton.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.width.greaterThanOrEqualTo(Constants.widthRightButton)
             $0.right.equalToSuperview().offset(-Constants.offsetRightRightButton)
         }
