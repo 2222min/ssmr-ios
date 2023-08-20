@@ -26,10 +26,9 @@ final class RecentSearchCollectionViewCell: BaseCollectionViewCell, ReactorKit.V
 	// MARK: Propertie
 
 	// MARK: UI Properties
-    private let button: UIButton = UIButton()
-    private let wordLabel: UILabel = UILabel()
-    private let removeImageView: UIImageView = UIImageView().then {
-        $0.image = CommonUIAsset.tagClose.image
+    private let wordButton: UIButton = UIButton()
+    private let removeButton: UIButton = UIButton().then {
+        $0.setImage(CommonUIAsset.tagClose.image, for: .normal)
     }
 
 	// MARK: Initializing
@@ -47,22 +46,22 @@ final class RecentSearchCollectionViewCell: BaseCollectionViewCell, ReactorKit.V
 	// MARK: UI
 	override func configureUI() {
 		super.configureUI()
-        self.addSubview(self.button)
-        self.button.addSubview(self.wordLabel)
-        self.button.addSubview(self.removeImageView)
+        [
+            self.wordButton,
+            self.removeButton
+        ].forEach {
+            self.addSubview($0)
+        }
 	}
 
 	// MARK: Constraints
 	override func setupConstraints() {
 		super.setupConstraints()
-        self.button.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        self.wordLabel.snp.makeConstraints {
+        self.wordButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(16)
         }
-        self.removeImageView.snp.makeConstraints {
+        self.removeButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(16)
             $0.size.equalTo(16)
@@ -85,7 +84,10 @@ extension RecentSearchCollectionViewCell {
                 typo: .Body3,
                 byAdding: [.color(CommonUIAsset.black.color)])
             }
-            .drive(self.wordLabel.rx.attributedText)
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.wordButton.setAttributedTitle($0, for: .normal)
+            })
             .disposed(by: self.disposeBag)
     }
 }

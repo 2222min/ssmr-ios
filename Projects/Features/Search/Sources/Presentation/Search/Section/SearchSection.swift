@@ -10,7 +10,9 @@ import RxDataSources
 
 struct SearchSection: Hashable {
     enum Identity: Hashable {
+        case topSearch
         case recent(RecentSearchHeaderCellReactor)
+        case relatedSearch(RecentSearchHeaderCellReactor)
     }
     let identity: Identity
     var items: [Item]
@@ -24,6 +26,7 @@ extension SearchSection: AnimatableSectionModelType {
 
 extension SearchSection {
     enum Item: Hashable {
+        case topSearch(TopSearchCollectionViewCellReactor)
         case recentSearch(RecentSearchCellReactor)
         case relatedSearch(RelatedSearchCellReactor)
     }

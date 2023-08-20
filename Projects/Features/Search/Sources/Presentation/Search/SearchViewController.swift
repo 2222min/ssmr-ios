@@ -24,13 +24,14 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     typealias Search = RxCollectionViewSectionedReloadDataSource<SearchSection>
     // MARK: Reusable
     private enum Reusable {
+        static let topSearchCell = ReusableCell<TopSearchCollectionViewCell>()
         static let recentSearchHeaderView = ReusableView<RecentSearchHeaderCollectionViewCell>()
         static let recentSearchCell = ReusableCell<RecentSearchCollectionViewCell>()
         static let relatedSearchCell = ReusableCell<RelatedSearchCollectionViewCell>()
     }
     
     // MARK: Properties
-    private lazy var dataSource = self.createDataSource()
+    lazy var dataSource = self.createDataSource()
     // MARK: UI Properties
     private let searchTopBar = SearchTopBar().then {
         $0.deleteButtonIsHidden = false
@@ -42,6 +43,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         frame: .zero,
         collectionViewLayout: self.createCompositionalLayout()
     ).then {
+        $0.register(Reusable.topSearchCell)
         $0.register(Reusable.recentSearchHeaderView, kind: .header)
         $0.register(Reusable.recentSearchCell)
         $0.register(Reusable.relatedSearchCell)
@@ -142,6 +144,12 @@ extension SearchViewController {
         return .init(
             configureCell: {  _, collectionView, indexPath, sectionItem in
                 switch sectionItem {
+                case let .topSearch(reactor):
+                    return collectionView.dequeue(Reusable.topSearchCell, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
                 case let .recentSearch(reactor) :
                     return collectionView.dequeue(Reusable.recentSearchCell, for: indexPath).then { cell in
                         if cell.reactor !== reactor {
@@ -156,16 +164,18 @@ extension SearchViewController {
                     }
                 }
             },
-            configureSupplementaryView: { [weak self] dataSource, collectionView, _, indexPath in
+            configureSupplementaryView: { dataSource, collectionView, _, indexPath in
                 let section = dataSource[indexPath.section]
                 
                 switch section.identity {
-                case let .recent(reactor):
+                case let .recent(reactor), let .relatedSearch(reactor):
                     return collectionView.dequeue(Reusable.recentSearchHeaderView, kind: .header, for: indexPath).then { cell in
                         if cell.reactor !== reactor {
                             cell.configure(reactor: reactor)
                         }
                     }
+                case .topSearch:
+                    return .init()
                 }
             }
         )

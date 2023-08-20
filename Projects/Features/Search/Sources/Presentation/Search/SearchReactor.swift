@@ -65,6 +65,18 @@ final class SearchReactor: Reactor {
 extension SearchReactor {
     private func setRecentSearchView() -> Observable<Mutation> {
         return .just(.setRecentSearchView([
+            .init(identity: .topSearch, items: [
+                .topSearch(.init(topSearchItem: "마라탕")),
+                .topSearch(.init(topSearchItem: "반미")),
+                .topSearch(.init(topSearchItem: "마라탕")),
+                .topSearch(.init(topSearchItem: "반미")),
+                .topSearch(.init(topSearchItem: "마라탕")),
+                .topSearch(.init(topSearchItem: "반미")),
+                .topSearch(.init(topSearchItem: "마라탕")),
+                .topSearch(.init(topSearchItem: "반미")),
+                .topSearch(.init(topSearchItem: "마라탕")),
+                .topSearch(.init(topSearchItem: "반미"))
+            ]),
             .init(identity: .recent(.init(isHidden: false)), items: [
                 .recentSearch(.init(recentWord: "마라탕")),
                 .recentSearch(.init(recentWord: "이자카야")),
@@ -74,7 +86,7 @@ extension SearchReactor {
     }
     private func setResultSearchView() -> Observable<Mutation> {
         return .just(.setResultSearchView([
-            .init(identity: .recent(.init(isHidden: true)), items: [
+            .init(identity: .relatedSearch(.init(isHidden: true)), items: [
                 .relatedSearch(.init(relatedWork: "마라탕")),
                 .relatedSearch(.init(relatedWork: "마라샹궈")),
                 .relatedSearch(.init(relatedWork: "마늘치킨")),
