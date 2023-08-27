@@ -24,6 +24,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     typealias Search = RxCollectionViewSectionedReloadDataSource<SearchSection>
     // MARK: Reusable
     private enum Reusable {
+        static let topSerachHeaderView = ReusableView<TopSearchHeaderCollectionViewCell>()
         static let topSearchCell = ReusableCell<TopSearchCollectionViewCell>()
         static let recentSearchHeaderView = ReusableView<RecentSearchHeaderCollectionViewCell>()
         static let recentSearchCell = ReusableCell<RecentSearchCollectionViewCell>()
@@ -43,6 +44,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         frame: .zero,
         collectionViewLayout: self.createCompositionalLayout()
     ).then {
+        $0.register(Reusable.topSerachHeaderView, kind: .header)
         $0.register(Reusable.topSearchCell)
         $0.register(Reusable.recentSearchHeaderView, kind: .header)
         $0.register(Reusable.recentSearchCell)
@@ -82,7 +84,7 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
             $0.leading.trailing.equalToSuperview()
         }
         self.collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.searchTopBar.snp.bottom).offset(12)
+            $0.top.equalTo(self.searchTopBar.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -174,8 +176,12 @@ extension SearchViewController {
                             cell.configure(reactor: reactor)
                         }
                     }
-                case .topSearch:
-                    return .init()
+                case let .topSearch(reactor):
+                    return collectionView.dequeue(Reusable.topSerachHeaderView, kind: .header, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
                 }
             }
         )

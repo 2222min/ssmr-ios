@@ -65,7 +65,7 @@ final class SearchReactor: Reactor {
 extension SearchReactor {
     private func setRecentSearchView() -> Observable<Mutation> {
         return .just(.setRecentSearchView([
-            .init(identity: .topSearch, items: [
+            .init(identity: .topSearch(.init()), items: [
                 .topSearch(.init(topSearchItem: "마라탕")),
                 .topSearch(.init(topSearchItem: "반미")),
                 .topSearch(.init(topSearchItem: "마라탕")),

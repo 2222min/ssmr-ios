@@ -41,24 +41,24 @@ extension SearchViewController {
     
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
-        section.contentInsets = .init(top: 0, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 12, trailing: 20)
         let config = UICollectionViewCompositionalLayoutConfiguration()
         section.orthogonalScrollingBehavior = .continuous
         let layout = UICollectionViewCompositionalLayout(section: section)
         layout.configuration = config
         
-//        // Header
-//        let headerSize = NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1.0),
-//            heightDimension: .estimated(0)
-//        )
-//        let header = NSCollectionLayoutBoundarySupplementaryItem(
-//            layoutSize: headerSize,
-//            elementKind: UICollectionView.elementKindSectionHeader,
-//            alignment: .top
-//        )
-//
-//        section.boundarySupplementaryItems = [header]
+        // Header
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(20)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+
+        section.boundarySupplementaryItems = [header]
         
         return section
     }
@@ -93,7 +93,7 @@ extension SearchViewController {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-        
+        section.contentInsets = .init(top: 4, leading: 0, bottom: 0, trailing: 0)
         section.boundarySupplementaryItems = [header]
         
         return section

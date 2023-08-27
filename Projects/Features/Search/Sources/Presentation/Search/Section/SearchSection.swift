@@ -10,7 +10,7 @@ import RxDataSources
 
 struct SearchSection: Hashable {
     enum Identity: Hashable {
-        case topSearch
+        case topSearch(TopSearchHeaderCellReactor)
         case recent(RecentSearchHeaderCellReactor)
         case relatedSearch(RecentSearchHeaderCellReactor)
     }
