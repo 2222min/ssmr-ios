@@ -64,25 +64,26 @@ final class SearchReactor: Reactor {
 
 extension SearchReactor {
     private func setRecentSearchView() -> Observable<Mutation> {
-        return .just(.setRecentSearchView([
-            .init(identity: .topSearch(.init()), items: [
-                .topSearch(.init(topSearchItem: "마라탕")),
-                .topSearch(.init(topSearchItem: "반미")),
-                .topSearch(.init(topSearchItem: "마라탕")),
-                .topSearch(.init(topSearchItem: "반미")),
-                .topSearch(.init(topSearchItem: "마라탕")),
-                .topSearch(.init(topSearchItem: "반미")),
-                .topSearch(.init(topSearchItem: "마라탕")),
-                .topSearch(.init(topSearchItem: "반미")),
-                .topSearch(.init(topSearchItem: "마라탕")),
-                .topSearch(.init(topSearchItem: "반미"))
-            ]),
-            .init(identity: .recent(.init(isHidden: false)), items: [
-                .recentSearch(.init(recentWord: "마라탕")),
-                .recentSearch(.init(recentWord: "이자카야")),
-                .recentSearch(.init(recentWord: "송리단길"))
-            ])
-        ]))
+        return  self.setReuslt()
+//        return .just(.setRecentSearchView([
+//            .init(identity: .topSearch(.init()), items: [
+//                .topSearch(.init(topSearchItem: "마라탕")),
+//                .topSearch(.init(topSearchItem: "반미")),
+//                .topSearch(.init(topSearchItem: "마라탕")),
+//                .topSearch(.init(topSearchItem: "반미")),
+//                .topSearch(.init(topSearchItem: "마라탕")),
+//                .topSearch(.init(topSearchItem: "반미")),
+//                .topSearch(.init(topSearchItem: "마라탕")),
+//                .topSearch(.init(topSearchItem: "반미")),
+//                .topSearch(.init(topSearchItem: "마라탕")),
+//                .topSearch(.init(topSearchItem: "반미"))
+//            ]),
+//            .init(identity: .recent(.init(isHidden: false)), items: [
+//                .recentSearch(.init(recentWord: "마라탕")),
+//                .recentSearch(.init(recentWord: "이자카야")),
+//                .recentSearch(.init(recentWord: "송리단길"))
+//            ])
+//        ]))
     }
     private func setResultSearchView() -> Observable<Mutation> {
         return .just(.setResultSearchView([
@@ -91,6 +92,23 @@ extension SearchReactor {
                 .relatedSearch(.init(relatedWork: "마라샹궈")),
                 .relatedSearch(.init(relatedWork: "마늘치킨")),
                 .relatedSearch(.init(relatedWork: "마늘바게트"))
+            ])
+        ]))
+    }
+    
+    private func setReuslt() -> Observable<Mutation> {
+        return .just(.setResultSearchView([
+            .init(identity: .searchResult(.init()), items: []),
+            .init(identity: .option(.init()), items: []),
+            .init(identity: .searchResult(.init()), items: [
+                .resultItem(.init()),
+                .resultItem(.init()),
+                .resultItem(.init()),
+                .resultItem(.init()),
+                .resultItem(.init()),
+                .resultItem(.init()),
+                .resultItem(.init()),
+                .resultItem(.init())
             ])
         ]))
     }

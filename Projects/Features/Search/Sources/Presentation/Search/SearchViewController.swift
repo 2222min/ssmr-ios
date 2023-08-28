@@ -29,6 +29,9 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         static let recentSearchHeaderView = ReusableView<RecentSearchHeaderCollectionViewCell>()
         static let recentSearchCell = ReusableCell<RecentSearchCollectionViewCell>()
         static let relatedSearchCell = ReusableCell<RelatedSearchCollectionViewCell>()
+        static let resultSearchHeaderView = ReusableView<SearchResultHeaderCollectionViewCell>()
+        static let resultSearchCell = ReusableCell<SearchResultCollectionViewCell>()
+        static let optionCell = ReusableCell<SearchOptionCollectionViewCell>()
     }
     
     // MARK: Properties
@@ -40,6 +43,8 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         $0.borderWidth = 2
     }
     
+    private let contentView: UIView = UIView()
+    
     private lazy var collectionView: UICollectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: self.createCompositionalLayout()
@@ -49,6 +54,9 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
         $0.register(Reusable.recentSearchHeaderView, kind: .header)
         $0.register(Reusable.recentSearchCell)
         $0.register(Reusable.relatedSearchCell)
+        $0.register(Reusable.resultSearchHeaderView, kind: .header)
+        $0.register(Reusable.resultSearchCell)
+        $0.register(Reusable.optionCell)
     }
     
     // MARK: Initializing
@@ -71,9 +79,9 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
     
     override func configureUI() {
         super.configureUI()
-        
         self.view.addSubview(self.searchTopBar)
-        self.view.addSubview(self.collectionView)
+        self.view.addSubview(contentView)
+        self.contentView.addSubview(self.collectionView)
     }
     
     // MARK: Constraints
@@ -83,9 +91,12 @@ final class SearchViewController: BaseViewController, ReactorKit.View {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
         }
-        self.collectionView.snp.makeConstraints {
+        self.contentView.snp.makeConstraints {
             $0.top.equalTo(self.searchTopBar.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
+        }
+        self.collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }
@@ -144,7 +155,9 @@ extension SearchViewController {
     
     fileprivate func createDataSource() -> Search {
         return .init(
-            configureCell: {  _, collectionView, indexPath, sectionItem in
+            configureCell: {  dataSource, collectionView, indexPath, sectionItem in
+                let section = dataSource[indexPath.section]
+                
                 switch sectionItem {
                 case let .topSearch(reactor):
                     return collectionView.dequeue(Reusable.topSearchCell, for: indexPath).then { cell in
@@ -164,7 +177,25 @@ extension SearchViewController {
                             cell.configure(reactor: reactor)
                         }
                     }
+                case let .resultItem(reactor):
+                    return collectionView.dequeue(Reusable.resultSearchCell, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
                 }
+                
+
+                switch section.identity {
+                case let .option(reactor):
+                    return collectionView.dequeue(Reusable.optionCell, kind: .header, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
+                default: return
+                }
+                
             },
             configureSupplementaryView: { dataSource, collectionView, _, indexPath in
                 let section = dataSource[indexPath.section]
@@ -182,6 +213,14 @@ extension SearchViewController {
                             cell.configure(reactor: reactor)
                         }
                     }
+                case let .searchResult(reactor):
+                    return collectionView.dequeue(Reusable.resultSearchHeaderView, kind: .header, for: indexPath).then { cell in
+                        if cell.reactor !== reactor {
+                            cell.configure(reactor: reactor)
+                        }
+                    }
+                default:
+                    break
                 }
             }
         )

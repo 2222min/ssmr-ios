@@ -13,6 +13,8 @@ struct SearchSection: Hashable {
         case topSearch(TopSearchHeaderCellReactor)
         case recent(RecentSearchHeaderCellReactor)
         case relatedSearch(RecentSearchHeaderCellReactor)
+        case searchResult(SearchResultHeaderCellReactor)
+        case option(SearchOptionCellReactor)
     }
     let identity: Identity
     var items: [Item]
@@ -29,6 +31,7 @@ extension SearchSection {
         case topSearch(TopSearchCollectionViewCellReactor)
         case recentSearch(RecentSearchCellReactor)
         case relatedSearch(RelatedSearchCellReactor)
+        case resultItem(SearchResultCellReactor)
     }
 }
 
