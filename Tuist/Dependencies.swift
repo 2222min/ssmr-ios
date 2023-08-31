@@ -20,7 +20,8 @@ let dependencies = Dependencies(
             .remote(url: "https://github.com/2222min/ReusableKit", requirement: .branch("master")),
             .remote(url: "https://github.com/RxSwiftCommunity/RxDataSources.git", requirement: .upToNextMajor(from: "5.0")),
             .remote(url: "https://github.com/Swinject/Swinject.git", requirement: .upToNextMajor(from: "2.8.0")),
-            .remote(url: "https://github.com/onevcat/Kingfisher", requirement: .upToNextMajor(from: "7.0.0"))
+            .remote(url: "https://github.com/onevcat/Kingfisher", requirement: .upToNextMajor(from: "7.0.0")),
+            .remote(url: "https://github.com/evgenyneu/Cosmos", requirement: .upToNextMajor(from: "23.0.0"))
          ],
          productTypes: [
             "ReactorKit": .framework,
