@@ -15,27 +15,22 @@ import Kingfisher
 class StoreInfoViewController: BaseViewController {
     
     private let storeImageSection = StoreImageSectionViewController()
+    private let storeInfoSection = StoreInfoSectionViewController()
     
     // MARK: UI Properties
     
     private let scrollView = UIScrollView().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = CommonUIAsset.cream.color
     }
     
     private let container = UIStackView().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = CommonUIAsset.cream.color
         $0.axis = .vertical
         $0.spacing = 36
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.addSubview(self.scrollView)
-        self.scrollView.addSubview(container)
-        [
-            self.storeImageSection.view
-        ].forEach(self.container.addArrangedSubview)
     }
     
     override func configureUI() {
@@ -44,7 +39,8 @@ class StoreInfoViewController: BaseViewController {
         self.view.addSubview(self.scrollView)
         self.scrollView.addSubview(container)
         [
-            self.storeImageSection.view
+            self.storeImageSection.view,
+            self.storeInfoSection.view
         ].forEach(self.container.addArrangedSubview)
     }
     
