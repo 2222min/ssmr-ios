@@ -10,6 +10,10 @@ import UIKit
 import CommonUI
 import Cosmos
 
+/*
+ TODO: 요일 UI, 버튼 subscribe
+ */
+
 class StoreInfoSectionViewController: BaseViewController {
     
     private let uiView = UIView().then {
@@ -68,8 +72,50 @@ class StoreInfoSectionViewController: BaseViewController {
         $0.image = CommonUIAsset.line.image
     }
     
-    private let testLabel = UILabel().then {
-        $0.text = "월"
+    private let bodyStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 16
+    }
+    
+    private let tagButton = LeftImageButton().then {
+        $0.normalTitle = "중식".styled(
+            typo: .Body3,
+            byAdding: [.color(CommonUIAsset.black.color)]
+        )
+        $0.normalImage = CommonUIAsset.tag.image
+        $0.titleEdgeInsets = .init(top: 0, left: 40, bottom: 0, right: 0)
+    }
+    
+    private let locationButton = LeftImageButton().then {
+        $0.normalTitle = "서울 성북구 동소문로20나길 11".styled(
+            typo: .Body3,
+            byAdding: [.color(CommonUIAsset.black.color)]
+        )
+        $0.normalImage = CommonUIAsset.location.image
+        $0.titleEdgeInsets = .init(top: 0, left: 40, bottom: 0, right: 0)
+    }
+    
+    private let copyButton = UIButton().then {
+        $0.setImage(CommonUIAsset.document.image, for: .normal)
+    }
+    
+    private let callButton = LeftImageButton().then {
+        $0.normalTitle = "0507-1413-3721".styled(
+            typo: .Body3,
+            byAdding: [.color(CommonUIAsset.black.color)]
+        )
+        $0.normalImage = CommonUIAsset.call.image
+        $0.titleEdgeInsets = .init(top: 0, left: 40, bottom: 0, right: 0)
+    }
+    
+    private let expandButton = LeftImageButton().then {
+        $0.normalTitle = "정보 열기".styled(
+            typo: .Body3,
+            byAdding: [.color(CommonUIAsset.grey.color)]
+        )
+        $0.normalImage = CommonUIAsset.downArrow.image.withRenderingMode(.alwaysOriginal)
+            .withTintColor(CommonUIAsset.grey.color)
+        $0.titleEdgeInsets = .init(top: 4.5, left: 0, bottom: 0, right: 0)
     }
     
     override func viewDidLoad() {
@@ -81,14 +127,19 @@ class StoreInfoSectionViewController: BaseViewController {
         super.configureUI()
         self.view.addSubview(uiView)
         self.uiView.addSubview(stackView)
+        self.uiView.addSubview(copyButton)
         self.stackView.addArrangedSubview(headerStackView)
         self.stackView.addArrangedSubview(lineImageView)
-        self.stackView.addArrangedSubview(testLabel)
+        self.stackView.addArrangedSubview(bodyStackView)
+        self.stackView.addArrangedSubview(expandButton)
         self.storeRatingStackView.addArrangedSubview(storeRatingView)
         self.storeRatingStackView.addArrangedSubview(storeRatingLabel)
         self.headerStackView.addArrangedSubview(storeNameLabel)
         self.headerStackView.addArrangedSubview(storeRatingStackView)
         self.headerStackView.addArrangedSubview(reviewRatingCountLabel)
+        self.bodyStackView.addArrangedSubview(tagButton)
+        self.bodyStackView.addArrangedSubview(locationButton)
+        self.bodyStackView.addArrangedSubview(callButton)
         
         self.stackView.setCustomSpacing(18, after: lineImageView)
     }
@@ -111,6 +162,13 @@ class StoreInfoSectionViewController: BaseViewController {
         self.lineImageView.snp.makeConstraints {
             $0.top.equalTo(self.headerStackView.snp.bottom).offset(24)
             $0.leading.trailing.equalToSuperview().inset(50)
+        }
+        self.bodyStackView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(48)
+        }
+        self.copyButton.snp.makeConstraints {
+            $0.top.equalTo(self.locationButton.snp.top).offset(-3)
+            $0.leading.equalTo(self.locationButton.titleLabel?.snp.trailing ?? self.locationButton.snp.trailing).offset(4)
         }
     }
 }
