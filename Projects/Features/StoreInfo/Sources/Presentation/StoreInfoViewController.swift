@@ -16,6 +16,7 @@ class StoreInfoViewController: BaseViewController {
     
     private let storeImageSection = StoreImageSectionViewController()
     private let storeInfoSection = StoreInfoSectionViewController()
+    private let storeNoticeSection = StoreNoticeSectionViewController()
     
     // MARK: UI Properties
     
@@ -33,6 +34,10 @@ class StoreInfoViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func configureUI() {
         super.configureUI()
         setNavigationTopBar()
@@ -40,7 +45,8 @@ class StoreInfoViewController: BaseViewController {
         self.scrollView.addSubview(container)
         [
             self.storeImageSection.view,
-            self.storeInfoSection.view
+            self.storeInfoSection.view,
+            self.storeNoticeSection.view
         ].forEach(self.container.addArrangedSubview)
     }
     

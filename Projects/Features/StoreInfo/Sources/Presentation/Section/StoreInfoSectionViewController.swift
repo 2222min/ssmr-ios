@@ -9,15 +9,16 @@
 import UIKit
 import CommonUI
 import Cosmos
+import RxSwift
 
 /*
- TODO: 요일 UI, 버튼 subscribe
+ TODO: 요일 UI, shadow 처리
  */
 
 class StoreInfoSectionViewController: BaseViewController {
     
     private let uiView = UIView().then {
-        $0.layer.shadowColor = CommonUIAsset.mRed.color.cgColor
+        $0.backgroundColor = CommonUIAsset.cream.color
     }
     
     private let stackView = UIStackView().then {
@@ -115,16 +116,25 @@ class StoreInfoSectionViewController: BaseViewController {
         )
         $0.normalImage = CommonUIAsset.downArrow.image.withRenderingMode(.alwaysOriginal)
             .withTintColor(CommonUIAsset.grey.color)
-        $0.titleEdgeInsets = .init(top: 4.5, left: 0, bottom: 0, right: 0)
+        $0.titleEdgeInsets = .init(top: 5.5, left: 0, bottom: 0, right: 0)
     }
+    
+    private var infoIsExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideNavigationBar()
+        subscribeUI()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.updateViewHeight()
     }
     
     override func configureUI() {
         super.configureUI()
+        self.view.backgroundColor = CommonUIAsset.cream.color
         self.view.addSubview(uiView)
         self.uiView.addSubview(stackView)
         self.uiView.addSubview(copyButton)
@@ -149,8 +159,9 @@ class StoreInfoSectionViewController: BaseViewController {
         super.setupConstraints()
         self.uiView.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.height.equalTo(0)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalTo(self.view.snp.bottom)
+            $0.bottom.equalToSuperview()
         }
         self.stackView.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -170,5 +181,37 @@ class StoreInfoSectionViewController: BaseViewController {
             $0.top.equalTo(self.locationButton.snp.top).offset(-3)
             $0.leading.equalTo(self.locationButton.titleLabel?.snp.trailing ?? self.locationButton.snp.trailing).offset(4)
         }
+    }
+    
+    override func subscribeUI() {
+        self.expandButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                owner.infoIsExpanded.toggle()
+                owner.updateInfoUI(owner.infoIsExpanded)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func updateViewHeight() {
+        self.stackView.layoutIfNeeded()
+        self.uiView.snp.updateConstraints {
+            $0.height.equalTo(self.stackView.frame.height)
+        }
+    }
+    
+    private func updateInfoUI(_ infoIsExpanded: Bool) {
+        self.expandButton.normalTitle = (infoIsExpanded ? "정보 닫기" : "정보 열기")
+            .styled(
+                typo: .Body3,
+                byAdding: [.color(CommonUIAsset.grey.color)]
+            )
+        
+        self.expandButton.normalImage = (
+            infoIsExpanded
+            ? CommonUIAsset.upperArrow.image
+            : CommonUIAsset.downArrow.image
+        )
+        .withRenderingMode(.alwaysOriginal)
+        .withTintColor(CommonUIAsset.grey.color)
     }
 }
